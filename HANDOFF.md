@@ -2,7 +2,7 @@
 
 **Project:** Battle Atlas, Osprey-style 3D phase-by-phase battle maps. It lives at `~/battle-maps/` on Nathan's Mac, and the library is published at https://claude.ai/artifact/Gbh8cmwciTY9jRqqHbMX54 .
 
-**Current state:** v1 is published (Austerlitz 1805 and Rossbach 1757). The v2 work is planned in `tasks/plan-v2.md`, with T1 done (tools/georef.py; Austerlitz uses maps.json/georef.json; overlays overlay_wp23.webp, overlay_ru7.webp). Git checkpoint: `fa7b547` (v1).
+**Current state:** v1 is published (Austerlitz 1805 and Rossbach 1757). The v2 work is planned in `tasks/plan-v2.md`; ticked boxes there are done, and the progress log at the bottom of this file says what each step left behind. Git checkpoint for v1: `fa7b547`. Mark a step done with `python3 tools/tick.py <step> "note"`, which ticks it, logs it here and commits.
 
 ## How to resume
 1. `cd ~/battle-maps && git log --oneline | head` shows which v2 steps are committed.
@@ -40,3 +40,6 @@ All of it should be done autonomously, with handoff docs kept current. He can't 
 - Artifact publishing: `dist/index.html` with `files` `{ "battles/<id>.json": "dist/battles/<id>.json", ... }`. Only scripts from cdnjs, jsdelivr and unpkg are allowed; everything else (data, images) must be published files or inline.
 - Wikimedia API: send a User-Agent and don't hammer it (sleep 1 s between calls).
 - Nominatim: no more than 1 request per second, with a User-Agent.
+
+## Progress log (newest last)
+- **T1**: tools/georef.py (generic, leave-one-out outlier flags, 1st/2nd order, overlay warping to .webp). Austerlitz has maps.json (wp23, ru7) -> georef.json, georef_report.md, overlay_wp23.webp, overlay_ru7.webp; scenario uses Georef(HERE)("wp23"). Old battles/austerlitz/georef.py renamed georef_v1_legacy.py.
