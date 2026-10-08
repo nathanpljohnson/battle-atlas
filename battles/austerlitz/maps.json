@@ -1,0 +1,146 @@
+{
+ "wp23": {
+  "file": "sources/wp_0900.png",
+  "label": "U.S. Military Academy map 23: situation at 09:00, 2 Dec 1805",
+  "order": 1,
+  "overlay": true,
+  "crop": [
+   38,
+   38,
+   1885,
+   1450
+  ],
+  "gcps": {
+   "Telnitz": [
+    762,
+    1099
+   ],
+   "Sokolnitz castle": [
+    791,
+    972
+   ],
+   "Kobelnitz": [
+    885,
+    785
+   ],
+   "Puntowitz": [
+    912,
+    669
+   ],
+   "Schlappanitz": [
+    830,
+    559
+   ],
+   "Pratzen": [
+    1043,
+    766
+   ],
+   "Krzenowitz": [
+    1398,
+    752
+   ],
+   "Austerlitz": [
+    1660,
+    653
+   ],
+   "Satschan": [
+    849,
+    1195
+   ],
+   "Menitz": [
+    640,
+    1268
+   ],
+   "Raigern": [
+    162,
+    1207
+   ],
+   "Bosenitz": [
+    1095,
+    333
+   ],
+   "Welatitz": [
+    987,
+    280
+   ],
+   "Posoritz post": [
+    1386,
+    377
+   ]
+  }
+ },
+ "ru7": {
+  "file": "sources/ru_map7_start.jpg",
+  "label": "Mikhailovsky-Danilevsky (1844), map 7: the battle at its start",
+  "order": 2,
+  "overlay": true,
+  "crop": [
+   22,
+   120,
+   1605,
+   1475
+  ],
+  "gcps": {
+   "Telnitz": [
+    265,
+    1272
+   ],
+   "Sokolnitz": [
+    280,
+    1112
+   ],
+   "Kobelnitz": [
+    410,
+    860
+   ],
+   "Puntowitz": [
+    483,
+    692
+   ],
+   "Schlappanitz": [
+    403,
+    483
+   ],
+   "Girzikowitz": [
+    630,
+    505
+   ],
+   "Pratzen": [
+    640,
+    860
+   ],
+   "Blasowitz": [
+    855,
+    573
+   ],
+   "Krzenowitz": [
+    1157,
+    870
+   ],
+   "Austerlitz": [
+    1517,
+    780
+   ],
+   "Hostieradek": [
+    760,
+    1147
+   ],
+   "Aujezd": [
+    553,
+    1280
+   ],
+   "Satschan": [
+    317,
+    1423
+   ],
+   "Menitz": [
+    85,
+    1425
+   ],
+   "Posoritz post": [
+    1112,
+    387
+   ]
+  }
+ }
+}

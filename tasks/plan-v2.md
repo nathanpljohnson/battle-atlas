@@ -11,7 +11,7 @@ Nathan asked for every item below to be done, autonomously, to a historian's sta
 Conventions: one commit per step (`git add -A && git commit -m "v2 <step id>: ..."`). After each step, tick the box here and update the "Current state" line in `HANDOFF.md`.
 
 ## Stage T: tooling and method (the /battle-map skill)
-- [ ] **T1 Map matching tool.** `tools/georef.py`, generic. Per battle, `maps.json` holds `{map_id: {file, gcps: {place: [x, y]}}}`. It fits a 1st- or 2nd-order transform, reports residuals, flags outliers (more than 600 m, or 3σ), writes `georef.json`, and warps each map into a bbox-aligned overlay JPG. battlekit gets `B.mapxy(map_id, x, y)`. Austerlitz is migrated off `georef.py`.
+- [x] **T1 Map matching tool.** `tools/georef.py`, generic. Per battle, `maps.json` holds `{map_id: {file, gcps: {place: [x, y]}}}`. It fits a 1st- or 2nd-order transform, reports residuals, flags outliers (more than 600 m, or 3σ), writes `georef.json`, and warps each map into a bbox-aligned overlay JPG. battlekit gets `B.mapxy(map_id, x, y)`. Austerlitz is migrated off `georef.py`.
 - [ ] **T2 Historical gazetteer.** `tools/gazetteer.py <battle dir> names.json`:
   - Look up each historical (German, French, etc.) name in Wikidata (labels and aliases in all languages, P625 coordinates), and in Nominatim with the modern name.
   - Flag any disagreement over 1 km.

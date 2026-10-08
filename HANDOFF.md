@@ -2,7 +2,7 @@
 
 **Project:** Battle Atlas, Osprey-style 3D phase-by-phase battle maps. It lives at `~/battle-maps/` on Nathan's Mac, and the library is published at https://claude.ai/artifact/Gbh8cmwciTY9jRqqHbMX54 .
 
-**Current state:** v1 is published (Austerlitz 1805 and Rossbach 1757). The v2 work is planned in `tasks/plan-v2.md`, with 0 of 28 steps done. Git checkpoint: `fa7b547` (v1).
+**Current state:** v1 is published (Austerlitz 1805 and Rossbach 1757). The v2 work is planned in `tasks/plan-v2.md`, with T1 done (tools/georef.py; Austerlitz uses maps.json/georef.json; overlays overlay_wp23.webp, overlay_ru7.webp). Git checkpoint: `fa7b547` (v1).
 
 ## How to resume
 1. `cd ~/battle-maps && git log --oneline | head` shows which v2 steps are committed.

@@ -1,0 +1,164 @@
+{
+ "wp23": {
+  "label": "U.S. Military Academy map 23: situation at 09:00, 2 Dec 1805",
+  "file": "sources/wp_0900.png",
+  "order": 1,
+  "fwd": [
+   [
+    49.232911411591836,
+    16.568827897059048
+   ],
+   [
+    -1.5400822910401893e-06,
+    0.0001834692989802229
+   ],
+   [
+    -0.00011822470541327635,
+    6.81363580745177e-06
+   ]
+  ],
+  "inv": [
+   [
+    -105742.15438638676,
+    417135.30558360816
+   ],
+   [
+    315.73072013283036,
+    -8448.461426367767
+   ],
+   [
+    5443.934469853383,
+    -71.91057450651613
+   ]
+  ],
+  "rmse_m": 245,
+  "m_per_px": 13.35,
+  "residuals_m": {
+   "Telnitz": 122,
+   "Sokolnitz castle": 511,
+   "Kobelnitz": 353,
+   "Puntowitz": 118,
+   "Schlappanitz": 410,
+   "Pratzen": 64,
+   "Krzenowitz": 88,
+   "Austerlitz": 117,
+   "Satschan": 280,
+   "Menitz": 64,
+   "Raigern": 289,
+   "Bosenitz": 40,
+   "Welatitz": 223,
+   "Posoritz post": 127
+  },
+  "loo_m": {
+   "Telnitz": 143,
+   "Sokolnitz castle": 567,
+   "Kobelnitz": 382,
+   "Puntowitz": 131,
+   "Schlappanitz": 497,
+   "Pratzen": 69,
+   "Krzenowitz": 116,
+   "Austerlitz": 206,
+   "Satschan": 359,
+   "Menitz": 84,
+   "Raigern": 513,
+   "Bosenitz": 53,
+   "Welatitz": 334,
+   "Posoritz post": 161
+  },
+  "flagged": []
+ },
+ "ru7": {
+  "label": "Mikhailovsky-Danilevsky (1844), map 7: the battle at its start",
+  "file": "sources/ru_map7_start.jpg",
+  "order": 2,
+  "fwd": [
+   [
+    49.198154181187434,
+    16.668670815063948
+   ],
+   [
+    2.1323783558732755e-05,
+    0.00014852461818899858
+   ],
+   [
+    -7.567935151423534e-05,
+    -2.251392699413604e-06
+   ],
+   [
+    -6.185785656427782e-09,
+    -7.794438682902317e-09
+   ],
+   [
+    -1.5692894034026235e-09,
+    -4.0450083663719576e-09
+   ],
+   [
+    -3.9274889489697645e-09,
+    9.857199439254194e-09
+   ]
+  ],
+  "inv": [
+   [
+    -24203530.609225795,
+    -18205840.277479388
+   ],
+   [
+    1034747.647473735,
+    754119.0642101266
+   ],
+   [
+    -155855.25955144071,
+    -4861.694871059145
+   ],
+   [
+    -10596.287994451925,
+    -8242.8771184023
+   ],
+   [
+    459.8714364904018,
+    2636.296784527912
+   ],
+   [
+    4191.243503715054,
+    -3688.3342654022103
+   ]
+  ],
+  "rmse_m": 207,
+  "m_per_px": 11.06,
+  "residuals_m": {
+   "Telnitz": 215,
+   "Sokolnitz": 227,
+   "Kobelnitz": 84,
+   "Puntowitz": 138,
+   "Schlappanitz": 108,
+   "Girzikowitz": 260,
+   "Pratzen": 149,
+   "Blasowitz": 308,
+   "Krzenowitz": 273,
+   "Austerlitz": 91,
+   "Hostieradek": 36,
+   "Aujezd": 132,
+   "Satschan": 279,
+   "Menitz": 294,
+   "Posoritz post": 236
+  },
+  "loo_m": {
+   "Telnitz": 266,
+   "Sokolnitz": 319,
+   "Kobelnitz": 115,
+   "Puntowitz": 172,
+   "Schlappanitz": 456,
+   "Girzikowitz": 341,
+   "Pratzen": 199,
+   "Blasowitz": 409,
+   "Krzenowitz": 374,
+   "Austerlitz": 668,
+   "Hostieradek": 57,
+   "Aujezd": 201,
+   "Satschan": 469,
+   "Menitz": 679,
+   "Posoritz post": 884
+  },
+  "flagged": []
+ }
+}

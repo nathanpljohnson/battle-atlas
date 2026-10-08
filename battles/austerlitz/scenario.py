@@ -8,7 +8,8 @@ sys.path.insert(0, os.path.join(HERE, "..", "..", "tools"))
 sys.path.insert(0, HERE)
 os.chdir(HERE)
 from battlekit import Battle
-from georef import wp
+from georef import Georef
+wp = Georef(HERE)("wp23")
 
 B = Battle("austerlitz", HERE)
 
