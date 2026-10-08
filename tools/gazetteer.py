@@ -112,7 +112,12 @@ def main(bdir, names_path=None, overwrite=False):
             best_w = min(wd, key=lambda c: dist_m((c["lat"], c["lon"]), (nm[0]["lat"], nm[0]["lon"])))
         best_n = nm[0] if nm else None
         gap = dist_m((best_w["lat"], best_w["lon"]), (best_n["lat"], best_n["lon"])) if best_w and best_n else None
-        pick = best_w or best_n
+        norm = lambda x: (x or "").lower().replace("ß", "ss").split(",")[0].split("(")[0].strip()
+        targets = {norm(name), norm(opt.get("modern"))} - {""}
+        osm_is_village = best_n and any(norm(best_n["label"]).startswith(t) or t.startswith(norm(best_n["label"])) for t in targets)
+        wd_is_village = best_w and any(norm(best_w["label"]).startswith(t) for t in targets)
+        # OSM points sit on the village itself; Wikidata sometimes gives a municipality centroid or a landmark in it
+        pick = best_n if osm_is_village and (not wd_is_village or (gap or 0) > 400) else (best_w or best_n)
         note = ""
         if pick is None:
             note = "NOT FOUND"; flags.append(name)

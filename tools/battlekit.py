@@ -257,7 +257,7 @@ class Battle:
                                 w.append(f"CROSSING {d['id']} phase {a}->{b} crosses a river at ({x[0]:.4f}, {x[1]:.4f}) with no declared bridge/ford within 450 m (B.crossing)")
             for i in range(n):
                 k = u.key(i)
-                if k and any(in_poly(k[:2], L) for L in lakes) and k[3] != "R":
+                if k and any(in_poly(k[:2], L) for L in lakes) and not (u.d.get("onIce") or {}).get(i):
                     w.append(f"WATER {d['id']} phase {i}: centre is in a lake/pond")
         for i in range(n):
             arrows = self.phases[i]["arrows"]

@@ -1,0 +1,72 @@
+{
+ "gal": {
+  "file": "sources/gallica_plan.jpg",
+  "label": "Bataille de Rossbach le 5 novembre 1757 (French staff map, 1:50,000, Bibliothèque nationale de France)",
+  "order": 1,
+  "overlay": true,
+  "crop": [
+   210,
+   228,
+   1690,
+   1655
+  ],
+  "gcps": {
+   "Branderoda": [
+    345,
+    697
+   ],
+   "Gröst": [
+    597,
+    820
+   ],
+   "Almsdorf": [
+    703,
+    883
+   ],
+   "Leiha": [
+    788,
+    862
+   ],
+   "Schortau": [
+    857,
+    693
+   ],
+   "Kleinkayna": [
+    1333,
+    680
+   ],
+   "Großkayna": [
+    1392,
+    730
+   ],
+   "Roßbach": [
+    953,
+    982
+   ],
+   "Lunstädt": [
+    1073,
+    972
+   ],
+   "Zeuchfeld": [
+    348,
+    1077
+   ],
+   "Pettstädt": [
+    752,
+    1230
+   ],
+   "Reichardtswerben": [
+    1300,
+    1283
+   ],
+   "Posendorf": [
+    1410,
+    1275
+   ],
+   "Tagewerben": [
+    1290,
+    1395
+   ]
+  }
+ }
+}

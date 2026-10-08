@@ -1,0 +1,70 @@
+{
+ "gal": {
+  "label": "Bataille de Rossbach le 5 novembre 1757 (French staff map, 1:50,000, Biblioth\u00e8que nationale de France)",
+  "file": "sources/gallica_plan.jpg",
+  "order": 1,
+  "fwd": [
+   [
+    51.29195160660712,
+    11.727269417753348
+   ],
+   [
+    2.9453214577745662e-05,
+    0.00012353988983705382
+   ],
+   [
+    -6.138870205948982e-05,
+    5.24354119673363e-05
+   ]
+  ],
+  "inv": [
+   [
+    -357482.6924249962,
+    625127.7215724227
+   ],
+   [
+    5448.222494524704,
+    -12911.042117467652
+   ],
+   [
+    6654.158899039567,
+    3166.525798369331
+   ]
+  ],
+  "rmse_m": 533,
+  "m_per_px": 9.2,
+  "residuals_m": {
+   "Branderoda": 525,
+   "Gr\u00f6st": 630,
+   "Almsdorf": 146,
+   "Leiha": 490,
+   "Schortau": 286,
+   "Kleinkayna": 330,
+   "Gro\u00dfkayna": 309,
+   "Ro\u00dfbach": 165,
+   "Lunst\u00e4dt": 436,
+   "Zeuchfeld": 183,
+   "Pettst\u00e4dt": 325,
+   "Reichardtswerben": 908,
+   "Posendorf": 819,
+   "Tagewerben": 949
+  },
+  "loo_m": {
+   "Branderoda": 754,
+   "Gr\u00f6st": 738,
+   "Almsdorf": 163,
+   "Leiha": 540,
+   "Schortau": 345,
+   "Kleinkayna": 503,
+   "Gro\u00dfkayna": 464,
+   "Ro\u00dfbach": 178,
+   "Lunst\u00e4dt": 475,
+   "Zeuchfeld": 275,
+   "Pettst\u00e4dt": 413,
+   "Reichardtswerben": 1174,
+   "Posendorf": 1105,
+   "Tagewerben": 1392
+  },
+  "flagged": []
+ }
+}

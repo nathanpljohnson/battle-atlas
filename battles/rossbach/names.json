@@ -1,0 +1,44 @@
+{
+ "langs": [
+  "de",
+  "en"
+ ],
+ "names": {
+  "Roßbach": {
+   "modern": "Roßbach, Braunsbedra"
+  },
+  "Schortau": {},
+  "Leiha": {
+   "modern": "Leiha, Braunsbedra"
+  },
+  "Almsdorf": {},
+  "Gröst": {
+   "modern": "Gröst, Mücheln"
+  },
+  "Branderoda": {},
+  "Mücheln": {
+   "modern": "Mücheln (Geiseltal)"
+  },
+  "Zeuchfeld": {},
+  "Pettstädt": {},
+  "Lunstädt": {},
+  "Reichardtswerben": {},
+  "Tagewerben": {
+   "modern": "Tagewerben, Weißenfels"
+  },
+  "Posendorf": {
+   "modern": "Posendorf, Weißenfels"
+  },
+  "Obschütz": {
+   "modern": "Obschütz, Weißenfels"
+  },
+  "Storkau": {},
+  "Burgwerben": {
+   "modern": "Burgwerben, Weißenfels"
+  },
+  "Großkayna": {},
+  "Kleinkayna": {},
+  "Janushügel": {},
+  "Krumpa": {}
+ }
+}

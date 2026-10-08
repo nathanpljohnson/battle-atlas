@@ -1,12 +1,12 @@
 {
  "bbox": [
-  11.8,
-  51.215,
-  11.99,
-  51.292
+  11.785,
+  51.21,
+  11.995,
+  51.31
  ],
  "zoom": 13,
- "grid_w": 240,
+ "grid_w": 250,
  "exag": 3.2,
  "masks": [
   {
@@ -850,7 +850,7 @@
    ],
    "buffer_m": 80,
    "auto": true,
-   "why": "water 18 m below surrounding ground: likely flooded pit or quarry (Großkaynaer See)"
+   "why": "water 18 m below surrounding ground: likely flooded pit or quarry (Gro\u00dfkaynaer See)"
   },
   {
    "poly": [
@@ -2925,5 +2925,20 @@
    "why": "OSM quarry"
   }
  ],
- "bumps": []
+ "bumps": [
+  {
+   "lat": 51.2666,
+   "lon": 11.9333,
+   "h_m": 16,
+   "sigma_m": 520,
+   "why": "Janus Hill (Janush\u00fcgel), partly dug away by the Gro\u00dfkayna open-cast mine; restored by estimate from period plans"
+  },
+  {
+   "lat": 51.2712,
+   "lon": 11.9545,
+   "h_m": 11,
+   "sigma_m": 450,
+   "why": "P\u00f6lzen Hill, at the edge of the mining area; restored by estimate"
+  }
+ ]
 }

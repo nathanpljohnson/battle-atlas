@@ -1,0 +1,13 @@
+{{EB1911
+ |volume      = 23
+ |previous    = Rossano
+ |next        = Rosse, Earl of
+ |wikipedia   = Battle of Rossbach
+ |contributor = Charles Francis Atkinson
+}}
+<pages index="EB1911 - Volume 23.djvu" include=783-784 fromsection=s4 tosection=s1 />
+{{clear}}
+{{rule}}
+{{smallrefs}}
+
+[[Category:EB1911:Cities:Europe:Germany]]
