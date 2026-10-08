@@ -40,41 +40,41 @@ Conventions: one commit per step (`git add -A && git commit -m "v2 <step id>: ..
 - [x] **T8 Update `~/.claude/commands/battle-map.md`** to use T1–T7, with stronger source requirements (scholarly works via the Internet Archive and Google Books, non-English sources, official histories).
 
 ## Stage E: engine (renderer)
-- [ ] **E1 Strength-driven blocks:**
+- [x] **E1 Strength-driven blocks:**
   - Block count is men divided by men-per-block (inf 700, gd 600, cav 300, lc 250, art 6 guns per block, lt 400), clamped to 1–14.
   - Blocks disappear as `men` falls.
   - A small strength readout appears on the unit card.
-- [ ] **E2 Realistic movement:**
+- [x] **E2 Realistic movement:**
   - Moves follow `via` waypoints, falling back to a gentle curve.
   - Units in column snake: each block trails the leader along the path.
   - Lines advance rigidly but turn about their centre.
   - Arcs come from the authored arrows when no `via` is given (a nearest-arrow heuristic).
-- [ ] **E3 Fog and smoke:**
+- [x] **E3 Fog and smoke:**
   - Fog is valley-hugging sprite layers with opacity from `phase.fog` and density set by low elevation.
   - Smoke from firing lines lingers and drifts downwind (`meta.wind`).
-- [ ] **E4 Overlays toggle:** "Historical map" drapes the warped source map (or a 19th-century survey) onto the terrain, with an opacity slider. There is one toggle per overlay in a dropdown.
-- [ ] **E5 Contour and scale toggles:**
+- [x] **E4 Overlays toggle:** "Historical map" drapes the warped source map (or a 19th-century survey) onto the terrain, with an opacity slider. There is one toggle per overlay in a dropdown.
+- [x] **E5 Contour and scale toggles:**
   - Contours are 10 m lines painted onto a second canvas, blended over the terrain.
   - The scale bar is computed from the camera at the view centre and snaps to 250 m, 500 m, 1 km or 2 km.
-- [ ] **E6 Label collision:** a priority-based greedy declutter (events > selected > HQ > places > hills > units), with Osprey-style leader lines for events.
-- [ ] **E7 Proportional, multi-day timeline:**
+- [x] **E6 Label collision:** a priority-based greedy declutter (events > selected > HQ > places > hills > units), with Osprey-style leader lines for events.
+- [x] **E7 Proportional, multi-day timeline:**
   - Stops sit at their real times; gaps over 3 h are compressed and get a break mark.
   - Day dividers say "1 July", "2 July".
   - The clock shows the day.
-- [ ] **E8 Strength-over-time chart:**
+- [x] **E8 Strength-over-time chart:**
   - A small SVG chart in the panel: one line per belligerent across the phases, with a marker for the current phase.
   - Losses are shaded.
   - The "Estimated" caveat comes from the data.
-- [ ] **E9 Citations UI:**
+- [x] **E9 Citations UI:**
   - Inline `[id]` markers become numbered superscripts that link to the Sources tab.
   - The unit card lists its sources, and the Sources tab gives each source's number.
-- [ ] **E10 Tactics links:** the tactic box shows "Also seen at: <battle · time>" links that jump to that battle and phase. Deep links use `#<id>` or `#<id>.p<n>`.
-- [ ] **E11 Library home page:**
+- [x] **E10 Tactics links:** the tactic box shows "Also seen at: <battle · time>" links that jump to that battle and phase. Deep links use `#<id>` or `#<id>.p<n>`.
+- [x] **E11 Library home page:**
   - Opens when there is no hash, and from a "Library" button.
   - Cards for each battle (title, year, war, era, sides, a confidence summary).
   - Filters by era and war.
   - A timeline strip of the battles, and a tactics index.
-- [ ] **E12 Eras.** New unit types and symbols:
+- [x] **E12 Eras.** New unit types and symbols:
   - ancient and medieval: heavy infantry and phalanx (`hi`), archers and missile troops (`arc`), knights and heavy horse (`kn`), elephants (`ele`), chariots (`cha`)
   - modern: armour (`arm`), mechanised infantry (`mech`), machine guns (`mg`)
 

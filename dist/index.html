@@ -3,7 +3,7 @@
 <link rel="preconnect" href="https://fonts.gstatic.com" crossorigin>
 <link rel="stylesheet" href="https://fonts.googleapis.com/css2?family=IM+Fell+English+SC&family=Alegreya+Sans:ital,wght@0,400;0,500;0,700;1,400&family=Alegreya+Sans+SC:wght@500;700&display=swap">
 <style>
-/* Layout: a general-staff map table. The terrain slab fills the stage; the dispatch column on the right narrates and switches battles; the clock rail underneath steps through the day. */
+/* Layout: a general-staff map table. The terrain slab fills the stage; the dispatch column on the right narrates and switches battles; the clock rail underneath steps through the day at true time scale. The library home is an atlas contents page laid over the table. */
 :root {
   --bg: #dcdfd8;
   --panel: #f2f2ec;
@@ -40,10 +40,11 @@ html, body { height: 100%; }
 [hidden] { display: none !important; }
 body { background: var(--bg); color: var(--ink); font-family: var(--body); font-size: 15px; line-height: 1.5; }
 * { box-sizing: border-box; }
-button { font: inherit; color: inherit; }
+button, select, input { font: inherit; color: inherit; }
 :focus-visible { outline: 2px solid var(--brass); outline-offset: 2px; }
+a { color: var(--brass); }
 
-.app { height: 100%; display: grid; grid-template-columns: minmax(0, 1fr) 400px; gap: 16px; padding-inline: 16px; padding-block: 16px; }
+.app { height: 100%; display: grid; grid-template-columns: minmax(0, 1fr) 400px; gap: 16px; padding-inline: 16px; padding-block: 16px; position: relative; }
 .map-col { display: grid; grid-template-rows: minmax(0, 1fr) auto; gap: 10px; min-width: 0; min-height: 0; }
 .stage { position: relative; min-height: 0; overflow: hidden; border-radius: 4px; border: 1px solid var(--rule); background: linear-gradient(to bottom, var(--sky1), var(--sky2)); touch-action: none; }
 .stage canvas { display: block; width: 100%; height: 100%; cursor: grab; }
@@ -58,39 +59,59 @@ button { font: inherit; color: inherit; }
 .lbl.unit.sel { outline: 2px solid #f0c64f; outline-offset: 1px; }
 .lbl.hq { display: flex; align-items: center; gap: 4px; font-family: var(--label); font-weight: 700; font-size: 10.5px; letter-spacing: .05em; color: #11151a; background: rgba(246, 243, 234, .92); padding: 2px 5px 2px 3px; border: 1px solid #11151a; }
 .lbl.hq svg { display: block; }
-.lbl.ev, .evn { width: 22px; height: 22px; border-radius: 50%; display: grid; place-items: center; font-family: var(--label); font-weight: 700; font-size: 12px; color: #1a1408; background: #e9c46a; border: 2px solid #1a1408; box-shadow: 0 2px 4px rgba(0, 0, 0, .35); }
-.lbl.ev.hot { background: #fff1c4; }
-.labels.hide-labels .lbl.place, .labels.hide-labels .lbl.hill, .labels.hide-labels .lbl.water, .labels.hide-labels .lbl.unit { display: none; }
+.lbl.ev { display: grid; justify-items: center; padding-bottom: 22px; }
+.lbl.ev::after { content: ""; position: absolute; bottom: 0; left: 50%; width: 2px; height: 22px; margin-left: -1px; background: #1a1408; }
+.lbl.ev::before { content: ""; position: absolute; bottom: -3px; left: 50%; width: 6px; height: 6px; margin-left: -3px; border-radius: 50%; background: #1a1408; }
+.evn { width: 22px; height: 22px; border-radius: 50%; display: grid; place-items: center; font-family: var(--label); font-weight: 700; font-size: 12px; color: #1a1408; background: #e9c46a; border: 2px solid #1a1408; box-shadow: 0 2px 4px rgba(0, 0, 0, .35); flex: none; }
+.lbl.ev.hot .evn { background: #fff1c4; transform: scale(1.15); }
+.labels.hide-labels .lbl.place, .labels.hide-labels .lbl.hill, .labels.hide-labels .lbl.water, .labels.hide-labels .lbl.unit { display: none !important; }
 
 .hud { position: absolute; display: flex; gap: 8px; align-items: center; font-size: 12px; }
 .hud.tl { left: 10px; top: 10px; pointer-events: none; }
-.hud.tr { right: 10px; top: 10px; flex-wrap: wrap; justify-content: flex-end; max-width: 70%; }
+.hud.tr { right: 10px; top: 10px; }
+.hud.bl { left: 10px; bottom: 10px; pointer-events: none; }
 .compass { width: 46px; height: 46px; filter: drop-shadow(0 1px 2px rgba(0, 0, 0, .3)); }
 .hint { color: var(--muted); background: color-mix(in srgb, var(--panel) 80%, transparent); padding: 3px 7px; border-radius: 3px; }
-.toggle { display: inline-flex; align-items: center; gap: 5px; cursor: pointer; user-select: none; background: color-mix(in srgb, var(--panel) 88%, transparent); border: 1px solid var(--rule); padding: 3px 8px; border-radius: 3px; font-family: var(--label); font-weight: 500; letter-spacing: .03em; }
+.scalebar { display: grid; gap: 2px; font-family: var(--label); font-weight: 700; font-size: 11px; color: #1b1f24; text-shadow: 0 0 3px rgba(246, 243, 234, .95); }
+.scalebar .bar { height: 7px; border: 1.5px solid #1b1f24; border-top: 0; background: linear-gradient(90deg, #1b1f24 0 50%, #f6f3ea 50% 100%); }
+.layers { position: relative; }
+.layers > summary { list-style: none; cursor: pointer; user-select: none; background: color-mix(in srgb, var(--panel) 92%, transparent); border: 1px solid var(--rule); padding: 4px 10px; border-radius: 3px; font-family: var(--label); font-weight: 700; letter-spacing: .04em; }
+.layers > summary::-webkit-details-marker { display: none; }
+.layers[open] > summary { border-color: var(--brass); }
+.layers .menu { position: absolute; right: 0; top: calc(100% + 6px); width: 250px; max-width: 80vw; background: var(--panel); border: 1px solid var(--rule); border-radius: 4px; padding: 10px 12px; display: grid; gap: 8px; box-shadow: 0 6px 20px rgba(0, 0, 0, .18); z-index: 5; }
+.layers .menu h4 { margin: 4px 0 0; font-family: var(--label); font-size: 11px; letter-spacing: .1em; color: var(--brass); }
+.toggle { display: flex; align-items: center; gap: 7px; cursor: pointer; user-select: none; font-size: 13.5px; }
 .toggle input { accent-color: var(--brass); margin: 0; }
-.loading { position: absolute; inset: 0; display: grid; place-items: center; font-family: var(--display); font-size: 20px; color: var(--muted); background: linear-gradient(to bottom, var(--sky1), var(--sky2)); }
+.layers select { width: 100%; padding: 3px 6px; border: 1px solid var(--rule); border-radius: 3px; background: var(--bg); }
+.layers input[type=range] { width: 100%; accent-color: var(--brass); }
+.layers .note { font-size: 12px; color: var(--muted); margin: 0; }
+.loading { position: absolute; inset: 0; display: grid; place-items: center; font-family: var(--display); font-size: 20px; color: var(--muted); background: linear-gradient(to bottom, var(--sky1), var(--sky2)); text-align: center; padding: 20px; }
 
 .rail { display: grid; grid-template-columns: auto minmax(0, 1fr); gap: 12px; align-items: center; }
 .transport { display: flex; gap: 4px; }
 .tbtn { width: 36px; height: 36px; border-radius: 50%; border: 1px solid var(--rule); background: var(--panel); display: grid; place-items: center; cursor: pointer; }
 .tbtn:hover { border-color: var(--brass); }
 .tbtn svg { width: 14px; height: 14px; fill: currentColor; }
-.stops { position: relative; display: grid; grid-auto-flow: column; grid-auto-columns: minmax(0, 1fr); padding-top: 4px; }
-.stops .track { position: absolute; left: var(--edge, 5%); right: var(--edge, 5%); top: 15px; height: 2px; background: var(--rule); }
-.stops .fill { position: absolute; left: var(--edge, 5%); top: 15px; height: 2px; background: var(--brass); transition: width .5s ease; }
-.stop { position: relative; background: none; border: 0; cursor: pointer; padding: 0 2px 2px; display: grid; justify-items: center; gap: 3px; min-width: 0; }
+.stops { position: relative; height: 52px; margin-inline: 14px; }
+.stops .track { position: absolute; left: 0; right: 0; top: 11px; height: 2px; background: var(--rule); }
+.stops .fill { position: absolute; left: 0; top: 11px; height: 2px; background: var(--brass); transition: width .5s ease; }
+.stops .brk { position: absolute; top: 4px; width: 10px; height: 16px; margin-left: -5px; background: var(--bg); border-inline: 2px solid var(--muted); transform: skewX(-18deg); }
+.stops .dayline { position: absolute; top: -2px; bottom: 0; width: 0; border-left: 1px dashed var(--muted); }
+.stops .dayline span { position: absolute; top: 34px; left: 4px; font-family: var(--label); font-weight: 700; font-size: 10.5px; letter-spacing: .06em; color: var(--muted); white-space: nowrap; }
+.stop { position: absolute; top: 0; transform: translateX(-50%); background: none; border: 0; cursor: pointer; padding: 3px 2px 2px; display: grid; justify-items: center; gap: 2px; }
 .stop .dot { width: 14px; height: 14px; border-radius: 50%; background: var(--panel); border: 2px solid var(--muted); transition: all .25s; }
-.stop .t { font-family: var(--label); font-weight: 700; font-size: 12px; font-variant-numeric: tabular-nums; color: var(--muted); }
-.stop .l { font-size: 11px; color: var(--muted); line-height: 1.15; text-align: center; overflow: hidden; text-overflow: ellipsis; white-space: nowrap; max-width: 100%; }
+.stop .t { font-family: var(--label); font-weight: 700; font-size: 11.5px; font-variant-numeric: tabular-nums; color: var(--muted); }
+.stop .l { font-size: 10.5px; color: var(--muted); line-height: 1.1; white-space: nowrap; }
 .stop.done .dot { background: var(--brass); border-color: var(--brass); }
-.stop.on .dot { background: var(--brass); border-color: var(--ink); transform: scale(1.25); }
+.stop.on .dot { background: var(--brass); border-color: var(--ink); transform: scale(1.3); }
 .stop.on .t, .stop.on .l { color: var(--ink); }
+.stop.quiet .t, .stop.quiet .l { visibility: hidden; }
+.stop.quiet.on .t { visibility: visible; }
 
 .panel { min-height: 0; overflow: auto; background: var(--panel); border: 1px solid var(--rule); border-radius: 4px; display: flex; flex-direction: column; }
 .library { display: flex; gap: 6px; flex-wrap: wrap; padding: 10px 16px; border-bottom: 1px solid var(--rule); align-items: center; }
-.library .lab { font-family: var(--label); font-weight: 700; letter-spacing: .1em; font-size: 11px; color: var(--muted); margin-right: 2px; }
-.bpick { border: 1px solid var(--rule); background: none; border-radius: 3px; padding: 3px 9px; cursor: pointer; font-family: var(--label); font-weight: 700; font-size: 12.5px; letter-spacing: .03em; color: var(--muted); }
+.bpick, .homebtn { border: 1px solid var(--rule); background: none; border-radius: 3px; padding: 3px 9px; cursor: pointer; font-family: var(--label); font-weight: 700; font-size: 12.5px; letter-spacing: .03em; color: var(--muted); }
+.homebtn { color: var(--brass); border-color: var(--brass); }
 .bpick .y { font-weight: 500; opacity: .8; margin-left: 4px; font-variant-numeric: tabular-nums; }
 .bpick[aria-current="true"] { background: var(--ink); color: var(--panel); border-color: var(--ink); }
 .head { padding: 16px 20px 14px; border-bottom: 1px solid var(--rule); display: grid; gap: 6px; }
@@ -104,28 +125,41 @@ h1 { font-family: var(--display); font-weight: 400; font-size: 46px; line-height
 .bar { height: 8px; background: color-mix(in srgb, var(--rule) 60%, transparent); border-radius: 1px; overflow: hidden; display: flex; }
 .bar .seg { display: flex; height: 100%; box-shadow: inset 0 0 0 1px rgba(0, 0, 0, .25); }
 .bar .seg span { display: block; height: 100%; }
+.chart { margin-top: 4px; }
+.chart svg { width: 100%; height: auto; display: block; overflow: visible; }
+.chart .cap { font-size: 11.5px; color: var(--muted); margin: 0; }
+.chart text { font-family: var(--label); font-size: 10px; fill: var(--muted); }
+.chart .axis { stroke: var(--rule); }
+.chart .now { stroke: var(--ink); stroke-dasharray: 3 3; }
 
 .tabs { display: flex; border-bottom: 1px solid var(--rule); padding-inline: 12px; }
 .tab { background: none; border: 0; border-bottom: 2px solid transparent; padding: 10px 8px 8px; cursor: pointer; font-family: var(--label); font-weight: 700; letter-spacing: .05em; font-size: 13px; color: var(--muted); }
 .tab[aria-selected="true"] { color: var(--ink); border-bottom-color: var(--brass); }
 .pane { padding: 16px 20px 20px; display: grid; gap: 14px; align-content: start; }
 .clock { display: flex; align-items: baseline; gap: 10px; flex-wrap: wrap; }
+.clock .day { font-family: var(--label); font-weight: 700; font-size: 13px; letter-spacing: .08em; color: var(--brass); }
 .clock .time { font-family: var(--display); font-size: 40px; line-height: 1; font-variant-numeric: tabular-nums; }
 .clock .of { color: var(--muted); font-size: 13px; }
 h2 { font-family: var(--display); font-weight: 400; font-size: 25px; line-height: 1.1; margin: 0; text-wrap: balance; }
 .narr { margin: 0; max-width: 62ch; }
-.tactic { border: 1px solid var(--rule); border-left: 3px solid var(--brass); padding: 10px 12px; background: color-mix(in srgb, var(--brass-soft) 45%, transparent); }
+sup.cite { font-size: 10px; line-height: 0; margin-left: 1px; }
+sup.cite a { text-decoration: none; font-family: var(--label); font-weight: 700; color: var(--brass); padding: 0 1px; }
+sup.cite a:hover { text-decoration: underline; }
+.tactic { border: 1px solid var(--rule); border-left: 3px solid var(--brass); padding: 10px 12px; background: color-mix(in srgb, var(--brass-soft) 45%, transparent); display: grid; gap: 4px; }
 .tactic .k { font-family: var(--label); font-weight: 700; letter-spacing: .08em; font-size: 11px; color: var(--brass); }
-.tactic .h { font-family: var(--display); font-size: 18px; margin: 2px 0 4px; }
+.tactic .h { font-family: var(--display); font-size: 18px; }
 .tactic p { margin: 0; font-size: 14px; }
+.tactic .also { font-size: 13px; color: var(--muted); }
+.tactic .also a { margin-right: 8px; white-space: nowrap; }
 .events { list-style: none; margin: 0; padding: 0; display: grid; gap: 6px; }
 .events li { display: grid; grid-template-columns: 24px minmax(0, 1fr); gap: 8px; align-items: start; font-size: 14px; }
 .sunline { font-size: 12.5px; color: var(--muted); display: flex; gap: 6px; align-items: center; }
 .sunline svg { width: 14px; height: 14px; flex: none; }
 .conf { display: inline-flex; align-items: center; gap: 5px; font-family: var(--label); font-weight: 700; font-size: 11px; letter-spacing: .06em; padding: 1px 7px; border-radius: 2px; border: 1px solid currentColor; }
 .conf.high { color: var(--ok); } .conf.medium { color: var(--warn); } .conf.low { color: var(--low); }
-.debate { font-size: 13.5px; border-top: 1px dashed var(--rule); padding-top: 10px; color: var(--muted); }
+.debate { font-size: 13.5px; border-top: 1px dashed var(--rule); padding-top: 10px; color: var(--muted); margin: 0; }
 .debate b { color: var(--ink); font-family: var(--label); letter-spacing: .04em; }
+.srcline { font-size: 12.5px; color: var(--muted); margin: 0; }
 
 .ucard { border: 1px solid var(--rule); padding: 12px; display: grid; gap: 6px; position: relative; }
 .ucard .top { display: flex; gap: 10px; align-items: center; }
@@ -136,6 +170,8 @@ h2 { font-family: var(--display); font-weight: 400; font-size: 25px; line-height
 .status { display: inline-block; font-family: var(--label); font-weight: 700; font-size: 11px; letter-spacing: .06em; padding: 1px 6px; border-radius: 2px; background: var(--brass-soft); color: var(--ink); }
 .status.R { background: #b5432f; color: #fff; }
 .status.F { background: #e9c46a; color: #1a1408; }
+.menbar { height: 6px; background: color-mix(in srgb, var(--rule) 70%, transparent); border-radius: 1px; overflow: hidden; }
+.menbar span { display: block; height: 100%; background: var(--brass); }
 .chip { width: 26px; height: 18px; display: inline-block; flex: none; border: 1px solid var(--chip-edge); border-radius: 1px; }
 .code { font-family: var(--label); font-weight: 700; min-width: 22px; height: 20px; padding: 0 5px; border-radius: 10px; display: inline-grid; place-items: center; font-size: 11.5px; border: 1.5px solid var(--chip-edge); flex: none; }
 
@@ -148,9 +184,46 @@ h2 { font-family: var(--display); font-weight: 400; font-size: 25px; line-height
 .oob li button:hover { background: color-mix(in srgb, var(--brass-soft) 60%, transparent); }
 .oob .nm { font-size: 13.5px; line-height: 1.25; }
 .oob .st { font-size: 12px; color: var(--muted); display: block; }
-.srcs { margin: 0; padding-left: 18px; font-size: 13px; display: grid; gap: 4px; }
-.srcs a { color: var(--brass); }
+.srcs { margin: 0; padding-left: 22px; font-size: 13px; display: grid; gap: 6px; }
+.srcs li { scroll-margin: 20px; border-radius: 3px; }
+.srcs li.flash { background: color-mix(in srgb, var(--brass-soft) 80%, transparent); }
+.srcs .kind { font-family: var(--label); font-weight: 700; font-size: 10.5px; letter-spacing: .06em; color: var(--muted); border: 1px solid var(--rule); border-radius: 2px; padding: 0 4px; margin-left: 4px; }
 .notes { font-size: 12.5px; color: var(--muted); border-top: 1px solid var(--rule); padding-top: 12px; margin: 0; }
+
+/* Library home: an atlas contents page */
+.home { position: absolute; inset: 16px; z-index: 20; background: var(--panel); border: 1px solid var(--rule); border-radius: 4px; overflow: auto; }
+.home .wrap { max-width: 1100px; margin: 0 auto; padding: 28px 24px 40px; display: grid; gap: 26px; }
+.home header { display: grid; gap: 8px; }
+.home h1 { font-size: clamp(40px, 7vw, 68px); }
+.home .lede { color: var(--muted); max-width: 62ch; margin: 0; }
+.home .close { justify-self: start; }
+.filters { display: flex; flex-wrap: wrap; gap: 6px; align-items: center; }
+.filters .lab { font-family: var(--label); font-weight: 700; letter-spacing: .1em; font-size: 11px; color: var(--muted); margin-right: 4px; }
+.fchip { border: 1px solid var(--rule); background: none; border-radius: 12px; padding: 2px 10px; cursor: pointer; font-family: var(--label); font-weight: 700; font-size: 12px; color: var(--muted); }
+.fchip[aria-pressed="true"] { background: var(--ink); border-color: var(--ink); color: var(--panel); }
+.tline { position: relative; height: 64px; border-bottom: 1px solid var(--rule); }
+.tline .tick { position: absolute; bottom: -18px; transform: translateX(-50%); font-family: var(--label); font-size: 11px; color: var(--muted); font-variant-numeric: tabular-nums; }
+.tline .pin { position: absolute; bottom: 0; transform: translateX(-50%); display: grid; justify-items: center; gap: 2px; background: none; border: 0; cursor: pointer; padding: 0; }
+.tline .pin span { font-family: var(--label); font-weight: 700; font-size: 11.5px; white-space: nowrap; }
+.tline .pin i { width: 2px; height: 14px; background: var(--brass); display: block; }
+.cards { display: grid; grid-template-columns: repeat(auto-fill, minmax(min(100%, 300px), 1fr)); gap: 14px; }
+.card { border: 1px solid var(--rule); border-radius: 4px; padding: 14px 16px; display: grid; gap: 8px; align-content: start; background: var(--bg); cursor: pointer; text-align: left; }
+.card:hover { border-color: var(--brass); }
+.card .t { font-family: var(--display); font-size: 28px; line-height: 1; }
+.card .y { font-family: var(--label); font-weight: 700; color: var(--brass); font-variant-numeric: tabular-nums; }
+.card .ey { font-family: var(--label); font-weight: 700; font-size: 11px; letter-spacing: .08em; color: var(--muted); }
+.card p { margin: 0; font-size: 14px; }
+.card .sides { display: grid; gap: 3px; font-size: 13px; }
+.card .sides span::before { content: ""; display: inline-block; width: 10px; height: 10px; margin-right: 6px; border: 1px solid var(--chip-edge); background: var(--c); vertical-align: -1px; }
+.card .stats { font-size: 12px; color: var(--muted); display: flex; gap: 10px; flex-wrap: wrap; }
+.confbar { height: 6px; display: flex; border-radius: 1px; overflow: hidden; }
+.confbar .h { background: var(--ok); } .confbar .m { background: var(--warn); } .confbar .l { background: var(--low); }
+.tindex { columns: 2 280px; column-gap: 28px; }
+.tindex div { break-inside: avoid; margin-bottom: 12px; }
+.tindex b { font-family: var(--display); font-weight: 400; font-size: 17px; display: block; }
+.tindex p { margin: 2px 0 4px; font-size: 13px; color: var(--muted); }
+.tindex a { font-size: 13px; margin-right: 10px; white-space: nowrap; }
+.home h3 { font-family: var(--label); font-weight: 700; letter-spacing: .1em; font-size: 12px; color: var(--brass); margin: 0 0 10px; }
 
 @media (max-width: 900px) {
   .app { height: auto; grid-template-columns: minmax(0, 1fr); }
@@ -158,10 +231,11 @@ h2 { font-family: var(--display); font-weight: 400; font-size: 25px; line-height
   .stage { height: 62vh; min-height: 340px; }
   .panel { overflow: visible; }
   h1 { font-size: 38px; }
+  .home { position: fixed; inset: 0; border-radius: 0; }
 }
 @media (max-width: 560px) {
   .stop .l { display: none; }
-  .stop .t { font-size: 10.5px; }
+  .stop .t { font-size: 10px; }
   .hud.tl .hint { display: none; }
   .rail { grid-template-columns: minmax(0, 1fr); }
   .transport { justify-content: center; }
@@ -169,7 +243,7 @@ h2 { font-family: var(--display); font-weight: 400; font-size: 25px; line-height
 @media (prefers-reduced-motion: reduce) { * { transition: none !important; } }
 </style>
 
-<div class="app">
+<div class="app" id="app">
   <div class="map-col">
     <div class="stage" id="stage">
       <canvas id="gl" aria-label="3D battle map"></canvas>
@@ -187,11 +261,28 @@ h2 { font-family: var(--display); font-weight: 400; font-size: 25px; line-height
         <span class="hint">Drag to turn · right-drag or two fingers to pan · scroll to zoom · click a unit</span>
       </div>
       <div class="hud tr">
-        <label class="toggle"><input type="checkbox" id="optFollow" checked> Follow action</label>
-        <label class="toggle"><input type="checkbox" id="optTrails" checked> Earlier moves</label>
-        <label class="toggle"><input type="checkbox" id="optLabels" checked> Labels</label>
+        <details class="layers" id="layers">
+          <summary>Layers</summary>
+          <div class="menu">
+            <h4>VIEW</h4>
+            <label class="toggle"><input type="checkbox" id="optFollow" checked> Follow the action</label>
+            <label class="toggle"><input type="checkbox" id="optTrails" checked> Earlier moves</label>
+            <label class="toggle"><input type="checkbox" id="optLabels" checked> Labels</label>
+            <label class="toggle"><input type="checkbox" id="optFx" checked> Fog and smoke</label>
+            <h4>GROUND</h4>
+            <label class="toggle"><input type="checkbox" id="optContours"> Contour lines</label>
+            <label class="toggle"><input type="checkbox" id="optScale" checked> Scale bar</label>
+            <div id="ovBox">
+              <label for="ovSel" class="note">Historical map on the ground</label>
+              <select id="ovSel"><option value="">None (modern terrain)</option></select>
+              <input type="range" id="ovOpacity" min="0.2" max="1" step="0.05" value="0.85" aria-label="Historical map opacity">
+              <p class="note" id="ovNote"></p>
+            </div>
+          </div>
+        </details>
       </div>
-      <div class="loading" id="loading">Surveying the ground…</div>
+      <div class="hud bl"><div class="scalebar" id="scalebar" hidden><span id="scaleTxt"></span><div class="bar" id="scaleBar"></div></div></div>
+      <div class="loading" id="loading">Opening the atlas…</div>
     </div>
     <div class="rail">
       <div class="transport">
@@ -204,12 +295,13 @@ h2 { font-family: var(--display); font-weight: 400; font-size: 25px; line-height
   </div>
 
   <aside class="panel">
-    <nav class="library" id="library" aria-label="Battles"><span class="lab">BATTLES</span></nav>
+    <nav class="library" id="library" aria-label="Battles"><button class="homebtn" id="homeBtn">Library</button></nav>
     <div class="head">
       <div class="eyebrow" id="eyebrow"></div>
       <h1 id="btitle"></h1>
       <p class="sub" id="bsub"></p>
       <div class="forces" id="forces"></div>
+      <div class="chart" id="chart" hidden></div>
     </div>
     <div class="tabs" role="tablist">
       <button class="tab" role="tab" id="tabN" aria-selected="true" aria-controls="paneN">The battle</button>
@@ -218,10 +310,11 @@ h2 { font-family: var(--display); font-weight: 400; font-size: 25px; line-height
     </div>
     <div class="pane" id="paneN" role="tabpanel">
       <div class="ucard" id="ucard" hidden></div>
-      <div class="clock"><span class="time" id="ptime"></span><span class="of" id="pof"></span><span class="conf" id="pconf" hidden></span></div>
+      <div class="clock"><span class="day" id="pday" hidden></span><span class="time" id="ptime"></span><span class="of" id="pof"></span><span class="conf" id="pconf" hidden></span></div>
       <h2 id="ptitle"></h2>
       <p class="narr" id="ptext"></p>
-      <div class="tactic"><div class="k">Tactic</div><div class="h" id="pth"></div><p id="ptb"></p></div>
+      <p class="srcline" id="psrc" hidden></p>
+      <div class="tactic"><div class="k">Tactic</div><div class="h" id="pth"></div><p id="ptb"></p><div class="also" id="palso" hidden></div></div>
       <ol class="events" id="pev"></ol>
       <p class="debate" id="pdebate" hidden></p>
       <div class="sunline" id="psun"></div>
@@ -229,7 +322,7 @@ h2 { font-family: var(--display); font-weight: 400; font-size: 25px; line-height
     <div class="pane key" id="paneK" role="tabpanel" hidden>
       <div><h3>Symbols</h3><div class="sym" id="symbols"></div></div>
       <div id="oobs"></div>
-      <p class="notes">Blocks are not to scale: each unit is drawn larger than life so it can be read. In the convention of campaign atlases, one army's units are lettered and the other's numbered. Strengths are approximate.</p>
+      <p class="notes">Blocks are not to scale: each unit is drawn larger than life so it can be read, and the number of blocks follows the unit's strength, shrinking as it takes losses. In the convention of campaign atlases, one army's units are lettered and the other's numbered.</p>
     </div>
     <div class="pane" id="paneS" role="tabpanel" hidden>
       <div class="key"><h3>How this map was made</h3><p class="narr" id="method" style="font-size:14px"></p></div>
@@ -237,13 +330,29 @@ h2 { font-family: var(--display); font-weight: 400; font-size: 25px; line-height
       <p class="notes" id="bnotes"></p>
     </div>
   </aside>
+
+  <section class="home" id="home" hidden aria-label="Battle Atlas library">
+    <div class="wrap">
+      <header>
+        <div class="eyebrow">A LIBRARY OF BATTLES, MAPPED HOUR BY HOUR</div>
+        <h1>Battle Atlas</h1>
+        <p class="lede">Each battle is laid out on its real ground. Step through the day to watch the armies move, read what happened and why, and see how firmly the sources support each position.</p>
+        <button class="homebtn close" id="homeClose" hidden>Back to the map</button>
+      </header>
+      <div class="filters" id="filters"></div>
+      <div><h3>THROUGH TIME</h3><div class="tline" id="tline"></div></div>
+      <div class="cards" id="cards"></div>
+      <div><h3>TACTICS ACROSS THE LIBRARY</h3><div class="tindex" id="tindex"></div></div>
+    </div>
+  </section>
 </div>
 
 <script src="https://cdnjs.cloudflare.com/ajax/libs/three.js/0.147.0/three.min.js"></script>
 <script src="https://cdn.jsdelivr.net/npm/three@0.147.0/examples/js/controls/OrbitControls.js"></script>
 <script>
 (function () {
-const MANIFEST = [{"id": "austerlitz", "title": "Austerlitz", "year": "1805"}, {"id": "rossbach", "title": "Rossbach", "year": "1757"}];
+const MANIFEST = [{"id": "austerlitz", "title": "Austerlitz", "year": "1805", "eyebrow": "2 December 1805 · Moravia · War of the Third Coalition", "subtitle": "Napoleon lets the Russians and Austrians attack his weak right, then breaks their centre on the Pratzen heights.", "war": "", "era": "", "center": [49.136, 16.785], "belligerents": [{"name": "Grande Armée", "commander": "Napoleon I", "color": "#2c4a8c"}, {"name": "Russo-Austrian army", "commander": "Kutuzov, with Alexander I and Francis II", "color": "#2f5b3a"}], "forces": [{"label": "French", "n": 73000, "segs": [["fr", 1]]}, {"label": "Allies", "n": 85000, "segs": [["ru", 0.72], ["au", 0.28]]}], "phases": 9, "units": 39, "conf": {"high": 16, "medium": 30, "low": 2}, "nsources": 7}, {"id": "rossbach", "title": "Rossbach", "year": "1757", "eyebrow": "5 November 1757 · Saxony · Seven Years' War", "subtitle": "Frederick the Great against the French and the army of the Holy Roman Empire, in ninety minutes.", "war": "", "era": "", "center": [51.254, 11.895], "belligerents": [{"name": "Prussian army", "commander": "Frederick II", "color": "#2b4f93"}, {"name": "Allied army", "commander": "Soubise & Hildburghausen", "color": "#f1ede2"}], "forces": [{"label": "Prussians", "n": 22000, "segs": [["pr", 1]]}, {"label": "Allies", "n": 41000, "segs": [["fr", 0.74], ["re", 0.26]]}], "phases": 10, "units": 27, "conf": {"high": 1, "medium": 36, "low": 0}, "nsources": 4}];
+const TACTICS = {"turning-movement": {"name": "Turning movement", "era": "all", "summary": "Marching around an enemy's flank to threaten his supply lines and line of retreat, forcing him to fight facing the wrong way or to withdraw. It needs speed, secrecy and good scouting.", "uses": []}, "fixing-force": {"name": "Fixing force", "era": "all", "summary": "A detachment that holds the enemy's attention and keeps him in place while the main blow lands elsewhere.", "uses": []}, "column-vs-line": {"name": "March column vs. battle line", "era": "gunpowder", "summary": "Columns move fast along roads but can barely fire. To fight, a column must first deploy into line, which takes time; a column caught before it deploys is very vulnerable.", "uses": []}, "dead-ground": {"name": "Using dead ground", "era": "all", "summary": "Hills, ridges and hollows hide troops moving behind them. Attacking out of ground the enemy cannot see achieves surprise.", "uses": []}, "massed-artillery": {"name": "Massed artillery", "era": "gunpowder", "summary": "Guns concentrated in one battery, often on high ground, to pound a single sector, especially troops packed in columns.", "uses": []}, "shock-cavalry": {"name": "Shock cavalry", "era": "all", "summary": "Heavy cavalry charging in close order at speed, hitting with weight and momentum rather than firepower.", "uses": []}, "rally-reform": {"name": "Rally and re-form", "era": "all", "summary": "Bringing troops back into order after a charge or setback, so they can strike again instead of scattering in pursuit.", "uses": []}, "echelon": {"name": "Echelon attack", "era": "gunpowder", "summary": "Units advance stepped back one from another, so the line meets the enemy one unit at a time from its strong end while the rest stays back.", "uses": []}, "oblique-order": {"name": "Oblique order", "era": "gunpowder", "summary": "Frederick the Great's method: mass against one enemy flank and attack in echelon there, while refusing (holding back) the rest of the line.", "uses": []}, "combined-arms": {"name": "Combined arms", "era": "all", "summary": "Infantry, cavalry and artillery used together so each covers the others' weaknesses, for example infantry fixing the front while cavalry hits the flank.", "uses": []}, "pursuit": {"name": "Pursuit", "era": "all", "summary": "Following up a beaten enemy to turn defeat into destruction. Darkness, exhaustion and rearguards limit it.", "uses": []}, "rearguard": {"name": "Rearguard", "era": "all", "summary": "Fresh, formed troops covering a retreat, slowing the pursuer so the main body can escape.", "uses": []}, "bait": {"name": "Deliberate weakness (bait)", "era": "all", "summary": "Leaving a sector apparently weak to lure the enemy into attacking it, drawing his strength away from where the real blow will fall.", "uses": []}, "strongpoint-defence": {"name": "Defending villages and strongpoints", "era": "gunpowder", "summary": "Stone buildings, walls and streams let a few troops hold off many; villages along a line become small fortresses.", "uses": []}, "central-position": {"name": "Central position", "era": "all", "summary": "Holding the ground between two parts of the enemy's army so they cannot support each other and can be beaten one at a time.", "uses": []}, "infantry-vs-cavalry": {"name": "Infantry against cavalry", "era": "gunpowder", "summary": "Formed infantry that keeps its nerve (in line or square) can stop a cavalry charge with volleys, leaving the cavalry open to counter-charge.", "uses": []}, "reserve-commitment": {"name": "Committing the reserve", "era": "all", "summary": "Holding the best troops back and committing them only at the decisive moment, or to restore a crisis.", "uses": []}, "envelopment": {"name": "Envelopment", "era": "all", "summary": "Attacking an enemy from front and flank or rear at once, so he must fight in two directions or run.", "uses": []}, "double-envelopment": {"name": "Double envelopment", "era": "all", "summary": "Closing on both enemy flanks at once until he is surrounded. Cannae (216 BC) is the archetype.", "uses": []}, "escape-route": {"name": "Rearguard and escape route", "era": "all", "summary": "A beaten army that keeps order and holds its line of retreat can still get away; one that loses it is destroyed.", "uses": []}, "decisive-battle": {"name": "Decisive battle", "era": "all", "summary": "Aiming not just to win the field but to destroy the enemy army's ability to keep fighting, ending the campaign in a day.", "uses": []}};
 const INLINE = null;
 const reduceMotion = matchMedia("(prefers-reduced-motion: reduce)").matches;
 const $ = (id) => document.getElementById(id);
@@ -251,6 +360,9 @@ const esc = (s) => String(s).replace(/[&<>"]/g, (c) => ({ "&": "&amp;", "<": "&l
 function rng(seed) { return function () { seed |= 0; seed = seed + 0x6D2B79F5 | 0; let t = Math.imul(seed ^ seed >>> 15, 1 | seed); t = t + Math.imul(t ^ t >>> 7, 61 | t) ^ t; return ((t ^ t >>> 14) >>> 0) / 4294967296; }; }
 const hash = (n) => rng(n * 9973 + 17)();
 const ease = (t) => t < 0.5 ? 4 * t * t * t : 1 - Math.pow(-2 * t + 2, 3) / 2;
+const smooth = (a, b, x) => { const t = Math.max(0, Math.min(1, (x - a) / (b - a))); return t * t * (3 - 2 * t); };
+const angLerp = (a, b, t) => { let d = b - a; d = ((d + Math.PI) % (2 * Math.PI) + 2 * Math.PI) % (2 * Math.PI) - Math.PI; return a + d * t; };
+const fmtN = (n) => Math.round(n).toLocaleString("en-GB");
 
 // ---------- Persistent renderer
 const stage = $("stage"), canvas = $("gl");
@@ -271,13 +383,22 @@ sun.shadow.mapSize.set(small ? 2048 : 4096, small ? 2048 : 4096);
 sun.shadow.bias = -0.0004; sun.shadow.normalBias = 0.02;
 const labelsEl = $("labels");
 
+// ---------- Unit types (all eras). per = men per block (for artillery: guns per block)
 const TYPE = {
-  inf: { w: 0.1, d: 0.036, h: 0.026, word: "Line infantry", text: "Fought shoulder to shoulder in close-order lines or columns, firing volleys, with the bayonet for the final rush." },
-  gd: { w: 0.1, d: 0.036, h: 0.03, word: "Guard infantry", text: "Picked veterans held back as the army's last reserve, committed only at the decisive moment." },
-  cav: { w: 0.085, d: 0.05, h: 0.03, word: "Heavy and line cavalry", text: "Cuirassiers, dragoons and line horse in close order. Their job was the charge." },
-  lc: { w: 0.07, d: 0.045, h: 0.026, word: "Light cavalry", text: "Hussars, chasseurs, Cossacks and uhlans: fast horsemen for scouting, screening, raiding and pursuit." },
-  art: { w: 0.05, d: 0.04, h: 0.016, word: "Artillery", text: "Guns firing roundshot at long range and canister close in. Slow to move once deployed." },
-  lt: { w: 0.05, d: 0.03, h: 0.022, word: "Light infantry", text: "Skirmishers who fought in loose order using cover, rather than standing in a close-packed line." },
+  inf: { w: 0.1, d: 0.036, h: 0.026, per: 700, word: "Line infantry", text: "Fought shoulder to shoulder in close-order lines or columns, firing volleys, with the bayonet for the final rush." },
+  gd: { w: 0.1, d: 0.036, h: 0.03, per: 600, word: "Guard or elite infantry", text: "Picked veterans held back as the army's last reserve, committed only at the decisive moment." },
+  lt: { w: 0.05, d: 0.03, h: 0.022, per: 400, word: "Light infantry", text: "Skirmishers who fought in loose order using cover, rather than standing in a close-packed line." },
+  cav: { w: 0.085, d: 0.05, h: 0.03, per: 300, word: "Heavy and line cavalry", text: "Cuirassiers, dragoons and line horse in close order. Their job was the charge." },
+  lc: { w: 0.07, d: 0.045, h: 0.026, per: 250, word: "Light cavalry", text: "Hussars, chasseurs, Cossacks and uhlans: fast horsemen for scouting, screening, raiding and pursuit." },
+  art: { w: 0.05, d: 0.04, h: 0.016, per: 4, word: "Artillery", text: "Guns firing roundshot at long range and canister close in. Slow to move once deployed. (Strength is counted in guns.)" },
+  hi: { w: 0.1, d: 0.05, h: 0.03, per: 800, word: "Heavy infantry", text: "Close-order foot soldiers with long spears, pikes or swords and shields, such as phalanxes and legions, who decided battles by pushing and fencing at close quarters." },
+  arc: { w: 0.08, d: 0.03, h: 0.02, per: 500, word: "Missile troops", text: "Archers, slingers and javelin men who softened the enemy at range and screened the main line." },
+  kn: { w: 0.08, d: 0.05, h: 0.032, per: 250, word: "Heavy horse", text: "Armoured horsemen, from Companion cavalry to medieval knights, who charged home with lance and sword." },
+  ele: { w: 0.07, d: 0.06, h: 0.045, per: 10, word: "War elephants", text: "Terrifying to men and horses unused to them, but liable to panic and trample their own side. (Strength counted in elephants.)" },
+  cha: { w: 0.07, d: 0.05, h: 0.024, per: 40, word: "Chariots", text: "Fast two- or four-horse platforms for archers or shock, effective on open, level ground. (Strength counted in chariots.)" },
+  arm: { w: 0.07, d: 0.05, h: 0.03, per: 15, word: "Armour", text: "Tanks and armoured vehicles combining protection, firepower and mobility. (Strength counted in vehicles.)" },
+  mech: { w: 0.08, d: 0.045, h: 0.026, per: 400, word: "Mechanised infantry", text: "Infantry carried in armoured vehicles, able to fight alongside tanks." },
+  mg: { w: 0.05, d: 0.035, h: 0.02, per: 300, word: "Machine guns", text: "Automatic weapons whose sustained fire dominated open ground and made frontal attacks costly." },
 };
 const FORM = { X: "In camp", C: "Marching in column", L: "Deployed in line", F: "Firing", R: "Routing" };
 const ARROW = {
@@ -288,9 +409,10 @@ const ARROW = {
 };
 
 // ---------- Per-battle state
-let D = null, scene = null, G = null; // G holds terrain geometry helpers and built objects
+let D = null, scene = null, G = null;
 const xz = (lat, lon) => [(lon - G.LON0) * G.KLON, -(lat - G.LAT0) * G.KLAT];
 const hAt = (x, z) => G.elevUV((x / G.MAPW + 0.5) * (G.GW - 1), (z / G.MAPH + 0.5) * (G.GH - 1)) / 1000 * G.EXAG;
+const tmin = (ph) => (((ph.day || 1) - 1) * 1440) + (+ph.t.slice(0, 2)) * 60 + (+ph.t.slice(3, 5));
 
 function setupTerrainMath(T) {
   const GW = T.w, GH = T.h, [BW, BS, BE, BN] = T.bbox;
@@ -304,7 +426,8 @@ function setupTerrainMath(T) {
     const i = u | 0, j = v | 0, fu = u - i, fv = v - j, o = j * GW + i;
     return (ELEV[o] * (1 - fu) + ELEV[o + 1] * fu) * (1 - fv) + (ELEV[o + GW] * (1 - fu) + ELEV[o + GW + 1] * fu) * fv;
   };
-  return { GW, GH, BW, BS, BE, BN, ELEV, LAT0, LON0, KLON, KLAT, MAPW: (BE - BW) * KLON, MAPH: (BN - BS) * KLAT, EXAG: T.exag || 3.2, BASE: -0.3, LIFT: 0.018, SC: (D.meta.unitScale || 1.9), elevUV };
+  let maxE = 0; for (const e of ELEV) if (e > maxE) maxE = e;
+  return { GW, GH, BW, BS, BE, BN, ELEV, maxE, LAT0, LON0, KLON, KLAT, MAPW: (BE - BW) * KLON, MAPH: (BN - BS) * KLAT, EXAG: T.exag || 3.2, BASE: -0.3, LIFT: 0.018, SC: (D.meta.unitScale || 1.9), elevUV };
 }
 
 // ---------- Terrain texture
@@ -320,9 +443,8 @@ function paintTerrain() {
   const R = rng(7), noise = new Float32Array(66 * 44).map(() => R());
   const nz = (x, y) => { const u = x / TW * 64, v = y / TH * 42, i = u | 0, j = v | 0, fu = u - i, fv = v - j, o = j * 66 + i; return (noise[o] * (1 - fu) + noise[o + 1] * fu) * (1 - fv) + (noise[o + 66] * (1 - fu) + noise[o + 67] * fu) * fv; };
   const pal = D.meta.ground || {};
-  const relief = pal.relief || 70;
-  const season = pal.season || "autumn";
-  const base = season === "winter" ? [168, 160, 128, 52, 44, 40] : [158, 146, 92, 54, 40, 30];
+  const relief = pal.relief || 70, season = pal.season || "autumn";
+  const base = season === "winter" ? [168, 160, 128, 52, 44, 40] : season === "summer" ? [150, 150, 88, 60, 46, 30] : [158, 146, 92, 54, 40, 30];
   for (let y = 0; y < TH; y++) for (let x = 0; x < TW; x++) {
     const o = y * TW + x, e = E[o];
     const ex = (E[y * TW + Math.min(TW - 1, x + 1)] - E[y * TW + Math.max(0, x - 1)]) / (2 * mpp);
@@ -367,8 +489,7 @@ function paintTerrain() {
     for (let i = 0; i < 26; i++) { const a = V() * Math.PI * 2, r = V() * 34; g.fillStyle = i % 3 ? "rgba(136,108,78,.45)" : "rgba(104,118,62,.35)"; g.save(); g.translate(cx + Math.cos(a) * r, cy + Math.sin(a) * r); g.rotate(V() * 3); g.fillRect(-9, -6, 18 + V() * 8, 12); g.restore(); }
   }
   const roadPts = (names) => {
-    const pts = [];
-    const P = (n) => Array.isArray(n) ? n : D.places[n];
+    const pts = [], P = (n) => Array.isArray(n) ? n : D.places[n];
     for (let i = 0; i < names.length - 1; i++) {
       const [ax, ay] = toPx(...P(names[i])), [bx, by] = toPx(...P(names[i + 1]));
       const dx = bx - ax, dy = by - ay, L = Math.hypot(dx, dy) || 1, nx = -dy / L, ny = dx / L;
@@ -386,6 +507,31 @@ function paintTerrain() {
   return tex;
 }
 
+// Contour lines: marching squares on the height grid, painted to a transparent canvas laid over the terrain.
+function contourTexture() {
+  const { GW, GH, ELEV, maxE } = G;
+  const TW = 2048, TH = Math.round(TW * G.MAPH / G.MAPW);
+  const c = document.createElement("canvas"); c.width = TW; c.height = TH;
+  const g = c.getContext("2d");
+  const step = maxE > 220 ? 20 : 10, sx = TW / (GW - 1), sy = TH / (GH - 1);
+  g.lineCap = "round";
+  for (let lev = step; lev < maxE; lev += step) {
+    const major = lev % (step * 5) === 0;
+    g.strokeStyle = major ? "rgba(60,34,12,.9)" : "rgba(60,34,12,.6)"; g.lineWidth = major ? 3.2 : 1.8;
+    g.beginPath();
+    for (let j = 0; j < GH - 1; j++) for (let i = 0; i < GW - 1; i++) {
+      const a = ELEV[j * GW + i], b = ELEV[j * GW + i + 1], cc = ELEV[(j + 1) * GW + i + 1], d = ELEV[(j + 1) * GW + i];
+      const pts = [];
+      const edge = (v1, v2, x1, y1, x2, y2) => { if ((v1 < lev) !== (v2 < lev)) { const t = (lev - v1) / (v2 - v1); pts.push([(x1 + (x2 - x1) * t) * sx, (y1 + (y2 - y1) * t) * sy]); } };
+      edge(a, b, i, j, i + 1, j); edge(b, cc, i + 1, j, i + 1, j + 1); edge(cc, d, i + 1, j + 1, i, j + 1); edge(d, a, i, j + 1, i, j);
+      for (let k = 0; k + 1 < pts.length; k += 2) { g.moveTo(pts[k][0], pts[k][1]); g.lineTo(pts[k + 1][0], pts[k + 1][1]); }
+    }
+    g.stroke();
+  }
+  const tex = new THREE.CanvasTexture(c); tex.anisotropy = renderer.capabilities.getMaxAnisotropy();
+  return tex;
+}
+
 function buildTerrain() {
   const { MAPW, MAPH, GW, GH, ELEV, EXAG, BASE } = G;
   const geo = new THREE.PlaneGeometry(MAPW, MAPH, GW - 1, GH - 1);
@@ -395,6 +541,7 @@ function buildTerrain() {
   geo.computeVertexNormals();
   const mesh = new THREE.Mesh(geo, new THREE.MeshLambertMaterial({ map: paintTerrain() }));
   mesh.receiveShadow = true; scene.add(mesh);
+  G.terrainGeo = geo;
   const verts = [], cols = [], idx = [];
   const top = new THREE.Color("#94714a"), mid = new THREE.Color("#6e5236"), bot = new THREE.Color("#33261a");
   const edge = (cells) => {
@@ -420,6 +567,11 @@ function buildTerrain() {
   gr.addColorStop(0, "rgba(0,0,0,.45)"); gr.addColorStop(1, "rgba(0,0,0,0)"); sg.fillStyle = gr; sg.fillRect(0, 0, 128, 128);
   const shadow = new THREE.Mesh(new THREE.PlaneGeometry(MAPW * 1.5, MAPH * 1.7), new THREE.MeshBasicMaterial({ map: new THREE.CanvasTexture(sc), transparent: true, depthWrite: false }));
   shadow.rotation.x = -Math.PI / 2; shadow.position.set(0.4, BASE - 0.05, 0.5); scene.add(shadow);
+  // overlays share the terrain geometry
+  G.contour = new THREE.Mesh(geo, new THREE.MeshBasicMaterial({ map: contourTexture(), transparent: true, depthWrite: false, polygonOffset: true, polygonOffsetFactor: -1, polygonOffsetUnits: -2 }));
+  G.contour.renderOrder = 1; G.contour.visible = $("optContours").checked; scene.add(G.contour);
+  G.overlay = new THREE.Mesh(geo, new THREE.MeshLambertMaterial({ transparent: true, opacity: +$("ovOpacity").value, depthWrite: false, polygonOffset: true, polygonOffsetFactor: -1, polygonOffsetUnits: -1 }));
+  G.overlay.renderOrder = 1; G.overlay.visible = false; scene.add(G.overlay);
 }
 
 function buildScenery() {
@@ -468,34 +620,89 @@ function buildCamps() {
   });
 }
 
+// ---------- Fog and smoke
+function softTexture(inner, outer) {
+  const c = document.createElement("canvas"); c.width = c.height = 64;
+  const g = c.getContext("2d"), gr = g.createRadialGradient(32, 32, 2, 32, 32, 31);
+  gr.addColorStop(0, inner); gr.addColorStop(0.6, outer); gr.addColorStop(1, "rgba(235,232,222,0)");
+  g.fillStyle = gr; g.fillRect(0, 0, 64, 64); return new THREE.CanvasTexture(c);
+}
+const puffTex = softTexture("rgba(250,248,240,.95)", "rgba(235,232,222,.45)");
+const fogTex = softTexture("rgba(240,242,244,.9)", "rgba(236,238,240,.4)");
+function buildFog() {
+  const { GW, GH, ELEV, maxE, MAPW, MAPH } = G;
+  const sorted = Array.from(ELEV).sort((a, b) => a - b), lowCut = sorted[Math.floor(sorted.length * 0.45)];
+  const R = rng(99), mats = [], list = [];
+  const geo = new THREE.PlaneGeometry(1, 1); geo.rotateX(-Math.PI / 2);
+  for (let tries = 0; list.length < 170 && tries < 4000; tries++) {
+    const i = (R() * (GW - 1)) | 0, j = (R() * (GH - 1)) | 0, e = ELEV[j * GW + i];
+    if (e > lowCut + (maxE - lowCut) * 0.15 * R()) continue;
+    const x = -MAPW / 2 + i / (GW - 1) * MAPW, z = -MAPH / 2 + j / (GH - 1) * MAPH;
+    const m = new THREE.MeshBasicMaterial({ map: fogTex, transparent: true, depthWrite: false, opacity: 0 });
+    const mesh = new THREE.Mesh(geo, m), s = 0.9 + R() * 1.6;
+    mesh.scale.set(s, 1, s * (0.6 + R() * 0.5)); mesh.position.set(x, e / 1000 * G.EXAG + 0.03 + R() * 0.06, z); mesh.rotation.y = R() * 3;
+    mesh.renderOrder = 5; scene.add(mesh); list.push({ mesh, base: 0.32 + R() * 0.3, phase: R() * 6 });
+  }
+  return list;
+}
+const smoke = { pool: [], next: 0 };
+function buildSmoke() {
+  smoke.pool = []; smoke.next = 0;
+  for (let i = 0; i < 1100; i++) {
+    const s = new THREE.Sprite(new THREE.SpriteMaterial({ map: puffTex, transparent: true, depthWrite: false, opacity: 0 }));
+    s.visible = false; s.renderOrder = 6; scene.add(s);
+    smoke.pool.push({ s, life: 0, max: 1, vx: 0, vz: 0, vy: 0, size: 0.06 });
+  }
+}
+function emitSmoke(x, y, z, big) {
+  const p = smoke.pool[smoke.next = (smoke.next + 1) % smoke.pool.length];
+  const w = ((D.meta.wind ?? 270) + 180) * Math.PI / 180, sp = 0.006 + Math.random() * 0.006;
+  p.s.position.set(x + (Math.random() - 0.5) * 0.03, y, z + (Math.random() - 0.5) * 0.03);
+  p.vx = Math.sin(w) * sp; p.vz = -Math.cos(w) * sp; p.vy = 0.002 + Math.random() * 0.003;
+  p.life = 0; p.max = 6 + Math.random() * 5; p.size = big ? 0.09 : 0.06; p.s.visible = true;
+}
+
 // ---------- Unit symbols
 const sideOf = (s) => D.meta.sides[s];
 function symbolCanvas(side, type, w = 128, h = 64) {
   const c = document.createElement("canvas"); c.width = w; c.height = h;
   const g = c.getContext("2d"), S = sideOf(side);
   g.fillStyle = S.top; g.fillRect(0, 0, w, h);
-  g.strokeStyle = S.mark; g.lineWidth = Math.max(2, h / 11); g.lineCap = "round";
+  g.strokeStyle = S.mark; g.fillStyle = S.mark; g.lineWidth = Math.max(2, h / 11); g.lineCap = "round";
   const m = h * 0.14;
-  g.beginPath();
-  if (type === "inf" || type === "lt" || type === "gd") { g.moveTo(m, m); g.lineTo(w - m, h - m); g.moveTo(m, h - m); g.lineTo(w - m, m); }
-  if (type === "cav" || type === "lc") { g.moveTo(m, h - m); g.lineTo(w - m, m); }
-  g.stroke();
+  const X = () => { g.beginPath(); g.moveTo(m, m); g.lineTo(w - m, h - m); g.moveTo(m, h - m); g.lineTo(w - m, m); g.stroke(); };
+  const slash = () => { g.beginPath(); g.moveTo(m, h - m); g.lineTo(w - m, m); g.stroke(); };
+  const oval = () => { g.beginPath(); g.ellipse(w / 2, h / 2, w * 0.3, h * 0.24, 0, 0, 7); g.stroke(); };
+  const txt = (t) => { g.font = `700 ${h * 0.42}px Georgia, serif`; g.textAlign = "center"; g.textBaseline = "middle"; g.fillText(t, w / 2, h / 2 + 1); };
+  if (type === "inf" || type === "lt" || type === "gd" || type === "mech") X();
+  if (type === "cav" || type === "lc" || type === "kn") slash();
   if (type === "lt") { g.setLineDash([h / 8, h / 10]); g.strokeRect(m * 0.6, m * 0.6, w - m * 1.2, h - m * 1.2); g.setLineDash([]); }
   if (type === "gd") { g.lineWidth = Math.max(2, h / 14); g.strokeRect(m * 0.5, m * 0.5, w - m, h - m); }
   if (type === "lc") { g.beginPath(); g.moveTo(w * 0.62, h - m); g.lineTo(w - m, h * 0.46); g.stroke(); }
-  if (type === "art") { g.fillStyle = S.mark; g.beginPath(); g.arc(w / 2, h / 2, h * 0.2, 0, 7); g.fill(); }
+  if (type === "kn") { g.beginPath(); g.moveTo(m, h * 0.62); g.lineTo(w * 0.62, m); g.stroke(); }
+  if (type === "art") { g.beginPath(); g.arc(w / 2, h / 2, h * 0.2, 0, 7); g.fill(); }
+  if (type === "hi") { X(); g.fillRect(m, m * 0.3, w - 2 * m, h * 0.12); }
+  if (type === "arc") { g.beginPath(); g.arc(w * 0.38, h / 2, h * 0.32, -1.1, 1.1); g.stroke(); g.beginPath(); g.moveTo(w * 0.38, h / 2); g.lineTo(w * 0.78, h / 2); g.stroke(); }
+  if (type === "arm" || type === "mech") oval();
+  if (type === "mg") { X(); g.font = `700 ${h * 0.3}px Georgia, serif`; g.textAlign = "center"; g.fillText("MG", w / 2, h - m * 0.6); }
+  if (type === "ele") txt("ELE");
+  if (type === "cha") { g.beginPath(); g.arc(w / 2, h / 2, h * 0.28, 0, 7); g.stroke(); for (let a = 0; a < 3; a++) { g.beginPath(); g.moveTo(w / 2 + Math.cos(a) * h * 0.28, h / 2 + Math.sin(a) * h * 0.28); g.lineTo(w / 2 - Math.cos(a) * h * 0.28, h / 2 - Math.sin(a) * h * 0.28); g.stroke(); } }
   g.strokeStyle = "rgba(0,0,0,.55)"; g.lineWidth = 3; g.strokeRect(1.5, 1.5, w - 3, h - 3);
   return c;
 }
-function puffTexture() {
-  const c = document.createElement("canvas"); c.width = c.height = 64;
-  const g = c.getContext("2d"), gr = g.createRadialGradient(32, 32, 2, 32, 32, 31);
-  gr.addColorStop(0, "rgba(250,248,240,.95)"); gr.addColorStop(0.6, "rgba(235,232,222,.45)"); gr.addColorStop(1, "rgba(235,232,222,0)");
-  g.fillStyle = gr; g.fillRect(0, 0, 64, 64); return new THREE.CanvasTexture(c);
-}
-const puffTex = puffTexture();
 const barrelGeo = new THREE.CylinderGeometry(0.0035, 0.005, 0.05, 6); barrelGeo.rotateX(Math.PI / 2);
 const barrelMat = new THREE.MeshLambertMaterial({ color: 0x2a2622 });
+
+const menOf = (u, p) => { const m = u.men; if (!m) return null; for (let j = p; j >= 0; j--) if (m[j] != null) return m[j]; return null; };
+function legacyBlocks(u) {
+  const m = /(\d+)\s*(bns?|sqns?|guns)/.exec(u.strength);
+  if (u.type === "art") return m && m[2] === "guns" ? Math.max(2, Math.min(8, Math.round(+m[1] / 4))) : 5;
+  if (u.type === "lt") return 4;
+  if (!m) return 6;
+  if (m[2].startsWith("sqn")) return Math.max(2, Math.min(6, Math.ceil(+m[1] / 2.5)));
+  return Math.max(2, Math.min(9, +m[1]));
+}
+const blocksFor = (U, men) => men == null ? U.nLegacy : Math.max(1, Math.min(14, Math.round(men / TYPE[U.type].per)));
 
 function buildUnits() {
   const matCache = {}, geoCache = {};
@@ -503,48 +710,72 @@ function buildUnits() {
   const boxGeo = (type) => geoCache[type] || (geoCache[type] = new THREE.BoxGeometry(TYPE[type].w * G.SC, TYPE[type].h * G.SC, TYPE[type].d * G.SC));
   const counters = {};
   return D.units.map((u, ui) => {
-    const m = /(\d+)\s*(bns?|sqns?|guns)/.exec(u.strength);
-    let n;
-    if (u.blocks) n = u.blocks;
-    else if (u.type === "art") n = m && m[2] === "guns" ? Math.max(2, Math.min(8, Math.round(+m[1] / 4))) : 5;
-    else if (u.type === "lt") n = 4;
-    else if (!m) n = 6;
-    else if (m[2].startsWith("sqn")) n = Math.max(2, Math.min(6, Math.ceil(+m[1] / 2.5)));
-    else n = Math.max(2, Math.min(9, +m[1]));
-    const blocks = [], puffs = [];
-    for (let k = 0; k < n; k++) {
+    const U = { ...u, idx: ui, nLegacy: legacyBlocks(u) };
+    let nmax = u.blocks || 0;
+    if (!nmax) { nmax = U.nLegacy; if (u.men) nmax = Math.max(...D.phases.map((_, p) => blocksFor(U, menOf(u, p)))); }
+    const blocks = [];
+    for (let k = 0; k < nmax; k++) {
       const mesh = new THREE.Mesh(boxGeo(u.type), mats(u.side, u.type));
       mesh.castShadow = true; mesh.receiveShadow = true; mesh.userData.unit = ui;
       if (u.type === "art") { const b = new THREE.Mesh(barrelGeo, barrelMat); b.position.set(0, 0.012, -0.045); b.castShadow = true; mesh.add(b); }
-      scene.add(mesh); blocks.push({ mesh, cur: null, from: null, to: null });
-      for (let j = 0; j < 2; j++) { const s = new THREE.Sprite(new THREE.SpriteMaterial({ map: puffTex, transparent: true, depthWrite: false, opacity: 0 })); s.scale.set(0.09, 0.09, 1); scene.add(s); puffs.push(s); }
+      scene.add(mesh); blocks.push({ mesh, cur: null, from: null, to: null, v: 1, vt: 1, emit: hash(ui * 13 + k) });
     }
     const bel = D.meta.belligerents.find((b) => b.sides.includes(u.side));
-    const style = bel.code || "numbers";
     counters[bel.name] = (counters[bel.name] || 0) + 1;
     const ci = counters[bel.name];
-    const code = u.code || (style === "letters" ? (ci <= 26 ? String.fromCharCode(64 + ci) : String.fromCharCode(64 + Math.floor((ci - 1) / 26)) + String.fromCharCode(65 + (ci - 1) % 26)) : String(ci));
-    return { ...u, idx: ui, n, blocks, puffs, code, bel, form: "X", f: [0, -1], center: new THREE.Vector3(), label: null };
+    const code = u.code || ((bel.code || "numbers") === "letters" ? (ci <= 26 ? String.fromCharCode(64 + ci) : String.fromCharCode(64 + Math.floor((ci - 1) / 26)) + String.fromCharCode(65 + (ci - 1) % 26)) : String(ci));
+    return Object.assign(U, { nmax, blocks, code, bel, form: "X", f: [0, -1], center: new THREE.Vector3(), label: null, tr: null, nvis: nmax });
   });
 }
 
 const keyAt = (u, p) => { for (let j = p; j >= 0; j--) if (u.keys[j]) return u.keys[j]; return null; };
-function layout(U, key) {
+// Blocks of a unit for a key; nvis visible, the rest stacked on the last visible block (and faded out).
+function layout(U, key, nvis) {
   const [lat, lon, face, form] = key;
   const [cx, cz] = xz(lat, lon);
   const th = face * Math.PI / 180, f = [Math.sin(th), -Math.cos(th)], r = [Math.cos(th), Math.sin(th)];
-  const T = TYPE[U.type], n = U.n, W = U.w / 1000, out = [], SC = G.SC;
-  for (let k = 0; k < n; k++) {
+  const T = TYPE[U.type], W = U.w / 1000, out = [], SC = G.SC, n = nvis;
+  for (let k = 0; k < U.nmax; k++) {
+    const kk = Math.min(k, n - 1);
     let a = 0, b = 0, rot = -th, sx = 1;
-    if (form === "C") { b = -(k - (n - 1) / 2) * (T.d * SC * 2.1); sx = 0.5; }
-    else if (form === "R") { const ang = hash(U.idx * 31 + k) * Math.PI * 2, rad = (0.1 + 0.045 * n) * Math.sqrt(hash(U.idx * 17 + k * 7 + 3)); a = Math.cos(ang) * rad; b = Math.sin(ang) * rad * 1.4; rot = -th + (hash(U.idx + k * 13) - 0.5) * 2.6; sx = 0.7; }
-    else if (form === "L" && U.lines === 2) { const per = Math.ceil(n / 2), row = k < per ? 0 : 1, kk = row ? k - per : k, nn = row ? n - per : per; const sp = Math.max(T.w * SC * 1.15, W / per); a = (kk - (nn - 1) / 2) * sp + (row ? sp / 2 : 0); b = row ? -T.d * SC * 3.2 : 0; }
-    else { const sp = Math.max(T.w * SC * 1.15, W / n) * (U.type === "lt" ? 1.6 : 1); a = (k - (n - 1) / 2) * sp; if (U.type === "lt") b = k % 2 ? 0.035 : -0.035; }
+    if (form === "C") { b = -kk * (T.d * SC * 2.1); sx = 0.5; }
+    else if (form === "R") { const ang = hash(U.idx * 31 + kk) * Math.PI * 2, rad = (0.1 + 0.045 * n) * Math.sqrt(hash(U.idx * 17 + kk * 7 + 3)); a = Math.cos(ang) * rad; b = Math.sin(ang) * rad * 1.4; rot = -th + (hash(U.idx + kk * 13) - 0.5) * 2.6; sx = 0.7; }
+    else if (form === "L" && U.lines === 2 && n > 1) { const per = Math.ceil(n / 2), row = kk < per ? 0 : 1, k2 = row ? kk - per : kk, nn = row ? n - per : per; const sp = Math.max(T.w * SC * 1.15, W / per); a = (k2 - (nn - 1) / 2) * sp + (row ? sp / 2 : 0); b = row ? -T.d * SC * 3.2 : 0; }
+    else { const sp = Math.max(T.w * SC * 1.15, W / n) * (U.type === "lt" ? 1.6 : 1); a = (kk - (n - 1) / 2) * sp; if (U.type === "lt") b = kk % 2 ? 0.035 : -0.035; }
     out.push({ x: cx + r[0] * a + f[0] * b, z: cz + r[1] * a + f[1] * b, rot, sx });
   }
-  return { blocks: out, f, form };
+  return { blocks: out, f, form, c: [cx, cz] };
 }
-function placeBlock(U, B, s) { const T = TYPE[U.type]; B.mesh.position.set(s.x, hAt(s.x, s.z) + T.h * G.SC / 2, s.z); B.mesh.rotation.y = s.rot; B.mesh.scale.x = s.sx; }
+function placeBlock(U, B, s) { const T = TYPE[U.type]; B.mesh.position.set(s.x, hAt(s.x, s.z) + T.h * G.SC * B.v / 2, s.z); B.mesh.rotation.y = s.rot; B.mesh.scale.set(s.sx, Math.max(0.02, B.v), 1); B.mesh.visible = B.v > 0.03; }
+
+// Movement path between two keys: authored via points, else a matching arrow of the same side, else straight.
+function movePath(U, p, fromC, toC) {
+  const pts = [fromC];
+  const via = U.via && (U.via[p] || U.via[String(p)]);
+  if (via) via.forEach(([la, lo]) => pts.push(xz(la, lo)));
+  else {
+    const d0 = (a, b) => Math.hypot(a[0] - b[0], a[1] - b[1]);
+    let best = null, bd = 1e9;
+    for (const a of D.phases[p].arrows) {
+      if (a.k === "fire" || !a.p.length) continue;
+      const sameBel = D.meta.belligerents.find((b) => b.sides.includes(a.s)) === U.bel;
+      if (!sameBel) continue;
+      const A = a.p.map(([la, lo]) => xz(la, lo)), s = d0(A[0], fromC), e = d0(A[A.length - 1], toC);
+      if (s < 0.8 && e < 1.0 && s + e < bd) { bd = s + e; best = A; }
+    }
+    if (best) best.slice(1, -1).forEach((q) => pts.push(q));
+  }
+  pts.push(toC);
+  const cum = [0];
+  for (let i = 1; i < pts.length; i++) cum.push(cum[i - 1] + Math.hypot(pts[i][0] - pts[i - 1][0], pts[i][1] - pts[i - 1][1]));
+  return { pts, cum, L: cum[cum.length - 1] };
+}
+function onPath(P, s) {
+  if (s <= 0) { const [a, b] = [P.pts[0], P.pts[1]], L = Math.hypot(b[0] - a[0], b[1] - a[1]) || 1, dx = (b[0] - a[0]) / L, dz = (b[1] - a[1]) / L; return { x: a[0] + dx * s, z: a[1] + dz * s, dx, dz }; }
+  let i = 1; while (i < P.cum.length - 1 && P.cum[i] < s) i++;
+  const a = P.pts[i - 1], b = P.pts[i], seg = (P.cum[i] - P.cum[i - 1]) || 1, t = Math.min(1, (s - P.cum[i - 1]) / seg);
+  return { x: a[0] + (b[0] - a[0]) * t, z: a[1] + (b[1] - a[1]) * t, dx: (b[0] - a[0]) / seg, dz: (b[1] - a[1]) / seg };
+}
 
 function buildHQs() {
   return (D.hq || []).map((h) => {
@@ -583,11 +814,12 @@ function buildArrows() {
   }));
 }
 
-// ---------- Labels
+// ---------- Labels, with priority-based decluttering
 let labels = [], eventLabels = [];
-function addLabel(cls, html, getPos, extra) {
-  const el = document.createElement("div"); el.className = "lbl " + cls; el.innerHTML = html; labelsEl.appendChild(el);
-  const L = { el, getPos, ...extra }; labels.push(L); return L;
+const PRIO = { ev: 0, sel: 1, hq: 2, unit: 3, place: 4, hill: 5, water: 6 };
+function addLabel(kind, html, getPos, extra) {
+  const el = document.createElement("div"); el.className = "lbl " + kind; el.innerHTML = html; labelsEl.appendChild(el);
+  const L = { el, kind, getPos, ...extra }; labels.push(L); return L;
 }
 const armySym = (side) => { const S = sideOf(side); return `<svg width="22" height="15" viewBox="0 0 22 15"><rect x="1" y="1" width="20" height="13" fill="${S.top}" stroke="#11151a" stroke-width="1.4"/><path d="M1 1 L21 14 M1 14 L21 1" stroke="${S.mark}" stroke-width="1.4"/></svg>`; };
 const codeStyle = (side) => { const S = sideOf(side); return `background:${S.top};color:${S.mark}`; };
@@ -595,21 +827,36 @@ const tmpV = new THREE.Vector3();
 function updateLabels() {
   const w = stage.clientWidth, h = stage.clientHeight;
   const far = camera.position.distanceTo(controls.target) > (D.meta.unitLabelDist || 10);
+  const hideAll = labelsEl.classList.contains("hide-labels");
+  const cands = [];
   for (const L of labels) {
-    if (far && L.unit !== undefined && L.unit !== S.selected) { L.el.style.display = "none"; continue; }
+    if (hideAll && L.kind !== "ev" && L.kind !== "hq") { L.el.style.display = "none"; continue; }
+    if (far && L.kind === "unit" && L.unit !== S.selected) { L.el.style.display = "none"; continue; }
     tmpV.copy(L.getPos()).project(camera);
-    if (tmpV.z > 1 || Math.abs(tmpV.x) > 1.2 || Math.abs(tmpV.y) > 1.2) { L.el.style.display = "none"; continue; }
-    L.el.style.display = "";
+    if (tmpV.z > 1 || Math.abs(tmpV.x) > 1.1 || Math.abs(tmpV.y) > 1.1) { L.el.style.display = "none"; continue; }
     const x = (tmpV.x + 1) / 2 * w, y = (1 - tmpV.y) / 2 * h;
-    const ow = L.ow || (L.ow = L.el.offsetWidth), oh = L.oh || (L.oh = L.el.offsetHeight);
-    L.el.style.transform = `translate(${(x - ow / 2).toFixed(1)}px, ${(L.anchor === "b" ? y - oh : y - oh / 2).toFixed(1)}px)`;
+    if (L.ow === undefined || !L.ow) { L.el.style.display = ""; L.ow = L.el.offsetWidth; L.oh = L.el.offsetHeight; }
+    const left = x - L.ow / 2, top = L.anchor === "b" ? y - L.oh : y - L.oh / 2;
+    const pr = L.kind === "unit" && L.unit === S.selected ? PRIO.sel : PRIO[L.kind];
+    cands.push({ L, left, top, pr, z: tmpV.z });
+  }
+  cands.sort((a, b) => a.pr - b.pr || a.z - b.z);
+  const placed = [];
+  for (const c of cands) {
+    const r = c.L.kind === "ev" ? { l: c.left, t: c.top, r: c.left + c.L.ow, b: c.top + 24 } : { l: c.left - 2, t: c.top - 1, r: c.left + c.L.ow + 2, b: c.top + c.L.oh + 1 };
+    const hit = c.pr > 0 && placed.some((p) => r.l < p.r && r.r > p.l && r.t < p.b && r.b > p.t);
+    if (hit) { c.L.el.style.display = "none"; continue; }
+    placed.push(r);
+    c.L.el.style.display = "";
+    c.L.el.style.transform = `translate(${c.left.toFixed(1)}px, ${c.top.toFixed(1)}px)`;
   }
 }
 
 // ---------- Battle state
-const S = { units: [], hqs: [], arrows: [], camps: [], phase: 0, animT: 1, selected: -1, ring: null };
+const S = { units: [], hqs: [], arrows: [], camps: [], fog: [], phase: 0, animT: 1, selected: -1, ring: null, fogLevel: 0, fogFrom: 0, fogTo: 0, timeline: null };
 const camAnim = { t: 1, dur: 1.6, fromT: new THREE.Vector3(), toT: new THREE.Vector3(), fromC: new THREE.Vector3(), toC: new THREE.Vector3() };
 const sunFrom = { dir: new THREE.Vector3(), col: new THREE.Color(), i: 0, hi: 0, dusk: 0 }, sunTo = { dir: new THREE.Vector3(), col: new THREE.Color(), i: 0, hi: 0, dusk: 0 };
+const ANIM = 2.2;
 
 function sunAt(hhmm) {
   const hrs = +hhmm.slice(0, 2) + (+hhmm.slice(3, 5)) / 60, H = (hrs - 12) * 15 * Math.PI / 180;
@@ -626,10 +873,7 @@ function sunState(p, out) {
   out.i = 1.0 - 0.4 * dusk; out.hi = 0.72 - 0.2 * dusk; out.dusk = dusk;
   return s;
 }
-function focusOf(p) {
-  const f = D.phases[p].focus;
-  return f || [(G.BS + G.BN) / 2, (G.BW + G.BE) / 2, 12];
-}
+const focusOf = (p) => D.phases[p].focus || [(G.BS + G.BN) / 2, (G.BW + G.BE) / 2, 12];
 function flyTo(lat, lon, dist, instant) {
   dist *= Math.max(1, 1.25 / camera.aspect);
   const [x, z] = xz(lat, lon), target = new THREE.Vector3(x, hAt(x, z), z);
@@ -640,29 +884,126 @@ function flyTo(lat, lon, dist, instant) {
 }
 
 function setPhase(p, animate = true) {
+  const prev = S.phase;
   S.phase = Math.max(0, Math.min(D.phases.length - 1, p));
   const ph = D.phases[S.phase], instant = !animate || reduceMotion;
   for (const U of S.units) {
-    const k = keyAt(U, S.phase), L = layout(U, k);
-    U.form = k[3]; U.f = L.f;
-    U.blocks.forEach((B, i) => { const to = L.blocks[i]; B.from = B.cur ? { ...B.cur } : { ...to }; B.to = to; if (!B.cur || instant) B.cur = { ...to }; });
+    const k = keyAt(U, S.phase), men = menOf(U, S.phase), nvis = U.blocks.length ? Math.min(U.nmax, blocksFor(U, men)) : 0;
+    const L = layout(U, k, nvis);
+    const prevKey = U.form ? U.lastKey : null;
+    U.form = k[3]; U.f = L.f; U.nvis = nvis; U.men_now = men;
+    const fromC = U.lastC || L.c, moved = Math.hypot(L.c[0] - fromC[0], L.c[1] - fromC[1]);
+    const fromForm = prevKey ? prevKey[3] : k[3];
+    let mode = "rigid", path = null;
+    if (!instant && moved > 0.05) {
+      if (k[3] === "R" || fromForm === "R") mode = "scatter";
+      else {
+        path = S.phase > prev ? movePath(U, S.phase, fromC, L.c) : movePath({ ...U, via: null, bel: null }, S.phase, fromC, L.c);
+        if (path.L > 0.6 || path.pts.length > 2 || k[3] === "C" || fromForm === "C") mode = "snake";
+      }
+    }
+    U.tr = { mode, path, gap: TYPE[U.type].d * G.SC * 2.1 };
+    U.blocks.forEach((B, i) => { const to = L.blocks[i]; B.from = B.cur ? { ...B.cur } : { ...to }; B.to = to; B.vt = i < nvis ? 1 : 0; if (!B.cur || instant) { B.cur = { ...to }; B.v = B.vt; } });
+    U.lastKey = k; U.lastC = L.c;
   }
   for (const h of S.hqs) { const k = keyAt(h, S.phase), [x, z] = xz(k[0], k[1]); h.from = h.cur ? { ...h.cur } : { x, z }; h.to = { x, z }; if (!h.cur || instant) h.cur = { x, z }; }
   S.animT = instant ? 1 : 0;
   const trails = $("optTrails").checked;
   S.arrows.forEach((list, i) => list.forEach((A) => { A.target = i === S.phase ? 1 : (i < S.phase && trails ? 0.13 : 0); A.prog = i === S.phase && !instant ? 0 : 1; }));
   S.camps.forEach((c) => { c.mesh.visible = S.phase <= c.until; });
+  S.fogFrom = S.fogLevel; S.fogTo = ph.fog || 0; if (instant) S.fogLevel = S.fogTo;
   sunState(S.phase, sunTo);
   sunFrom.dir.copy(sun.position).sub(sun.target.position).normalize(); sunFrom.col.copy(sun.color); sunFrom.i = sun.intensity; sunFrom.hi = hemi.intensity;
   sunFrom.dusk = +stage.style.getPropertyValue("--dusk") || 0;
   if ($("optFollow").checked) { const f = focusOf(S.phase); flyTo(f[0], f[1], f[2], instant); }
   eventLabels.forEach((L) => { L.el.remove(); labels.splice(labels.indexOf(L), 1); });
-  eventLabels = ph.events.map(([lat, lon], i) => { const [x, z] = xz(lat, lon), v = new THREE.Vector3(x, hAt(x, z) + 0.13, z); return addLabel("ev", String(i + 1), () => v, { anchor: "c" }); });
+  eventLabels = ph.events.map((ev, i) => { const [x, z] = xz(ev[0], ev[1]), v = new THREE.Vector3(x, hAt(x, z) + 0.004, z); return addLabel("ev", `<span class="evn">${i + 1}</span>`, () => v, { anchor: "b" }); });
+  try { history.replaceState(null, "", `#${D.id}.p${S.phase}`); } catch (e) {}
   renderPanel();
 }
 
+// ---------- Citations
+let SRC = {};
+const cites = (ids) => (ids || []).filter((id) => SRC[id]).map((id) => `<sup class="cite"><a href="#" data-src="${esc(id)}" title="${esc(SRC[id].label)}">${SRC[id].n}</a></sup>`).join("");
+const richText = (t) => esc(t).replace(/\s?\[([a-z0-9_]+)\]/g, (m, id) => SRC[id] ? cites([id]) : "");
+function wireCites(root) {
+  root.querySelectorAll("a[data-src]").forEach((a) => a.addEventListener("click", (e) => {
+    e.preventDefault(); showTab("S");
+    const li = $("src-" + a.dataset.src); if (!li) return;
+    li.scrollIntoView({ block: "nearest" }); li.classList.add("flash"); setTimeout(() => li.classList.remove("flash"), 1600);
+  }));
+}
+
+// ---------- Timeline (true time scale; long gaps compressed; day dividers)
+function buildTimeline() {
+  const ts = D.phases.map(tmin), xs = [0];
+  const breaks = [];
+  for (let i = 1; i < ts.length; i++) { const gap = ts[i] - ts[i - 1], g = gap > 180 ? 75 : gap; if (gap > 180) breaks.push(i); xs.push(xs[i - 1] + Math.max(g, 6)); }
+  const span = xs[xs.length - 1] || 1;
+  const pos = xs.map((x) => x / span * 100);
+  const el = $("stops");
+  el.innerHTML = '<div class="track"></div><div class="fill" id="fill"></div>';
+  breaks.forEach((i) => { const b = document.createElement("div"); b.className = "brk"; b.style.left = ((pos[i - 1] + pos[i]) / 2) + "%"; el.appendChild(b); });
+  const multi = D.phases.some((p) => (p.day || 1) > 1);
+  if (multi) D.phases.forEach((ph, i) => {
+    if (i > 0 && (ph.day || 1) !== (D.phases[i - 1].day || 1)) {
+      const d = document.createElement("div"); d.className = "dayline"; d.style.left = ((pos[i - 1] + pos[i]) / 2) + "%";
+      d.innerHTML = `<span>${esc(dayName(ph.day || 1))}</span>`; el.appendChild(d);
+    }
+  });
+  const width = el.clientWidth || 600;
+  let lastT = -1e9, lastL = -1e9;
+  D.phases.forEach((ph, i) => {
+    const b = document.createElement("button"); b.className = "stop"; b.style.left = pos[i] + "%";
+    b.setAttribute("aria-label", `${multi ? dayName(ph.day || 1) + " " : ""}${ph.t} ${ph.label}`);
+    b.innerHTML = `<span class="dot"></span><span class="t">${esc(ph.t)}</span><span class="l">${esc(ph.label)}</span>`;
+    const px = pos[i] / 100 * width;
+    if (px - lastT < 38) b.classList.add("quiet"); else lastT = px;
+    const lab = b.querySelector(".l"); if (px - lastL < 74 && !b.classList.contains("quiet")) lab.style.visibility = "hidden"; else if (!b.classList.contains("quiet")) lastL = px;
+    b.addEventListener("click", () => { stopPlay(); setPhase(i); });
+    el.appendChild(b);
+  });
+  S.timeline = { pos, multi };
+}
+const dayName = (d) => (D.meta.days && D.meta.days[d - 1]) || `Day ${d}`;
+
+// ---------- Strength chart
+function strengthSeries() {
+  if (!D.units.some((u) => u.men)) return null;
+  return D.meta.belligerents.map((b) => ({
+    name: b.name, short: b.short || b.name.split(" ").pop(),
+    color: chartColor(D.meta.sides[b.sides[0]]),
+    vals: D.phases.map((_, p) => D.units.filter((u) => b.sides.includes(u.side) && u.type !== "art").reduce((s, u) => s + (menOf(u, p) || 0), 0)),
+  }));
+}
+function chartColor(sd) {
+  const h = sd.chart || sd.top, r = parseInt(h.slice(1, 3), 16), g = parseInt(h.slice(3, 5), 16), b = parseInt(h.slice(5, 7), 16);
+  return (0.299 * r + 0.587 * g + 0.114 * b) > 200 ? "#8a7f6c" : h;
+}
+function renderChart() {
+  const ser = S.series, box = $("chart");
+  if (!ser) { box.hidden = true; return; }
+  box.hidden = false;
+  const W = 360, H = 92, L = 40, R = 66, T = 6, B = 18, pos = S.timeline.pos;
+  const max = Math.max(...ser.flatMap((s) => s.vals)) * 1.08 || 1;
+  const X = (i) => L + pos[i] / 100 * (W - L - R), Y = (v) => T + (1 - v / max) * (H - T - B);
+  const nice = max > 40000 ? 20000 : max > 15000 ? 10000 : max > 6000 ? 5000 : 2000;
+  let svg = `<svg viewBox="0 0 ${W} ${H}" role="img" aria-label="Strength of each army through the battle">`;
+  for (let v = 0; v <= max; v += nice) svg += `<line class="axis" x1="${L}" x2="${W - R}" y1="${Y(v)}" y2="${Y(v)}" stroke-width="${v ? 0.6 : 1}"/><text x="${L - 4}" y="${Y(v) + 3}" text-anchor="end">${v ? (v / 1000) + "k" : "0"}</text>`;
+  svg += `<line class="now" x1="${X(S.phase)}" x2="${X(S.phase)}" y1="${T}" y2="${H - B}"/>`;
+  for (const s of ser) {
+    const pts = s.vals.map((v, i) => `${X(i).toFixed(1)},${Y(v).toFixed(1)}`).join(" ");
+    svg += `<polygon points="${X(0)},${Y(0)} ${pts} ${X(s.vals.length - 1)},${Y(0)}" fill="${s.color}" opacity=".10"/>`;
+    svg += `<polyline points="${pts}" fill="none" stroke="${s.color}" stroke-width="2" stroke-linejoin="round"/>`;
+    svg += `<circle cx="${X(S.phase)}" cy="${Y(s.vals[S.phase])}" r="3.5" fill="${s.color}" stroke="var(--panel)" stroke-width="1.5"/>`;
+    const last = s.vals.length - 1;
+    svg += `<text x="${X(last) + 5}" y="${Y(s.vals[last]) + 3}" style="fill:${s.color};font-weight:700">${esc(s.short)} ${(s.vals[S.phase] / 1000).toFixed(1)}k</text>`;
+  }
+  svg += `<text x="${L}" y="${H - 4}">${esc(D.phases[0].t)}</text><text x="${W - R}" y="${H - 4}" text-anchor="end">${esc(D.phases[D.phases.length - 1].t)}</text></svg>`;
+  box.innerHTML = svg + `<p class="cap">${esc(D.meta.strengthNote || "Men still in the ranks, from the unit strengths in the data. Losses between moments are estimates spread across the day.")}</p>`;
+}
+
 // ---------- Panel
-const fmtN = (n) => n.toLocaleString("en-GB");
 function renderForces() {
   const end = S.phase === D.phases.length - 1 && D.meta.forces.end;
   const rows = end ? D.meta.forces.end : D.meta.forces.start;
@@ -674,17 +1015,23 @@ function renderForces() {
 }
 function renderPanel() {
   const ph = D.phases[S.phase];
+  $("pday").hidden = !S.timeline.multi; $("pday").textContent = dayName(ph.day || 1).toUpperCase();
   $("ptime").textContent = ph.t;
   $("pof").textContent = `${S.phase + 1} of ${D.phases.length}`;
   const pc = $("pconf");
   if (ph.conf) { pc.hidden = false; pc.className = "conf " + ph.conf; pc.textContent = ph.conf.toUpperCase() + " CONFIDENCE"; pc.title = "How firmly the sources agree on positions at this moment"; } else pc.hidden = true;
   $("ptitle").textContent = ph.title;
-  $("ptext").textContent = ph.text;
+  $("ptext").innerHTML = richText(ph.text);
+  const ps = $("psrc"); ps.hidden = !(ph.cite && ph.cite.length); ps.innerHTML = ph.cite ? "Sources for this moment: " + cites(ph.cite) : "";
   $("pth").textContent = ph.tactic[0];
-  $("ptb").textContent = ph.tactic[1];
+  $("ptb").innerHTML = richText(ph.tactic[1]);
+  const also = $("palso"), uses = ph.tacticId && TACTICS[ph.tacticId] ? TACTICS[ph.tacticId].uses.filter((u) => !(u.battle === D.id && u.phase === S.phase)) : [];
+  also.hidden = !uses.length;
+  also.innerHTML = uses.length ? "Also seen at: " + uses.map((u) => `<a href="#${u.battle}.p${u.phase}" data-b="${u.battle}" data-p="${u.phase}">${esc(u.title)} ${esc(u.year)} · ${esc(u.t)}</a>`).join("") : "";
+  also.querySelectorAll("a").forEach((a) => a.addEventListener("click", (e) => { e.preventDefault(); openBattle(a.dataset.b, +a.dataset.p); }));
   const db = $("pdebate");
-  if (ph.debate) { db.hidden = false; db.innerHTML = `<b>Historians differ.</b> ${esc(ph.debate)}`; } else db.hidden = true;
-  $("pev").innerHTML = ph.events.map((e, i) => `<li data-i="${i}"><span class="evn">${i + 1}</span><span>${esc(e[2])}</span></li>`).join("");
+  if (ph.debate) { db.hidden = false; db.innerHTML = `<b>Historians differ.</b> ${richText(ph.debate)}`; } else db.hidden = true;
+  $("pev").innerHTML = ph.events.map((e, i) => `<li data-i="${i}"><span class="evn">${i + 1}</span><span>${richText(e[2])}${cites(e[3])}</span></li>`).join("");
   $("pev").querySelectorAll("li").forEach((li) => {
     const L = () => eventLabels[+li.dataset.i];
     li.addEventListener("mouseenter", () => L() && L().el.classList.add("hot"));
@@ -694,20 +1041,23 @@ function renderPanel() {
   $("psun").innerHTML = `<svg viewBox="0 0 16 16"><circle cx="8" cy="9" r="4" fill="currentColor"/><path d="M1 13h14" stroke="currentColor"/></svg>` +
     (s.alt > 0.3 ? `Sun ${s.alt.toFixed(0)}° above the horizon, bearing ${s.az.toFixed(0)}°. ${esc(D.meta.sun.note || "")}` : `The sun is below the horizon. ${esc(D.meta.sun.note || "")}`);
   document.querySelectorAll(".stop").forEach((b, i) => { b.classList.toggle("on", i === S.phase); b.classList.toggle("done", i < S.phase); b.setAttribute("aria-current", i === S.phase ? "step" : "false"); });
-  const n = D.phases.length, edge = 50 / n;
-  $("stops").style.setProperty("--edge", edge + "%");
-  $("fill").style.width = (S.phase / (n - 1) * (100 - 2 * edge)) + "%";
-  renderForces();
+  $("fill").style.width = S.timeline.pos[S.phase] + "%";
+  renderForces(); renderChart();
+  wireCites($("paneN"));
   if (S.selected >= 0) renderUnit(S.selected);
 }
 function renderUnit(i) {
   const U = S.units[i], T = TYPE[U.type], card = $("ucard");
   card.hidden = false;
+  const m0 = menOf(U, 0), mn = menOf(U, S.phase), unit = U.type === "art" ? "guns" : U.type === "ele" ? "elephants" : U.type === "cha" ? "chariots" : U.type === "arm" ? "vehicles" : "men";
+  const menHtml = mn != null ? `<div><div class="meta">≈${fmtN(mn)} ${unit}${m0 && mn < m0 ? ` of ${fmtN(m0)} at the start` : ""}</div><div class="menbar"><span style="width:${Math.min(100, mn / Math.max(m0, mn) * 100).toFixed(0)}%"></span></div></div>` : "";
   card.innerHTML = `<button class="close" aria-label="Close unit details">×</button>
     <div class="top"><span class="code" style="${codeStyle(U.side)}">${esc(U.code)}</span><img class="chip" alt="" src="${symbolCanvas(U.side, U.type, 52, 36).toDataURL()}"><div><div class="name">${esc(U.name)}</div><div class="meta">${esc(sideOf(U.side).name)} · ${esc(U.strength)}</div></div></div>
     <div style="display:flex;gap:6px;flex-wrap:wrap"><span class="status ${U.form}">${FORM[U.form].toUpperCase()}</span>${U.conf ? `<span class="conf ${U.conf}">POSITION: ${U.conf.toUpperCase()} CONFIDENCE</span>` : ""}</div>
-    <p><b>${T.word}.</b> ${T.text}</p>${U.note ? `<p>${esc(U.note)}</p>` : ""}`;
+    ${menHtml}
+    <p><b>${T.word}.</b> ${T.text}</p>${U.note ? `<p>${richText(U.note)}${cites(U.cite)}</p>` : (U.cite ? `<p class="srcline">Sources: ${cites(U.cite)}</p>` : "")}`;
   card.querySelector(".close").addEventListener("click", () => select(-1));
+  wireCites(card);
 }
 function select(i, fly) {
   S.selected = i;
@@ -716,50 +1066,58 @@ function select(i, fly) {
   showTab("N"); renderUnit(i); S.ring.visible = true;
   if (fly) { const k = keyAt(S.units[i], S.phase); flyTo(k[0], k[1], 3.2, false); }
 }
-function showTab(which) {
-  for (const t of ["N", "K", "S"]) { $("tab" + t).setAttribute("aria-selected", which === t); $("pane" + t).hidden = which !== t; }
-}
+function showTab(which) { for (const t of ["N", "K", "S"]) { $("tab" + t).setAttribute("aria-selected", which === t); $("pane" + t).hidden = which !== t; } }
 
 function renderStatic() {
   const M = D.meta;
   document.title = `${M.title} ${M.year} · Battle Atlas`;
-  $("eyebrow").textContent = M.eyebrow;
-  $("btitle").textContent = M.title;
-  $("bsub").textContent = M.subtitle;
-  const stops = $("stops");
-  stops.innerHTML = '<div class="track"></div><div class="fill" id="fill"></div>';
-  D.phases.forEach((ph, i) => {
-    const b = document.createElement("button"); b.className = "stop"; b.setAttribute("aria-label", `${ph.t} ${ph.label}`);
-    b.innerHTML = `<span class="dot"></span><span class="t">${esc(ph.t)}</span><span class="l">${esc(ph.label)}</span>`;
-    b.addEventListener("click", () => { stopPlay(); setPhase(i); });
-    stops.appendChild(b);
-  });
+  $("eyebrow").textContent = M.eyebrow; $("btitle").textContent = M.title; $("bsub").textContent = M.subtitle;
+  SRC = {}; (M.sources || []).forEach((s, i) => { SRC[s.id || "s" + i] = { ...s, n: i + 1 }; });
+  buildTimeline();
+  S.series = strengthSeries();
   const types = [...new Set(D.units.map((u) => u.side + "|" + u.type))];
-  const typeWord = { inf: "infantry (crossed box)", gd: "guard infantry (crossed box, inner frame)", cav: "cavalry (single diagonal)", lc: "light cavalry", art: "artillery (dot)", lt: "light infantry (dashed edge)" };
+  const typeWord = { inf: "infantry (crossed box)", gd: "guard infantry (crossed box, inner frame)", cav: "cavalry (single diagonal)", lc: "light cavalry", art: "artillery (dot)", lt: "light infantry (dashed edge)", hi: "heavy infantry (crossed box, bar)", arc: "missile troops (bow)", kn: "heavy horse (double diagonal)", ele: "elephants", cha: "chariots (wheel)", arm: "armour (track oval)", mech: "mechanised infantry", mg: "machine guns" };
   $("symbols").innerHTML = types.map((k) => { const [s, t] = k.split("|"); return `<img alt="" src="${symbolCanvas(s, t, 64, 32).toDataURL()}"><span>${esc(sideOf(s).name)} ${typeWord[t]}</span>`; }).join("") +
     Object.values(M.sides).map((sd) => `<svg class="arrowsw" viewBox="0 0 32 12"><path d="M1 6h22" stroke="${sd.arrow}" stroke-width="4"/><path d="M22 1l9 5-9 5z" fill="${sd.arrow}"/></svg><span>${esc(sd.name)} movement or charge</span>`).join("") +
     `<svg class="arrowsw" viewBox="0 0 32 12"><path d="M1 6h22" stroke="#999" stroke-width="4" stroke-dasharray="5 4"/><path d="M22 1l9 5-9 5z" fill="#999"/></svg><span>Dashed: retreat or rout</span>` +
     `<svg class="arrowsw" viewBox="0 0 32 12"><path d="M1 6h24" stroke="#e8722e" stroke-width="2" stroke-dasharray="3 3"/><path d="M24 3l7 3-7 3z" fill="#e8722e"/></svg><span>Artillery or musket fire</span>` +
     `<span class="evn">1</span><span>Numbered events, explained in the battle notes</span>`;
-  $("oobs").innerHTML = M.belligerents.map((bel, bi) => `<div><h3>${esc(bel.name)} · ${esc(bel.commander)}</h3><ul class="oob">${S.units.filter((U) => U.bel === bel).map((U) => `<li><button data-u="${U.idx}"><span class="code" style="${codeStyle(U.side)}">${esc(U.code)}</span><span class="nm">${esc(U.name)}<span class="st">${esc(U.strength)}${U.conf && U.conf !== "high" ? ` · position ${U.conf} confidence` : ""}</span></span></button></li>`).join("")}</ul></div>`).join("");
+  $("oobs").innerHTML = M.belligerents.map((bel) => `<div class="key"><h3>${esc(bel.name)} · ${esc(bel.commander)}</h3><ul class="oob">${S.units.filter((U) => U.bel === bel).map((U) => { const m0 = menOf(U, 0); return `<li><button data-u="${U.idx}"><span class="code" style="${codeStyle(U.side)}">${esc(U.code)}</span><span class="nm">${esc(U.name)}<span class="st">${esc(U.strength)}${m0 && !/≈/.test(U.strength) ? ` · ≈${fmtN(m0)}` : ""}${U.conf && U.conf !== "high" ? ` · position ${U.conf} confidence` : ""}</span></span></button></li>`; }).join("")}</ul></div>`).join("");
   document.querySelectorAll(".oob button").forEach((b) => b.addEventListener("click", () => select(+b.dataset.u, true)));
   $("method").textContent = M.method || "";
-  $("srcs").innerHTML = (M.sources || []).map((s) => `<li>${s.url ? `<a href="${esc(s.url)}" target="_blank" rel="noopener">${esc(s.label)}</a>` : esc(s.label)}${s.note ? ` <span style="color:var(--muted)">· ${esc(s.note)}</span>` : ""}</li>`).join("");
+  $("srcs").innerHTML = (M.sources || []).map((s, i) => `<li id="src-${esc(s.id || "s" + i)}">${s.url ? `<a href="${esc(s.url)}" target="_blank" rel="noopener">${esc(s.label)}</a>` : esc(s.label)}${s.kind ? `<span class="kind">${esc(s.kind.toUpperCase())}</span>` : ""}${s.note ? ` <span style="color:var(--muted)">· ${esc(s.note)}</span>` : ""}</li>`).join("");
   $("bnotes").textContent = M.notes || "";
+  const sel = $("ovSel");
+  sel.innerHTML = '<option value="">None (modern terrain)</option>' + (M.overlays || []).map((o, i) => `<option value="${i}">${esc(o.label)}</option>`).join("");
+  $("ovBox").hidden = !(M.overlays || []).length; $("ovNote").textContent = "";
   document.querySelectorAll(".bpick").forEach((b) => b.setAttribute("aria-current", b.dataset.id === D.id ? "true" : "false"));
+}
+
+// ---------- Overlays (historical maps)
+const texCache = {};
+function setOverlay(idx) {
+  const ov = idx === "" ? null : D.meta.overlays[+idx];
+  if (!ov) { G.overlay.visible = false; $("ovNote").textContent = ""; return; }
+  $("ovNote").textContent = ov.note || (ov.kind === "period" ? "A period map, warped to fit the terrain using village positions." : "A modern staff map, warped to fit the terrain.");
+  const done = (tex) => { G.overlay.material.map = tex; G.overlay.material.needsUpdate = true; G.overlay.visible = true; };
+  if (texCache[ov.file]) return done(texCache[ov.file]);
+  $("ovNote").textContent = "Loading the map…";
+  new THREE.TextureLoader().load(ov.file, (tex) => { tex.anisotropy = renderer.capabilities.getMaxAnisotropy(); texCache[ov.file] = tex; done(tex); $("ovNote").textContent = ov.note || ""; },
+    undefined, () => { $("ovNote").textContent = "This map image could not be loaded."; });
 }
 
 // ---------- Mount a battle
 function disposeScene() {
   if (!scene) return;
+  const keep = new Set([barrelGeo, puffTex, fogTex, barrelMat, ...Object.values(texCache)]);
   scene.traverse((o) => {
-    if (o.geometry && o.geometry !== barrelGeo) o.geometry.dispose();
+    if (o.geometry && !keep.has(o.geometry)) o.geometry.dispose();
     const ms = Array.isArray(o.material) ? o.material : o.material ? [o.material] : [];
-    ms.forEach((m) => { if (m.map && m.map !== puffTex) m.map.dispose(); if (m !== barrelMat) m.dispose(); });
+    ms.forEach((m) => { if (m.map && !keep.has(m.map)) m.map.dispose(); if (!keep.has(m)) m.dispose(); });
   });
   labelsEl.innerHTML = ""; labels = []; eventLabels = [];
 }
-function mount(data) {
+function mount(data, phase) {
   stopPlay(); disposeScene();
   D = data; scene = new THREE.Scene(); G = setupTerrainMath(D.terrain);
   scene.add(hemi, sun, sun.target);
@@ -767,14 +1125,15 @@ function mount(data) {
   Object.assign(sun.shadow.camera, { left: -ext, right: ext, top: ext, bottom: -ext, near: 1, far: 90 }); sun.shadow.camera.updateProjectionMatrix();
   controls.maxDistance = Math.max(G.MAPW, G.MAPH) * 2.2;
   buildTerrain(); buildScenery();
-  S.camps = buildCamps(); S.units = buildUnits(); S.hqs = buildHQs(); S.arrows = buildArrows(); S.selected = -1;
+  S.camps = buildCamps(); S.units = buildUnits(); S.hqs = buildHQs(); S.arrows = buildArrows(); S.fog = buildFog(); buildSmoke(); S.selected = -1;
   S.ring = new THREE.Mesh(new THREE.RingGeometry(0.22, 0.25, 48), new THREE.MeshBasicMaterial({ color: 0xf0c64f, transparent: true, opacity: 0.9, depthWrite: false, side: THREE.DoubleSide }));
   S.ring.rotation.x = -Math.PI / 2; S.ring.visible = false; S.ring.renderOrder = 4; scene.add(S.ring);
   for (const [name, v] of Object.entries(D.places)) { const [x, z] = xz(v[0], v[1]), p = new THREE.Vector3(x, hAt(x, z) + 0.07, z); addLabel("place", esc(name.toUpperCase()), () => p, { anchor: "c" }); }
   for (const [name, [lat, lon]] of Object.entries(D.hills || {})) { const [x, z] = xz(lat, lon), p = new THREE.Vector3(x, hAt(x, z) + 0.02, z); addLabel("hill", esc(name), () => p, { anchor: "c" }); }
   for (const [name, [lat, lon]] of Object.entries((D.water || {}).labels || {})) { const [x, z] = xz(lat, lon), p = new THREE.Vector3(x, hAt(x, z) + 0.01, z); addLabel("water", esc(name), () => p, { anchor: "c" }); }
   for (const h of S.hqs) h.label = addLabel("hq", armySym(h.side) + esc(h.name.toUpperCase()), () => h.g.position.clone().setY(h.g.position.y + 0.2), { anchor: "b" });
-  for (const U of S.units) U.label = addLabel("unit", esc(U.code), () => U.center.clone().setY(U.center.y + 0.07), { anchor: "c", unit: U.idx }), U.label.el.setAttribute("style", codeStyle(U.side));
+  for (const U of S.units) { U.label = addLabel("unit", esc(U.code), () => U.center.clone().setY(U.center.y + 0.07), { anchor: "c", unit: U.idx }); U.label.el.setAttribute("style", codeStyle(U.side)); }
+  S.phase = 0; S.fogLevel = 0;
   renderStatic();
   const f = focusOf(0), [x, z] = xz(f[0], f[1]);
   controls.target.set(x, hAt(x, z), z);
@@ -782,36 +1141,70 @@ function mount(data) {
   camera.position.set(x + Math.sin(view.az) * Math.cos(view.el) * d, hAt(x, z) + Math.sin(view.el) * d, z + Math.cos(view.az) * Math.cos(view.el) * d);
   sunState(0, sunTo); sunFrom.dir.copy(sunTo.dir); sunFrom.col.copy(sunTo.col); sunFrom.i = sunTo.i; sunFrom.hi = sunTo.hi; sunFrom.dusk = sunTo.dusk;
   sun.position.copy(sunTo.dir).multiplyScalar(30);
-  S.units.forEach((U) => U.blocks.forEach((B) => { B.cur = null; }));
+  S.units.forEach((U) => { U.blocks.forEach((B) => { B.cur = null; }); U.lastKey = null; U.lastC = null; U.form = null; });
   S.hqs.forEach((h) => { h.cur = null; });
-  setPhase(0, false);
-  select(-1);
-  showTab("N");
+  setPhase(phase || 0, false);
+  select(-1); showTab("N");
+  $("ovSel").value = ""; G.overlay.visible = false;
 }
 
 const cache = {};
-async function openBattle(id) {
+async function openBattle(id, phase) {
+  hideHome();
+  if (D && D.id === id) { setPhase(phase || 0); return; }
   $("loading").hidden = false; $("loading").textContent = "Surveying the ground…";
   try {
     const data = cache[id] || (INLINE && INLINE[id]) || await fetch(`battles/${id}.json`).then((r) => { if (!r.ok) throw new Error(r.status); return r.json(); });
     cache[id] = data;
     await new Promise((r) => setTimeout(r, 30));
-    mount(data);
-    try { history.replaceState(null, "", "#" + id); } catch (e) {}
+    mount(data, phase);
     $("loading").hidden = true;
   } catch (e) {
+    console.error(e);
     $("loading").textContent = "This battle's data could not be loaded. Reload the page to try again.";
   }
 }
+
+// ---------- Library home
+const filt = { era: null, war: null };
+function renderHome() {
+  const eras = [...new Set(MANIFEST.map((m) => m.era).filter(Boolean))], wars = [...new Set(MANIFEST.map((m) => m.war).filter(Boolean))];
+  const chip = (k, v, label) => `<button class="fchip" data-k="${k}" data-v="${esc(v)}" aria-pressed="${filt[k] === v}">${esc(label)}</button>`;
+  $("filters").innerHTML = `<span class="lab">ERA</span>${chip("era", null, "All")}${eras.map((e) => chip("era", e, e)).join("")}` + (wars.length > 1 ? `<span class="lab" style="margin-left:10px">WAR</span>${chip("war", null, "All")}${wars.map((w) => chip("war", w, w)).join("")}` : "");
+  $("filters").querySelectorAll(".fchip").forEach((b) => b.addEventListener("click", () => { filt[b.dataset.k] = b.dataset.v === "null" || b.dataset.v === "" ? null : b.dataset.v; renderHome(); }));
+  const shown = MANIFEST.filter((m) => (!filt.era || m.era === filt.era) && (!filt.war || m.war === filt.war));
+  const yr = (m) => parseInt(String(m.year).replace(/[^\d-]/g, "")) * (/BC/i.test(m.year) ? -1 : 1);
+  const ys = MANIFEST.map(yr), y0 = Math.min(...ys), y1 = Math.max(...ys), pad = Math.max(20, (y1 - y0) * 0.06);
+  const X = (y) => ((y - y0 + pad) / (y1 - y0 + 2 * pad) * 100);
+  const ticks = []; const stepY = (y1 - y0) > 1200 ? 500 : (y1 - y0) > 300 ? 100 : 25;
+  for (let t = Math.ceil((y0 - pad) / stepY) * stepY; t <= y1 + pad; t += stepY) ticks.push(t);
+  $("tline").innerHTML = ticks.map((t) => `<span class="tick" style="left:${X(t)}%">${t < 0 ? -t + " BC" : t}</span>`).join("") +
+    MANIFEST.map((m, i) => `<button class="pin" data-id="${m.id}" style="left:${X(yr(m))}%;bottom:${(i % 2) * 22}px"><span>${esc(m.title)}</span><i></i></button>`).join("");
+  $("cards").innerHTML = shown.map((m) => {
+    const tot = m.conf.high + m.conf.medium + m.conf.low || 1;
+    return `<button class="card" data-id="${m.id}"><span class="ey">${esc(m.eyebrow)}</span><span class="t">${esc(m.title)} <span class="y">${esc(m.year)}</span></span><p>${esc(m.subtitle)}</p>
+      <span class="sides">${m.belligerents.map((b) => `<span style="--c:${b.color}">${esc(b.name)} · ${esc(b.commander)}</span>`).join("")}</span>
+      <span class="stats"><span>${m.phases} moments</span><span>${m.units} units</span><span>${m.nsources} sources</span></span>
+      <span class="confbar" title="Confidence of positions: high / medium / low"><span class="h" style="width:${m.conf.high / tot * 100}%"></span><span class="m" style="width:${m.conf.medium / tot * 100}%"></span><span class="l" style="width:${m.conf.low / tot * 100}%"></span></span></button>`;
+  }).join("") || `<p class="lede">No battles match these filters.</p>`;
+  document.querySelectorAll(".card, .pin").forEach((c) => c.addEventListener("click", () => openBattle(c.dataset.id, 0)));
+  $("tindex").innerHTML = Object.entries(TACTICS).filter(([, t]) => t.uses.length).sort((a, b) => a[1].name.localeCompare(b[1].name))
+    .map(([id, t]) => `<div><b>${esc(t.name)}</b><p>${esc(t.summary)}</p>${t.uses.map((u) => `<a href="#${u.battle}.p${u.phase}" data-b="${u.battle}" data-p="${u.phase}">${esc(u.title)} ${esc(u.year)} · ${esc(u.t)}</a>`).join("")}</div>`).join("");
+  $("tindex").querySelectorAll("a").forEach((a) => a.addEventListener("click", (e) => { e.preventDefault(); openBattle(a.dataset.b, +a.dataset.p); }));
+}
+function showHome() { renderHome(); $("home").hidden = false; $("homeClose").hidden = !D; stopPlay(); try { history.replaceState(null, "", "#library"); } catch (e) {} }
+function hideHome() { $("home").hidden = true; }
 
 // ---------- UI wiring (once)
 const lib = $("library");
 MANIFEST.forEach((m) => {
   const b = document.createElement("button"); b.className = "bpick"; b.dataset.id = m.id;
   b.innerHTML = `${esc(m.title)}<span class="y">${esc(m.year)}</span>`;
-  b.addEventListener("click", () => { if (!D || D.id !== m.id) openBattle(m.id); });
+  b.addEventListener("click", () => openBattle(m.id, 0));
   lib.appendChild(b);
 });
+$("homeBtn").addEventListener("click", showHome);
+$("homeClose").addEventListener("click", () => { hideHome(); if (D) try { history.replaceState(null, "", `#${D.id}.p${S.phase}`); } catch (e) {} });
 let playTimer = null;
 const playIcon = $("playIcon");
 function stopPlay() { if (playTimer) { clearInterval(playTimer); playTimer = null; playIcon.innerHTML = '<path d="M4 2 L13 8 L4 14 Z"/>'; $("play").setAttribute("aria-label", "Play through the battle"); } }
@@ -820,18 +1213,22 @@ $("play").addEventListener("click", () => {
   if (playTimer) return stopPlay();
   if (S.phase === D.phases.length - 1) setPhase(0);
   playIcon.innerHTML = '<path d="M3 2h4v12H3zM9 2h4v12H9z"/>'; $("play").setAttribute("aria-label", "Pause");
-  playTimer = setInterval(() => { if (S.phase >= D.phases.length - 1) return stopPlay(); setPhase(S.phase + 1); }, 7000);
+  playTimer = setInterval(() => { if (S.phase >= D.phases.length - 1) return stopPlay(); setPhase(S.phase + 1); }, 8000);
 });
 $("prev").addEventListener("click", () => { if (D) { stopPlay(); setPhase(S.phase - 1); } });
 $("next").addEventListener("click", () => { if (D) { stopPlay(); setPhase(S.phase + 1); } });
 document.addEventListener("keydown", (e) => {
-  if (!D || (e.target.closest && e.target.closest("input"))) return;
+  if (!D || !$("home").hidden || (e.target.closest && e.target.closest("input,select"))) return;
   if (e.key === "ArrowRight") { stopPlay(); setPhase(S.phase + 1); }
   if (e.key === "ArrowLeft") { stopPlay(); setPhase(S.phase - 1); }
 });
 $("optLabels").addEventListener("change", (e) => labelsEl.classList.toggle("hide-labels", !e.target.checked));
 $("optTrails").addEventListener("change", () => { const tr = $("optTrails").checked; S.arrows.forEach((list, i) => list.forEach((A) => { if (i < S.phase) A.target = tr ? 0.13 : 0; })); });
 $("optFollow").addEventListener("change", (e) => { if (e.target.checked && D) { const f = focusOf(S.phase); flyTo(f[0], f[1], f[2], false); } });
+$("optContours").addEventListener("change", (e) => { if (G) G.contour.visible = e.target.checked; });
+$("optScale").addEventListener("change", (e) => { $("scalebar").hidden = !e.target.checked; });
+$("ovSel").addEventListener("change", (e) => { if (G) setOverlay(e.target.value); });
+$("ovOpacity").addEventListener("input", (e) => { if (G) G.overlay.material.opacity = +e.target.value; });
 for (const t of ["N", "K", "S"]) $("tab" + t).addEventListener("click", () => showTab(t));
 
 const ray = new THREE.Raycaster(), ndc = new THREE.Vector2();
@@ -842,7 +1239,7 @@ canvas.addEventListener("pointerup", (e) => {
   const r = canvas.getBoundingClientRect();
   ndc.set((e.clientX - r.left) / r.width * 2 - 1, -(e.clientY - r.top) / r.height * 2 + 1);
   ray.setFromCamera(ndc, camera);
-  const hit = ray.intersectObjects(S.units.flatMap((U) => U.blocks.map((B) => B.mesh)), false)[0];
+  const hit = ray.intersectObjects(S.units.flatMap((U) => U.blocks.filter((B) => B.mesh.visible).map((B) => B.mesh)), false)[0];
   select(hit ? hit.object.userData.unit : -1);
 });
 controls.addEventListener("start", () => { camAnim.t = 1; });
@@ -851,34 +1248,77 @@ function resize() {
   const w = stage.clientWidth, h = stage.clientHeight;
   renderer.setSize(w, h, false); camera.aspect = w / h; camera.updateProjectionMatrix();
   labels.forEach((L) => { L.ow = 0; L.oh = 0; });
+  if (D) { buildTimeline(); renderPanel(); }
 }
-new ResizeObserver(resize).observe(stage);
+let rzT = null;
+new ResizeObserver(() => { clearTimeout(rzT); rzT = setTimeout(resize, 60); }).observe(stage);
 resize();
+
+// Scale bar: metres per pixel at the view centre, snapped to a round distance.
+const sb = { a: new THREE.Vector3(), b: new THREE.Vector3() };
+function updateScale() {
+  if ($("scalebar").hidden && !$("optScale").checked) return;
+  $("scalebar").hidden = !$("optScale").checked;
+  const right = new THREE.Vector3().subVectors(controls.target, camera.position).cross(camera.up).normalize();
+  sb.a.copy(controls.target).addScaledVector(right, -0.5).project(camera); sb.b.copy(controls.target).addScaledVector(right, 0.5).project(camera);
+  const pxPerKm = Math.hypot((sb.b.x - sb.a.x) / 2 * stage.clientWidth, (sb.b.y - sb.a.y) / 2 * stage.clientHeight);
+  if (!pxPerKm) return;
+  const opts = [0.1, 0.25, 0.5, 1, 2, 5, 10], km = opts.find((k) => k * pxPerKm >= 70) || 10;
+  $("scaleBar").style.width = (km * pxPerKm).toFixed(0) + "px";
+  $("scaleTxt").textContent = km < 1 ? `${km * 1000} m` : `${km} km`;
+}
 
 // ---------- Loop
 const clock = new THREE.Clock();
+let simT = 0;
 function frame() {
   requestAnimationFrame(frame);
-  const dt = Math.min(0.25, clock.getDelta()), t = clock.elapsedTime;
+  tick(Math.min(0.25, clock.getDelta()));
+}
+function tick(dt, draw = true) {
+  simT += dt; const t = simT;
   if (!D) return;
-  if (S.animT < 1) S.animT = Math.min(1, S.animT + dt / 1.5);
-  const e = ease(S.animT);
+  if (S.animT < 1) S.animT = Math.min(1, S.animT + dt / ANIM);
+  const e = ease(S.animT), fx = $("optFx").checked;
   for (const U of S.units) {
-    let sx = 0, sy = 0, sz = 0;
-    for (const B of U.blocks) {
-      if (S.animT < 1) { const a = B.from, b = B.to; let dr = b.rot - a.rot; dr = ((dr + Math.PI) % (2 * Math.PI) + 2 * Math.PI) % (2 * Math.PI) - Math.PI; B.cur = { x: a.x + (b.x - a.x) * e, z: a.z + (b.z - a.z) * e, rot: a.rot + dr * e, sx: a.sx + (b.sx - a.sx) * e }; }
-      else B.cur = B.to;
+    let sx = 0, sy = 0, sz = 0, nv = 0;
+    const tr = U.tr;
+    U.blocks.forEach((B, k) => {
+      B.v += (B.vt - B.v) * Math.min(1, dt * 2.5);
+      if (S.animT < 1 && tr && tr.mode === "snake") {
+        const lead = e * tr.path.L, q = onPath(tr.path, lead - Math.min(k, Math.max(U.nvis, 1) - 1) * tr.gap);
+        const rot = -Math.atan2(q.dx, -q.dz), snake = { x: q.x, z: q.z, rot, sx: 0.5 };
+        const w0 = 1 - smooth(0, 0.16, S.animT), w1 = smooth(0.82, 1, S.animT);
+        const a = { x: snake.x + (B.from.x - snake.x) * w0, z: snake.z + (B.from.z - snake.z) * w0, rot: angLerp(snake.rot, B.from.rot, w0), sx: snake.sx + (B.from.sx - snake.sx) * w0 };
+        B.cur = { x: a.x + (B.to.x - a.x) * w1, z: a.z + (B.to.z - a.z) * w1, rot: angLerp(a.rot, B.to.rot, w1), sx: a.sx + (B.to.sx - a.sx) * w1 };
+      } else if (S.animT < 1) {
+        const a = B.from, b = B.to;
+        B.cur = { x: a.x + (b.x - a.x) * e, z: a.z + (b.z - a.z) * e, rot: angLerp(a.rot, b.rot, e), sx: a.sx + (b.sx - a.sx) * e };
+      } else B.cur = B.to;
       placeBlock(U, B, B.cur);
-      sx += B.mesh.position.x; sy += B.mesh.position.y; sz += B.mesh.position.z;
-    }
-    U.center.set(sx / U.n, sy / U.n, sz / U.n);
-    const firing = U.form === "F" && S.animT >= 1;
-    U.puffs.forEach((s, j) => {
-      const B = U.blocks[j >> 1].mesh, cyc = (t * 0.35 + hash(U.idx * 7 + j)) % 1, fwd = 0.05 + cyc * 0.09;
-      s.position.set(B.position.x + U.f[0] * fwd + (j % 2 ? 0.02 : -0.02), B.position.y + 0.025 + cyc * 0.05, B.position.z + U.f[1] * fwd);
-      s.material.opacity += ((firing ? 0.75 * Math.sin(cyc * Math.PI) : 0) - s.material.opacity) * Math.min(1, dt * 4);
-      const sc = 0.06 + cyc * 0.1; s.scale.set(sc, sc, 1); s.visible = s.material.opacity > 0.01;
+      if (B.v > 0.5) { sx += B.mesh.position.x; sy += B.mesh.position.y; sz += B.mesh.position.z; nv++; }
+      if (fx && U.form === "F" && S.animT > 0.7 && B.v > 0.5) {
+        B.emit += dt * (U.type === "art" ? 0.8 : 0.32);
+        if (B.emit >= 1) { B.emit -= 1; emitSmoke(B.mesh.position.x + U.f[0] * 0.05, B.mesh.position.y + 0.02, B.mesh.position.z + U.f[1] * 0.05, U.type === "art"); }
+      }
     });
+    if (nv) U.center.set(sx / nv, sy / nv, sz / nv);
+  }
+  for (const p of smoke.pool) {
+    if (!p.s.visible) continue;
+    p.life += dt;
+    if (p.life >= p.max || !fx) { p.s.visible = false; p.s.material.opacity = 0; continue; }
+    const k = p.life / p.max;
+    p.s.position.x += p.vx * dt; p.s.position.z += p.vz * dt; p.s.position.y += p.vy * dt;
+    const sc = p.size * (1.2 + k * 4); p.s.scale.set(sc, sc, 1);
+    p.s.material.opacity = 0.8 * Math.sin(Math.min(1, k * 4) * Math.PI / 2) * (1 - k * 0.85);
+  }
+  S.fogLevel = S.fogFrom + (S.fogTo - S.fogFrom) * smooth(0, 1, S.animT);
+  const wv = ((D.meta.wind ?? 270) + 180) * Math.PI / 180;
+  for (const f of S.fog) {
+    f.mesh.material.opacity = fx ? S.fogLevel * f.base * (0.85 + 0.15 * Math.sin(t * 0.3 + f.phase)) : 0;
+    f.mesh.visible = f.mesh.material.opacity > 0.005;
+    if (f.mesh.visible) { f.mesh.position.x += Math.sin(wv) * dt * 0.01; f.mesh.position.z += -Math.cos(wv) * dt * 0.01; }
   }
   for (const h of S.hqs) {
     h.cur = S.animT < 1 ? { x: h.from.x + (h.to.x - h.from.x) * e, z: h.from.z + (h.to.z - h.from.z) * e } : h.to;
@@ -886,7 +1326,7 @@ function frame() {
     h.g.children[1].rotation.y = Math.sin(t * 2 + h.cur.x) * 0.25;
   }
   S.arrows.forEach((list) => list.forEach((A) => {
-    if (A.prog < 1) A.prog = Math.min(1, A.prog + dt / 1.2);
+    if (A.prog < 1) A.prog = Math.min(1, A.prog + dt / 1.4);
     const k = A.target === 1 ? ease(A.prog) : 1;
     const op = A.body.material.opacity + (A.target - A.body.material.opacity) * Math.min(1, dt * 5);
     A.body.material.opacity = op; A.outline.material.opacity = op * 0.5;
@@ -908,11 +1348,17 @@ function frame() {
   if (S.selected >= 0) { const c = S.units[S.selected].center; S.ring.position.set(c.x, c.y + 0.02, c.z); const s = 1 + 0.08 * Math.sin(t * 4); S.ring.scale.set(s, s, s); }
   const d = controls.target.clone().sub(camera.position);
   $("needle").setAttribute("transform", `rotate(${(-Math.atan2(d.x, -d.z) * 180 / Math.PI).toFixed(1)})`);
+  if (!draw) return;
   renderer.render(scene, camera);
-  updateLabels();
+  updateLabels(); updateScale();
 }
+// Test hook: advance the simulation by hand (hidden preview panes run no animation frames).
+window.__atlas = { S, smoke, get D() { return D; }, get G() { return G; }, step(sec, fps = 20) { const n = Math.round(sec * fps); for (let i = 0; i < n; i++) tick(1 / fps, i === n - 1); } };
 requestAnimationFrame(frame);
-const start = (location.hash || "").slice(1);
-openBattle(MANIFEST.some((m) => m.id === start) ? start : MANIFEST[0].id);
+
+// Start: "#id" or "#id.pN" opens a battle; anything else shows the library home.
+const m = /^#([a-z0-9_-]+)(?:\.p(\d+))?$/.exec(location.hash || "");
+if (m && MANIFEST.some((b) => b.id === m[1])) openBattle(m[1], m[2] ? +m[2] : 0);
+else { $("loading").hidden = true; showHome(); }
 })();
 </script>
