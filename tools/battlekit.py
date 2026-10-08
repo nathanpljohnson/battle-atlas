@@ -247,8 +247,9 @@ class Battle:
                 path = [pa] + d.get("via", {}).get(b, []) + [pb]
                 dist = sum(dist_m(p, q) for p, q in zip(path, path[1:]))
                 hrs = (tmin[b] - tmin[a]) / 60
-                if hrs > 0 and dist / 1000 / hrs > SPEED[d["type"]] and dist > 400:
-                    w.append(f"SPEED {d['id']} phase {a}->{b}: {dist/1000:.1f} km in {hrs*60:.0f} min = {dist/1000/hrs:.1f} km/h (max {SPEED[d['type']]} for {d['type']})")
+                vmax = SPEED[d["type"]] * (1.6 if d["keys"][b][3] == "R" else 1)  # men in flight briefly outrun a march
+                if hrs > 0 and dist / 1000 / hrs > vmax and dist > 400:
+                    w.append(f"SPEED {d['id']} phase {a}->{b}: {dist/1000:.1f} km in {hrs*60:.0f} min = {dist/1000/hrs:.1f} km/h (max {vmax:g} for {d['type']}{' routing' if vmax > SPEED[d['type']] else ''})")
                 for p, q in zip(path, path[1:]):
                     for r in rivers:
                         for r1, r2 in zip(r, r[1:]):
