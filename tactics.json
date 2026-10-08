@@ -1,0 +1,23 @@
+{
+  "turning-movement": {"name": "Turning movement", "era": "all", "summary": "Marching around an enemy's flank to threaten his supply lines and line of retreat, forcing him to fight facing the wrong way or to withdraw. It needs speed, secrecy and good scouting."},
+  "fixing-force": {"name": "Fixing force", "era": "all", "summary": "A detachment that holds the enemy's attention and keeps him in place while the main blow lands elsewhere."},
+  "column-vs-line": {"name": "March column vs. battle line", "era": "gunpowder", "summary": "Columns move fast along roads but can barely fire. To fight, a column must first deploy into line, which takes time; a column caught before it deploys is very vulnerable."},
+  "dead-ground": {"name": "Using dead ground", "era": "all", "summary": "Hills, ridges and hollows hide troops moving behind them. Attacking out of ground the enemy cannot see achieves surprise."},
+  "massed-artillery": {"name": "Massed artillery", "era": "gunpowder", "summary": "Guns concentrated in one battery, often on high ground, to pound a single sector, especially troops packed in columns."},
+  "shock-cavalry": {"name": "Shock cavalry", "era": "all", "summary": "Heavy cavalry charging in close order at speed, hitting with weight and momentum rather than firepower."},
+  "rally-reform": {"name": "Rally and re-form", "era": "all", "summary": "Bringing troops back into order after a charge or setback, so they can strike again instead of scattering in pursuit."},
+  "echelon": {"name": "Echelon attack", "era": "gunpowder", "summary": "Units advance stepped back one from another, so the line meets the enemy one unit at a time from its strong end while the rest stays back."},
+  "oblique-order": {"name": "Oblique order", "era": "gunpowder", "summary": "Frederick the Great's method: mass against one enemy flank and attack in echelon there, while refusing (holding back) the rest of the line."},
+  "combined-arms": {"name": "Combined arms", "era": "all", "summary": "Infantry, cavalry and artillery used together so each covers the others' weaknesses, for example infantry fixing the front while cavalry hits the flank."},
+  "pursuit": {"name": "Pursuit", "era": "all", "summary": "Following up a beaten enemy to turn defeat into destruction. Darkness, exhaustion and rearguards limit it."},
+  "rearguard": {"name": "Rearguard", "era": "all", "summary": "Fresh, formed troops covering a retreat, slowing the pursuer so the main body can escape."},
+  "bait": {"name": "Deliberate weakness (bait)", "era": "all", "summary": "Leaving a sector apparently weak to lure the enemy into attacking it, drawing his strength away from where the real blow will fall."},
+  "strongpoint-defence": {"name": "Defending villages and strongpoints", "era": "gunpowder", "summary": "Stone buildings, walls and streams let a few troops hold off many; villages along a line become small fortresses."},
+  "central-position": {"name": "Central position", "era": "all", "summary": "Holding the ground between two parts of the enemy's army so they cannot support each other and can be beaten one at a time."},
+  "infantry-vs-cavalry": {"name": "Infantry against cavalry", "era": "gunpowder", "summary": "Formed infantry that keeps its nerve (in line or square) can stop a cavalry charge with volleys, leaving the cavalry open to counter-charge."},
+  "reserve-commitment": {"name": "Committing the reserve", "era": "all", "summary": "Holding the best troops back and committing them only at the decisive moment, or to restore a crisis."},
+  "envelopment": {"name": "Envelopment", "era": "all", "summary": "Attacking an enemy from front and flank or rear at once, so he must fight in two directions or run."},
+  "double-envelopment": {"name": "Double envelopment", "era": "all", "summary": "Closing on both enemy flanks at once until he is surrounded. Cannae (216 BC) is the archetype."},
+  "escape-route": {"name": "Rearguard and escape route", "era": "all", "summary": "A beaten army that keeps order and holds its line of retreat can still get away; one that loses it is destroyed."},
+  "decisive-battle": {"name": "Decisive battle", "era": "all", "summary": "Aiming not just to win the field but to destroy the enemy army's ability to keep fighting, ending the campaign in a day."}
+}

@@ -35,7 +35,7 @@ Conventions: one commit per step (`git add -A && git commit -m "v2 <step id>: ..
   - crossing a river away from a ford, bridge or causeway (`B.crossings`)
   - unit strengths summing to `forces.start` within 15%
   - every unit with a citation; every phase with a citation and a confidence level
-- [ ] **T6 Second-opinion review protocol.** `tools/review_prompt.md`, a template for an independent reviewer agent. It gets the brief, the scenario and the sources, and must return a list of issues with severity. The output is saved as `battles/<id>/review.md` and each issue is resolved or rebutted in `brief.md`.
+- [x] **T6 Second-opinion review protocol.** `tools/review_prompt.md`, a template for an independent reviewer agent. It gets the brief, the scenario and the sources, and must return a list of issues with severity. The output is saved as `battles/<id>/review.md` and each issue is resolved or rebutted in `brief.md`.
 - [ ] **T7 Tactics glossary.** `tactics.json` maps each tactic id to `{name, summary, era}`; battles reference ids. `build_library.py` builds a cross-link index (tactic → battle and phase).
 - [ ] **T8 Update `~/.claude/commands/battle-map.md`** to use T1–T7, with stronger source requirements (scholarly works via the Internet Archive and Google Books, non-English sources, official histories).
 
