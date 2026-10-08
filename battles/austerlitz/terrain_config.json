@@ -1,0 +1,28 @@
+{
+ "bbox": [
+  16.675,
+  49.068,
+  16.895,
+  49.205
+ ],
+ "zoom": 13,
+ "grid_w": 260,
+ "exag": 3.2,
+ "masks": [
+  {
+   "lat": 49.156,
+   "lon": 16.748,
+   "rx_m": 260,
+   "ry_m": 200,
+   "why": "modern pond/quarry near Ji\u0159\u00edkovice"
+  },
+  {
+   "lat": 49.1525,
+   "lon": 16.768,
+   "rx_m": 260,
+   "ry_m": 160,
+   "why": "modern pond near Ji\u0159\u00edkovice"
+  }
+ ],
+ "bumps": []
+}
