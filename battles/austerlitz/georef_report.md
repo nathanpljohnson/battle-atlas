@@ -21,22 +21,23 @@ order 1, 14 control points, RMSE 245 m, 13.3 m/pixel
 | Posoritz post | 127 | 161 |
 
 ## ru7: Mikhailovsky-Danilevsky (1844), map 7: the battle at its start
-order 2, 15 control points, RMSE 207 m, 11.1 m/pixel
+order 2, 16 control points, RMSE 223 m, 11.3 m/pixel
 
 | place | residual m | leave-one-out m |
 |---|---|---|
-| Telnitz | 215 | 266 |
-| Sokolnitz | 227 | 319 |
-| Kobelnitz | 84 | 115 |
-| Puntowitz | 138 | 172 |
-| Schlappanitz | 108 | 456 |
-| Girzikowitz | 260 | 341 |
-| Pratzen | 149 | 199 |
-| Blasowitz | 308 | 409 |
-| Krzenowitz | 273 | 374 |
-| Austerlitz | 91 | 668 |
-| Hostieradek | 36 | 57 |
-| Aujezd | 132 | 201 |
-| Satschan | 279 | 469 |
-| Menitz | 294 | 679 |
-| Posoritz post | 236 | 884 |
+| Telnitz | 205 | 253 |
+| Sokolnitz | 252 | 351 |
+| Kobelnitz | 61 | 83 |
+| Puntowitz | 137 | 171 |
+| Schlappanitz | 109 | 462 |
+| Girzikowitz | 217 | 275 |
+| Pratzen | 151 | 201 |
+| Blasowitz | 349 | 430 |
+| Krzenowitz | 270 | 370 |
+| Austerlitz | 89 | 652 |
+| Hostieradek | 38 | 59 |
+| Aujezd | 129 | 196 |
+| Satschan | 268 | 448 |
+| Menitz | 294 | 677 |
+| Posoritz post | 329 | 638 |
+| Holubitz | 318 | 491 |

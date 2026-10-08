@@ -14,7 +14,7 @@ For each historical name:
   3. Agree within 1 km -> use the Wikidata point. Disagree -> flag in the report and use Wikidata if it exists.
 Writes places.json (merging with what is there; existing entries are kept unless --overwrite) and gazetteer_report.md.
 """
-import json, math, os, subprocess, sys, time, urllib.parse
+import json, math, os, re, subprocess, sys, time, urllib.parse
 
 UA = "BattleAtlas/0.2 (https://claude.ai/; personal non-commercial history project)"
 
@@ -83,6 +83,27 @@ def wikipedia(name, langs, bbox):
     return sorted(out, key=lambda c: c["rank"])
 
 
+def osm_place_nodes(names, bbox):
+    """Exact settlement nodes (place=village/town/hamlet/...) from OpenStreetMap via Overpass. Nominatim can return
+    an administrative-area centroid that is a kilometre or more from the village itself; place nodes sit on it."""
+    W, S, E, N = bbox; pad = 0.03
+    rx = "|".join(re.escape(n) for n in names if n)
+    q = f'[out:json][timeout:60];node["place"]["name"~"^({rx})$"]({S - pad},{W - pad},{N + pad},{E + pad});out;'
+    for k in range(5):
+        r = subprocess.run(["curl", "-s", "-A", UA, "--data-urlencode", "data=" + q, "https://overpass-api.de/api/interpreter"], capture_output=True, text=True)
+        try:
+            els = json.loads(r.stdout)["elements"]
+            break
+        except Exception:
+            time.sleep(12 * (k + 1))
+    else:
+        return {}
+    out = {}
+    for e in els:
+        out.setdefault(e["tags"]["name"], []).append({"lat": round(e["lat"], 5), "lon": round(e["lon"], 5), "label": e["tags"]["name"], "src": "osm-node:" + e["tags"].get("place", "")})
+    return out
+
+
 def nominatim(q, bbox):
     W, S, E, N = bbox
     p = urllib.parse.urlencode({"q": q, "format": "json", "limit": 3, "viewbox": f"{W},{N},{E},{S}", "bounded": 1})
@@ -99,6 +120,8 @@ def main(bdir, names_path=None, overwrite=False):
     rep = ["# Gazetteer report", "", f"bbox {bbox}, languages {langs}", "",
            "| historical name | Wikidata or Wikipedia | OSM Nominatim | gap | used |", "|---|---|---|---|---|"]
     flags = []
+    nodes = osm_place_nodes([n for o in cfg["names"].items() for n in (o[0], (o[1].get("modern") or "").split(",")[0].strip())], bbox)
+    rep[4] = "| historical name | Wikidata or Wikipedia | OSM (place node, else Nominatim) | gap | used |"
     for name, opt in cfg["names"].items():
         wd = wikidata(name, langs, bbox)
         if opt.get("modern"):
@@ -106,7 +129,8 @@ def main(bdir, names_path=None, overwrite=False):
         wp = [] if wd else wikipedia(name, langs, bbox)
         if not wd and wp:
             wd = wp
-        nm = nominatim(opt.get("modern") or (wp[0]["label"] if wp else name), bbox)
+        key = (opt.get("modern") or "").split(",")[0].strip()
+        nm = nodes.get(name) or nodes.get(key) or nominatim(opt.get("modern") or (wp[0]["label"] if wp else name), bbox)
         best_w = wd[0] if wd else None
         if best_w and len(wd) > 1 and nm:
             best_w = min(wd, key=lambda c: dist_m((c["lat"], c["lon"]), (nm[0]["lat"], nm[0]["lon"])))
@@ -117,7 +141,10 @@ def main(bdir, names_path=None, overwrite=False):
         osm_is_village = best_n and any(norm(best_n["label"]).startswith(t) or t.startswith(norm(best_n["label"])) for t in targets)
         wd_is_village = best_w and any(norm(best_w["label"]).startswith(t) for t in targets)
         # OSM points sit on the village itself; Wikidata sometimes gives a municipality centroid or a landmark in it
-        pick = best_n if osm_is_village and (not wd_is_village or (gap or 0) > 400) else (best_w or best_n)
+        if best_n and best_n.get("src", "").startswith("osm-node"):
+            pick = best_n  # a settlement node is the most precise point available
+        else:
+            pick = best_n if osm_is_village and (not wd_is_village or (gap or 0) > 400) else (best_w or best_n)
         note = ""
         if pick is None:
             note = "NOT FOUND"; flags.append(name)
