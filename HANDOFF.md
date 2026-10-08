@@ -43,3 +43,4 @@ All of it should be done autonomously, with handoff docs kept current. He can't 
 
 ## Progress log (newest last)
 - **T1**: tools/georef.py (generic, leave-one-out outlier flags, 1st/2nd order, overlay warping to .webp). Austerlitz has maps.json (wp23, ru7) -> georef.json, georef_report.md, overlay_wp23.webp, overlay_ru7.webp; scenario uses Georef(HERE)("wp23"). Old battles/austerlitz/georef.py renamed georef_v1_legacy.py.
+- 2026-10-08 02:37 **T2**: tools/gazetteer.py: Wikidata aliases + bbox-filtered Wikipedia full-text + Nominatim cross-check, >1km flags; needs a URL-style User-Agent (Wikipedia rate-limits generic ones) and retries. Tested on 11 Austerlitz names: all resolved (Bosenitz->Tvarožná). Sub-locality picks (e.g. 'Sokolnice - Cihelna') can be ~500 m off: check report.
