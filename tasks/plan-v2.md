@@ -28,7 +28,7 @@ Conventions: one commit per step (`git add -A && git commit -m "v2 <step id>: ..
   - **Eras:** `era` in meta and the new unit types.
   - **Tactics:** an id on each phase's tactic.
   - **Overlays and fog:** an `overlays` list in meta; `fog` (0–1) on phases.
-- [ ] **T5 Physical sanity checks** in `battlekit.validate`, as warnings, plus `--strict` to fail on them:
+- [x] **T5 Physical sanity checks** in `battlekit.validate`, as warnings, plus `--strict` to fail on them:
   - movement speed between phases by unit type
   - unit centre inside a lake
   - overlapping hostile units with no F, R or charge
