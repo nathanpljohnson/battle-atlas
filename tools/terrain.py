@@ -85,6 +85,26 @@ def hull(pts):
     return lo[:-1] + up[:-1]
 
 
+def stitch(ways):
+    """Join multipolygon member ways that share end points into closed rings."""
+    segs = [[(p["lat"], p["lon"]) for p in w] for w in ways if len(w) > 1]
+    rings = []
+    while segs:
+        ring = segs.pop(0)
+        changed = True
+        while changed and ring[0] != ring[-1]:
+            changed = False
+            for i, sgm in enumerate(segs):
+                if sgm[0] == ring[-1]: ring += sgm[1:]
+                elif sgm[-1] == ring[-1]: ring += sgm[::-1][1:]
+                elif sgm[-1] == ring[0]: ring = sgm[:-1] + ring
+                elif sgm[0] == ring[0]: ring = sgm[::-1][:-1] + ring
+                else: continue
+                segs.pop(i); changed = True; break
+        rings.append([{"lat": a, "lon": b} for a, b in ring])
+    return rings
+
+
 def overpass(bbox, cache=None):
     if cache and os.path.exists(cache) and "--refetch" not in sys.argv:
         return json.load(open(cache))
@@ -92,7 +112,7 @@ def overpass(bbox, cache=None):
     q = ("[out:json][timeout:90];("
          f'way["landuse"~"quarry|landfill|brownfield"]{b};way["man_made"~"spoil_heap|tailings"]{b};'
          f'way["natural"="water"]{b};relation["natural"="water"]{b};way["landuse"~"reservoir|basin"]{b};'
-         f'way["highway"="motorway"]{b};);out geom tags qt;')
+         f'way["highway"="motorway"]{b};);out geom;')
     import time
     for k in range(5):
         r = subprocess.run(["curl", "-s", "-A", UA, "--data-urlencode", "data=" + q, "https://overpass-api.de/api/interpreter"], capture_output=True, text=True)
@@ -117,7 +137,7 @@ def detect(bdir, cfg, d, bbox):
     feats = []
     pit_raster = np.zeros(d.shape, bool)
     for e in overpass(bbox, os.path.join(bdir, "osm_cache.json")):
-        geoms = [e["geometry"]] if e["type"] == "way" and "geometry" in e else [m["geometry"] for m in e.get("members", []) if m.get("role") == "outer" and "geometry" in m]
+        geoms = [e["geometry"]] if e["type"] == "way" and "geometry" in e else stitch([m["geometry"] for m in e.get("members", []) if m.get("role") == "outer" and "geometry" in m])
         tags = e.get("tags", {})
         for g in geoms:
             poly = [(p["lat"], p["lon"]) for p in g]
@@ -126,7 +146,15 @@ def detect(bdir, cfg, d, bbox):
             area = abs(sum(xs[i] * ys[i - 1] - xs[i - 1] * ys[i] for i in range(len(xs)))) / 2
             im = Image.new("L", (Wd, H), 0); ImageDraw.Draw(im).polygon([to_px(*p) for p in poly], fill=255)
             inside = np.asarray(im) > 0
-            depth = float(-np.median(anom[inside])) if inside.any() else 0.0
+            depth = 0.0
+            if inside.any():
+                # compare the water/feature surface with a ring of land 200-700 m around it
+                near = blur(inside.astype(float), 450 / mpp) > 0.02
+                ring = near & ~(blur(inside.astype(float), 150 / mpp) > 0.02)
+                if ring.sum() > 20:
+                    depth = float(np.median(d[ring]) - np.median(d[inside]))
+                else:
+                    depth = float(-np.median(anom[inside]))
             kind = tags.get("landuse") or tags.get("man_made") or tags.get("highway") or tags.get("water") or tags.get("natural")
             if tags.get("highway") == "motorway":
                 action = "suggest"; why = "motorway (embankments and cuttings)"

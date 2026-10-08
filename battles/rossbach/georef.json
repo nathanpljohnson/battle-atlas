@@ -5,65 +5,65 @@
   "order": 1,
   "fwd": [
    [
-    51.29195160660712,
-    11.727269417753348
+    51.30555105784802,
+    11.749805506918023
    ],
    [
-    2.9453214577745662e-05,
-    0.00012353988983705382
+    2.4877153455502434e-05,
+    0.00011539850951177344
    ],
    [
-    -6.138870205948982e-05,
-    5.24354119673363e-05
+    -7.196031153044872e-05,
+    3.6440441796059294e-05
    ]
   ],
   "inv": [
    [
-    -357482.6924249962,
-    625127.7215724227
+    -293444.4750416983,
+    604092.0261258458
    ],
    [
-    5448.222494524704,
-    -12911.042117467652
+    3932.725131864937,
+    -12390.308121078746
    ],
    [
-    6654.158899039567,
-    3166.525798369331
+    7802.195219877273,
+    2690.046135609557
    ]
   ],
-  "rmse_m": 533,
-  "m_per_px": 9.2,
+  "rmse_m": 227,
+  "m_per_px": 8.49,
   "residuals_m": {
-   "Branderoda": 525,
-   "Gr\u00f6st": 630,
-   "Almsdorf": 146,
-   "Leiha": 490,
-   "Schortau": 286,
-   "Kleinkayna": 330,
-   "Gro\u00dfkayna": 309,
-   "Ro\u00dfbach": 165,
-   "Lunst\u00e4dt": 436,
-   "Zeuchfeld": 183,
-   "Pettst\u00e4dt": 325,
-   "Reichardtswerben": 908,
-   "Posendorf": 819,
-   "Tagewerben": 949
+   "Branderoda": 32,
+   "Gr\u00f6st": 10,
+   "Almsdorf": 87,
+   "Leiha": 300,
+   "Schortau": 143,
+   "Kleinkayna": 333,
+   "Gro\u00dfkayna": 408,
+   "Ro\u00dfbach": 333,
+   "Lunst\u00e4dt": 249,
+   "Zeuchfeld": 151,
+   "Pettst\u00e4dt": 176,
+   "Reichardtswerben": 196,
+   "Posendorf": 119,
+   "Tagewerben": 212
   },
   "loo_m": {
-   "Branderoda": 754,
-   "Gr\u00f6st": 738,
-   "Almsdorf": 163,
-   "Leiha": 540,
-   "Schortau": 345,
-   "Kleinkayna": 503,
-   "Gro\u00dfkayna": 464,
-   "Ro\u00dfbach": 178,
-   "Lunst\u00e4dt": 475,
-   "Zeuchfeld": 275,
-   "Pettst\u00e4dt": 413,
-   "Reichardtswerben": 1174,
-   "Posendorf": 1105,
-   "Tagewerben": 1392
+   "Branderoda": 46,
+   "Gr\u00f6st": 12,
+   "Almsdorf": 97,
+   "Leiha": 331,
+   "Schortau": 172,
+   "Kleinkayna": 505,
+   "Gro\u00dfkayna": 608,
+   "Ro\u00dfbach": 359,
+   "Lunst\u00e4dt": 271,
+   "Zeuchfeld": 227,
+   "Pettst\u00e4dt": 226,
+   "Reichardtswerben": 257,
+   "Posendorf": 160,
+   "Tagewerben": 313
   },
   "flagged": []
  }
