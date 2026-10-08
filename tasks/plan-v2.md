@@ -87,7 +87,7 @@ Conventions: one commit per step (`git add -A && git commit -m "v2 <step id>: ..
   - `men` per phase, with losses estimated and marked as such.
   - Fog at 07:00–09:00; `via` routes for the columns; tactic ids; crossings declared.
   - Must pass the strict checks.
-- [ ] **D2 Rossbach rebuilt the Austerlitz way.** Done when it passes the strict checks and its review is resolved.
+- [x] **D2 Rossbach rebuilt the Austerlitz way.** Done when it passes the strict checks and its review is resolved.
   - **Sources:** at least 3 independent ones plus maps, for example the West Point Seven Years' War maps, the Prussian General Staff *Die Kriege Friedrichs des Großen* plans, Kronoskaf, Wikipedia, and Duffy or Millar summaries.
   - **Groundwork:** gazetteer and map matching.
   - **Data:** a new `battles/rossbach/scenario.py` written with battlekit, plus `brief.md`, citations and strengths.
