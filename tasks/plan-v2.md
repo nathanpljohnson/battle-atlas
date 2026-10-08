@@ -16,7 +16,7 @@ Conventions: one commit per step (`git add -A && git commit -m "v2 <step id>: ..
   - Look up each historical (German, French, etc.) name in Wikidata (labels and aliases in all languages, P625 coordinates), and in Nominatim with the modern name.
   - Flag any disagreement over 1 km.
   - Write `places.json` plus `gazetteer_report.md`.
-- [ ] **T3 Modern change detection.** `tools/terrain.py --detect` queries OSM Overpass in the bbox for quarries, opencast mines, landfill, spoil heaps, reservoirs, basins and motorways, then:
+- [x] **T3 Modern change detection.** `tools/terrain.py --detect` queries OSM Overpass in the bbox for quarries, opencast mines, landfill, spoil heaps, reservoirs, basins and motorways, then:
   - Writes `terrain_suggestions.json` and auto-adds masks for mining, quarry, landfill and spoil areas over 2 ha. Water bodies are only suggested, because a historical lake must not be erased.
   - Also flags DEM anomalies: pits or heaps more than 12 m off a 600 m-blur surface.
   - Draws a preview with the flagged areas outlined.
