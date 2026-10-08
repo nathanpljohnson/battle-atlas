@@ -2,7 +2,7 @@
 
 **Project:** Battle Atlas, Osprey-style 3D phase-by-phase battle maps. It lives at `~/battle-maps/` on Nathan's Mac, and the library is published at https://claude.ai/artifact/Gbh8cmwciTY9jRqqHbMX54 .
 
-**Current state:** v1 is published (Austerlitz 1805 and Rossbach 1757). The v2 work is planned in `tasks/plan-v2.md`; ticked boxes there are done, and the progress log at the bottom of this file says what each step left behind. Git checkpoint for v1: `fa7b547`. Mark a step done with `python3 tools/tick.py <step> "note"`, which ticks it, logs it here and commits.
+**Current state:** v2 release checkpoint built and visually regression-tested (Austerlitz 1805 and Rossbach 1757); artifact publication is the remaining release action. The v2 work is planned in `tasks/plan-v2.md`; ticked boxes there are done, and the progress log at the bottom of this file says what each step left behind. Git checkpoint for v1: `fa7b547`. Mark a step done with `python3 tools/tick.py <step> "note"`, which ticks it, logs it here and commits.
 
 ## How to resume
 1. `cd ~/battle-maps && git log --oneline | head` shows which v2 steps are committed.
@@ -42,6 +42,7 @@ All of it should be done autonomously, with handoff docs kept current. He can't 
 - Nominatim: no more than 1 request per second, with a User-Agent.
 
 ## Progress log (newest last)
+- 2026-10-08 **Release checkpoint**: rebuilt `dist/` with the current Austerlitz and Rossbach v2 data only. Checked the library and both battle views at desktop light and dark themes, plus narrow mobile layouts; no application console errors or visual regressions observed (the only console request failure was an optional missing `/favicon.ico`). **Cannae is explicitly on hold:** its source and terrain work remain uncommitted under `battles/cannae/`; do not continue D4, add it to the library, or publish it unless Nathan explicitly resumes it.
 - **T1**: tools/georef.py (generic, leave-one-out outlier flags, 1st/2nd order, overlay warping to .webp). Austerlitz has maps.json (wp23, ru7) -> georef.json, georef_report.md, overlay_wp23.webp, overlay_ru7.webp; scenario uses Georef(HERE)("wp23"). Old battles/austerlitz/georef.py renamed georef_v1_legacy.py.
 - 2026-10-08 02:37 **T2**: tools/gazetteer.py: Wikidata aliases + bbox-filtered Wikipedia full-text + Nominatim cross-check, >1km flags; needs a URL-style User-Agent (Wikipedia rate-limits generic ones) and retries. Tested on 11 Austerlitz names: all resolved (Bosenitz->Tvarožná). Sub-locality picks (e.g. 'Sokolnice - Cihelna') can be ~500 m off: check report.
 - 2026-10-08 02:41 **T3**: tools/terrain.py --detect: OSM Overpass (cached in battles/<id>/osm_cache.json, --refetch to refresh) -> auto-masks quarries/landfill/spoil and water >8 m below surroundings (flooded pits), grown to exact pit shape saved as terrain_automask.png (raster mask); suggests other water + motorways; reports top-8 DEM heaps/pits (often natural, report-only). Masks now support poly/raster/ellipse. Rossbach: terrain_config.json created, mining pits auto-filled; the spoil heap N of the field (51.285, 11.912) still needs a manual mask in D2.
