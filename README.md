@@ -11,7 +11,7 @@ library.json              ordered list of battle ids shown in the library
 engine/index.src.html     the renderer (three.js 0.147 + OrbitControls, from CDNs); placeholders /*MANIFEST*/[] and /*INLINE*/null
 tools/terrain.py          python3 tools/terrain.py battles/<id>    -> terrain.json (+ terrain_raw/filled.png previews)
 tools/battlekit.py        authoring kit used by each scenario.py; validates and exports <id>.json + check.png
-tools/build_library.py    python3 tools/build_library.py           -> dist/index.html, dist/battles/*.json, dist/preview.html
+tools/build_library.py    python3 tools/build_library.py           -> dist/index.html, dist/battles/*.json, dist/preview.html, dist/battle-atlas-offline.html
 battles/<id>/             sources/, brief.md, places.json, terrain_config.json, terrain.json, scenario.py, <id>.json, check.png
 battles/rossbach/make.py  converts the original Rossbach project (../rossbach/) into the library format
 dist/                     the built site: publish index.html with battles/*.json as files; preview.html runs straight from disk
@@ -46,6 +46,7 @@ dist/                     the built site: publish index.html with battles/*.json
 
 ## Testing
 - **Preview server:** the `battle-library` entry in `~/.claude/launch.json` serves `dist/` on port 8791. Open `/preview.html#<id>`.
+- **Portable release:** `dist/battle-atlas-offline.html` is a self-contained file. It embeds the Austerlitz/Rossbach data, their historical-map overlays, and the pinned Three.js 0.147 runtime; it can be copied or opened without sibling `battles/` files or a network connection.
 - **Hash changes need a reload:** changing only the `#id` part of the URL doesn't reload the page, so reload after switching battles that way.
 - **Hidden panes look frozen:** a hidden browser pane throttles animation to about 1 frame per second, so wait before taking screenshots.
 - **Python SSL is broken on Nathan's machine.** All network calls use `curl` through `subprocess`.
