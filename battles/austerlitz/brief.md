@@ -1,58 +1,71 @@
-# Austerlitz, 2 December 1805: research brief
+# Austerlitz, 2 December 1805: research brief (v2)
 
 ## Overview
-
-- **Place:** Moravia, between Brünn (Brno) and Austerlitz (Slavkov u Brna). The battle was fought around the Pratzen plateau and the Goldbach brook.
-- **French:** Napoleon. About 73,000 men and 157 guns (sources range from 65,000 to 75,000). The West Point maps give 73,200 on 1 December and 74,000 on 2 December.
-- **Allies:** Russians and Austrians. Nominal command was Kutuzov's; Tsar Alexander I and Emperor Francis II were present, and Buxhöwden commanded the left wing. About 85,000 men (sources range from 73,000 to 89,000; West Point gives 85,000–87,000), roughly 70–75% of them Russian, with 318 guns.
+- **Place:** Moravia, between Brünn (Brno) and Austerlitz (Slavkov u Brna). The battle was fought around the Pratzen plateau and the Goldbach brook. Places are identified with `tools/gazetteer.py` (Bosenitz is Tvarožná, not Podolí).
+- **French:** Napoleon. About 73,000 men and 139–157 guns. The order of battle (Duffy and Smith) gives 73,000 [oob]; Wikipedia's range is 65,000–75,000 [wiki].
+- **Allies:** Kutuzov, with Alexander I and Francis II present. About 85,400 men and 278 guns [oob]; the range is 73,000–89,000 [wiki].
 - **Losses:**
-  - French: about 9,000 (8,569–9,288; about 1,300–1,500 killed).
-  - Allies: about 27,000 (Wikipedia gives 27,000–36,000: 15–16,000 killed or wounded, 11–12,000 or more captured), plus 180–186 guns.
-  - We use the low ends (≈9,000 and ≈27,000), which are the most commonly cited.
+  - French: about 9,000 (8,569–9,288) [wiki].
+  - Allies: about 27,000 (27,000–36,000, including 11–20,000 prisoners) and 180–186 guns [wiki].
+  - The lower, most-cited figures are used.
 
-## Sources consulted
-
-| # | Source | Kind | Used for | Reliability |
+## Sources
+| id | source | kind | used for | reliability |
 |---|---|---|---|---|
-| 1 | West Point Dept. of History atlas maps 22–24 (situation at 18:00 on 1 Dec, 09:00 and 14:00 on 2 Dec), Wikimedia Commons | Modern staff maps | Positions, unit sizes, terrain, the drained ponds | High for the large-scale picture; schematic at brigade level |
-| 2 | Mikhailovsky-Danilevsky, *Описание первой войны Императора Александра с Наполеоном в 1805 г.* (1844), maps 6–8 (dispositions, start, end), Commons | Russian official history | An independent check on Allied positions and on the end state (Kamensky at Hostieradek, Kienmayer at Satschan, Bagration at Raussnitz) | High for the Allied side; it was drawn from Russian records |
-| 3 | Wikipedia, "Battle of Austerlitz" | Summary of modern scholarship | Strengths and losses ranges, sequence, timings | Medium-high; cites Chandler, Duffy, Goetz and others |
-| 4 | napoleon.org, "Austerlitz, 2 December 1805: a timeline" (Fondation Napoléon) | French institutional | Times: 07:00 Telnitz; 08:00 columns leave the plateau; 08:30–09:00 Soult attacks; 09:00 counterattack; 11:00 Allied retreat begins | High |
-| 5 | warhistory.org, "Battle of Austerlitz" parts I–II | Narrative based on standard works | Brigade-level detail (Thiébault, Kamensky, Jurczik, Rottermund, the 4e Ligne's eagle, 24e Léger, Drouet), the 14:00 envelopment, ≈200 drowned, last Allied troops gone by about 16:00 | Medium |
-| 6 | Summaries of the pond-draining evidence (via search: denofgeek / historycrunch, which cite the standard works) | Secondary | The ice myth | Medium; consistent with the modern consensus |
+| wp22/23/24 | U.S. Military Academy situation maps 22–24 (18:00 on 1 Dec; 09:00 and 14:00 on 2 Dec) | modern staff map | positions (georeferenced, RMSE 245 m) | high for the large-scale picture; schematic at brigade level; **one label error, see D2** |
+| md1844 | Mikhailovsky-Danilevsky (1844), maps 6–8 | Russian official history maps | an independent check of Allied positions and the end state; map 7 is the historical-map overlay (2nd-order fit, RMSE 207 m) | high on the Allied side |
+| md1846 | Mikhailovsky-Danilevsky, *Relation de la campagne de 1805: Austerlitz* (French translation, 1846), archive.org full text | Russian official history | the Allied plan; Uvarov's move to Bagration; Kamensky's brigade; times; the dyke and the ice | high; drawn from Russian records, defends Russian conduct |
+| stut | Stutterheim, *A Detailed Account of the Battle of Austerlitz* (1807), archive.org full text | eyewitness (Austrian staff officer) | battalion and squadron counts per column; routes; the lake | high on Allied structure; partisan against the Russian command |
+| burton | Burton, *From Boulogne to Austerlitz* (1912), archive.org | staff study | fog: by 07:00 the hilltops stood clear like islands while the valleys stayed fogged | medium-high |
+| oob | Wikipedia order of battle (citing Duffy 1977 and Smith 1998) | reference compiled from scholarship | strengths per column and corps; brigade composition | medium-high |
+| wiki | Wikipedia, "Battle of Austerlitz" | reference | ranges; sequence | medium-high |
+| fn | Fondation Napoléon timeline | French institutional | times (07:00 Telnitz, 08:00, 08:30, 11:00) | high |
+| wh | warhistory.org, parts I–II | narrative based on the standard works | brigade detail (Thiébault, Kamensky, Jurczik, Rottermund, the 4e Ligne, the 24e Léger); ≈200 drowned; last troops gone about 16:00 | medium |
+| ice | Den of Geek (summarising the drainage evidence) | popular | 28–30 guns, about 150 horses and 2–3 bodies found | medium; it agrees with the modern consensus |
 
-## Phases (all times local, approximate)
+Consulted but not usable: Alombert & Colin, *La campagne de 1805 en Allemagne* (the French General Staff history). Vol. 4 stops in mid-November, before the battle, because the series never reached Austerlitz. Chandler (1966) is lending-only on archive.org.
 
-| # | Time | What happens | Confidence |
+## Phases and confidence
+| # | time | summary | conf |
 |---|---|---|---|
-| 0 | 07:00 | Fog in the valleys. Kienmayer's Austrian advance guard attacks Telnitz, held by the 3e Ligne and the Tirailleurs du Po. Allied columns 1–3 start down off the plateau. Soult's two divisions wait hidden in the Goldbach valley around Puntowitz. Liechtenstein's cavalry, wrongly placed on the south overnight, crosses north through the columns, delaying Langeron. | high (S1 Dec-1 map, S4, S5) |
-| 1 | 08:00 | Dokhturov's 1st column joins in and takes Telnitz. Langeron and Przhebyshevsky attack Sokolnitz and the castle. After a forced march from Vienna (about 110 km in 48 h), Davout's lead troops (Friant's division, Heudelet's brigade) retake Telnitz, then lose it to an Austrian hussar charge. The 4th column (Kolowrat and Miloradovich, with Kutuzov) starts down the plateau. | high |
-| 2 | 09:00 | "Sun of Austerlitz": the mist lifts off the heights and Soult's divisions climb the plateau, St Hilaire towards Pratzen village and the Pratzeberg, Vandamme towards Staré Vinohrady. In the north, Lannes, Murat and Bernadotte advance east, Bernadotte crossing the Goldbach at Girzikowitz. Bagration comes down the Olmütz road and Liechtenstein forms near Blasowitz with the Russian Guard behind. (This matches West Point map 23.) | high |
-| 3 | 10:00 | Fight for the Pratzeberg. Kamensky's brigade turns back from Langeron's column and, with the Austrian brigades of Jurczik and Rottermund, contests the summit. Thiébault's brigade nearly runs out of ammunition before a bayonet charge clears the hill. In the north, Liechtenstein charges Kellermann's light horse and is stopped by Caffarelli's infantry and Nansouty's heavy cavalry. Lannes and Bagration engage around the Posoritz road, and the Santon battery (18 guns, 17e Léger) holds the French left. | medium (brigade positions from narrative) |
-| 4 | 11:00 | Vandamme takes Staré Vinohrady from Rottermund and Miloradovich. Kamensky is driven off south-east, and the French hold the plateau from end to end. Napoleon moves to the Pratzen heights. The Allied army is now cut in two. | high (S4: "11am Allied retreat began") |
-| 5 | 13:00 | Grand Duke Constantine's Russian Imperial Guard counterattacks at Staré Vinohrady. Guard infantry breaks a battalion of the 4e Ligne (the only eagle the French lost), and Guard cavalry breaks the 24e Léger. Napoleon sends in Bessières' Guard cavalry with Rapp. Drouet's division (Bernadotte) steadies the line, and the Russian Guard falls back towards Krzenowitz. | medium-high on the sequence, medium on the exact time (S3 and S5 put it in the early afternoon) |
-| 6 | 14:00 | The trap closes. Soult wheels south off the plateau into the rear of Allied columns 1–3, while Davout and Legrand press from the west. Kolowrat, Liechtenstein and the Guard re-form east of the Littawa near Austerlitz. Bagration pulls back to the Posoritz post house, and Przhebyshevsky's column is cut off at Sokolnitz. (This matches West Point map 24.) | high |
-| 7 | 15:30 | Retreat over and around the Satschan ponds. Przhebyshevsky surrenders near Sokolnitz and Kobelnitz. Langeron gets five of his nine battalions out. Dokhturov and Kienmayer escape along the causeway between the Satschan and Menitz ponds, under fire from Vandamme's guns above Aujezd. Some troops go onto the ice and it breaks under fire. | medium (S2 map 8, S5) |
-| 8 | 16:30 | Nightfall at about 16:10. The last Allied troops leave the field around 16:00–16:30, heading towards Austerlitz and Hungary. Bagration withdraws to Raussnitz. | high on the overall state |
+| 0 | 07:00 | Fog in the valleys, clear hilltops [burton]. Kienmayer attacks Telnitz [fn]. Columns 1–3 descend. Liechtenstein crosses the columns and delays Langeron [wiki]. Soult is hidden. | high |
+| 1 | 08:00 | Telnitz falls to Dokhturov, is retaken by Friant's lead brigade, then lost again to hussars [wiki]. Sokolnitz and the castle change hands repeatedly. | high |
+| 2 | 09:00 | Soult's attack on the Pratzen [wp23] [fn]. The emperors reach Kutuzov about 09:00 [md1846]. In the north, Lannes, Murat and Bernadotte advance. | high |
+| 3 | 10:00 | Fight for the Pratzeberg: Kamensky and Jurczik against St Hilaire; Thiébault's bayonet charge [wh] [md1846]. The Uhlans' charge is broken by Kellermann and Caffarelli [wh]. Bagration is checked at the Santon [wh]. | medium |
+| 4 | 11:00 | The plateau is taken from end to end; the Allies are cut in two [wh] [fn]. | high |
+| 5 | 13:00 | The Russian Guard counterattacks; the 4e Ligne loses its eagle; Rapp's charge [wh] [wiki]. | medium |
+| 6 | 14:00 | Soult wheels south; Przhebyshevsky is cut off; the Allied centre re-forms on the Littawa [wp24]. | high |
+| 7 | 15:30 | Retreat over the dyke between the ponds; the ice breaks; Przhebyshevsky surrenders [md1846] [stut] [wh]. | medium |
+| 8 | 16:30 | Nightfall; retreat towards Austerlitz and Raussnitz [md1844]. | high |
 
-## Unit size
-
-- **Divisions** for most formations, and **brigades** where the fighting turns on them: St Hilaire's and Vandamme's brigades; Kamensky, Jurczik and Rottermund.
-- **Allied columns** are shown as single units, which is how all the sources map them.
-- **Positions** are read from the georeferenced West Point maps where possible (`georef.py`; residuals mostly under 300 m) and interpolated from the narratives between map times. Each unit's `conf` flag says which.
+## Order of battle: what changed in v2, and why
+- **Allied structure** follows Stutterheim and the Russian official history:
+  - 1st Column: 24 battalions.
+  - 2nd Column: 18 battalions, Kamensky's brigade (Fanagoria Grenadiers and Ryazhsk) included.
+  - 3rd Column: 18 battalions.
+  - 4th Column: 27 battalions, 12 of them Russian.
+  - Kienmayer: 22 Austrian and 10 Cossack squadrons plus 5 Grenz battalions.
+  - Bagration: 12 battalions and 40 squadrons.
+  - Guard: 10 battalions and 18 squadrons.
+- **The 5th Column is split as the Russian history describes.** Uvarov's dragoons and hussars went to Bagration's left the evening before. The rest was 32 Austrian squadrons plus the Grand Duke Constantine Uhlans; the Uhlans are the "Russian cavalry" that charged at Blasowitz [md1846] [oob].
+- **Strengths** come from the order of battle [oob]. Brigades are split by regiment counts where only divisions are given (marked medium).
+- **Losses through the day** are estimates that spread the sourced totals across units following the narrative. This is stated in the strength chart caption.
 
 ## Disagreements and the choices made
+1. **Column strengths.** West Point maps 22–23 label Przhebyshevsky's column 13,800 and Dokhturov's 8,500. Stutterheim (24 battalions against 18) and the order of battle (13,240 against 7,700) both say the reverse, so **the West Point labels are treated as swapped.** The 2-to-1 agreement of independent sources decides it.
+2. **Time of the first attack.** The Fondation Napoléon and French accounts give 07:00; the Russian official history says the columns left at 08:00. 07:00 is used, as in most modern accounts, and noted as a debate in phase 0.
+3. **Time of Soult's attack.** Sources give 08:30–09:00. 09:00 is used, as on West Point map 23.
+4. **The ice.** Napoleon's bulletin and Marbot spoke of thousands drowned; Stutterheim and the Russian history confirm that men died on the ice; the drainage finds were 2–3 bodies and about 150 horses. The map shows modest losses on the ice and gives all three positions in the debate note.
+5. **Time of the Guard counterattack.** Sources range from late morning to 13:00. 13:00 is used; confidence medium.
+6. **Bernadotte's passivity** is a common criticism in the scholarship. It is mentioned but not dramatised.
 
-1. **Strengths.** The French are put at 65–75k and the Allies at 73–89k. We use ≈73k vs ≈85k, which matches West Point and sits mid-range.
-2. **Time of Soult's attack.** Sources give 08:30–09:00 (the "less than twenty minutes" exchange is put at about 08:45). We show the attack at 09:00, as West Point does.
-3. **Allied losses.** Captured figures run from 11,000 to 20,000. We use ≈27,000 total and note the range.
-4. **The ice myth.** Marbot's tale of thousands drowned has been rejected. When the ponds were drained shortly after the battle, the finds were 28–30 guns, about 150 horses and two or three human bodies. Modern estimates of the drowned run from a few dozen to about 200. The map shows the ice breaking at the edges with modest losses, and the text says the legend is false.
-5. **Time of the Russian Guard counterattack.** Sources say "midday" or "about 13:00". We use 13:00 and give the phase medium-high confidence.
-6. **Liechtenstein's night position.** He was placed on the south overnight, and his move north across the columns delayed Langeron. The sources agree on this, so it is shown in phase 0–1.
+## Terrain
+- The ponds (Satschan, Menitz, Kobelnitz and one near Austerlitz) were drained in the 19th century and are drawn from West Point map 23.
+- Two small modern ponds near Jiříkovice are smoothed out.
+- Crossings are declared at the village bridges, mill dams and fords, and at the dyke between the ponds that is described in both period sources.
 
-## Terrain notes
+## Validation
+`BATTLEKIT_STRICT=1 python3 scenario.py` passes with 0 warnings. The French units sum to 62,600 against 73,000, which is within 15%; the unmodelled cavalry divisions and artillery are listed in the notes.
 
-- The Satschan and Menitz ponds were drained in the 19th century and are flat fields in modern elevation data. They are drawn from West Point map 23 (georeferenced) as frozen ponds.
-- The Kobelnitz pond is drawn the same way.
-- Two small modern ponds or quarries near Jiříkovice are smoothed out.
-- Heights are exaggerated three times.
+## Review responses
+(to be filled after the independent review: see review.md)

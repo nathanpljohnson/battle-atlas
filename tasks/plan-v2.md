@@ -81,7 +81,7 @@ Conventions: one commit per step (`git add -A && git commit -m "v2 <step id>: ..
   Each has a symbol and a glossary text. Naval battles are documented as out of scope.
 
 ## Stage D: data
-- [ ] **D1 Austerlitz v2:**
+- [x] **D1 Austerlitz v2:**
   - `maps.json` and an overlay from the georeferenced Russian 1844 map (map 7 or 8) and West Point map 23.
   - Citations on every unit, phase and event, with inline `[id]` markers in the text.
   - `men` per phase, with losses estimated and marked as such.
