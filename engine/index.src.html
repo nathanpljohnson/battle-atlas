@@ -938,7 +938,7 @@ function wireCites(root) {
 function buildTimeline() {
   const ts = D.phases.map(tmin), xs = [0];
   const breaks = [];
-  for (let i = 1; i < ts.length; i++) { const gap = ts[i] - ts[i - 1], g = gap > 180 ? 75 : gap; if (gap > 180) breaks.push(i); xs.push(xs[i - 1] + Math.max(g, 6)); }
+  for (let i = 1; i < ts.length; i++) { const gap = ts[i] - ts[i - 1], g = gap > 360 ? 120 : gap; if (gap > 360) breaks.push(i); xs.push(xs[i - 1] + Math.max(g, 6)); }
   const span = xs[xs.length - 1] || 1;
   const pos = xs.map((x) => x / span * 100);
   const el = $("stops");

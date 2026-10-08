@@ -58,7 +58,7 @@ Conventions: one commit per step (`git add -A && git commit -m "v2 <step id>: ..
   - The scale bar is computed from the camera at the view centre and snaps to 250 m, 500 m, 1 km or 2 km.
 - [x] **E6 Label collision:** a priority-based greedy declutter (events > selected > HQ > places > hills > units), with Osprey-style leader lines for events.
 - [x] **E7 Proportional, multi-day timeline:**
-  - Stops sit at their real times; gaps over 3 h are compressed and get a break mark.
+  - Stops sit at their real times; gaps over 6 h are compressed and get a break mark.
   - Day dividers say "1 July", "2 July".
   - The clock shows the day.
 - [x] **E8 Strength-over-time chart:**
@@ -95,7 +95,7 @@ Conventions: one commit per step (`git add -A && git commit -m "v2 <step id>: ..
   - **Retire:** the old `make.py`.
 - [ ] **D3 Second opinion** on both battles: a reviewer agent per battle, then fixes applied and `review.md` saved.
 - [ ] **D4 A third battle from another era**, to exercise eras, tactics links and the home page: Cannae, 216 BC (envelopment, which links to Austerlitz). The disputed site goes in a debate note with low confidence.
-- [ ] **D5 Multi-day test:** a small synthetic multi-day fixture (`tests/fixture_multiday.json`, not in the library) to check the E7 timeline. Optional: a real multi-day battle later.
+- [x] **D5 Multi-day test:** a small synthetic multi-day fixture (`tests/fixture_multiday.json`, not in the library) to check the E7 timeline. Optional: a real multi-day battle later.
 
 ## Stage S: ship
 - [ ] **S1** Build, then test in the browser:

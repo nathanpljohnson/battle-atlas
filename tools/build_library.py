@@ -55,4 +55,15 @@ open(os.path.join(dist, "preview.html"), "w").write(
     '<style>:root{color-scheme:light}body{margin:0;font:14px system-ui}[hidden]{display:none!important}img{max-width:100%}</style></head><body>'
     + full + "</body></html>")
 json.dump(files, open(os.path.join(dist, "files.json"), "w"), indent=1)
+# test page: python3 tools/build_library.py also writes dist/preview_tests.html with fixtures from tests/*/ (never published)
+import glob
+fx = {}
+for fp in glob.glob(os.path.join(ROOT, "tests", "*", "*.json")):
+    d = json.load(open(fp))
+    if "meta" in d and "phases" in d: fx[d["id"]] = d
+if fx:
+    tman = manifest + [{"id": k, "title": v["meta"]["title"], "year": v["meta"]["year"], "eyebrow": v["meta"]["eyebrow"], "subtitle": v["meta"]["subtitle"], "war": "Test", "era": v["meta"].get("era", ""),
+                        "center": [0, 0], "belligerents": [], "forces": v["meta"]["forces"]["start"], "phases": len(v["phases"]), "units": len(v["units"]), "conf": {"high": 1, "medium": 0, "low": 0}, "nsources": 1} for k, v in fx.items()]
+    tp = src.replace("/*MANIFEST*/[]", json.dumps(tman, ensure_ascii=False)).replace("/*TACTICS*/{}", json.dumps(tindex, ensure_ascii=False)).replace("/*INLINE*/null", json.dumps({**inline, **fx}, ensure_ascii=False))
+    open(os.path.join(dist, "preview_tests.html"), "w").write('<!doctype html><html lang="en"><head><meta charset="utf-8"><meta name="viewport" content="width=device-width,initial-scale=1"></head><body>' + tp + "</body></html>")
 print(f"dist/index.html + {len(ids)} battles ({', '.join(ids)}), {sum(len(v) for v in uses.values())} tactic links, {len(files)} files")
