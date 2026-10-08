@@ -20,7 +20,7 @@ Conventions: one commit per step (`git add -A && git commit -m "v2 <step id>: ..
   - Writes `terrain_suggestions.json` and auto-adds masks for mining, quarry, landfill and spoil areas over 2 ha. Water bodies are only suggested, because a historical lake must not be erased.
   - Also flags DEM anomalies: pits or heaps more than 12 m off a 600 m-blur surface.
   - Draws a preview with the flagged areas outlined.
-- [ ] **T4 battlekit v2:**
+- [x] **T4 battlekit v2:**
   - **Citations:** `sources = {id: {...}}`, `cite=[ids]` on units, phases and events, and inline `[id]` markers in text, all validated.
   - **Strength over time:** `men={phase: n}`, carried forward.
   - **Route waypoints:** `via=[pos, ...]` on keys.
