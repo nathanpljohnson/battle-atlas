@@ -33,6 +33,8 @@ Rebuild Rossbach the Austerlitz way, and make moves feel realistic:
 
 All of it should be done autonomously, with handoff docs kept current. He can't fact-check the history: the work should be judged as a PhD military historian would judge it.
 
+**Later preference (2026-10-09):** do not add new historical-map-as-ground overlays. They are unnecessary. Retain existing optional overlays unless Nathan separately asks to remove them; Cannae correctly has none because its available maps are schematic.
+
 ## Environment facts
 - Python 3.13 with numpy and Pillow, but **no scipy**. Python's SSL certificates are broken, so all network calls go through `curl` via `subprocess`. Don't install packages without asking.
 - Preview server `battle-library` in `~/.claude/launch.json` serves `dist/` on port 8791; open `/preview.html#<id>`.
