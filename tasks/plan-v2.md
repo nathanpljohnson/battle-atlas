@@ -94,7 +94,7 @@ Conventions: one commit per step (`git add -A && git commit -m "v2 <step id>: ..
   - **Terrain:** detect and mask the mining pits automatically, then compare with the v1 hand-made masks.
   - **Retire:** the old `make.py`.
 - [ ] **D3 Second opinion** on both battles: a reviewer agent per battle, then fixes applied and `review.md` saved.
-- [ ] **D4 A third battle from another era**, to exercise eras, tactics links and the home page: Cannae, 216 BC (envelopment, which links to Austerlitz). The disputed site goes in a debate note with low confidence.
+- [x] **D4 A third battle from another era**, to exercise eras, tactics links and the home page: Cannae, 216 BC (envelopment, which links to Austerlitz). The disputed site goes in a debate note with low confidence.
 - [x] **D5 Multi-day test:** a small synthetic multi-day fixture (`tests/fixture_multiday.json`, not in the library) to check the E7 timeline. Optional: a real multi-day battle later.
 
 ## Stage S: ship

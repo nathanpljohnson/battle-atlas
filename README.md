@@ -2,7 +2,7 @@
 
 This is a library of Osprey-style 3D battle maps, one page with a tab for each battle. Each battle is shown on real terrain, with unit blocks (infantry, cavalry, artillery, light troops), movement arrows, numbered events, narrative and tactics notes, confidence levels and sources, stepped through a timeline.
 
-- **Published library:** https://claude.ai/artifact/Gbh8cmwciTY9jRqqHbMX54 (private until shared)
+- **Published library:** https://battle-atlas.johnna1203600.chatgpt.site (ChatGPT Site; includes Austerlitz, Rossbach and Cannae)
 - **Add a battle:** run `/battle-map <battle name and year>` in Claude Code. The full research and verification method is in `~/.claude/commands/battle-map.md`.
 
 ## Layout
@@ -46,7 +46,7 @@ dist/                     the built site: publish index.html with battles/*.json
 
 ## Testing
 - **Preview server:** the `battle-library` entry in `~/.claude/launch.json` serves `dist/` on port 8791. Open `/preview.html#<id>`.
-- **Portable release:** `dist/battle-atlas-offline.html` is a self-contained file. It embeds the Austerlitz/Rossbach data, their historical-map overlays, and the pinned Three.js 0.147 runtime; it can be copied or opened without sibling `battles/` files or a network connection.
+- **Portable release:** `dist/battle-atlas-offline.html` is a self-contained file. It embeds the Austerlitz, Rossbach and Cannae data, the available historical-map overlays, and the pinned Three.js 0.147 runtime; it can be copied or opened without sibling `battles/` files or a network connection.
 - **Hash changes need a reload:** changing only the `#id` part of the URL doesn't reload the page, so reload after switching battles that way.
 - **Hidden panes look frozen:** a hidden browser pane throttles animation to about 1 frame per second, so wait before taking screenshots.
 - **Python SSL is broken on Nathan's machine.** All network calls use `curl` through `subprocess`.
