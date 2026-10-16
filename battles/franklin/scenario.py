@@ -25,7 +25,7 @@ def k(tx, ty):  # thumbnail pixel on the 4:30-dark sheet (1286 px wide), north-u
 B = Battle("franklin", HERE)
 
 B.source("cox", "Jacob D. Cox, The Battle of Franklin, Tennessee, November 30, 1864 (New York: Scribner, 1897)", "https://archive.org/details/battleoffranklin00coxj", "commander of the Union line; dispositions, timings, sunset, strengths (pp. 209-211) and losses (pp. 211-216) from the Official Records", "primary")
-B.source("or", "War of the Rebellion: Official Records, Ser. I, vol. 45, pt 1 (Schofield, Thomas, Hood reports)", "https://ebooks.library.cornell.edu/cgi/t/text/pageviewer-idx?c=moawar;cc=moawar;idno=waro0093;view=image;seq=368", "official returns: Union losses p. 343, Confederate losses as counted after reoccupation p. 344, Hood's figure p. 654; read via Cox's quotations", "official-history")
+B.source("or", "War of the Rebellion: Official Records, Ser. I, vol. 45, pt 1 (Schofield, Thomas, Hood reports)", "https://archive.org/details/warofrebellion451unit", "full text (archive.org warofrebellion451unit): Forrest p. 754, Lee pp. 687-688, Stanley pp. 115-116, Hatch pp. 576-577, Cockerill p. 432, losses pp. 343-344", "official-history")
 B.source("hood", "John B. Hood, Advance and Retreat (New Orleans, 1880), pp. 292-295", "https://archive.org/details/advanceretreatpe00hood", "the Confederate commander's account: 4 p.m. advance, artillery withheld, Johnson's division before dark, fighting until 9 p.m.", "primary")
 B.source("wp", "Wikipedia, 'Battle of Franklin' (after Jacobson & Rupp 2006, Sword 1992, McDonough & Connelly 1983, Eicher 2001)", "https://en.wikipedia.org/wiki/Battle_of_Franklin", "brigade-level sequence of the breakthrough, Opdycke, Stewart's attacks, Bate, Johnson and the cavalry fight", "reference")
 B.source("abt", "American Battlefield Trust, 'Franklin'", "https://www.battlefields.org/learn/civil-war/battles/franklin", "4 p.m. step-off, about 20,000 attackers, Wagner's collapse, Opdycke, the Hughes's Ford fight, losses 2,326 and 6,252", "reference")
@@ -55,7 +55,7 @@ B.meta = {
     "wind": 200, "view": {"az": 0.0, "el": 0.85}, "unitScale": 1.1, "unitLabelDist": 6,
     "ground": {"season": "autumn", "relief": 70},
     "days": {"1": "30 November 1864"},
-    "strengthNote": "Union: 29,234 of all arms, including about 5,500 cavalry [cox]. Confederate: 27,000-31,000 in the army [wp], about 20,000-24,000 in the assault [abt] [cox] [tnenc]. Union losses 2,326 [cox] [or]. Confederate losses 6,252 as counted when Franklin was reoccupied [cox] [or]; Hood reported 4,500 [hood]. Brigade strengths are estimates (only Cockrell's 696 is sourced [cox]), and losses per moment are an allocation of the sourced totals following the narrative.",
+    "strengthNote": "Union: 29,234 of all arms, including about 5,500 cavalry [cox]. Confederate: 27,000-31,000 in the army [wp]; about 20,000 in the main assault [abt] [wp] (Cox and the Tennessee Encyclopedia give up to 24,000 [cox] [tnenc]), plus Johnson's division after dark. Union losses 2,326 [cox] [or]. Confederate losses 6,252 as counted when Franklin was reoccupied [cox] [or]; Hood reported 4,500 [hood]. Brigade strengths are estimates (only Cockrell's 696 is sourced [cox]), and losses per moment are an allocation of the sourced totals following the narrative.",
     "method": "Brigade positions are read off two modern maps based on Jacobson's study and georeferenced against the Carter House, Lotz House, Carnton, Fort Granger and the town square (16 m error) [jesp]. The Union works are checked against the 1864 field-works survey [fw] and Cox's description [cox]. Positions after dark, and the exact frontages of the compressed Confederate brigades at the works, are approximate.",
     "notes": "The Union earthworks themselves are not drawn: the units in the works mark the line. The terrain is modern; quarry and pond changes away from the field were masked or left as noted in terrain_config.json. No historical-map overlay is offered. Brigade strengths and losses per moment are estimates; see brief.md.",
 }
@@ -89,21 +89,24 @@ NORTH = j(640, 210)  # across the Harpeth after the withdrawal
 
 # ---- Union: Wagner's division (IV Corps): two brigades forward, Opdycke in reserve
 U("lane", "us", "inf", "Lane's brigade (Wagner)", "~1,500 infantry", 450,
-  {0: (j(432, 598), 200, "F", 0.08), 2: (k(640, 560), 180, "R"), 3: (k(650, 470), 180, "R"), 5: (k(700, 430), 180, "L")},
-  "Left forward on the rise half a mile south of the works; collapsed when the Confederate line overlapped it [wp] [cox].", "high", {0: 1500, 2: 980}, ["wp", "cox", "jesp"], {2: [k(625, 700)]})
+  {0: (j(432, 598), 200, "F", 0.08), 2: (k(590, 560), 180, "R"), 3: (k(650, 470), 180, "R"), 5: (k(700, 430), 180, "L")},
+  "West of the pike in Wagner's advanced position; Stanley says Lane, on the right, re-entered the works several hundred yards west of the pike [or] [wp] [cox].", "high", {0: 1500, 2: 980}, ["wp", "cox", "jesp", "or"], {2: [k(560, 680)]})
 U("conrad", "us", "inf", "Conrad's brigade (Wagner)", "~1,500 infantry", 450,
   {0: (j(530, 640), 170, "F", 0.06), 2: (k(690, 560), 180, "R"), 3: (k(700, 480), 180, "R"), 5: (k(740, 440), 180, "L")},
   "East of the pike in the advanced position; most of Wagner's 670 missing came from Lane and Conrad [cox].", "high", {0: 1500, 2: 940}, ["wp", "cox", "jesp"], {2: [k(660, 720)]})
 U("opdycke", "us", "inf", "Opdycke's brigade (Wagner)", "~2,000 infantry", 330,
-  {0: (k(632, 460), 180, "C"), 3: (k(632, 520), 180, "L"), 4: (k(625, 650), 180, "F", -0.05), 8: (j(560, 170), 0, "C")},
+  {0: (k(632, 460), 0, "C"), 3: (k(632, 520), 180, "L"), 4: (k(625, 650), 180, "F", -0.05), 8: (j(560, 170), 0, "C")},
   "Refused to stop in the advanced position and halted about 200 yards north of the Carter House; its charge sealed the breach [wp] [abt].", "high", {0: 2000, 4: 1880, 6: 1840}, ["wp", "abt", "jesp", "cox"], {8: [j(560, 400), j(610, 270)]})
 # ---- Ruger's division (XXIII Corps), west of the pike
 U("strickland", "us", "inf", "Strickland's brigade (Ruger)", "~1,700 infantry", 420,
   {0: (k(505, 575), 225, "F", -0.05), 3: (k(560, 520), 225, "R"), 4: (k(505, 575), 225, "F", -0.05), 8: (j(600, 160), 0, "C")},
-  "From the pike to Locust Grove; its front regiments were driven back to the retrenchment at the Carter House and recovered with Opdycke [wp] [cox].", "high", {0: 1700, 3: 1400, 4: 1250, 6: 1230}, ["jesp", "wp", "cox"], {8: [j(540, 400), j(610, 270)]})
+  "From the pike to Locust Grove; its front regiments were driven back to the retrenchment at the Carter House and recovered with Opdycke [wp] [cox].", "high", {0: 1700, 3: 1450, 4: 1360, 6: 1350}, ["jesp", "wp", "cox"], {8: [j(540, 400), j(610, 270)]})
 U("moore", "us", "inf", "Moore's brigade (Ruger)", "~1,600 infantry", 450,
   {0: (k(360, 420), 225, "F", -0.05), 8: (j(640, 170), 0, "C")},
   "Held the works from Locust Grove to the Carter's Creek Pike; Cox calls its missing trifling [cox] [jesp].", "high", {0: 1600, 5: 1520, 6: 1460}, ["jesp", "cox"], {8: [j(470, 420), j(610, 270)]})
+U("strickland_res", "us", "inf", "44th Missouri and 183rd Ohio (Strickland's second line)", "~1,100 infantry", 220,
+  {0: (k(590, 610), 225, "L"), 3: (k(595, 615), 200, "F"), 8: (j(620, 170), 0, "C")},
+  "Held the retrenchment by the Carter House when the front regiments were swept back; the 72nd Illinois rallied on the 183rd Ohio there [wp].", "medium", {0: 1100, 4: 1000, 6: 980}, ["wp", "jesp"], {8: [j(540, 400), j(610, 270)]})
 # ---- Reilly's division (XXIII Corps), east of the pike
 U("reilly", "us", "inf", "Reilly's brigade, front line", "~1,100 infantry", 260,
   {0: (k(690, 745), 180, "F"), 3: (k(700, 680), 180, "R"), 4: (k(690, 745), 180, "F"), 8: (j(680, 180), 0, "C")},
@@ -127,8 +130,8 @@ U("whitaker", "us", "inf", "Whitaker's brigade (Kimball)", "~1,300 infantry", 38
 # ---- North of the river
 U("wood", "us", "inf", "Wood's division (IV Corps)", "~4,500 infantry", 600, {0: (j(830, 390), 200, "L")},
   "Held north of the river to cover the crossings and Fort Granger [jesp] [fw].", "medium", {0: 4500}, ["jesp", "fw"])
-U("granger_art", "us", "art", "Fort Granger batteries", "8 guns", 120, {0: (B.geo["Fort Granger"], 200, "F")},
-  "Enfiladed Stewart's corps from across the river [wp] [jesp].", "high", {0: 8}, ["wp", "jesp", "fw"])
+U("granger_art", "us", "art", "Battery D, 1st Ohio (Fort Granger)", "4 guns", 80, {0: (B.geo["Fort Granger"], 200, "F")},
+  "The one battery in the fort; with Battery M, 4th U.S. it enfiladed Stewart's corps along the railroad cut [or] [cox].", "high", {0: 4}, ["or", "cox", "jesp"])
 U("art_centre", "us", "art", "Batteries at the Carter House", "8 guns", 120, {0: (k(590, 645), 200, "F"), 3: (k(600, 600), 200, "R"), 4: (k(590, 645), 200, "F"), 8: (j(760, 200), 0, "C")},
   "Guns at the pike were briefly overrun and turned in the breakthrough [jesp] [hood].", "medium", {0: 8, 3: 6, 4: 6}, ["jesp", "hood", "cox"], {8: [j(560, 400), j(610, 270)]})
 U("art_gin", "us", "art", "6th Ohio Battery at the cotton gin", "4 guns", 80, {0: (k(740, 725), 190, "F"), 8: (j(600, 235), 0, "C")},
@@ -137,11 +140,11 @@ U("art_left", "us", "art", "Battery G 1st Ohio and Battery M 4th U.S.", "8 guns"
   "Fired canister down the railroad cut on the far left [wp] [jesp].", "medium", {0: 8}, ["jesp", "wp"], {8: [j(640, 440), j(700, 292)]})
 # ---- Wilson's cavalry
 U("hatch", "us", "cav", "Hatch's cavalry division (Wilson)", "2,638 cavalry", 500,
-  {0: (j(1050, 460), 180, "C"), 1: (j(1030, 820), 160, "F"), 3: (j(1040, 900), 160, "F"), 5: (j(1000, 760), 340, "L")},
-  "Came south from the Brentwood road and charged Forrest's dismounted troopers near Hughes's Ford [wp] [abt].", "medium", {0: 2638, 3: 2610}, ["wp", "abt", "cox"], {1: [j(1060, 640)]})
+  {0: (j(1050, 460), 180, "C"), 1: (j(1030, 800), 160, "F"), 6: (j(1060, 930), 160, "F"), 7: (j(1000, 760), 340, "L")},
+  "Came south from the Brentwood road and charged Jackson's dismounted troopers; Hatch says they were over the river by 7 p.m. [wp] [abt] [or].", "medium", {0: 2638, 6: 2610}, ["wp", "abt", "cox"], {1: [j(1060, 640)]})
 U("croxton", "us", "cav", "Croxton's brigade (Wilson)", "~1,500 cavalry", 350,
-  {0: (j(850, 580), 120, "L"), 1: (j(940, 840), 120, "F"), 5: (j(900, 720), 340, "L")},
-  "Struck Forrest's flank with Spencer carbines [wp].", "medium", {0: 1500, 3: 1480}, ["wp", "jesp"])
+  {0: (j(850, 580), 120, "L"), 1: (j(940, 840), 120, "F"), 7: (j(900, 720), 340, "L")},
+  "Struck Forrest's flank with Spencer carbines [wp].", "medium", {0: 1500, 6: 1480}, ["wp", "jesp"])
 
 # ---- Confederate: Stewart's corps, east of the pike
 def CS(uid, name, men, p0, p1, p3, p4, face, note, conf="medium", cite=("jesp", "wp"), loss=(), extra=None):
@@ -155,8 +158,8 @@ CS("scott", "Scott's brigade (Loring)", 1000, j(840, 975), j(835, 752), k(1100, 
    "Loring's division twice assaulted Stiles near the railroad and river [wp].", loss={3: 850, 4: 740})
 CS("featherston", "Featherston's brigade (Loring)", 1200, j(880, 975), j(795, 772), k(1120, 905), k(1080, 790), 320,
    "Fell back under fire when Loring rode out in front of it [wp].", loss={3: 1000, 4: 900})
-CS("adams", "Adams's brigade (Loring)", 1100, j(860, 1010), j(825, 800), k(1095, 960), k(1040, 800), 320,
-   "Adams was killed on the parapet trying to seize the 65th Illinois's colours [wp].", loss={3: 900, 4: 820})
+CS("adams", "Adams's brigade (Loring)", 1100, j(860, 1010), j(825, 800), k(1000, 900), k(925, 790), 330,
+   "Struck in front of Stiles's right and Casement's left; Adams was killed on the parapet trying to seize the 65th Illinois's colours [or] [wp].", loss={3: 900, 4: 820})
 CS("quarles", "Quarles's brigade (Walthall)", 1000, j(705, 990), j(745, 772), k(900, 925), k(905, 800), 330,
    "Reached the works through the abatis and was pinned there; by the end a captain commanded it [wp].", loss={3: 800, 4: 680})
 CS("reynolds", "Reynolds's brigade (Walthall)", 900, j(755, 990), j(705, 792), k(980, 950), k(980, 820), 330,
@@ -165,7 +168,7 @@ CS("shelley", "Shelley's brigade (Walthall)", 1000, j(745, 1040), j(735, 822), k
    "Intermixed with Loring's men in the narrowing ground between railroad and river [wp].", loss={3: 860, 4: 770})
 CS("cockrell", "Cockrell's brigade (French)", 696, j(615, 1005), j(640, 820), k(790, 895), k(830, 805), 350,
    "Went in with 696 officers and men and lost 419 [cox].", conf="high", cite=("cox", "jesp", "wp"), loss={3: 450, 4: 300, 5: 277})
-CS("sears", "Sears's brigade (French)", 1000, j(645, 1005), j(630, 858), k(795, 935), k(860, 840), 350,
+CS("sears", "Sears's brigade (French)", 1000, j(630, 1040), j(630, 858), k(795, 935), k(860, 840), 350,
    "French's second brigade; Ector's brigade was away guarding the pontoon train [cox].", cite=("jesp", "cox"), loss={3: 880, 4: 780})
 # ---- Cheatham's corps: Cleburne, Brown, Bate
 CS("granbury", "Granbury's brigade (Cleburne)", 1100, j(470, 1025), j(490, 830), k(670, 700), k(690, 785), 0,
@@ -173,7 +176,7 @@ CS("granbury", "Granbury's brigade (Cleburne)", 1100, j(470, 1025), j(490, 830),
 CS("govan", "Govan's brigade (Cleburne)", 1200, j(515, 1025), j(560, 840), k(740, 865), k(760, 800), 0,
    "Struck the cotton-gin salient; Cleburne was killed in this attack [wp] [hood].", cite=("jesp", "wp", "hood"), loss={3: 950, 4: 750, 5: 700})
 CS("lowrey", "Lowrey's brigade (Cleburne)", 1300, j(490, 1060), j(540, 865), k(695, 900), k(730, 830), 0,
-   "Cleburne's third line, formed at his request in depth [hood] [jesp].", cite=("jesp", "hood", "wp"), loss={3: 1100, 4: 900, 5: 820})
+   "Cleburne's second line; Hood recalls Cleburne asking to form in two, or perhaps three, lines [hood] [jesp].", cite=("jesp", "hood", "wp"), loss={3: 1100, 4: 900, 5: 820})
 CS("gordon", "Gordon's brigade (Brown)", 1000, j(400, 1005), j(420, 800), k(640, 700), k(635, 745), 10,
    "Angled right in the advance, crossed the pike and broke in with Cleburne; Gordon was captured [wp].", cite=("jesp", "wp"), loss={3: 750, 4: 520, 5: 500})
 CS("strahl", "Strahl's brigade (Brown)", 1000, j(380, 1030), j(400, 830), k(575, 690), k(560, 705), 20,
@@ -199,20 +202,22 @@ for uid, name, men, p5, p6, loss in [
     ("brantley", "Brantley's brigade (Johnson)", 800, k(200, 830), k(300, 670), 720)]:
     U(uid, "cs", "inf", name, f"~{men} infantry", 280,
       {0: (j(450, 1180), 0, "C"), 4: (j(440, 1000), 0, "C"), 5: (j(435, 900), 0, "C"), 6: (p6, 40, "F"), 7: (p5, 30, "L")},
-      "Johnson's division attacked west of the pike about 7 p.m., lost its alignment in the dark and was repulsed in one assault [wp] [hood].", "low", {0: men, 6: loss}, ["wp", "hood", "jesp"],
+      "Johnson's division attacked west of the pike about an hour after dark, lost its alignment and was repulsed in one assault [or] [wp].", "low", {0: men, 6: loss}, ["wp", "or", "jesp"],
       {6: [j(430, 800), p5]})
 # ---- Forrest's cavalry
 U("chalmers", "cs", "cav", "Chalmers's cavalry division (Forrest)", "~1,800 cavalry", 450,
   {0: (j(110, 760), 20, "L"), 1: (j(140, 650), 30, "L"), 5: (j(320, 420), 70, "F"), 6: (j(240, 470), 70, "L")},
   "Fought dismounted against Kirby and Whitaker; Bate did not know it was engaged [wp].", "low", {0: 1800, 6: 1760}, ["wp", "jesp"])
 U("buford", "cs", "cav", "Buford's cavalry division (Forrest)", "~2,000 cavalry", 450,
-  {0: (j(965, 1060), 0, "C"), 1: (j(1075, 880), 330, "F"), 3: (j(1000, 1030), 200, "R"), 5: (j(960, 1080), 340, "L")},
-  "Crossed at Hughes's Ford to turn the Union left and was driven back over the river by Wilson [wp] [abt].", "medium", {0: 2000, 3: 1930}, ["wp", "abt", "jesp"], {1: [j(1050, 950)], 3: [j(1050, 950)]})
+  {0: (j(965, 1060), 0, "C"), 1: (j(885, 745), 330, "F"), 5: (j(895, 760), 330, "L")},
+  "Fought dismounted on Stewart's right between the Lewisburg Pike and the river and drove the Union cavalry back across the Harpeth; it did not cross [or].", "medium", {0: 2000, 3: 1950}, ["or", "jesp"], {1: [j(940, 900)]})
 U("jackson_cav", "cs", "cav", "W. H. Jackson's cavalry division (Forrest)", "~2,000 cavalry", 450,
-  {0: (j(1000, 1060), 0, "C"), 1: (j(1110, 900), 320, "F"), 3: (j(1040, 1040), 200, "R"), 5: (j(1000, 1090), 340, "L")},
-  "With Buford across Hughes's Ford; outgunned by Croxton's Spencers [wp] [abt].", "medium", {0: 2000, 3: 1940}, ["wp", "abt", "jesp"], {1: [j(1050, 950)], 3: [j(1050, 950)]})
-U("cs_art", "cs", "art", "Confederate batteries in action", "8 guns", 120, {0: (j(470, 1060), 0, "C"), 1: (j(470, 880), 0, "F")},
-  "Hood says he withheld artillery to spare the town; Cox finds only two batteries under fire [hood] [cox].", "low", {0: 8}, ["hood", "cox"])
+  {0: (j(1000, 1060), 0, "C"), 1: (j(1110, 900), 320, "F"), 6: (j(1040, 1040), 200, "R"), 7: (j(1000, 1090), 340, "L")},
+  "Crossed at Hughes's Ford to protect Forrest's right and held Wilson until night, then recrossed [or]; Croxton's Spencer carbines told heavily [wp] [abt].", "medium", {0: 2000, 6: 1900}, ["or", "wp", "abt", "jesp"], {1: [j(1050, 950)], 6: [j(1050, 950)]})
+U("guibor", "cs", "art", "Guibor's battery (Stewart)", "6 guns", 100, {0: (j(690, 1030), 0, "C"), 1: (j(690, 900), 340, "F")},
+  "Served in sections in the intervals of Stewart's line; one of only two Confederate batteries Cox found in action, though Hood says he withheld his artillery to spare the town [cox] [hood].", "low", {0: 6}, ["cox", "hood"])
+U("presstman", "cs", "art", "Presstman's battery (Cheatham)", "6 guns", 100, {0: (j(405, 742), 0, "F"), 5: (j(300, 640), 30, "F")},
+  "First on Privet Knob, later on the knoll at Bostick's near the Carter's Creek Pike [cox].", "low", {0: 6}, ["cox"])
 
 B.commander("schofield", "us", "Schofield", {0: B.geo["Fort Granger"]}, "Directed the battle from Fort Granger across the river [jesp] [cox].")
 B.commander("cox", "us", "Cox", {0: k(660, 650)}, "Commanded the line from his station on the pike by the Carter House [cox].")
@@ -227,47 +232,47 @@ B.phase("15:00", "Hood deploys", "Two armies face each other across two miles",
   events=[(B.geo["Winstead Hill"], "Hood's headquarters on Winstead Hill [fw]", ["fw"]), (j(480, 620), "Wagner's two brigades stand exposed in front of the main line [cox]", ["cox"])],
   conf="high", cite=["cox", "jesp", "hood", "fw"])
 B.phase("16:00", "The advance", "A two-mile line steps off",
-  "About 20,000 Confederates advance in parade order across open ground, with almost no artillery support [abt] [hood] [cox]. East of the river Forrest's Buford and Jackson push across Hughes's Ford to turn the Union left [wp].",
+  "About 20,000 Confederates of Stewart's and Cheatham's corps advance in parade order across open ground, with almost no artillery support [abt] [hood] [cox]. On the right Buford's dismounted cavalry drives the Union cavalry pickets back across the Harpeth, while Jackson's division crosses at Hughes's Ford to protect the army's flank [or].",
   ("Frontal assault", "Attacking an entrenched enemy head-on over open ground trades the attacker's numbers for the defender's fire.", "frontal-assault"), j(560, 820), 5.0,
   arrows=[B.arrow("cs", "move", j(490, 1030), j(490, 840)), B.arrow("cs", "move", j(740, 1000), j(745, 790)), B.arrow("cs", "move", j(340, 1000), j(330, 760)), B.arrow("cs", "move", j(1000, 1040), j(1050, 950), j(1100, 890))],
-  events=[(j(1050, 950), "Forrest's cavalry crosses at Hughes's Ford [wp]", ["wp"])],
-  conf="high", debate="Hood, the American Battlefield Trust and Jespersen give about 4 p.m.; the Tennessee Encyclopedia gives 4:30. This map follows 4 p.m. [hood] [abt] [tnenc].", cite=["abt", "hood", "wp", "cox", "tnenc"])
+  events=[(j(1050, 950), "Jackson's cavalry crosses at Hughes's Ford [or]", ["or"])],
+  conf="medium", debate="Hood, the American Battlefield Trust and Jespersen give about 4 p.m.; the Tennessee Encyclopedia gives 4:30. This map follows 4 p.m. [hood] [abt] [tnenc].", cite=["abt", "hood", "or", "cox", "tnenc"])
 B.phase("16:15", "Wagner overrun", "\"Go into the works with them\"",
   "The Confederate line overlaps Lane and Conrad, who fire one volley and break. Nearly 700 are captured; the rest run up the pike with Cleburne's and Brown's men at their heels, and the defenders in the works cannot fire without hitting them [wp] [abt] [cox].",
   ("Exposed advanced position", "An advanced force caught in front of the main line masks that line's fire as it falls back.", "exposed-outpost"), j(505, 640), 3.2,
-  arrows=[B.arrow("us", "retreat", j(470, 600), PIKE_W), B.arrow("us", "retreat", j(530, 630), PIKE_E), B.arrow("cs", "charge", j(490, 800), k(650, 760))],
+  arrows=[B.arrow("us", "retreat", j(470, 600), k(560, 690)), B.arrow("us", "retreat", j(530, 630), PIKE_E), B.arrow("cs", "charge", j(490, 800), k(650, 760))],
   events=[(j(495, 620), "Wagner's men flee towards the works; about 700 are taken [wp]", ["wp"])],
   conf="high", cite=["wp", "abt", "cox"])
 B.phase("16:30", "Breakthrough at the Carter House", "The line breaks at the pike",
-  "Cleburne, Brown and French converge on the gap at the pike. The 100th Ohio and Strickland's front regiments are driven back and Confederates penetrate about 50 yards into the line, turning captured guns [wp] [hood]. East of the railroad Stewart's corps, squeezed against the river, stalls in the osage-orange abatis under fire from Fort Granger; Adams dies on the parapet [wp]. Wilson's cavalry drives Forrest back across the Harpeth [wp] [abt].",
+  "Cleburne, Brown and French converge on the gap at the pike. The 100th Ohio and Strickland's front regiments are driven back and Confederates penetrate about 50 yards into the line, turning captured guns [wp] [hood]. East of the railroad Stewart's corps, squeezed against the river, stalls in the osage-orange abatis under fire from Fort Granger; Adams dies on the parapet [wp]. Across the river Jackson's troopers are fighting Wilson's [or].",
   ("Penetration", "A break-in at a single point is only decisive if reserves can widen it before the defender's reserves seal it.", "reserve-commitment"), k(660, 700), 2.2,
-  arrows=[B.arrow("cs", "charge", k(650, 860), k(640, 660)), B.arrow("cs", "charge", k(740, 880), k(740, 760)), B.arrow("cs", "charge", k(1080, 880), k(1000, 720)), B.arrow("us", "charge", j(1040, 820), j(1040, 920)), B.arrow("us", "fire", B.geo["Fort Granger"], k(1060, 820))],
-  events=[(k(650, 660), "Confederates break 50 yards into the line at the Carter House [wp]", ["wp"]), (k(1040, 770), "Adams killed on the parapet [wp]", ["wp"]), (k(720, 790), "Cleburne killed near the cotton gin [wp] [hood]", ["wp", "hood"])],
-  conf="medium", cite=["wp", "hood", "abt", "jesp"])
+  arrows=[B.arrow("cs", "charge", k(650, 860), k(640, 660)), B.arrow("cs", "charge", k(740, 880), k(740, 760)), B.arrow("cs", "charge", k(1080, 880), k(1000, 720)), B.arrow("us", "fire", B.geo["Fort Granger"], k(1060, 820))],
+  events=[(k(650, 660), "Confederates break 50 yards into the line at the Carter House [wp]", ["wp"]), (k(915, 765), "Adams killed on the parapet at the Stiles-Casement junction [or] [wp]", ["or", "wp"]), (k(720, 790), "Cleburne killed near the cotton gin [wp] [hood]", ["wp", "hood"])],
+  conf="medium", cite=["wp", "hood", "abt", "jesp", "or"])
 B.phase("16:45", "Opdycke's counterattack", "The breach is sealed",
-  "Opdycke deploys his veterans astride the pike and charges into the breach on his own initiative; Stanley, arriving, gives no orders and is wounded. Reilly's reserve regiments east of the pike rally the fugitives. Hand-to-hand fighting in the Carter garden restores the line, and the Confederates are pinned in the outer ditch [wp] [abt] [hood].",
+  "Opdycke deploys his veterans astride the pike and charges into the breach on his own initiative; Stanley, arriving, urges the nearest regiment on but gives Opdycke no orders, and is wounded [or]. West of the pike the 44th Missouri and 183rd Ohio hold the retrenchment at the Carter House; east of it Reilly's reserve regiments rally the fugitives. Hand-to-hand fighting in the Carter garden restores the line, and the Confederates are pinned in the outer ditch [wp] [abt] [hood].",
   ("Reserve commitment", "A reserve held close behind the threatened point can counterattack before a break-in becomes a breakthrough.", "reserve-commitment"), k(650, 680), 1.8,
   arrows=[B.arrow("us", "charge", k(632, 520), k(625, 650)), B.arrow("us", "charge", k(700, 640), k(690, 720))],
   events=[(k(625, 640), "Opdycke's brigade retakes the works at the pike [wp]", ["wp"]), (k(645, 600), "Close combat in the Carter house garden [wp] [hood]", ["wp", "hood"])],
-  conf="high", debate="Cox credits Opdycke's initiative and Reilly's reserves; Stanley's supporters later credited Stanley. Stanley himself wrote that he gave Opdycke no orders [wp] [cox].", cite=["wp", "abt", "hood", "cox"])
+  conf="high", debate="Cox credits Opdycke's initiative and Reilly's reserves; Stanley's supporters later credited Stanley, who wrote that he called a regiment to charge but gave Opdycke no order. Jacobson's later work stresses the 44th Missouri, 175th and 183rd Ohio at the breach [wp] [cox] [or].", cite=["wp", "abt", "hood", "cox", "or"])
 B.phase("17:00", "Sunset", "The flanks fail as the light goes",
   "The sun sets at about five [cox]. On the Union right Bate's division finally reaches the works past Everbright, without the support it expected from Chalmers, whose dismounted troopers are fighting Kimball out of Bate's sight; both are repulsed [wp]. At the centre the Confederates renew their assaults again and again from the ditch [cox] [tnenc].",
   ("Envelopment", "A flank attack needs time and coordination; started late and unsupported, it becomes just another frontal assault.", "envelopment"), k(450, 560), 3.6,
   arrows=[B.arrow("cs", "charge", k(130, 560), k(250, 430)), B.arrow("cs", "charge", j(240, 470), j(380, 380))],
   events=[(j(380, 600), "Bate sweeps past Everbright [wp]", ["wp"]), (k(300, 380), "Bate's single line is stopped at the works [wp]", ["wp"])],
   conf="medium", cite=["wp", "cox", "tnenc"])
-B.phase("19:00", "Johnson's attack", "Lee's one division goes in after dark",
-  "Hood commits Edward Johnson's division, the only one of Lee's corps to have arrived. Guideless in the dark, it loses its alignment around Privet Knob and attacks the works west of the Carter House in a single assault, which is repulsed with heavy loss [wp] [hood].",
+B.phase("18:00", "Johnson's attack", "Lee's one division goes in after dark",
+  "Hood commits Edward Johnson's division, the only one of Lee's corps to have arrived. Guideless in the dark, it loses its alignment around Privet Knob and attacks the works west of the Carter House in a single assault, which is repulsed with heavy loss [wp] [hood]. Lee says it was not felt by the enemy until about an hour after dark [or]. Across the river, Hatch and Croxton finally drive Jackson's troopers back over the Harpeth [or] [wp].",
   ("Reserve commitment", "Committing a reserve piecemeal and in darkness against an intact line adds losses without changing the result.", "reserve-commitment"), k(420, 650), 2.6,
-  arrows=[B.arrow("cs", "charge", k(260, 880), k(400, 690)), B.arrow("cs", "charge", k(210, 800), k(330, 650))],
-  events=[(k(380, 660), "Johnson's division repulsed in one assault [wp]", ["wp"])],
-  conf="medium", cite=["wp", "hood"])
+  arrows=[B.arrow("cs", "charge", k(260, 880), k(400, 690)), B.arrow("cs", "charge", k(210, 800), k(330, 650)), B.arrow("us", "charge", j(1040, 820), j(1060, 930))],
+  events=[(k(380, 660), "Johnson's division repulsed in one assault [wp]", ["wp"]), (j(1050, 950), "Jackson's cavalry recrosses the Harpeth [or]", ["or"])],
+  conf="medium", debate="Hood has Johnson moving 'just before dark'; Lee and Cox put the blow about an hour after dark (about 6 p.m.); Wikipedia, after Jacobson, gives about 7 p.m. This map follows Lee [hood] [or] [cox] [wp].", cite=["wp", "hood", "or", "cox"])
 B.phase("21:00", "Stalemate at the works", "Firing dies down",
   "Effective fire ends about nine o'clock, though the Tennessee Encyclopedia has fighting until ten [cox] [hood] [tnenc]. Union troops hold the inside of the works and Confederates the outer ditch, a few feet apart [tnenc].",
   ("Strongpoint defence", "Once the attacker's momentum is spent at the parapet, the defender's line wins by simply holding.", "strongpoint-defence"), k(650, 720), 2.4,
   events=[(k(700, 760), "The dead lie five or six deep in the ditch [tnenc]", ["tnenc"])], conf="medium", fog=0.25, cite=["cox", "hood", "tnenc"])
 B.phase("23:00", "Withdrawal", "Schofield crosses the Harpeth",
-  "Schofield's withdrawal order was issued at 7:15 p.m.; near midnight the infantry leaves the works and crosses the river towards Nashville, leaving dead and wounded on the field [cox] [hood]. Hood, claiming the field, has lost 6,252 men by Schofield's count, including six generals killed or mortally wounded [cox] [or].",
+  "Schofield issued his withdrawal order between six and seven, passed on by the Fourth Corps at 7:15; near midnight the infantry leaves the works and crosses the river towards Nashville, leaving dead and wounded on the field [cox] [hood]. Hood, claiming the field, has lost 6,252 men by Schofield's count, including six generals killed or mortally wounded [cox] [or].",
   ("Rearguard", "A defender who has won the fight can still decline the next one, slipping away under cover of darkness.", "rearguard"), j(560, 420), 4.0,
   arrows=[B.arrow("us", "move", j(560, 440), j(610, 270), j(640, 200))],
   events=[(j(610, 270), "Union infantry crosses the Harpeth bridges [cox]", ["cox"]), (B.geo["Carnton"], "Carnton becomes a Confederate field hospital [tnenc]", ["tnenc"])],

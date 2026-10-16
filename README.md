@@ -2,7 +2,7 @@
 
 This is a library of Osprey-style 3D battle maps, one page with a tab for each battle. Each battle is shown on real terrain, with unit blocks (infantry, cavalry, artillery, light troops), movement arrows, numbered events, narrative and tactics notes, confidence levels and sources, stepped through a timeline.
 
-- **Published library:** https://battle-atlas.johnna1203600.chatgpt.site (ChatGPT Site; includes Austerlitz, Rossbach and Cannae)
+- **Published library:** https://battle-atlas.johnna1203600.chatgpt.site (ChatGPT Site; includes Austerlitz, Rossbach and Cannae; Franklin is in the local build only)
 - **Add a battle:** run `/battle-map <battle name and year>` in Claude Code. The full research and verification method is in `~/.claude/commands/battle-map.md`.
 
 ## Layout
