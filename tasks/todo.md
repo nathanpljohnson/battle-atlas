@@ -34,4 +34,4 @@ Goal: a reusable system that turns a battle name into an Osprey-style 3D phase m
 - [x] 6 strict validation + check.png
 - [x] 7 independent review
 - [x] 8 library + browser test
-- [ ] 9 publish + report
+- [x] 9 publish + report
