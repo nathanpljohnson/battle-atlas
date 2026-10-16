@@ -1,0 +1,52 @@
+{
+ "fbb1899": {
+  "label": "Famous British Battles (1899), Battle of Azincourt",
+  "file": "sources/fbb1899.jpg",
+  "order": 1,
+  "fwd": [
+   [
+    50.49171041341177,
+    2.0730470680257738
+   ],
+   [
+    5.66836428828419e-06,
+    8.635393052967238e-05
+   ],
+   [
+    -5.5730742560697044e-05,
+    1.3155944438651061e-05
+   ]
+  ],
+  "inv": [
+   [
+    -159182.3715527749,
+    877723.1777508759
+   ],
+   [
+    2686.605987863487,
+    -17430.497715661546
+   ],
+   [
+    11352.466328407869,
+    1147.615336924553
+   ]
+  ],
+  "rmse_m": 175,
+  "m_per_px": 6.14,
+  "residuals_m": {
+   "Ruisseauville": 137,
+   "Canlers": 246,
+   "Azincourt": 89,
+   "Tramecourt": 244,
+   "Maisoncelle": 82
+  },
+  "loo_m": {
+   "Ruisseauville": 425,
+   "Canlers": 587,
+   "Azincourt": 182,
+   "Tramecourt": 505,
+   "Maisoncelle": 290
+  },
+  "flagged": []
+ }
+}

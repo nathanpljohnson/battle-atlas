@@ -1,0 +1,5 @@
+# Agincourt sources (fetched 2026-10-16)
+- nicolas1833.txt: N. Harris Nicolas, *History of the Battle of Agincourt* (2nd ed., 1833), archive.org historyofbattl00nico. Prints translated eyewitness passages: Jean Le Fèvre de Saint-Remy (with the English army) and Monstrelet, Elmham, Titus Livius and the Gesta Henrici Quinti. Used for the distances between the armies (p. 5506ff), the French wait until 9-10 a.m., stakes, and Le Fèvre's denial of the hidden-archer ambush.
+- wp_agincourt.wiki / wp_clean.txt: Wikipedia "Battle of Agincourt", built on Curry 2005, Barker 2005, Sumption 2015, Rogers 2008, Mortimer 2009, Keegan 1976 and Sutherland 2015. French order of battle (vanguard 4,800, main battle 3,000, wings 600 each, cavalry 800-1,200, raid on rear 200); numbers debate; the site debate.
+- frwp_azincourt.wiki: French Wikipedia "Bataille d'Azincourt" (French historiography: Contamine, Schnerb).
+- Maps: wp_map.png (Wikipedia schematic, no scale); fbb1899.jpg (*Famous British Battles*, 1899, north-up sketch; georeferenced on 5 villages, RMSE 175 m); fr_positions.jpg (E. Hardy's French plan, a dissenting placement further west of Azincourt).

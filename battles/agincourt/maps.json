@@ -1,0 +1,30 @@
+{
+ "fbb1899": {
+  "file": "sources/fbb1899.jpg",
+  "label": "Famous British Battles (1899), Battle of Azincourt",
+  "order": 1,
+  "gcps": {
+   "Ruisseauville": [
+    550,
+    230
+   ],
+   "Canlers": [
+    765,
+    287
+   ],
+   "Azincourt": [
+    545,
+    577
+   ],
+   "Tramecourt": [
+    802,
+    550
+   ],
+   "Maisoncelle": [
+    680,
+    875
+   ]
+  },
+  "note": "Outlying villages (Ambricourt, Planques, Avondance) dropped: the sketch compresses distances away from the field (leave-one-out errors 0.8-1.9 km)."
+ }
+}
