@@ -95,45 +95,45 @@ U("conrad", "us", "inf", "Conrad's brigade (Wagner)", "~1,500 infantry", 450,
   {0: (j(530, 640), 170, "F", 0.06), 2: (k(690, 560), 180, "R"), 3: (k(700, 480), 180, "R"), 5: (k(740, 440), 180, "L")},
   "East of the pike in the advanced position; most of Wagner's 670 missing came from Lane and Conrad [cox].", "high", {0: 1500, 2: 900, 5: 850}, ["wp", "cox", "jesp"], {2: [k(660, 720)]})
 U("opdycke", "us", "inf", "Opdycke's brigade (Wagner)", "~2,000 infantry", 330,
-  {0: (k(632, 460), 180, "C"), 3: (k(632, 520), 180, "L"), 4: (k(625, 650), 180, "F", -0.05), 8: (NORTH, 0, "C")},
+  {0: (k(632, 460), 180, "C"), 3: (k(632, 520), 180, "L"), 4: (k(625, 650), 180, "F", -0.05), 8: (j(560, 170), 0, "C")},
   "Refused to stop in the advanced position and halted about 200 yards north of the Carter House; its charge sealed the breach [wp] [abt].", "high", {0: 2000, 4: 1880, 6: 1830}, ["wp", "abt", "jesp", "cox"], {8: [j(560, 400), j(610, 270)]})
 # ---- Ruger's division (XXIII Corps), west of the pike
 U("strickland", "us", "inf", "Strickland's brigade (Ruger)", "~1,700 infantry", 420,
-  {0: (k(505, 575), 225, "F", -0.05), 3: (k(560, 520), 225, "R"), 4: (k(505, 575), 225, "F", -0.05), 8: (NORTH, 0, "C")},
+  {0: (k(505, 575), 225, "F", -0.05), 3: (k(560, 520), 225, "R"), 4: (k(505, 575), 225, "F", -0.05), 8: (j(600, 160), 0, "C")},
   "From the pike to Locust Grove; its front regiments were driven back to the retrenchment at the Carter House and recovered with Opdycke [wp] [cox].", "high", {0: 1700, 3: 1400, 4: 1250, 6: 1230}, ["jesp", "wp", "cox"], {8: [j(540, 400), j(610, 270)]})
 U("moore", "us", "inf", "Moore's brigade (Ruger)", "~1,600 infantry", 450,
-  {0: (k(360, 420), 225, "F", -0.05), 8: (NORTH, 0, "C")},
+  {0: (k(360, 420), 225, "F", -0.05), 8: (j(640, 170), 0, "C")},
   "Held the works from Locust Grove to the Carter's Creek Pike; Cox calls its missing trifling [cox] [jesp].", "high", {0: 1600, 5: 1520, 6: 1460}, ["jesp", "cox"], {8: [j(470, 420), j(610, 270)]})
 # ---- Reilly's division (XXIII Corps), east of the pike
 U("reilly", "us", "inf", "Reilly's brigade, front line", "~1,100 infantry", 260,
-  {0: (k(690, 745), 180, "F"), 3: (k(700, 680), 180, "R"), 4: (k(690, 745), 180, "F"), 8: (NORTH, 0, "C")},
+  {0: (k(690, 745), 180, "F"), 3: (k(700, 680), 180, "R"), 4: (k(690, 745), 180, "F"), 8: (j(680, 180), 0, "C")},
   "Held the pike to the cotton gin; the 100th Ohio was driven back in the breakthrough [wp] [jesp].", "high", {0: 1100, 3: 950, 6: 900}, ["jesp", "wp"], {8: [j(560, 400), j(610, 270)]})
 U("reilly_res", "us", "inf", "Reilly's reserve: 12th and 16th Kentucky, 175th Ohio", "~1,000 infantry", 220,
-  {0: (k(700, 640), 180, "L"), 3: (k(690, 660), 180, "F"), 8: (NORTH, 0, "C")},
+  {0: (k(700, 640), 180, "L"), 3: (k(690, 660), 180, "F"), 8: (j(720, 190), 0, "C")},
   "Stood in the second line and became the rally point that sealed the breach east of the pike; the 12th Kentucky carried Henry repeaters [wp].", "high", {0: 1000, 4: 920, 6: 900}, ["wp", "jesp"], {8: [j(560, 400), j(610, 270)]})
 U("casement", "us", "inf", "Casement's brigade (Reilly)", "~1,500 infantry", 300,
-  {0: (k(840, 765), 180, "F"), 8: (NORTH, 0, "C")},
+  {0: (k(840, 765), 180, "F"), 8: (j(580, 200), 0, "C")},
   "East of the cotton gin; its cross fire shattered Cleburne's and French's assaults [wp] [jesp].", "high", {0: 1500, 4: 1450, 6: 1430}, ["jesp", "wp", "cox"], {8: [j(600, 420), j(700, 292)]})
 U("stiles", "us", "inf", "Stiles's brigade (Reilly)", "~1,400 infantry", 380,
-  {0: (k(975, 690), 135, "F"), 8: (NORTH, 0, "C")},
+  {0: (k(975, 690), 135, "F"), 8: (j(620, 205), 0, "C")},
   "Anchored the left on the railroad cut and the river behind an osage-orange abatis; repulsed Loring twice [wp] [jesp].", "high", {0: 1400, 3: 1370, 6: 1340}, ["jesp", "wp"], {8: [j(640, 440), j(700, 292)]})
 # ---- Kimball's division (IV Corps), the right flank to the river
-U("grose", "us", "inf", "Grose's brigade (Kimball)", "~1,300 infantry", 380, {0: (j(415, 410), 250, "F"), 8: (NORTH, 0, "C")},
+U("grose", "us", "inf", "Grose's brigade (Kimball)", "~1,300 infantry", 380, {0: (j(415, 410), 250, "F"), 8: (j(660, 215), 0, "C")},
   "Left brigade of Kimball's division, joining Ruger near the Carter's Creek Pike [jesp] [cox].", "high", {0: 1300, 6: 1260}, ["jesp", "cox"], {8: [j(470, 330), j(610, 270)]})
-U("kirby", "us", "inf", "Kirby's brigade (Kimball)", "~1,300 infantry", 380, {0: (j(400, 335), 265, "F"), 8: (NORTH, 0, "C")},
+U("kirby", "us", "inf", "Kirby's brigade (Kimball)", "~1,300 infantry", 380, {0: (j(400, 335), 265, "F"), 8: (j(700, 225), 0, "C")},
   "Lightly engaged with Chalmers's dismounted cavalry [wp] [cox].", "high", {0: 1300, 6: 1290}, ["jesp", "wp", "cox"], {8: [j(470, 300), j(610, 270)]})
-U("whitaker", "us", "inf", "Whitaker's brigade (Kimball)", "~1,300 infantry", 380, {0: (j(395, 268), 270, "F"), 8: (NORTH, 0, "C")},
+U("whitaker", "us", "inf", "Whitaker's brigade (Kimball)", "~1,300 infantry", 380, {0: (j(395, 268), 270, "F"), 8: (j(540, 190), 0, "C")},
   "Covered the right back to the Harpeth below the town [jesp] [cox].", "high", {0: 1300, 6: 1290}, ["jesp", "cox"], {8: [j(480, 250), j(610, 270)]})
 # ---- North of the river
 U("wood", "us", "inf", "Wood's division (IV Corps)", "~4,500 infantry", 600, {0: (j(830, 390), 200, "L")},
   "Held north of the river to cover the crossings and Fort Granger [jesp] [fw].", "medium", {0: 4500}, ["jesp", "fw"])
 U("granger_art", "us", "art", "Fort Granger batteries", "8 guns", 120, {0: (B.geo["Fort Granger"], 200, "F")},
   "Enfiladed Stewart's corps from across the river [wp] [jesp].", "high", {0: 8}, ["wp", "jesp", "fw"])
-U("art_centre", "us", "art", "Batteries at the Carter House", "8 guns", 120, {0: (k(590, 645), 200, "F"), 3: (k(600, 600), 200, "R"), 4: (k(590, 645), 200, "F"), 8: (NORTH, 0, "C")},
+U("art_centre", "us", "art", "Batteries at the Carter House", "8 guns", 120, {0: (k(590, 645), 200, "F"), 3: (k(600, 600), 200, "R"), 4: (k(590, 645), 200, "F"), 8: (j(760, 200), 0, "C")},
   "Guns at the pike were briefly overrun and turned in the breakthrough [jesp] [hood].", "medium", {0: 8, 3: 6, 4: 6}, ["jesp", "hood", "cox"], {8: [j(560, 400), j(610, 270)]})
-U("art_gin", "us", "art", "6th Ohio Battery at the cotton gin", "4 guns", 80, {0: (k(740, 725), 190, "F"), 8: (NORTH, 0, "C")},
+U("art_gin", "us", "art", "6th Ohio Battery at the cotton gin", "4 guns", 80, {0: (k(740, 725), 190, "F"), 8: (j(600, 235), 0, "C")},
   "Fired from the salient that Reilly chose as his headquarters [cox] [jesp].", "medium", {0: 4}, ["jesp", "cox"], {8: [j(600, 420), j(700, 292)]})
-U("art_left", "us", "art", "Battery G 1st Ohio and Battery M 4th U.S.", "8 guns", 120, {0: (k(975, 560), 160, "F"), 8: (NORTH, 0, "C")},
+U("art_left", "us", "art", "Battery G 1st Ohio and Battery M 4th U.S.", "8 guns", 120, {0: (k(975, 560), 160, "F"), 8: (j(740, 230), 0, "C")},
   "Fired canister down the railroad cut on the far left [wp] [jesp].", "medium", {0: 8}, ["jesp", "wp"], {8: [j(640, 440), j(700, 292)]})
 # ---- Wilson's cavalry
 U("hatch", "us", "cav", "Hatch's cavalry division (Wilson)", "2,638 cavalry", 500,
