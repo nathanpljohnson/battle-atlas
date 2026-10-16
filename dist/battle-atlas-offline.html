@@ -1512,6 +1512,7 @@ const TYPE = {
   mg: { w: 0.05, d: 0.035, h: 0.02, per: 300, word: "Machine guns", text: "Automatic weapons whose sustained fire dominated open ground and made frontal attacks costly." },
 };
 const FORM = { X: "In camp", C: "Marching in column", L: "Deployed in line", F: "Firing", R: "Routing" };
+const formWord = (f) => f === "F" && G && !G.powder ? "Fighting" : FORM[f];
 const ARROW = {
   move: { w: 0.07, hw: 0.2, hl: 0.17, dash: false },
   charge: { w: 0.1, hw: 0.27, hl: 0.21, dash: false },
@@ -1739,6 +1740,7 @@ function softTexture(inner, outer) {
   g.fillStyle = gr; g.fillRect(0, 0, 64, 64); return new THREE.CanvasTexture(c);
 }
 const puffTex = softTexture("rgba(250,248,240,.95)", "rgba(235,232,222,.45)");
+const dustTex = softTexture("rgba(196,170,124,.85)", "rgba(176,150,108,.35)");
 const fogTex = softTexture("rgba(240,242,244,.9)", "rgba(236,238,240,.4)");
 function buildFog() {
   const { GW, GH, ELEV, maxE, MAPW, MAPH } = G;
@@ -1765,12 +1767,15 @@ function buildSmoke() {
     smoke.pool.push({ s, life: 0, max: 1, vx: 0, vz: 0, vy: 0, size: 0.06 });
   }
 }
-function emitSmoke(x, y, z, big) {
+// Powder smoke before the gunpowder era would be wrong: ancient and medieval battles raise dust instead.
+const hasPowder = () => !["ancient", "medieval"].includes(D.meta.era);
+function emitSmoke(x, y, z, big, dust) {
   const p = smoke.pool[smoke.next = (smoke.next + 1) % smoke.pool.length];
-  const w = ((D.meta.wind ?? 270) + 180) * Math.PI / 180, sp = 0.006 + Math.random() * 0.006;
-  p.s.position.set(x + (Math.random() - 0.5) * 0.03, y, z + (Math.random() - 0.5) * 0.03);
-  p.vx = Math.sin(w) * sp; p.vz = -Math.cos(w) * sp; p.vy = 0.002 + Math.random() * 0.003;
-  p.life = 0; p.max = 6 + Math.random() * 5; p.size = big ? 0.09 : 0.06; p.s.visible = true;
+  const w = ((D.meta.wind ?? 270) + 180) * Math.PI / 180, sp = (dust ? 0.003 : 0.006) + Math.random() * 0.006;
+  p.s.material.map = dust ? dustTex : puffTex;
+  p.s.position.set(x + (Math.random() - 0.5) * 0.03, dust ? y - 0.015 : y, z + (Math.random() - 0.5) * 0.03);
+  p.vx = Math.sin(w) * sp; p.vz = -Math.cos(w) * sp; p.vy = dust ? 0.0008 + Math.random() * 0.001 : 0.002 + Math.random() * 0.003;
+  p.life = 0; p.max = dust ? 3 + Math.random() * 3 : 6 + Math.random() * 5; p.size = big ? 0.09 : 0.06; p.s.visible = true;
 }
 
 // ---------- Contact: hostile blocks never share ground. Where they meet they press together, a routing
@@ -1808,8 +1813,8 @@ function contact(dt, fx) {
     b.B.cur = { ...b.B.cur, x: b.B.cur.x + ux * o * wb, z: b.B.cur.z + uz * o * wb };
     if (pass === 0 && fx && Math.random() < dt * 5) {
       const mx = (a.B.cur.x + b.B.cur.x) / 2, mz = (a.B.cur.z + b.B.cur.z) / 2;
-      emitClash(mx, hAt(mx, mz), mz);
-      if (Math.random() < 0.4) emitSmoke(mx, hAt(mx, mz) + 0.02, mz, false);
+      if (G.powder) { emitClash(mx, hAt(mx, mz), mz); if (Math.random() < 0.4) emitSmoke(mx, hAt(mx, mz) + 0.02, mz, false); }
+      else emitSmoke(mx, hAt(mx, mz) + 0.02, mz, false, true);
     }
   }
 }
@@ -2209,7 +2214,7 @@ function renderUnit(i) {
   const menHtml = mn != null ? `<div><div class="meta">≈${fmtN(mn)} ${unit}${m0 && mn < m0 ? ` of ${fmtN(m0)} at the start` : ""}</div><div class="menbar"><span style="width:${Math.min(100, mn / Math.max(m0, mn) * 100).toFixed(0)}%"></span></div></div>` : "";
   card.innerHTML = `<button class="close" aria-label="Close unit details">×</button>
     <div class="top"><span class="code" style="${codeStyle(U.side)}">${esc(U.code)}</span><img class="chip" alt="" src="${symbolCanvas(U.side, U.type, 52, 36).toDataURL()}"><div><div class="name">${esc(U.name)}</div><div class="meta">${esc(sideOf(U.side).name)} · ${esc(U.strength)}</div></div></div>
-    <div style="display:flex;gap:6px;flex-wrap:wrap"><span class="status ${U.form}">${FORM[U.form].toUpperCase()}</span>${U.conf ? `<span class="conf ${U.conf}">POSITION: ${U.conf.toUpperCase()} CONFIDENCE</span>` : ""}</div>
+    <div style="display:flex;gap:6px;flex-wrap:wrap"><span class="status ${U.form}">${formWord(U.form).toUpperCase()}</span>${U.conf ? `<span class="conf ${U.conf}">POSITION: ${U.conf.toUpperCase()} CONFIDENCE</span>` : ""}</div>
     ${menHtml}
     <p><b>${T.word}.</b> ${T.text}</p>${U.note ? `<p>${richText(U.note)}${cites(U.cite)}</p>` : (U.cite ? `<p class="srcline">Sources: ${cites(U.cite)}</p>` : "")}`;
   card.querySelector(".close").addEventListener("click", () => select(-1));
@@ -2236,7 +2241,7 @@ function renderStatic() {
   $("symbols").innerHTML = types.map((k) => { const [s, t] = k.split("|"); return `<img alt="" src="${symbolCanvas(s, t, 64, 32).toDataURL()}"><span>${esc(sideOf(s).name)} ${typeWord[t]}</span>`; }).join("") +
     Object.values(M.sides).map((sd) => `<svg class="arrowsw" viewBox="0 0 32 12"><path d="M1 6h22" stroke="${sd.arrow}" stroke-width="4"/><path d="M22 1l9 5-9 5z" fill="${sd.arrow}"/></svg><span>${esc(sd.name)} movement or charge</span>`).join("") +
     `<svg class="arrowsw" viewBox="0 0 32 12"><path d="M1 6h22" stroke="#999" stroke-width="4" stroke-dasharray="5 4"/><path d="M22 1l9 5-9 5z" fill="#999"/></svg><span>Dashed: retreat or rout</span>` +
-    `<svg class="arrowsw" viewBox="0 0 32 12"><path d="M1 6h24" stroke="#e8722e" stroke-width="2" stroke-dasharray="3 3"/><path d="M24 3l7 3-7 3z" fill="#e8722e"/></svg><span>Artillery or musket fire</span>` +
+    `<svg class="arrowsw" viewBox="0 0 32 12"><path d="M1 6h24" stroke="#e8722e" stroke-width="2" stroke-dasharray="3 3"/><path d="M24 3l7 3-7 3z" fill="#e8722e"/></svg><span>${G.powder ? "Artillery or musket fire" : "Missiles: arrows, slings and javelins"}</span>` +
     `<span class="evn">1</span><span>Numbered events, explained in the battle notes</span>`;
   $("oobs").innerHTML = M.belligerents.map((bel) => `<div class="key"><h3>${esc(bel.name)} · ${esc(bel.commander)}</h3><ul class="oob">${S.units.filter((U) => U.bel === bel).map((U) => { const m0 = menOf(U, 0); return `<li><button data-u="${U.idx}"><span class="code" style="${codeStyle(U.side)}">${esc(U.code)}</span><span class="nm">${esc(U.name)}<span class="st">${esc(U.strength)}${m0 && !/≈/.test(U.strength) ? ` · ≈${fmtN(m0)}` : ""}${U.conf && U.conf !== "high" ? ` · position ${U.conf} confidence` : ""}</span></span></button></li>`; }).join("")}</ul></div>`).join("");
   document.querySelectorAll(".oob button").forEach((b) => b.addEventListener("click", () => select(+b.dataset.u, true)));
@@ -2265,7 +2270,7 @@ function setOverlay(idx) {
 // ---------- Mount a battle
 function disposeScene() {
   if (!scene) return;
-  const keep = new Set([barrelGeo, puffTex, fogTex, flashTex, barrelMat, ...Object.values(texCache)]);
+  const keep = new Set([barrelGeo, puffTex, fogTex, flashTex, dustTex, barrelMat, ...Object.values(texCache)]);
   scene.traverse((o) => {
     if (o.geometry && !keep.has(o.geometry)) o.geometry.dispose();
     const ms = Array.isArray(o.material) ? o.material : o.material ? [o.material] : [];
@@ -2275,7 +2280,7 @@ function disposeScene() {
 }
 function mount(data, phase) {
   stopPlay(); disposeScene();
-  D = data; scene = new THREE.Scene(); G = setupTerrainMath(D.terrain);
+  D = data; scene = new THREE.Scene(); G = setupTerrainMath(D.terrain); G.powder = hasPowder();
   scene.add(hemi, sun, sun.target);
   const ext = Math.max(G.MAPW, G.MAPH) * 0.7;
   Object.assign(sun.shadow.camera, { left: -ext, right: ext, top: ext, bottom: -ext, near: 1, far: 90 }); sun.shadow.camera.updateProjectionMatrix();
@@ -2462,8 +2467,8 @@ function tick(dt, draw = true) {
       placeBlock(U, B, B.cur);
       if (B.v > 0.5) { sx += B.mesh.position.x; sy += B.mesh.position.y; sz += B.mesh.position.z; nv++; }
       if (fx && U.form === "F" && S.animT > 0.7 && B.v > 0.5) {
-        B.emit += dt * (U.type === "art" ? 0.8 : 0.32);
-        if (B.emit >= 1) { B.emit -= 1; emitSmoke(B.mesh.position.x + U.f[0] * 0.05, B.mesh.position.y + 0.02, B.mesh.position.z + U.f[1] * 0.05, U.type === "art"); }
+        B.emit += dt * (!G.powder ? 0.15 : U.type === "art" ? 0.8 : 0.32);
+        if (B.emit >= 1) { B.emit -= 1; emitSmoke(B.mesh.position.x + U.f[0] * 0.05, B.mesh.position.y + 0.02, B.mesh.position.z + U.f[1] * 0.05, U.type === "art", !G.powder); }
       }
     });
     if (nv) U.center.set(sx / nv, sy / nv, sz / nv);
@@ -2544,7 +2549,7 @@ window.__atlas = { S, smoke, get D() { return D; }, get G() { return G; }, step(
           if (!((b0[0] - a0[0]) * f0[0] + (b0[1] - a0[1]) * f0[1] > 0.03 && (b1[0] - a1[0]) * f0[0] + (b1[1] - a1[1]) * f0[1] < -0.03)) return;
           if (Math.min(...frames.map((F) => F[i].b[bi] && F[j].b[bj] ? Math.hypot(F[i].b[bi][0] - F[j].b[bj][0], F[i].b[bi][1] - F[j].b[bj][1]) : 9)) < 0.1) hits++;
         }));
-        if (hits >= 2) out.push(`${D.phases[p - 1].t}->${D.phases[p].t}: ${V.id} (${FORM[V.form]}) passes through ${U.id} (${FORM[U.form]})`);
+        if (hits >= 2) out.push(`${D.phases[p - 1].t}->${D.phases[p].t}: ${V.id} (${formWord(V.form)}) passes through ${U.id} (${formWord(U.form)})`);
       }));
     }
     return out;
