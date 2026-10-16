@@ -1,5 +1,5 @@
-Task: Battle Atlas v2. Franklin 1864 added and published.
-Completed: Franklin steps 1-9; artifact v2 published (https://claude.ai/artifact/Gbh8cmwciTY9jRqqHbMX54).
-Next: optional. Read Jacobson 2006/2011 and Sword directly for Franklin; redeploy the ChatGPT Site from the ChatGPT side; D3 review of Austerlitz, Rossbach and Cannae.
-Files written: battles/franklin/*, dist/*
+Task: Battle Atlas. Agincourt 1415 added, reviewed and published.
+Completed: Agincourt steps 1-9; the WOODS validator; era-aware effects; the pass-through fixes.
+Next: optional. Read Curry 2000, Rogers 2008 and Phillpotts 1984 for Agincourt; redeploy the ChatGPT Site; D3 reviews for Austerlitz, Rossbach and Cannae.
+Files written: battles/agincourt/*, tools/battlekit.py, tactics.json, library.json, dist/*
 Notes: see HANDOFF.md progress log.

@@ -260,6 +260,19 @@ class Battle:
                 k = u.key(i)
                 if k and any(in_poly(k[:2], L) for L in lakes) and not (u.d.get("onIce") or {}).get(i):
                     w.append(f"WATER {d['id']} phase {i}: centre is in a lake/pond")
+        # WOODS: a deployed line whose ends stand well inside a drawn wood
+        for u in self.units:
+            for p, k in u.d["keys"].items():
+                if k[3] not in "LF": continue
+                th = math.radians(k[2]); half = u.d["w"] / 2
+                ends = [mv(tuple(k[:2]), (k[2] + 90) % 360, half), mv(tuple(k[:2]), (k[2] + 270) % 360, half), tuple(k[:2])]
+                for wl, wo, rx, ry in self.woods:
+                    for e in ends:
+                        dy, dx = (e[0] - wl) * 111200, (e[1] - wo) * 111200 * math.cos(math.radians(wl))
+                        if (dx / max(rx - 60, 1)) ** 2 + (dy / max(ry - 60, 1)) ** 2 < 1:
+                            w.append(f"WOODS {u.d['id']}@{p}: frontage reaches more than 60 m into the wood at ({wl:.4f}, {wo:.4f})"); break
+                    else: continue
+                    break
         for i in range(n):
             arrows = self.phases[i]["arrows"]
             pts = [(u, u.key(i)) for u in self.units if u.key(i)]

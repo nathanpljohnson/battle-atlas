@@ -215,7 +215,7 @@ U("col2", "ru", "inf", "2nd Column (Langeron)", "Russian · Olsufiev's brigade, 
   "Delayed at dawn when Liechtenstein's cavalry crossed its line of march [wiki]. Only part of it escaped: Buxhöwden got through Aujezd with a few battalions, and about 4,000 men were taken prisoner in and around the village [stut].", "medium",
   {0: 7250, 2: 6800, 4: 6300, 6: 5800, 7: 4300, 8: 3250}, POS + ["oob", "stut"], via={7: [(870, 1075)], 8: [(988, 1074), (1010, 1135)]})
 U("kam", "ru", "inf", "Kamensky's brigade (Fanagoria Grenadiers, Ryazhsk)", "2nd Column · 2 regiments [md1846]", 500,
-  {0: (1010, 950, 230, "C"), 1: (1000, 930, 230, "C"), 2: (1030, 880, 30, "C"), 3: (1062, 890, 330, "F"), 4: (1080, 930, 340, "F"), 5: (1120, 950, 150, "R"), 6: (1145, 972, 130, "R"), 7: (1150, 975, 300, "L")},
+  {0: (1010, 950, 230, "C"), 1: (1000, 930, 230, "C"), 2: (1030, 880, 30, "C"), 3: (1062, 890, 330, "F"), 4: (1080, 930, 340, "F"), 5: (1120, 950, 150, "R"), 6: (1145, 972, 130, "R"), 7: (1112, 968, 300, "L")},
   "Turned back to fight for the southern Pratzen heights, where Thiébault and Morand drove it off [thi] [md1846]; it ended the day near Hostieradek [md1844].", "medium",
   {0: 4000, 3: 3400, 4: 2600, 5: 2200, 8: 2000}, ["wp23", "wp24", "oob", "md1846", "md1844", "thi"])
 U("col3", "ru", "inf", "3rd Column (Przhebyshevsky)", "Russian · 18 bns [stut], ≈7,700 [oob]", 800,
