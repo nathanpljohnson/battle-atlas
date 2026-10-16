@@ -39,7 +39,7 @@ B.meta = {
         "end": [{"label": "Romans", "n": 67500, "segs": [["rom", 1]]}, {"label": "Carthaginians", "n": 5700, "segs": [["car", 1]]}],
     },
     "sun": {"lat": 41.30, "decl": 17.5, "note": "August sun and wind are approximations; ancient local time and calendar conversion are uncertain."},
-    "wind": 315, "view": {"az": -0.65, "el": 0.72}, "unitScale": 2.0, "unitLabelDist": 11,
+    "wind": 315, "view": {"az": 0.0, "el": 1.0}, "unitScale": 1.45, "unitLabelDist": 11,
     "ground": {"season": "summer", "relief": 80},
     "strengthNote": "Polybius gives about 80,000 Roman infantry and just over 6,000 cavalry against a Carthaginian force of just over 40,000 infantry and 10,000 cavalry [poly]. The Roman headline includes 10,000 men left in camp; they are shown separately and captured after the field battle. Losses across moments are illustrative allocations of Polybius's totals, not a casualty return. Livy's lower Roman death total (48,200) is shown in the debate notes [livy].",
     "method": "This is a tactical reconstruction, not a surveyed battlefield map. Unit positions are placed on a modern terrain window around Canne della Battaglia using Polybius's relative order (Romans facing south; Carthaginians north; Carthaginian cavalry left/right and African flank reserves), checked against two schematic maps [poly] [wp] [roth]. The ancient Aufidus channel and exact battle location are unsettled; all coordinate-level claims are low confidence [mahaney]. Modern terrain is shown only as a relief context.",
@@ -73,10 +73,10 @@ U("r_cav_right", "rom", "cav", "Roman citizen cavalry", "2,400 cavalry", 560,
   {0: ((41.324, 16.088), 180, "L"), 2: ((41.318, 16.090), 180, "F"), 3: ((41.310, 16.081), 235, "R"), 5: ((41.302, 16.070), 235, "R")},
   "Roman cavalry on the right beside the river in Polybius's order; it was defeated by Hasdrubal's Spanish and Celtic horse [poly].", "medium", {0: 2400, 3: 700, 5: 180}, ["poly", "wp"], {3: [(41.315, 16.085)]})
 U("r_legions", "rom", "hi", "Roman legions", "25,000 heavy infantry", 1250,
-  {0: ((41.326, 16.112), 180, "C"), 1: ((41.322, 16.112), 180, "C"), 2: ((41.317, 16.112), 180, "C"), 3: ((41.311, 16.112), 180, "F"), 4: ((41.306, 16.112), 180, "F"), 5: ((41.304, 16.112), 180, "F")},
+  {0: ((41.326, 16.112), 180, "C"), 1: ((41.322, 16.112), 180, "C"), 2: ((41.317, 16.112), 180, "C"), 3: ((41.312, 16.117), 180, "F"), 4: ((41.3075, 16.122), 180, "F"), 5: ((41.306, 16.122), 180, "F")},
   "The Roman citizen heavy infantry, packed more deeply and closely than normal [poly].", "medium", {0: 25000, 3: 23800, 4: 19000, 5: 8000}, ["poly", "livy", "wp"])
 U("r_allies", "rom", "hi", "Italian allied infantry", "30,000 heavy infantry", 1350,
-  {0: ((41.326, 16.132), 180, "C"), 1: ((41.322, 16.132), 180, "C"), 2: ((41.317, 16.132), 180, "C"), 3: ((41.311, 16.132), 180, "F"), 4: ((41.306, 16.132), 180, "F"), 5: ((41.304, 16.132), 180, "F")},
+  {0: ((41.326, 16.132), 180, "C"), 1: ((41.322, 16.132), 180, "C"), 2: ((41.317, 16.132), 180, "C"), 3: ((41.308, 16.127), 180, "F"), 4: ((41.3035, 16.122), 180, "F"), 5: ((41.3025, 16.122), 180, "F")},
   "Allied heavy infantry forms the other half of the unusually deep Roman mass [poly].", "medium", {0: 30000, 3: 28500, 4: 22500, 5: 9000}, ["poly", "livy", "wp"])
 U("r_velites", "rom", "arc", "Roman light troops", "15,000 velites and light infantry", 900,
   {0: ((41.319, 16.122), 180, "L"), 1: ((41.315, 16.122), 180, "F"), 2: ((41.311, 16.122), 180, "R"), 4: ((41.305, 16.122), 180, "R")},
@@ -91,22 +91,22 @@ U("r_camp", "rom", "hi", "Roman camp garrison", "10,000 infantry", 1050,
 # Hannibal's army: Spanish/Celtic centre gives ground; African heavy infantry turns in;
 # the two cavalry wings are kept separate so their distinct roles remain visible.
 U("c_celtiber", "car", "hi", "Spanish and Celtic centre", "24,000 infantry", 1600,
-  {0: ((41.307, 16.122), 0, "C"), 1: ((41.311, 16.122), 0, "C"), 2: ((41.314, 16.122), 0, "C"), 3: ((41.310, 16.122), 0, "R"), 4: ((41.306, 16.122), 0, "F"), 5: ((41.305, 16.122), 0, "F")},
+  {0: ((41.307, 16.122), 0, "C"), 1: ((41.311, 16.122), 0, "C"), 2: ((41.314, 16.122), 0, "C"), 3: ((41.310, 16.122), 0, "R"), 4: ((41.300, 16.122), 0, "F"), 5: ((41.2995, 16.122), 0, "F")},
   "Spaniards and Celts formed the projecting centre. Polybius says it yielded under pressure, drawing the Roman mass between the Africans [poly].", "medium", {0: 24000, 3: 21000, 5: 20000}, ["poly", "roth", "wp"])
 U("c_africa_w", "car", "hi", "African heavy infantry, western wing", "4,000 infantry", 760,
-  {0: ((41.307, 16.100), 0, "L"), 2: ((41.307, 16.100), 0, "L"), 3: ((41.308, 16.105), 90, "F"), 4: ((41.306, 16.110), 90, "F"), 5: ((41.304, 16.112), 90, "F")},
+  {0: ((41.307, 16.100), 0, "L"), 2: ((41.307, 16.100), 0, "L"), 3: ((41.309, 16.104), 90, "F"), 4: ((41.307, 16.109), 90, "F"), 5: ((41.304, 16.113), 90, "F")},
   "African heavy infantry held back on the flank, then faced inward against the Roman side [poly].", "medium", {0: 4000, 5: 3500}, ["poly", "roth"])
 U("c_africa_e", "car", "hi", "African heavy infantry, eastern wing", "4,000 infantry", 760,
-  {0: ((41.307, 16.144), 0, "L"), 2: ((41.307, 16.144), 0, "L"), 3: ((41.308, 16.139), 270, "F"), 4: ((41.306, 16.134), 270, "F"), 5: ((41.304, 16.132), 270, "F")},
+  {0: ((41.307, 16.144), 0, "L"), 2: ((41.307, 16.144), 0, "L"), 3: ((41.309, 16.140), 270, "F"), 4: ((41.307, 16.135), 270, "F"), 5: ((41.304, 16.131), 270, "F")},
   "The second African wing mirrors the inward turn described by Polybius [poly].", "medium", {0: 4000, 5: 3500}, ["poly", "roth"])
 U("c_skirm", "car", "arc", "Slingers and javelin troops", "8,000 light troops", 850,
   {0: ((41.313, 16.122), 0, "L"), 1: ((41.316, 16.122), 0, "F"), 2: ((41.312, 16.122), 0, "R"), 3: ((41.308, 16.122), 0, "R")},
   "Hannibal sent slingers and javelin troops forward before the main line crossed and deployed [poly].", "medium", {0: 8000, 3: 6800}, ["poly", "wp"])
 U("c_hasdrubal", "car", "cav", "Spanish and Celtic cavalry (Hasdrubal)", "6,000 cavalry", 860,
-  {0: ((41.307, 16.081), 0, "L"), 1: ((41.313, 16.084), 0, "F"), 2: ((41.317, 16.088), 0, "F"), 3: ((41.314, 16.150), 85, "C"), 4: ((41.307, 16.127), 180, "F"), 5: ((41.304, 16.122), 180, "F")},
-  "Hasdrubal's cavalry defeated the Roman right, then rode across to decide the other cavalry fight and attack the infantry's rear [poly].", "high", {0: 6000, 5: 5800}, ["poly", "wp"], {3: [(41.320, 16.110), (41.318, 16.135)], 4: [(41.312, 16.140)]})
+  {0: ((41.307, 16.081), 0, "L"), 1: ((41.313, 16.084), 0, "F"), 2: ((41.317, 16.088), 0, "F"), 3: ((41.314, 16.150), 85, "C"), 4: ((41.313, 16.140), 180, "F"), 5: ((41.3095, 16.122), 180, "F")},
+  "Hasdrubal's cavalry defeated the Roman right, then rode across to decide the other cavalry fight and attack the infantry's rear [poly].", "high", {0: 6000, 5: 5800}, ["poly", "wp"], {3: [(41.320, 16.110), (41.318, 16.135)], 4: [(41.316, 16.142)], 5: [(41.315, 16.130)]})
 U("c_numidian", "car", "lc", "Numidian cavalry (Hanno)", "4,000 cavalry", 760,
-  {0: ((41.307, 16.165), 0, "L"), 1: ((41.313, 16.158), 0, "F"), 2: ((41.317, 16.154), 0, "F"), 3: ((41.316, 16.158), 0, "F"), 4: ((41.309, 16.146), 225, "C"), 5: ((41.304, 16.136), 225, "F")},
+  {0: ((41.307, 16.165), 0, "L"), 1: ((41.313, 16.158), 0, "F"), 2: ((41.317, 16.154), 0, "F"), 3: ((41.316, 16.158), 0, "F"), 4: ((41.312, 16.148), 225, "C"), 5: ((41.307, 16.170), 110, "F")},
   "Numidians kept the allied cavalry occupied; Hasdrubal then joined them and left them to pursue the fugitives [poly].", "high", {0: 4000, 5: 3800}, ["poly", "wp"])
 
 B.commander("varro", "rom", "Varro", {0: (41.329, 16.120), 2: (41.321, 16.120), 4: (41.311, 16.120)}, "Command alternated by day; Polybius makes Varro commander on the battle morning [poly].")
@@ -134,16 +134,16 @@ B.phase("09:00", "The centre yields", "The Roman mass presses into the crescent"
   ("Using dead ground", "A formation can conceal its intended shape until the enemy's commitment makes a response too late.", "dead-ground"), (41.311, 16.122), 5.0,
   arrows=[B.arrow("rom", "move", (41.317, 16.112), (41.310, 16.112)), B.arrow("rom", "move", (41.317, 16.132), (41.310, 16.132)), B.arrow("car", "retreat", (41.314, 16.122), (41.310, 16.122))],
   events=[((41.310, 16.122), "The centre's controlled withdrawal draws the Roman mass forward [poly]", ["poly"])], conf="medium", cite=["poly", "roth"])
-B.phase("10:00", "Flanks turn inward", "The trap becomes an encirclement",
-  "The African infantry turns against both Roman flanks. Hasdrubal has crossed to the other cavalry wing; the allied horse breaks, leaving Carthaginian cavalry free to strike the rear [poly].",
+B.phase("10:00", "Flanks close", "The Roman mass is pinched from both sides",
+  "First the Africans turn inward against both exposed Roman flanks. Hasdrubal has crossed to the other cavalry wing, but the rear is still open: this moment is the pinch, not yet the completed ring [poly].",
   ("Envelopment", "A force attacks front and flank together, denying the enemy room to face every threat.", "envelopment"), (41.307, 16.122), 4.2,
-  arrows=[B.arrow("car", "charge", (41.308, 16.105), (41.306, 16.112)), B.arrow("car", "charge", (41.308, 16.139), (41.306, 16.132)), B.arrow("car", "charge", (41.314, 16.150), (41.307, 16.127))],
-  events=[((41.306, 16.112), "African infantry attacks the Roman flank [poly]", ["poly"]), ((41.312, 16.140), "Hasdrubal reaches the second cavalry fight [poly]", ["poly"])], conf="medium", cite=["poly"])
-B.phase("11:00", "The ring closes", "No room remains to deploy",
-  "Carthaginian cavalry attacks from behind while the Africans hold the flanks. Polybius describes Romans turning singly or in small groups to meet attacks from every direction; their compressed depth now prevents orderly manoeuvre [poly].",
-  ("Rear attack", "A force that has won a wing can turn mobility into a rear attack before the enemy can re-form.", "rearguard"), (41.304, 16.122), 3.2,
-  arrows=[B.arrow("car", "charge", (41.307, 16.127), (41.304, 16.122)), B.arrow("car", "charge", (41.309, 16.146), (41.304, 16.136))],
-  events=[((41.305, 16.122), "Paullus is killed in the infantry struggle [poly]", ["poly"])], conf="medium",
+  arrows=[B.arrow("car", "charge", (41.309, 16.104), (41.307, 16.109)), B.arrow("car", "charge", (41.309, 16.140), (41.307, 16.135)), B.arrow("car", "charge", (41.314, 16.150), (41.313, 16.140))],
+  events=[((41.307, 16.109), "Western African wing turns into the Roman flank [poly]", ["poly"]), ((41.307, 16.135), "Eastern African wing turns into the other flank [poly]", ["poly"]), ((41.313, 16.140), "Hasdrubal wins the second cavalry fight and can ride behind the Roman mass [poly]", ["poly"])], conf="medium", cite=["poly"])
+B.phase("11:00", "Cavalry seals the rear", "The ring closes behind the Romans",
+  "Only now does Hasdrubal's cavalry arrive behind the Roman mass. The Africans keep both flanks pinned while cavalry closes the northern exit and the rallied Spanish and Celtic centre holds the front, while the Numidians pursue the broken allied horse. Polybius describes Romans turning in small groups to meet attacks from every direction [poly].",
+  ("Rear attack", "A force that has won a wing can turn mobility into a rear attack before the enemy can re-form.", "rearguard"), (41.305, 16.122), 5.0,
+  arrows=[B.arrow("car", "charge", (41.307, 16.109), (41.304, 16.113)), B.arrow("car", "charge", (41.307, 16.135), (41.304, 16.131)), B.arrow("car", "charge", (41.313, 16.140), (41.315, 16.130), (41.3095, 16.122)), B.arrow("car", "move", (41.312, 16.148), (41.307, 16.170))],
+  events=[((41.3095, 16.122), "Hasdrubal's cavalry seals the Roman rear [poly]", ["poly"]), ((41.304, 16.122), "The trapped Roman mass has no room to turn or deploy [poly]", ["poly"]), ((41.305, 16.122), "Paullus is killed in the infantry struggle [poly]", ["poly"])], conf="medium",
   debate="The sequence of the final slaughter is much clearer than its duration. This model uses hourly moments only to make the tactical relationship legible, not to assert an exact stopwatch chronology [poly] [livy].", cite=["poly", "livy"])
 B.phase("12:00", "Destruction and flight", "The Roman army collapses",
   "Polybius reports about 70,000 Roman dead, 10,000 captives not in the main battle, and only about 3,000 infantry escaping the field; he gives 5,700 Carthaginian dead. Livy gives a much lower Roman death total. The strength chart follows Polybius while preserving this disagreement [poly] [livy].",
