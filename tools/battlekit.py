@@ -10,7 +10,7 @@ Positions can be written the way historians describe them:
 v2 additions
     B.source(id, label, url=None, note=None, kind=None)      citable source; cite with cite=[ids] or inline "[id]" in text
     B.unit(..., cite=[ids], men={phase: n})                    strength over time (carried forward)
-    unit.at(phase, pos, facing, form, men=None, via=[pos...])  via = route waypoints into this position
+    unit.at(phase, pos, facing, form, men=None, via=[pos...], bend=0)  via = route waypoints; bend bows the line (+ convex toward facing, - concave), as a fraction of frontage
     B.phase(..., day=1, fog=0.0, cite=[ids], tactic=(name, body, tactic_id))
     B.crossing(name, pos)                                       bridges / fords / causeways for the river-crossing check
     B.overlay(id, label, file, kind="period", opacity=0.85)     georeferenced map drapes (see tools/georef.py --overlays)
@@ -80,9 +80,9 @@ class Unit:
         if men is not None:
             self.d["men"] = {0: men} if isinstance(men, int) else dict(men)
 
-    def at(self, phase, pos, facing, form="L", men=None, via=None):
+    def at(self, phase, pos, facing, form="L", men=None, via=None, bend=0):
         lat, lon = self.b.pos(pos)
-        self.d["keys"][phase] = [round(lat, 5), round(lon, 5), facing, form]
+        self.d["keys"][phase] = [round(lat, 5), round(lon, 5), facing, form] + ([round(bend, 3)] if bend else [])
         if men is not None:
             self.d.setdefault("men", {})[phase] = men
         if via:
@@ -194,7 +194,7 @@ class Battle:
             check_cites(d["id"], d.get("cite"))
             if src_ids and not d.get("cite"): warns.append(f"{d['id']}: no citation")
             if "men" not in d: warns.append(f"{d['id']}: no strength (men)")
-            for p, (la, lo, f, form) in d["keys"].items():
+            for p, (la, lo, f, form, *_) in d["keys"].items():
                 if not 0 <= p < n: errs.append(f"{d['id']}: phase {p} out of range")
                 if form not in FORMS: errs.append(f"{d['id']}@{p}: bad form {form}")
                 if not inside(la, lo): errs.append(f"{d['id']}@{p}: outside map")
@@ -334,7 +334,7 @@ class Battle:
                 x, y = px(*a["p"][-1]); d.ellipse([x - 3, y - 3, x + 3, y + 3], fill=(255, 140, 0))
             for u in self.units:
                 k = u.key(i)
-                la, lo, f, form = k; x, y = px(la, lo)
+                la, lo, f, form = k[:4]; x, y = px(la, lo)
                 if i in u.d.get("via", {}):
                     prev = u.key(i - 1) if i > 0 else k
                     d.line([px(*prev[:2])] + [px(*p) for p in u.d["via"][i]] + [px(la, lo)], fill=(140, 140, 140), width=1)

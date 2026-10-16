@@ -63,8 +63,8 @@ B.camps = [
 
 def U(uid, side, typ, name, strength, frontage, keys, note, conf, men, cite, via=None):
     u = B.unit(uid, side, typ, name, strength, frontage, note=note, conf=conf, men=men, cite=cite)
-    for phase, (pos, facing, form) in keys.items():
-        u.at(phase, pos, facing, form, via=(via or {}).get(phase))
+    for phase, (pos, facing, form, *bend) in keys.items():
+        u.at(phase, pos, facing, form, via=(via or {}).get(phase), bend=bend[0] if bend else 0)
     return u
 
 # Roman line: Polybius describes an unusually deep, compressed centre, with cavalry at
@@ -73,10 +73,10 @@ U("r_cav_right", "rom", "cav", "Roman citizen cavalry", "2,400 cavalry", 560,
   {0: ((41.324, 16.088), 180, "L"), 2: ((41.318, 16.090), 180, "F"), 3: ((41.310, 16.081), 235, "R"), 5: ((41.302, 16.070), 235, "R")},
   "Roman cavalry on the right beside the river in Polybius's order; it was defeated by Hasdrubal's Spanish and Celtic horse [poly].", "medium", {0: 2400, 3: 700, 5: 180}, ["poly", "wp"], {3: [(41.315, 16.085)]})
 U("r_legions", "rom", "hi", "Roman legions", "25,000 heavy infantry", 1250,
-  {0: ((41.326, 16.112), 180, "C"), 1: ((41.322, 16.112), 180, "C"), 2: ((41.317, 16.112), 180, "C"), 3: ((41.312, 16.117), 180, "F"), 4: ((41.3075, 16.122), 180, "F"), 5: ((41.306, 16.122), 180, "F")},
+  {0: ((41.326, 16.112), 180, "L"), 1: ((41.322, 16.112), 180, "L"), 2: ((41.317, 16.112), 180, "L"), 3: ((41.312, 16.117), 180, "F"), 4: ((41.3075, 16.122), 180, "F"), 5: ((41.306, 16.122), 180, "F")},
   "The Roman citizen heavy infantry, packed more deeply and closely than normal [poly].", "medium", {0: 25000, 3: 23800, 4: 19000, 5: 8000}, ["poly", "livy", "wp"])
 U("r_allies", "rom", "hi", "Italian allied infantry", "30,000 heavy infantry", 1350,
-  {0: ((41.326, 16.132), 180, "C"), 1: ((41.322, 16.132), 180, "C"), 2: ((41.317, 16.132), 180, "C"), 3: ((41.308, 16.127), 180, "F"), 4: ((41.3035, 16.122), 180, "F"), 5: ((41.3025, 16.122), 180, "F")},
+  {0: ((41.326, 16.132), 180, "L"), 1: ((41.322, 16.132), 180, "L"), 2: ((41.317, 16.132), 180, "L"), 3: ((41.308, 16.127), 180, "F"), 4: ((41.3035, 16.122), 180, "F", 0.1), 5: ((41.3025, 16.122), 180, "F", 0.12)},
   "Allied heavy infantry forms the other half of the unusually deep Roman mass [poly].", "medium", {0: 30000, 3: 28500, 4: 22500, 5: 9000}, ["poly", "livy", "wp"])
 U("r_velites", "rom", "arc", "Roman light troops", "15,000 velites and light infantry", 900,
   {0: ((41.319, 16.122), 180, "L"), 1: ((41.315, 16.122), 180, "F"), 2: ((41.311, 16.122), 180, "R"), 4: ((41.305, 16.122), 180, "R")},
@@ -91,7 +91,7 @@ U("r_camp", "rom", "hi", "Roman camp garrison", "10,000 infantry", 1050,
 # Hannibal's army: Spanish/Celtic centre gives ground; African heavy infantry turns in;
 # the two cavalry wings are kept separate so their distinct roles remain visible.
 U("c_celtiber", "car", "hi", "Spanish and Celtic centre", "24,000 infantry", 1600,
-  {0: ((41.307, 16.122), 0, "C"), 1: ((41.311, 16.122), 0, "C"), 2: ((41.314, 16.122), 0, "C"), 3: ((41.310, 16.122), 0, "R"), 4: ((41.300, 16.122), 0, "F"), 5: ((41.2995, 16.122), 0, "F")},
+  {0: ((41.307, 16.122), 0, "L", 0.14), 1: ((41.311, 16.122), 0, "L", 0.14), 2: ((41.314, 16.122), 0, "F", 0.12), 3: ((41.310, 16.122), 0, "F", 0.02), 4: ((41.300, 16.122), 0, "F", -0.12), 5: ((41.2995, 16.122), 0, "F", -0.14)},
   "Spaniards and Celts formed the projecting centre. Polybius says it yielded under pressure, drawing the Roman mass between the Africans [poly].", "medium", {0: 24000, 3: 21000, 5: 20000}, ["poly", "roth", "wp"])
 U("c_africa_w", "car", "hi", "African heavy infantry, western wing", "4,000 infantry", 760,
   {0: ((41.307, 16.100), 0, "L"), 2: ((41.307, 16.100), 0, "L"), 3: ((41.309, 16.104), 90, "F"), 4: ((41.307, 16.109), 90, "F"), 5: ((41.304, 16.113), 90, "F")},

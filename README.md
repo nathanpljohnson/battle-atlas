@@ -34,7 +34,7 @@ dist/                     the built site: publish index.html with battles/*.json
   - `method`, `sources [{label, url, note}]`, `notes`
 - `terrain`: `{w, h, bbox, exag, b64}`, where `b64` holds uint16 little-endian values of (elevation − min) × 10, rows north first.
 - `phases []`: `{t, label, title, text, tactic: [heading, body], arrows: [{s, k: move|charge|retreat|fire, p: [[lat, lon], ...]}], events: [[lat, lon, text]], focus: [lat, lon, dist_km], conf?, debate?}`
-- `units []`: `{id, side, type: inf|gd|cav|lc|art|lt, name, strength, w (frontage m), keys: {phase: [lat, lon, facing°, form X|C|L|F|R]}, note, conf?, lines?, blocks?, code?}`
+- `units []`: `{id, side, type: inf|gd|cav|lc|art|lt, name, strength, w (frontage m), keys: {phase: [lat, lon, facing°, form X|C|L|F|R, bend?]} (bend bows the line: + convex toward facing, - concave; moves keep formation unless a C key or a ride over 2.5 km makes them snake), note, conf?, lines?, blocks?, code?}`
   - Keys carry forward: a phase with no entry keeps the previous one.
   - The number of blocks is read from `strength`: "N bns", "N sqns" or "N guns".
 - `hq []`: `{id, side, name, keys: {phase: [lat, lon]}, note}`

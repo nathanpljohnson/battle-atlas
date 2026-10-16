@@ -731,7 +731,7 @@ function buildUnits() {
 const keyAt = (u, p) => { for (let j = p; j >= 0; j--) if (u.keys[j]) return u.keys[j]; return null; };
 // Blocks of a unit for a key; nvis visible, the rest stacked on the last visible block (and faded out).
 function layout(U, key, nvis) {
-  const [lat, lon, face, form] = key;
+  const [lat, lon, face, form, bend = 0] = key;
   const [cx, cz] = xz(lat, lon);
   const th = face * Math.PI / 180, f = [Math.sin(th), -Math.cos(th)], r = [Math.cos(th), Math.sin(th)];
   const T = TYPE[U.type], W = U.w / 1000, out = [], SC = G.SC, n = nvis;
@@ -742,6 +742,9 @@ function layout(U, key, nvis) {
     else if (form === "R") { const ang = hash(U.idx * 31 + kk) * Math.PI * 2, rad = (0.1 + 0.045 * n) * Math.sqrt(hash(U.idx * 17 + kk * 7 + 3)); a = Math.cos(ang) * rad; b = Math.sin(ang) * rad * 1.4; rot = -th + (hash(U.idx + kk * 13) - 0.5) * 2.6; sx = 0.7; }
     else if (form === "L" && U.lines === 2 && n > 1) { const per = Math.ceil(n / 2), row = kk < per ? 0 : 1, k2 = row ? kk - per : kk, nn = row ? n - per : per; const sp = Math.max(T.w * SC * 1.15, W / per); a = (k2 - (nn - 1) / 2) * sp + (row ? sp / 2 : 0); b = row ? -T.d * SC * 3.2 : 0; }
     else { const sp = Math.max(T.w * SC * 1.15, W / n) * (U.type === "lt" ? 1.6 : 1); a = (kk - (n - 1) / 2) * sp; if (U.type === "lt") b = kk % 2 ? 0.035 : -0.035; }
+    // Bend: positive bows the line toward its facing (convex), negative sags it back (concave).
+    if (bend && form !== "C" && form !== "R") { const span = Math.max(W, T.w * SC * n * 1.15), u = 2 * a / span; b += bend * span * (1 - u * u); rot -= Math.atan(-4 * bend * u); }
+    if (form === "F") { b += (hash(U.idx * 53 + kk * 11) - 0.5) * T.d * SC * 1.4; rot += (hash(U.idx * 71 + kk * 5) - 0.5) * 0.14; }
     out.push({ x: cx + r[0] * a + f[0] * b, z: cz + r[1] * a + f[1] * b, rot, sx });
   }
   return { blocks: out, f, form, c: [cx, cz] };
@@ -899,10 +902,11 @@ function setPhase(p, animate = true) {
       if (k[3] === "R" || fromForm === "R") mode = "scatter";
       else {
         path = S.phase > prev ? movePath(U, S.phase, fromC, L.c) : movePath({ ...U, via: null, bel: null }, S.phase, fromC, L.c);
-        if (path.L > 0.6 || path.pts.length > 2 || k[3] === "C" || fromForm === "C") mode = "snake";
+        // Lines advance or give ground in formation; only march columns and long rides file into a snake.
+        mode = k[3] === "C" || fromForm === "C" || path.L > 2.5 ? "snake" : "line";
       }
     }
-    U.tr = { mode, path, gap: TYPE[U.type].d * G.SC * 2.1 };
+    U.tr = { mode, path, gap: TYPE[U.type].d * G.SC * 2.1, fromC, toC: L.c };
     U.blocks.forEach((B, i) => { const to = L.blocks[i]; B.from = B.cur ? { ...B.cur } : { ...to }; B.to = to; B.vt = i < nvis ? 1 : 0; if (!B.cur || instant) { B.cur = { ...to }; B.v = B.vt; } });
     U.lastKey = k; U.lastC = L.c;
   }
@@ -1291,6 +1295,9 @@ function tick(dt, draw = true) {
         const w0 = 1 - smooth(0, 0.16, S.animT), w1 = smooth(0.82, 1, S.animT);
         const a = { x: snake.x + (B.from.x - snake.x) * w0, z: snake.z + (B.from.z - snake.z) * w0, rot: angLerp(snake.rot, B.from.rot, w0), sx: snake.sx + (B.from.sx - snake.sx) * w0 };
         B.cur = { x: a.x + (B.to.x - a.x) * w1, z: a.z + (B.to.z - a.z) * w1, rot: angLerp(a.rot, B.to.rot, w1), sx: a.sx + (B.to.sx - a.sx) * w1 };
+      } else if (S.animT < 1 && tr && tr.mode === "line") {
+        const q = onPath(tr.path, e * tr.path.L), ox = (B.from.x - tr.fromC[0]) + ((B.to.x - tr.toC[0]) - (B.from.x - tr.fromC[0])) * e, oz = (B.from.z - tr.fromC[1]) + ((B.to.z - tr.toC[1]) - (B.from.z - tr.fromC[1])) * e;
+        B.cur = { x: q.x + ox, z: q.z + oz, rot: angLerp(B.from.rot, B.to.rot, e), sx: B.from.sx + (B.to.sx - B.from.sx) * e };
       } else if (S.animT < 1) {
         const a = B.from, b = B.to;
         B.cur = { x: a.x + (b.x - a.x) * e, z: a.z + (b.z - a.z) * e, rot: angLerp(a.rot, b.rot, e), sx: a.sx + (b.sx - a.sx) * e };
