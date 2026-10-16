@@ -143,8 +143,8 @@ U("hatch", "us", "cav", "Hatch's cavalry division (Wilson)", "2,638 cavalry", 50
   {0: (j(1050, 460), 180, "C"), 1: (j(1030, 800), 160, "F"), 6: (j(1060, 930), 160, "F"), 7: (j(1000, 760), 340, "L")},
   "Came south from the Brentwood road and charged Jackson's dismounted troopers; Hatch says they were over the river by 7 p.m. [wp] [abt] [or].", "medium", {0: 2638, 6: 2610}, ["wp", "abt", "cox"], {1: [j(1060, 640)]})
 U("croxton", "us", "cav", "Croxton's brigade (Wilson)", "~1,500 cavalry", 350,
-  {0: (j(850, 580), 120, "L"), 1: (j(940, 840), 120, "F"), 7: (j(900, 720), 340, "L")},
-  "Struck Forrest's flank with Spencer carbines [wp].", "medium", {0: 1500, 6: 1480}, ["wp", "jesp"])
+  {0: (j(850, 580), 120, "L"), 1: (j(1070, 860), 150, "F"), 7: (j(940, 690), 340, "L")},
+  "Struck the flank of Jackson's division north of the river with Spencer carbines [wp] [or].", "medium", {0: 1500, 6: 1480}, ["wp", "jesp", "or"], {1: [j(990, 700)]})
 
 # ---- Confederate: Stewart's corps, east of the pike
 def CS(uid, name, men, p0, p1, p3, p4, face, note, conf="medium", cite=("jesp", "wp"), loss=(), extra=None):

@@ -47,6 +47,7 @@ dist/                     the built site: publish index.html with battles/*.json
 ## Testing
 - **Preview server:** the `battle-library` entry in `~/.claude/launch.json` serves `dist/` on port 8791. Open `/preview.html#<id>`.
 - **Portable release:** `dist/battle-atlas-offline.html` is a self-contained file. It embeds the Austerlitz, Rossbach and Cannae data, the available historical-map overlays, and the pinned Three.js 0.147 runtime; it can be copied or opened without sibling `battles/` files or a network connection.
+- **Pass-through check:** load `/preview.html#<id>.p0`, then run `window.__atlas.passThrough()` in the console. It lists enemy units that end up behind each other after a move. Fix each one in the data, or confirm it is a real overrun. On screen, enemy blocks press against each other at contact (a routing unit gets shoved aside) with orange flashes, so they never share ground.
 - **Hash changes need a reload:** changing only the `#id` part of the URL doesn't reload the page, so reload after switching battles that way.
 - **Hidden panes look frozen:** a hidden browser pane throttles animation to about 1 frame per second, so wait before taking screenshots.
 - **Python SSL is broken on Nathan's machine.** All network calls use `curl` through `subprocess`.
