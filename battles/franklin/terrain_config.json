@@ -746,5 +746,5 @@
   }
  ],
  "bumps": [],
- "notes": "Removed auto mask 'water 12 m below surrounding ground' (35.886-35.902, -86.846..-86.830): it is the Harpeth River channel polygon, not a flooded pit. Kept: OSM quarry and its flooded pit west of Carter's Creek Pike (modern, outside the main action). I-65 embankments (east edge) left: outside the action, minor. Modern ponds left: surface water only."
+ "notes": "Removed auto mask 'water 12 m below surrounding ground' (35.886-35.902, -86.846..-86.830): it is a modern golf-course water hazard along a creek valley; filling it would erase the valley, and the water itself is not drawn. Kept: OSM quarry and its flooded pit west of Carter's Creek Pike (modern, outside the main action). I-65 embankments (east edge) left: outside the action, minor. Modern ponds left: surface water only."
 }
