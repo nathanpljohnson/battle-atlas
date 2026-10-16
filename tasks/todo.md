@@ -24,3 +24,14 @@ Goal: a reusable system that turns a battle name into an Osprey-style 3D phase m
 
 ## Follow-ups (optional)
 - [ ] Phone-width check of Austerlitz (desktop verified; layout shared with Rossbach, which passed at 375px)
+
+## Franklin 1864 (added 2026-10-16)
+- [ ] 1 Sources: narratives, maps, scholarly/official (OR, Cox, Jacobson/Sword)
+- [ ] 2 brief.md
+- [ ] 3 places (gazetteer) + map matching
+- [ ] 4 terrain
+- [ ] 5 scenario.py
+- [ ] 6 strict validation + check.png
+- [ ] 7 independent review
+- [ ] 8 library + browser test
+- [ ] 9 publish + report
