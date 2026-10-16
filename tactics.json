@@ -113,5 +113,30 @@
   "name": "Exposed advanced position",
   "era": "all",
   "summary": "A detachment left in front of the main line can give warning, but if it is caught there it masks the main line's fire as it falls back."
+ },
+ "defensive-waiting": {
+  "name": "Waiting on the defensive",
+  "era": "medieval",
+  "summary": "Holding a strong position and letting the enemy come, because the side that advances on foot against a standing enemy tends to lose."
+ },
+ "provoke-attack": {
+  "name": "Provoking the attack",
+  "era": "all",
+  "summary": "Moving close enough to hurt a waiting enemy, so that he must either attack on your terms or suffer."
+ },
+ "field-obstacles": {
+  "name": "Field obstacles",
+  "era": "all",
+  "summary": "Stakes, pits, carts or hedges in front of missile troops break a mounted charge and leave the riders exposed."
+ },
+ "narrow-front": {
+  "name": "Crowding on a narrow front",
+  "era": "all",
+  "summary": "Too many men on too little ground cannot use their numbers; the press itself disorders and kills them."
+ },
+ "rear-threat": {
+  "name": "A threat to the rear",
+  "era": "all",
+  "summary": "A raid or apparent attack behind the line forces a commander to divide his attention or take drastic measures."
  }
 }
