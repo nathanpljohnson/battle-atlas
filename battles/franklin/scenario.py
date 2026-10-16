@@ -90,13 +90,13 @@ NORTH = j(640, 210)  # across the Harpeth after the withdrawal
 # ---- Union: Wagner's division (IV Corps): two brigades forward, Opdycke in reserve
 U("lane", "us", "inf", "Lane's brigade (Wagner)", "~1,500 infantry", 450,
   {0: (j(432, 598), 200, "F", 0.08), 2: (k(640, 560), 180, "R"), 3: (k(650, 470), 180, "R"), 5: (k(700, 430), 180, "L")},
-  "Left forward on the rise half a mile south of the works; collapsed when the Confederate line overlapped it [wp] [cox].", "high", {0: 1500, 2: 950, 5: 900}, ["wp", "cox", "jesp"], {2: [k(625, 700)]})
+  "Left forward on the rise half a mile south of the works; collapsed when the Confederate line overlapped it [wp] [cox].", "high", {0: 1500, 2: 980}, ["wp", "cox", "jesp"], {2: [k(625, 700)]})
 U("conrad", "us", "inf", "Conrad's brigade (Wagner)", "~1,500 infantry", 450,
   {0: (j(530, 640), 170, "F", 0.06), 2: (k(690, 560), 180, "R"), 3: (k(700, 480), 180, "R"), 5: (k(740, 440), 180, "L")},
-  "East of the pike in the advanced position; most of Wagner's 670 missing came from Lane and Conrad [cox].", "high", {0: 1500, 2: 900, 5: 850}, ["wp", "cox", "jesp"], {2: [k(660, 720)]})
+  "East of the pike in the advanced position; most of Wagner's 670 missing came from Lane and Conrad [cox].", "high", {0: 1500, 2: 940}, ["wp", "cox", "jesp"], {2: [k(660, 720)]})
 U("opdycke", "us", "inf", "Opdycke's brigade (Wagner)", "~2,000 infantry", 330,
   {0: (k(632, 460), 180, "C"), 3: (k(632, 520), 180, "L"), 4: (k(625, 650), 180, "F", -0.05), 8: (j(560, 170), 0, "C")},
-  "Refused to stop in the advanced position and halted about 200 yards north of the Carter House; its charge sealed the breach [wp] [abt].", "high", {0: 2000, 4: 1880, 6: 1830}, ["wp", "abt", "jesp", "cox"], {8: [j(560, 400), j(610, 270)]})
+  "Refused to stop in the advanced position and halted about 200 yards north of the Carter House; its charge sealed the breach [wp] [abt].", "high", {0: 2000, 4: 1880, 6: 1840}, ["wp", "abt", "jesp", "cox"], {8: [j(560, 400), j(610, 270)]})
 # ---- Ruger's division (XXIII Corps), west of the pike
 U("strickland", "us", "inf", "Strickland's brigade (Ruger)", "~1,700 infantry", 420,
   {0: (k(505, 575), 225, "F", -0.05), 3: (k(560, 520), 225, "R"), 4: (k(505, 575), 225, "F", -0.05), 8: (j(600, 160), 0, "C")},
@@ -107,16 +107,16 @@ U("moore", "us", "inf", "Moore's brigade (Ruger)", "~1,600 infantry", 450,
 # ---- Reilly's division (XXIII Corps), east of the pike
 U("reilly", "us", "inf", "Reilly's brigade, front line", "~1,100 infantry", 260,
   {0: (k(690, 745), 180, "F"), 3: (k(700, 680), 180, "R"), 4: (k(690, 745), 180, "F"), 8: (j(680, 180), 0, "C")},
-  "Held the pike to the cotton gin; the 100th Ohio was driven back in the breakthrough [wp] [jesp].", "high", {0: 1100, 3: 950, 6: 900}, ["jesp", "wp"], {8: [j(560, 400), j(610, 270)]})
+  "Held the pike to the cotton gin; the 100th Ohio was driven back in the breakthrough [wp] [jesp].", "high", {0: 1100, 3: 980, 6: 950}, ["jesp", "wp"], {8: [j(560, 400), j(610, 270)]})
 U("reilly_res", "us", "inf", "Reilly's reserve: 12th and 16th Kentucky, 175th Ohio", "~1,000 infantry", 220,
   {0: (k(700, 640), 180, "L"), 3: (k(690, 660), 180, "F"), 8: (j(720, 190), 0, "C")},
-  "Stood in the second line and became the rally point that sealed the breach east of the pike; the 12th Kentucky carried Henry repeaters [wp].", "high", {0: 1000, 4: 920, 6: 900}, ["wp", "jesp"], {8: [j(560, 400), j(610, 270)]})
+  "Stood in the second line and became the rally point that sealed the breach east of the pike; the 12th Kentucky carried Henry repeaters [wp].", "high", {0: 1000, 4: 950, 6: 930}, ["wp", "jesp"], {8: [j(560, 400), j(610, 270)]})
 U("casement", "us", "inf", "Casement's brigade (Reilly)", "~1,500 infantry", 300,
   {0: (k(840, 765), 180, "F"), 8: (j(580, 200), 0, "C")},
-  "East of the cotton gin; its cross fire shattered Cleburne's and French's assaults [wp] [jesp].", "high", {0: 1500, 4: 1450, 6: 1430}, ["jesp", "wp", "cox"], {8: [j(600, 420), j(700, 292)]})
+  "East of the cotton gin; its cross fire shattered Cleburne's and French's assaults [wp] [jesp].", "high", {0: 1500, 4: 1450, 6: 1440}, ["jesp", "wp", "cox"], {8: [j(600, 420), j(700, 292)]})
 U("stiles", "us", "inf", "Stiles's brigade (Reilly)", "~1,400 infantry", 380,
   {0: (k(975, 690), 135, "F"), 8: (j(620, 205), 0, "C")},
-  "Anchored the left on the railroad cut and the river behind an osage-orange abatis; repulsed Loring twice [wp] [jesp].", "high", {0: 1400, 3: 1370, 6: 1340}, ["jesp", "wp"], {8: [j(640, 440), j(700, 292)]})
+  "Anchored the left on the railroad cut and the river behind an osage-orange abatis; repulsed Loring twice [wp] [jesp].", "high", {0: 1400, 3: 1370, 6: 1350}, ["jesp", "wp"], {8: [j(640, 440), j(700, 292)]})
 # ---- Kimball's division (IV Corps), the right flank to the river
 U("grose", "us", "inf", "Grose's brigade (Kimball)", "~1,300 infantry", 380, {0: (j(415, 410), 250, "F"), 8: (j(660, 215), 0, "C")},
   "Left brigade of Kimball's division, joining Ruger near the Carter's Creek Pike [jesp] [cox].", "high", {0: 1300, 6: 1260}, ["jesp", "cox"], {8: [j(470, 330), j(610, 270)]})
@@ -138,10 +138,10 @@ U("art_left", "us", "art", "Battery G 1st Ohio and Battery M 4th U.S.", "8 guns"
 # ---- Wilson's cavalry
 U("hatch", "us", "cav", "Hatch's cavalry division (Wilson)", "2,638 cavalry", 500,
   {0: (j(1050, 460), 180, "C"), 1: (j(1030, 820), 160, "F"), 3: (j(1040, 900), 160, "F"), 5: (j(1000, 760), 340, "L")},
-  "Came south from the Brentwood road and charged Forrest's dismounted troopers near Hughes's Ford [wp] [abt].", "medium", {0: 2638, 3: 2560}, ["wp", "abt", "cox"], {1: [j(1060, 640)]})
+  "Came south from the Brentwood road and charged Forrest's dismounted troopers near Hughes's Ford [wp] [abt].", "medium", {0: 2638, 3: 2610}, ["wp", "abt", "cox"], {1: [j(1060, 640)]})
 U("croxton", "us", "cav", "Croxton's brigade (Wilson)", "~1,500 cavalry", 350,
   {0: (j(850, 580), 120, "L"), 1: (j(940, 840), 120, "F"), 5: (j(900, 720), 340, "L")},
-  "Struck Forrest's flank with Spencer carbines [wp].", "medium", {0: 1500, 3: 1460}, ["wp", "jesp"])
+  "Struck Forrest's flank with Spencer carbines [wp].", "medium", {0: 1500, 3: 1480}, ["wp", "jesp"])
 
 # ---- Confederate: Stewart's corps, east of the pike
 def CS(uid, name, men, p0, p1, p3, p4, face, note, conf="medium", cite=("jesp", "wp"), loss=(), extra=None):
@@ -169,19 +169,19 @@ CS("sears", "Sears's brigade (French)", 1000, j(645, 1005), j(630, 858), k(795, 
    "French's second brigade; Ector's brigade was away guarding the pontoon train [cox].", cite=("jesp", "cox"), loss={3: 880, 4: 780})
 # ---- Cheatham's corps: Cleburne, Brown, Bate
 CS("granbury", "Granbury's brigade (Cleburne)", 1100, j(470, 1025), j(490, 830), k(670, 700), k(690, 785), 0,
-   "Broke in east of the pike beside Gordon; Granbury was killed and a captain led the brigade afterwards [wp] [tnenc].", cite=("jesp", "wp", "tnenc"), loss={3: 800, 4: 600, 5: 560})
+   "Broke in east of the pike beside Gordon; Granbury was killed and a captain led the brigade afterwards [wp] [tnenc].", cite=("jesp", "wp", "tnenc"), loss={3: 800, 4: 600, 5: 540})
 CS("govan", "Govan's brigade (Cleburne)", 1200, j(515, 1025), j(560, 840), k(740, 865), k(760, 800), 0,
-   "Struck the cotton-gin salient; Cleburne was killed in this attack [wp] [hood].", cite=("jesp", "wp", "hood"), loss={3: 950, 4: 750, 5: 720})
+   "Struck the cotton-gin salient; Cleburne was killed in this attack [wp] [hood].", cite=("jesp", "wp", "hood"), loss={3: 950, 4: 750, 5: 700})
 CS("lowrey", "Lowrey's brigade (Cleburne)", 1300, j(490, 1060), j(540, 865), k(695, 900), k(730, 830), 0,
-   "Cleburne's third line, formed at his request in depth [hood] [jesp].", cite=("jesp", "hood", "wp"), loss={3: 1100, 4: 900, 5: 860})
+   "Cleburne's third line, formed at his request in depth [hood] [jesp].", cite=("jesp", "hood", "wp"), loss={3: 1100, 4: 900, 5: 820})
 CS("gordon", "Gordon's brigade (Brown)", 1000, j(400, 1005), j(420, 800), k(640, 700), k(635, 745), 10,
    "Angled right in the advance, crossed the pike and broke in with Cleburne; Gordon was captured [wp].", cite=("jesp", "wp"), loss={3: 750, 4: 520, 5: 500})
 CS("strahl", "Strahl's brigade (Brown)", 1000, j(380, 1030), j(400, 830), k(575, 690), k(560, 705), 20,
    "Fought in the ditch west of the pike for hours; Strahl was killed [wp] [hood].", cite=("jesp", "wp", "hood"), loss={3: 800, 4: 620, 5: 560, 6: 540})
 CS("carter", "Carter's brigade (Brown)", 1000, j(340, 1005), j(335, 790), k(420, 805), k(450, 625), 40,
-   "Struck Strickland and Moore west of Locust Grove; Carter was mortally wounded [wp] [jesp].", cite=("jesp", "wp"), loss={3: 900, 4: 750, 5: 700})
+   "Struck Strickland and Moore west of Locust Grove; Carter was mortally wounded [wp] [jesp].", cite=("jesp", "wp"), loss={3: 900, 4: 750, 5: 680})
 CS("gist", "Gist's brigade (Brown)", 1000, j(355, 980), j(330, 752), k(440, 775), k(480, 650), 35,
-   "Brown's left front brigade; Gist was killed [wp] [hood].", cite=("jesp", "wp", "hood"), loss={3: 880, 4: 760, 5: 720})
+   "Brown's left front brigade; Gist was killed [wp] [hood].", cite=("jesp", "wp", "hood"), loss={3: 880, 4: 760, 5: 700})
 U("smith_bate", "cs", "inf", "Smith's (Tyler's) brigade (Bate)", "~800 infantry", 330,
   {0: (j(185, 960), 0, "L"), 1: (j(210, 705), 30, "L"), 5: (k(200, 430), 45, "F"), 6: (k(130, 560), 45, "L")},
   "Bate's long march round the left reached the works near the Carter's Creek Pike only at dusk [wp].", "medium", {0: 800, 5: 700, 6: 680}, ["jesp", "wp"])
