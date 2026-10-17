@@ -20,10 +20,10 @@ wp = lambda x, y: Georef(HERE).xy("fujii", x, y)
 B.source("ishikawa", "Ishikawa Yasumichi and Hikosaka Motomasa to Matsudaira Ienori, Keichō 5.9.17 (two days after the battle); text in Nakano Hitoshi (2017) p. 462, quoted in ja.wikipedia and Shiramine (2016)", "https://ja.wikipedia.org/wiki/%E9%96%A2%E3%83%B6%E5%8E%9F%E3%81%AE%E6%88%A6%E3%81%84", "primary letter: Ieyasu engaged at Sekigahara at the hour of the snake (~10:00); Ii and Fukushima as vanguard; Kobayakawa, Wakisaka and Ogawa father and son 'turned' as the lines met; Ōtani, Shima Sakon, Shimazu Toyohisa, Toda and Hiratsuka killed", "primary")
 B.source("ieyasu", "Tokugawa Ieyasu to Date Masamune, Keichō 5.9.15 (the day of the battle), as summarised in ja/en.wikipedia", "https://en.wikipedia.org/wiki/Battle_of_Sekigahara", "primary letter: the fighting was over by the hour of the horse (~noon)", "primary")
 B.source("shimazu", "Memoirs of Shimazu retainers (Kanbe Gobei, Kuroki Sakon and Hirayama Kurōzaemon, Yamada Ansai and others) in Kyūki zatsuroku kōhen 3, in modern Japanese in Shiramine (2016)", "https://beppu-u.repo.nii.ac.jp/records/2002278", "participants' memoirs: Ōtani attacked first; six or seven clashes before Kobayakawa came down 'from the hill above'; Ukita, then Ishida broken; a pond between Ukita and the Shimazu; Shimazu Yoshihiro in the second line", "primary")
-B.source("shiramine", "Shiramine Jun, 'Sekigahara no tatakai ni okeru Ishida Mitsunari-gata gunzei no fujin ichi ni tsuite no shinkaishaku', Shigaku ronsō 46 (Beppu University, 2016), 151-160", "https://beppu-u.repo.nii.ac.jp/records/2002278", "revisionist, built on letters and memoirs: Western main body packed tightly at Yamanaka; Ishida not on Sasaoyama; Ōtani destroyed first; the marked camp sites were fixed by Gifu officials after Kamiya Dōichi's 1892 Sekigahara kassen zushi", "scholarly")
-B.source("shiramine2", "Shiramine Jun, 'Sekigahara no tatakai no fujinzu ni kansuru kōsatsu', Beppu daigaku kiyō", "https://beppu-u.repo.nii.ac.jp/records/2001668", "the 1893 General Staff deployment map is a Meiji creation; Furuta Shigekatsu on it is an error for Furuta Shigenari (Oribe); Terazawa's presence is not confirmed by primary sources; Ii and Fukushima should stand together as joint vanguard", "scholarly")
-B.source("kasaya", "Kasaya Kazuhiko, Sekigahara kassen (Kōdansha, 1994; rev. 2022), pp. 209-227, as summarised with page references in ja.wikipedia (not consulted directly)", "https://ja.wikipedia.org/wiki/%E9%96%A2%E3%83%B6%E5%8E%9F%E3%81%AE%E6%88%A6%E3%81%84", "traditionalist: skirmishing from ~08:00 in fog, general attack ~10:00 when it lifted; 'several hours' of fighting before Kobayakawa turned about noon (Shimazu diary, Chōsa memoir); 'crushed at once' is a stock victory phrase", "scholarly")
-B.source("takahashi", "Takahashi Yōsuke, 'Atarashii Sekigahara' (Kōdansha Gendai shinsho, 2025), extract on gendai.media", "https://gendai.media/articles/-/159156", "revisionist overview: the standard story comes from the General Staff's Nihon senshi; the probing shots and the Meckel anecdote are later inventions; Kobayakawa had defected by the day before", "scholarly")
+B.source("shiramine", "Shiramine Jun, 'Sekigahara no tatakai ni okeru Ishida Mitsunari-gata gunzei no fujin ichi ni tsuite no shinkaishaku', Shigaku ronsō 46 (Beppu University, 2016), 151-163, subtitle 'naze Ōtani Yoshitsugu dake ga senshi shita no ka'", "https://beppu-u.repo.nii.ac.jp/records/2002278", "revisionist, built on letters and memoirs: Western main body packed tightly at Yamanaka; Ishida not on Sasaoyama; Ōtani destroyed first; the marked camp sites were fixed by Gifu officials after Kamiya Dōichi's 1892 Sekigahara kassen zushi", "scholarly")
+B.source("shiramine2", "Shiramine Jun, 'Sekigahara no tatakai no fujinzu ni kansuru kōsatsu', Beppu daigaku daigakuin kiyō 15 (2013), 55-86", "https://beppu-u.repo.nii.ac.jp/records/2001668", "the 1893 General Staff deployment map is a Meiji creation; Furuta Shigekatsu on it is an error for Furuta Shigenari (Oribe); Terazawa's presence is not confirmed by primary sources; Ii and Fukushima should stand together as joint vanguard", "scholarly")
+B.source("kasaya", "Kasaya Kazuhiko, Ronsō Sekigahara kassen (Shinchō sensho, Shinchōsha, 2022), pp. 209-227, as summarised with page references in ja.wikipedia (not consulted directly)", "https://www.shinchosha.co.jp/book/603887/", "traditionalist: skirmishing from ~08:00 in fog, general attack ~10:00 when it lifted; 'several hours' of fighting before Kobayakawa turned about noon (Shimazu diary, Chōsa memoir); 'crushed at once' is a stock victory phrase", "scholarly")
+B.source("takahashi", "Takahashi Yōsuke, Shin Sekigahara (Kōdansha Gendai shinsho, October 2025), extract on gendai.media", "https://gendai.media/articles/-/159156", "revisionist overview: the standard story comes from the General Staff's Nihon senshi; the probing shots and the Meckel anecdote are later inventions; Kobayakawa had defected by the day before", "scholarly")
 B.source("turnbull", "Stephen Turnbull, 'The battle of Sekigahara – what went right?', Osprey blog (2019)", "https://www.ospreypublishing.com/uk/osprey-blog/2019/the-battle-of-sekigahara-what-went-right", "specialist's English summary of Shiramine: early reports name Yamanaka; all modern maps derive from Nihon senshi (1893); defection at the start; the probing shots a myth", "secondary")
 B.source("murdoch", "James Murdoch, A History of Japan, vol. 2 (Kobe, 1903), ch. XIV 'Sekigahara', following the General Staff's Nihon senshi", "https://archive.org/details/historyofjapan02murd", "the traditional narrative in English: night march, fog, Ii's thirty spearmen, Fukushima against Ukita, stalemate to noon, Kobayakawa's attack and the four defectors, the Shimazu breakout, 8,000 Western dead", "secondary")
 B.source("wpja", "ja.wikipedia, '関ヶ原の戦い' and '関ヶ原本戦の配置' (General Staff strength table; deployments in Kuroda kafu, Sekigahara gunki taisei, Naifukō gunki, Sekigahara shimatsuki)", "https://ja.wikipedia.org/wiki/%E9%96%A2%E3%83%B6%E5%8E%9F%E6%9C%AC%E6%88%A6%E3%81%AE%E9%85%8D%E7%BD%AE", "strengths (3 men per 100 koku), the Edo accounts' variants, scholarly debates", "reference")
@@ -32,6 +32,7 @@ B.source("fujii", "Fujii Jizaemon, situation map of the morning of the 15th (192
 B.source("hi", "Deployment after Chōya kyūbun hōkō, plotted on the 1894 1:20,000 survey sheet 'Sekihara' (Wikimedia Commons, user HI)", "https://commons.wikimedia.org/wiki/File:Sekigaharahonsen(sekigaharahoumen).jpg", "an Edo-compilation tradition independent of the 1893 staff map: Ōtani's main body at Yamanaka, Ieyasu's forward command post; georeferenced on six points (RMSE 114 m)", "staff-map")
 B.source("nsmap", "General Staff (Sanbō honbu), Nihon senshi: Sekigahara-eki,附図 (1893), as redrawn on Wikimedia Commons", "https://commons.wikimedia.org/wiki/File:Sekigahara.png", "the canonical 08:00 deployment; used only for cross-checking", "staff-map")
 B.source("jinseki", "Sekigahara town open data, 'Sekigahara ichi jōhō list' (2013, LinkData) and OpenStreetMap memorials", "https://linkdata.org/work/rdf1s884i", "coordinates of the camp sites marked on the battlefield (a Meiji-era identification)", "data")
+B.source("gifukanko", "Gifu Prefecture tourism site (kankou-gifu.jp), pages for the camp sites around Nangū-san and Tarui (Mōri Hidemoto, Kikkawa, Ankokuji, Natsuka, Chōsokabe, Ikeda, Asano) and the Shimazu retreat (Utōzaka)", "https://www.kankou-gifu.jp/spot/detail_6780.html", "map coordinates of the marked camp sites east of the field; Toyohisa held the rearguard at Utōzaka (Ōgaki city), where he is said to have died", "data")
 B.source("data", "AWS Terrain Tiles; OpenStreetMap (streams, ponds, villages); Wikidata", "https://registry.opendata.aws/terrain-tiles/", "modern elevation and geography", "data")
 
 B.meta = {
@@ -51,13 +52,13 @@ B.meta = {
         "start": [{"label": "East", "n": 88900, "segs": [["e", 1]]}, {"label": "West", "n": 63100, "segs": [["w", 1]]}, {"label": "Defectors", "n": 20000, "segs": [["t", 1]]}],
         "end": [{"label": "East", "n": 4000, "segs": [["e", 1]]}, {"label": "West", "n": 8000, "segs": [["w", 1]]}, {"label": "Defectors", "n": 800, "segs": [["t", 1]]}],
     },
-    "sun": {"lat": 35.36, "decl": -10.9, "note": "21 October 1600 (Gregorian); sunrise about 06:00 local solar time. Japanese sources give the old two-hour 'hours' (snake ~09-11, horse ~11-13), so every time here is approximate [wpja]."},
+    "sun": {"lat": 35.36, "decl": -10.9, "note": "21 October 1600 (Gregorian); sunrise about 06:30 local apparent time. Japanese sources give the old two-hour 'hours' (snake ~09-11, horse ~11-13), so every time here is approximate [wpja]."},
     "view": {"az": 0.25, "el": 0.85}, "unitScale": 1.0, "unitLabelDist": 9,
     "ground": {"season": "autumn", "relief": 55},
     "wind": 270,
     "strengthNote": "The East line in the chart includes the five contingents that changed sides (about 20,000, purple on the map), which were nominally Western but never fought the East. Strengths are the General Staff's estimates at three men per hundred koku, not musters; the General Staff itself said the true numbers are unknown [wpja]. Other totals: West 79,000-82,000 and East 70,000-89,000 [murdoch] [wpen]; a letter of the 20th gives Ieyasu about 50,000 and the West about 50,000 [wpja]. Western dead about 8,000 (32,600 in the 1713 Gunki taisei; 4-5,000 in the Konoe letter), Eastern dead unknown (about 4,000 often quoted) [wpja] [murdoch]. Per-moment losses are estimates following the narrative; after a rout, a contingent's strength counts the men still with the colours, not the survivors.",
     "method": "A traditional reconstruction. Units start on the camp sites marked on the battlefield [jinseki], checked against Fujii's 1926 situation map [fujii] (georeferenced on nine points, 227 m) and an Edo-compilation plot on the 1894 survey [hi] (114 m); advanced positions are read off the Fujii map. Those marked camps were fixed in the late Meiji era and the familiar layout descends from the 1893 General Staff map, which modern scholars criticise [shiramine] [shiramine2], so positions show where tradition puts the armies, to within a few hundred metres.",
-    "notes": "The timetable follows the traditional account as defended by Kasaya (fighting from about 08:00, Kobayakawa about noon) [kasaya] [murdoch]. Since 2014 Shiramine, Takahashi and others have argued from letters written days after the battle that Kobayakawa turned as soon as the main lines met, about 10:00, and that the Western main body fought packed together at Yamanaka; that reading is given wherever it applies [shiramine] [takahashi] [turnbull]. Contingents of a few hundred men (Oda Nobutaka, Kawajiri Hidenaga, Ishikawa Sadakiyo; Hachisuka with Ikeda) are not drawn separately. The streams are shallow and treated as fordable. The Ikedera and Jūkujo ponds are shown as on the 1926 map; whether they had their modern size in 1600 is unknown. No historical-map overlay is offered. Per-moment losses are estimates.",
+    "notes": "The timetable follows the traditional account as defended by Kasaya (fighting from about 08:00, Kobayakawa about noon) [kasaya] [murdoch]. Since 2013-14 Shiramine, Takahashi and others have argued from letters written days after the battle that Kobayakawa turned as soon as the main lines met, about 10:00, and that the Western main body fought packed together at Yamanaka; that reading is given wherever it applies [shiramine] [takahashi] [turnbull]. Small contingents (Oda Nobutaka, Kawajiri Hidenaga, Ishikawa Sadakiyo and Mōri Katsunobu on the Western side; Hachisuka with Ikeda) are not drawn separately. The streams are shallow and treated as fordable. The Ikedera and Jūkujo ponds are shown as on the 1926 map; whether they had their modern size in 1600 is unknown. No historical-map overlay is offered. Per-moment losses are estimates.",
 }
 
 # ---- geography
@@ -106,34 +107,34 @@ U("shima", "w", "inf", "Shima Sakon (Ishida's vanguard)", {0: 1500, 3: 1100, 5: 
   "Mitsunari's chief retainer, in front of the double palisade; shot down by Kuroda arquebusiers firing from the flank. 'Over 3,000' in Kuroda kafu [jinseki] [fujii] [wpen] [wpja].", "medium", ["jinseki", "fujii", "wpen", "wpja"])
 U("gamo", "w", "inf", "Gamō Yorisato (Ishida's vanguard)", {0: 1500, 3: 1300, 5: 1100, 7: 300, 8: 100}, 200,
   {0: (wp(975, 495), 120, "L"), 3: ((35.3697, 136.4605), 120, "F"), 7: ((35.3750, 136.4545), 300, "R")},
-  "Ishida's second vanguard commander beside Shima Sakon; killed in the collapse [jinseki] [fujii] [wpen].", "medium", ["jinseki", "fujii", "wpen"])
+  "Ishida's second vanguard commander beside Shima Sakon (camp marker). Later accounts say he was killed, but one Edo account has him the only survivor among Ishida's officers, and his identity with Gamō Satoie is unsettled [jinseki] [fujii] [wpja].", "low", ["jinseki", "fujii", "wpja"])
 U("toyohisa", "w", "inf", "Shimazu Toyohisa (forward battle)", {0: 700, 7: 600, 8: 60}, 140,
-  {0: (wp(907, 705), 100, "L"), 3: (wp(907, 705), 100, "F"), 8: ((35.3513, 136.4811), 140, "R")},
-  "Yoshihiro's nephew led the Shimazu front line about 160 m to the right of Ishida's men; killed covering the breakout near Karasugashira, where a marker stands [shimazu] [jinseki] [wpen].", "medium", ["shimazu", "jinseki", "fujii", "wpen"],
+  {0: ((35.3679, 136.4607), 100, "L"), 3: ((35.3679, 136.4607), 100, "F"), 8: ((35.3513, 136.4811), 140, "R")},
+  "Yoshihiro's nephew led the Shimazu forward battle, a chō and a half (160 m) to the right of Ishida's men in one memoir, here about 150 m ahead of Yoshihiro. He held the rearguard on the Ise road at Utōzaka, where a memorial stands; where he died is disputed [shimazu] [gifukanko] [wpen].", "medium", ["shimazu", "gifukanko", "wpen"],
   {8: [(35.3645, 136.4635), (35.3618, 136.4690), (35.3565, 136.4745)]})
 U("yoshihiro", "w", "inf", "Shimazu Yoshihiro", {0: 1000, 7: 950, 8: 250}, 160,
   {0: ((35.3671, 136.4592), 100, "L"), 3: ((35.3671, 136.4592), 100, "F"), 8: ((35.3440, 136.4880), 140, "R")},
-  "About 1,500-1,700 Satsuma men with Toyohisa's; they held their ground in the second line and fired on anyone who came near, then cut their way out to the east. Around 80 reached Satsuma [shimazu] [jinseki] [wpja] [wpen].", "medium", ["shimazu", "jinseki", "wpja", "wpen"],
+  "About 1,500-1,700 Satsuma men with Toyohisa's; they held their ground in the second line and fired on anyone who came near, then cut their way out to the east. Some 50 (ja.wikipedia) to 200 (en.wikipedia) got clear of the field; tradition says about 80 reached Satsuma [shimazu] [wpja] [wpen] [murdoch].", "medium", ["shimazu", "jinseki", "wpja", "wpen", "murdoch"],
   {8: [(35.3650, 136.4630), (35.3620, 136.4695), (35.3560, 136.4750), (35.3513, 136.4811)]})
 U("konishi", "w", "inf", "Konishi Yukinaga", {0: 6000, 3: 5600, 5: 5000, 7: 2000, 8: 500}, 380,
   {0: ((35.3652, 136.4580), 105, "L"), 3: (wp(875, 875), 105, "F"), 7: ((35.3690, 136.4520), 290, "R"), 8: (R, 300, "R")},
   "On north Tenmayama (camp marker); 4,000-6,000. Murdoch has his men give way first under weight of numbers [jinseki] [fujii] [wpja] [murdoch].", "medium", ["jinseki", "fujii", "wpja", "murdoch"])
 U("ukita", "w", "inf", "Ukita Hideie (main body)", {0: 9220, 3: 8800, 5: 8000, 7: 3000, 8: 800}, 480,
   {0: ((35.3626, 136.4552), 100, "L"), 3: ((35.3622, 136.4560), 100, "F"), 7: ((35.3650, 136.4470), 280, "R"), 8: (R, 290, "R")},
-  "The largest Western division (17,220 in all) on south Tenmayama, including many new hires after the Ukita household split [jinseki] [wpja] [wpen].", "medium", ["jinseki", "fujii", "wpja", "wpen"])
+  "The largest Western division (17,220 in all) on south Tenmayama, including many new hires after the Ukita household split; the 9,220 / 8,000 division between main body and vanguard is an estimate [jinseki] [wpja] [wpen].", "medium", ["jinseki", "fujii", "wpja", "wpen"])
 U("akashi", "w", "inf", "Ukita vanguard (Akashi Takenori)", {0: 8000, 3: 7400, 5: 6800, 7: 2500, 8: 600}, 420,
   {0: (wp(875, 1040), 100, "L"), 2: (wp(875, 1040), 100, "F"), 3: (wp(905, 1050), 95, "F"), 5: (wp(880, 1040), 95, "F"), 7: ((35.3640, 136.4490), 280, "R"), 8: (R, 290, "R")},
   "Ukita's forward battle toward the Nakasendō; it pushed Fukushima back several hundred metres before the collapse [fujii] [murdoch] [wpen].", "medium", ["fujii", "murdoch", "wpen", "wpja"])
 U("toda", "w", "inf", "Toda Katsushige", {0: 300, 3: 280, 5: 250, 6: 40}, 100,
-  {0: (wp(695, 1140), 95, "L"), 3: ((35.3598, 136.4556), 95, "F"), 6: ((35.3620, 136.4485), 290, "R")},
+  {0: (wp(695, 1140), 95, "L"), 3: ((35.3600, 136.4543), 95, "F"), 6: ((35.3620, 136.4485), 290, "R")},
   "Ōtani's ally, killed after the defection [fujii] [ishikawa] [wpen].", "medium", ["fujii", "ishikawa", "wpen"])
 U("hiratsuka", "w", "inf", "Hiratsuka Tamehiro", {0: 360, 3: 330, 5: 300, 6: 40}, 100,
-  {0: (wp(835, 1195), 95, "L"), 3: ((35.3592, 136.4572), 95, "F"), 6: ((35.3628, 136.4500), 290, "R")},
-  "360 men on the Fujikawa plateau; fought off Kobayakawa's troops for a time and was killed [fujii] [ishikawa] [wpen].", "medium", ["fujii", "ishikawa", "wpen"])
+  {0: ((35.3605, 136.4545), 105, "L"), 3: ((35.3592, 136.4553), 100, "F"), 6: ((35.3628, 136.4500), 290, "R")},
+  "360 men on the Fujikawa plateau west of the stream (a memorial stands there; the Fujii map draws him just across it); fought off Kobayakawa's troops for a time and was killed [jinseki] [fujii] [ishikawa] [wpen].", "medium", ["jinseki", "fujii", "ishikawa", "wpen"])
 U("otani", "w", "inf", "Ōtani Yoshitsugu", {0: 1500, 5: 1300, 6: 300, 7: 100}, 180,
   {0: ((35.3599, 136.4505), 140, "L"), 5: ((35.3590, 136.4508), 160, "F"), 6: ((35.3635, 136.4470), 320, "R")},
   "On the hill above Yamanaka (camp marker), part of his force facing Matsuoyama; he killed himself when his command broke [jinseki] [hi] [murdoch] [ishikawa].", "medium", ["jinseki", "hi", "fujii", "murdoch", "ishikawa"])
-U("otani2", "w", "inf", "Ōtani Yoshikatsu and Kinoshita Yoritsugu", {0: 4250, 3: 4000, 5: 3700, 6: 1200, 7: 500}, 320,
+U("otani2", "w", "inf", "Ōtani Yoshiharu (Yoshikatsu) and Kinoshita Yoritsugu", {0: 4250, 3: 4000, 5: 3700, 6: 1200, 7: 500}, 320,
   {0: ((35.3585, 136.4530), 110, "L"), 3: ((35.3585, 136.4542), 95, "F"), 5: ((35.3572, 136.4532), 160, "F"), 6: ((35.3625, 136.4480), 320, "R"), 7: ((35.3655, 136.4440), 300, "R")},
   "Ōtani's son and Kinoshita, at the front of the Ōtani command (3,500 and 750 in the General Staff table); the plot after Chōya kyūbun hōkō puts Ōtani's main body at Yamanaka [wpja] [hi] [fujii].", "low", ["wpja", "hi", "fujii"])
 # ---- the defectors (shown as their own colour from the start; they were nominally Western)
@@ -149,23 +150,23 @@ U("kob_van", "t", "inf", "Kobayakawa vanguard", {0: 3000, 5: 2700, 6: 2400}, 260
   {5: [(35.3540, 136.4530)]})
 U("kobayakawa", "t", "inf", "Kobayakawa Hideaki", {0: 12675, 6: 12500, 7: 12300}, 420,
   {0: ((35.3480, 136.4543), 350, "L"), 5: ((35.3525, 136.4530), 350, "C"), 6: ((35.3550, 136.4515), 340, "F"), 7: ((35.3592, 136.4520), 30, "F")},
-  "On Matsuoyama, the old castle site, flanking the Western right. 15,675 in the General Staff table, 8,000 in Murdoch. Whether he hesitated until noon or came down as soon as the lines met is the battle's central dispute [jinseki] [wpja] [murdoch] [ishikawa].", "medium", ["jinseki", "hi", "wpja", "murdoch", "ishikawa"])
+  "On Matsuoyama, the old castle site, flanking the Western right. 15,675 in the General Staff table, 8,000 in Murdoch. Whether he hesitated until noon or came down as soon as the lines met is the battle's central dispute, so his moves after phase 4 are low confidence [jinseki] [wpja] [murdoch] [ishikawa].", "low", ["jinseki", "hi", "wpja", "murdoch", "ishikawa"])
 # ---- Nangū-san and Kurihara-yama: present, never engaged
 U("hidemoto", "w", "inf", "Mōri Hidemoto", {0: 13000}, 400,
-  {0: ((35.3490, 136.5120), 340, "L"), 8: ((35.3440, 136.5250), 160, "C")},
-  "High on Nangū-san, below the summit (Mōri forces 16,000 with Kikkawa); blocked by Kikkawa in front of him; withdrew after the battle [murdoch] [wpja] [wpen].", "low", ["murdoch", "wpja", "wpen"], {8: [(35.3470, 136.5180)]})
+  {0: ((35.3469, 136.5175), 340, "L"), 8: ((35.3400, 136.5280), 160, "C")},
+  "High on Nangū-san just below the summit (camp marker; Mōri forces 16,000 with Kikkawa); blocked by Kikkawa below him; withdrew after the battle [gifukanko] [murdoch] [wpja] [wpen].", "low", ["gifukanko", "murdoch", "wpja", "wpen"])
 U("kikkawa", "w", "inf", "Kikkawa Hiroie", {0: 3000}, 220,
-  {0: ((35.3572, 136.5125), 340, "L")},
-  "At the north foot of Nangū-san; had given hostages and a promise that the Mōri would not fight on the 14th, and kept the force above him from coming down [wpja] [murdoch] [wpen].", "low", ["wpja", "murdoch", "wpen"])
+  {0: ((35.3611, 136.5192), 340, "L")},
+  "At the north foot of Nangū-san (camp marker west of the Nangū shrine); had given hostages and a promise that the Mōri would not fight on the 14th, and kept the force above him from coming down [wpja] [murdoch] [wpen].", "low", ["gifukanko", "wpja", "murdoch", "wpen"])
 U("ankokuji", "w", "inf", "Ankokuji Ekei", {0: 1800}, 160,
-  {0: ((35.3545, 136.5262), 330, "L"), 8: ((35.3470, 136.5390), 160, "C")},
-  "Near the Nangū shrine at the east foot of the mountain; did not fight and fled; executed in Kyoto on 1 November [wpja] [murdoch].", "low", ["wpja", "murdoch"])
+  {0: ((35.3585, 136.5223), 330, "L"), 8: ((35.3500, 136.5350), 160, "C")},
+  "By the Nangū shrine at the north foot of the mountain (camp marker); did not fight and fled; executed in Kyoto on 6 November (Keichō 5.10.1) [gifukanko] [wpja] [murdoch].", "low", ["gifukanko", "wpja", "murdoch"])
 U("natsuka", "w", "inf", "Natsuka Masaie", {0: 1500}, 150,
-  {0: ((35.3505, 136.5292), 330, "L"), 8: ((35.3430, 136.5410), 160, "C")},
-  "Toyotomi commissioner; urged an attack on the Tokugawa rear and could not make one; retreated toward Ōmi [wpja] [murdoch].", "low", ["wpja", "murdoch"])
+  {0: ((35.3454, 136.5376), 330, "L"), 8: ((35.3380, 136.5450), 160, "C")},
+  "On the east foot of Nangū-san (camp marker). Toyotomi commissioner; urged an attack on the Tokugawa rear and could not make one; retreated toward Ōmi [gifukanko] [wpja] [murdoch].", "low", ["gifukanko", "wpja", "murdoch"])
 U("chosokabe", "w", "inf", "Chōsokabe Morichika", {0: 6660}, 300,
-  {0: ((35.3388, 136.5395), 330, "L"), 8: ((35.3310, 136.5440), 180, "C")},
-  "On Kurihara-yama at the rear of the Nangū-san group; never engaged [murdoch] [wpja].", "low", ["murdoch", "wpja"])
+  {0: ((35.3355, 136.5389), 330, "L"), 8: ((35.3280, 136.5450), 180, "C")},
+  "On Kurihara-yama at the rear of the Nangū-san group (camp marker at the Kurihara temple ruins); never engaged [gifukanko] [murdoch] [wpja].", "low", ["gifukanko", "murdoch", "wpja"])
 
 # ================= EAST (column on the Nakasendō at dawn, then the positions on the Fujii map)
 def EU(uid, name, men, w, col, dep, adv, more, note, conf, cite, typ="inf"):
@@ -178,7 +179,7 @@ EU("fukushima", "Fukushima Masanori", {0: 6000, 3: 5600, 5: 5300, 7: 5100}, 380,
    {2: ((35.3596, 136.4605), 285, "F"), 3: ((35.3598, 136.4630), 285, "F"), 5: (wp(960, 1090), 285, "F"), 7: ((35.3615, 136.4565), 290, "F")},
    "Head of the Eastern van; ran into Ukita's rearguard in the fog, opened fire on Ukita and was pushed back before the defection turned the fight [jinseki] [murdoch] [ishikawa].", "medium", ["jinseki", "fujii", "murdoch", "ishikawa", "wpen"])
 EU("ii", "Ii Naomasa ('red devils')", {0: 3600, 3: 3450, 7: 3300, 8: 3200}, 220, (35.3637, 136.4760), (35.3642, 136.4688), wp(1085, 825),
-   {2: ((35.3630, 136.4640), 250, "F"), 7: ((35.3660, 136.4605), 260, "F"), 8: ((35.3555, 136.4745), 150, "F")},
+   {2: ((35.3645, 136.4628), 255, "F"), 7: ((35.3657, 136.4620), 260, "F"), 8: ((35.3555, 136.4745), 150, "F")},
    "Ieyasu's field commander, in red armour; went ahead of Fukushima to open the battle, and was wounded by a Shimazu bullet in the pursuit [ishikawa] [wpen] [murdoch].", "medium", ["jinseki", "fujii", "ishikawa", "wpen", "murdoch"])
 EU("tadayoshi", "Matsudaira Tadayoshi", {0: 3000, 3: 2850, 7: 2750}, 200, (35.3633, 136.4790), (35.3634, 136.4686), wp(1040, 875),
    {2: ((35.3624, 136.4640), 250, "F")},
@@ -191,7 +192,7 @@ EU("todo", "Tōdō Takatora", {0: 2490, 3: 2300, 6: 2150}, 200, (35.3615, 136.47
    "Faced Ōtani's front; he had arranged the defection of Wakisaka, Kutsuki, Ogawa and Akaza [jinseki] [wpen] [murdoch].", "medium", ["jinseki", "fujii", "wpen", "murdoch"])
 EU("kyogoku", "Kyōgoku Takatomo", {0: 3000, 3: 2800, 6: 2700}, 220, (35.3610, 136.4722), (35.3586, 136.4650), (35.3583, 136.4594),
    {6: ((35.3582, 136.4578), 260, "F"), 7: ((35.3588, 136.4540), 270, "F")},
-   "Beside Tōdō against Ōtani's command [jinseki] [murdoch] [wpen].", "medium", ["jinseki", "fujii", "murdoch", "wpen"])
+   "Beside Tōdō against Ōtani's command; the 3,000 is from en.wikipedia, the General Staff table gives no figure [jinseki] [murdoch] [wpen] [wpja].", "medium", ["jinseki", "fujii", "murdoch", "wpen"])
 EU("terazawa", "Terazawa Hirotaka", {0: 2400, 3: 2300}, 180, (35.3620, 136.4740), (35.3607, 136.4686), (35.3605, 136.4618),
    {7: ((35.3610, 136.4585), 270, "F")},
    "Placed behind Fukushima in the traditional order of battle; his presence is not confirmed by primary sources [shiramine2] [murdoch].", "low", ["shiramine2", "murdoch", "fujii"])
@@ -205,13 +206,13 @@ EU("hosokawa", "Hosokawa Tadaoki", {0: 5100, 3: 4850, 7: 4700}, 300, (35.3645, 1
    {7: ((35.3702, 136.4610), 260, "F")},
    "Attacked Ishida's front from the south-east (camp marker) [jinseki] [fujii] [murdoch].", "medium", ["jinseki", "fujii", "murdoch", "wpja"])
 EU("kato", "Katō Yoshiaki", {0: 3000, 3: 2850}, 220, (35.3642, 136.4840), (35.3677, 136.4692), wp(1180, 622),
-   {7: ((35.3695, 136.4605), 260, "F")},
+   {7: ((35.3698, 136.4624), 260, "F")},
    "In the line against Ishida [fujii] [murdoch].", "low", ["fujii", "murdoch", "wpja"])
 EU("tsutsui", "Tsutsui Sadatsugu", {0: 2850, 3: 2750}, 200, (35.3639, 136.4860), (35.3671, 136.4683), (35.3681, 136.4650),
    {7: ((35.3686, 136.4625), 260, "F")},
    "Second line behind Katō in the traditional order [fujii] [wpja].", "low", ["fujii", "wpja"])
 EU("tanaka", "Tanaka Yoshimasa", {0: 3000, 3: 2850, 7: 2750}, 220, (35.3636, 136.4880), (35.3652, 136.4663), wp(1095, 695),
-   {7: ((35.3685, 136.4612), 260, "F")},
+   {7: ((35.3690, 136.4628), 260, "F")},
    "Attacked Ishida; his men caught Mitsunari in the hills days later [jinseki] [fujii] [wpja].", "medium", ["jinseki", "fujii", "wpja"])
 EU("ikoma", "Ikoma Kazumasa", {0: 1830, 3: 1750}, 150, (35.3634, 136.4900), (35.3657, 136.4728), wp(1120, 762),
    {}, "With the attack on Ishida's left [fujii] [wpja].", "low", ["fujii", "wpja"])
@@ -224,11 +225,11 @@ EU("furuta", "Furuta Shigenari (Oribe)", {0: 1020, 3: 980}, 100, (35.3627, 136.4
 U("ieyasu", "e", "gd", "Tokugawa Ieyasu (household troops)", {0: 30000, 7: 29800}, 600,
   {0: ((35.3650, 136.4880), 270, "L"), 4: (wp(1926, 955), 270, "L"), 7: ((35.3657, 136.4705), 270, "L")},
   "About 30,000 Tokugawa retainers under Ieyasu, first on Momokubariyama, then forward to near the village; barely engaged [jinseki] [fujii] [hi] [wpja].", "medium", ["jinseki", "fujii", "hi", "wpja"])
-for uid, name, men, pos, f, note in [("ikeda", "Ikeda Terumasa", 4500, (35.3622, 136.5110), 190, "Watching Nangū-san at its north-west foot"),
-                                     ("asano", "Asano Yoshinaga", 6510, (35.3700, 136.5150), 200, "At Tarui (camp marker by the milestone mound), facing Nangū-san"),
+for uid, name, men, pos, f, note in [("ikeda", "Ikeda Terumasa", 4500, (35.3685, 136.5230), 190, "Watching Nangū-san from the north, at Tarui (camp marker by the Shunō and Annō graves)"),
+                                     ("asano", "Asano Yoshinaga", 6510, (35.3708, 136.5117), 200, "At Tarui (camp marker by the milestone mound), facing Nangū-san"),
                                      ("yamauchi", "Yamauchi Kazutoyo", 2058, (35.3669, 136.4925), 170, "Behind Ieyasu on the Nakasendō (camp marker), guarding the rear"),
                                      ("arima", "Arima Toyouji", 900, (35.3652, 136.5010), 175, "With Yamauchi on the road behind Ieyasu")]:
-    U(uid, "e", "inf", name, {0: men}, max(120, men // 15), {0: (pos, f, "L")}, f"{note}; never engaged [murdoch] [wpja] [jinseki].", "low" if uid in ("ikeda", "arima") else "medium", ["murdoch", "wpja", "jinseki"])
+    U(uid, "e", "inf", name, {0: men}, max(120, men // 15), {0: (pos, f, "L")}, f"{note}; never engaged [murdoch] [wpja] [jinseki] [gifukanko].", "low" if uid == "arima" else "medium", ["murdoch", "wpja", "jinseki", "gifukanko"])
 
 B.commander("ieyasu_hq", "e", "Tokugawa Ieyasu", {0: "Ieyasu first camp (Momokubariyama)", 4: wp(1926, 955), 7: wp(1360, 790)},
             "First on Momokubariyama; the traditional account moves him forward in the late morning, and the head inspection was held on the ground marked as his last camp [jinseki] [fujii] [hi].")
@@ -238,10 +239,10 @@ B.commander("kob_hq", "t", "Kobayakawa Hideaki", {0: "Kobayakawa camp (Matsuoyam
 # ================= PHASES
 FOG0 = (35.3640, 136.4650)
 B.phase("06:30", "Fog", "Two armies in the fog",
-  "After a night march from Ōgaki in pouring rain, the Western divisions stand across the Sekigahara basin: Ishida on Sasaoyama, the Shimazu by Koike, Konishi and Ukita on Tenmayama, Ōtani's command above Yamanaka, Kobayakawa on Matsuoyama to the south [murdoch] [jinseki] [ishikawa]. A second Western force of some 30,000 sits nine kilometres back on Nangū-san, behind the Eastern line of march [murdoch]. The Eastern van, marching from Akasaka since 03:00, comes up the Nakasendō in fog so thick that Fukushima's leading troops run into Ukita's rearguard [murdoch]. Ieyasu halts on Momokubariyama [jinseki].",
+  "After a night march from Ōgaki in pouring rain, the Western divisions stand across the Sekigahara basin: Ishida on Sasaoyama, the Shimazu by Koike, Konishi and Ukita on Tenmayama, Ōtani's command above Yamanaka, Kobayakawa on Matsuoyama to the south [murdoch] [jinseki] [ishikawa]. A second Western force of some 30,000 sits on Nangū-san, about 5 km east, overlooking the road the Eastern army has just marched along [murdoch] [gifukanko]. The Eastern van, marching from Akasaka since 03:00, comes up the Nakasendō in fog so thick that Fukushima's leading troops run into Ukita's rearguard [murdoch]. Ieyasu halts on Momokubariyama [jinseki].",
   ("Blocking a pass", "An army holding the hills on both sides of a road forces the enemy to attack uphill into a funnel; it works only if every contingent fights.", "strongpoint-defence"), FOG0, 7.5,
   arrows=[B.arrow("e", "move", (35.3655, 136.4930), (35.3632, 136.4760), (35.3605, 136.4655))],
-  events=[(wp(960, 1090), "Fukushima's van stumbles into Ukita's rearguard in the fog [murdoch]", ["murdoch"]), ((35.3500, 136.5150), "30,000 Westerners on Nangū-san, behind the Eastern army [murdoch]", ["murdoch"])],
+  events=[(wp(960, 1090), "Fukushima's van stumbles into Ukita's rearguard in the fog [murdoch]", ["murdoch"]), ((35.3500, 136.5150), "30,000 Westerners on Nangū-san, behind the Eastern army [murdoch] [gifukanko]", ["murdoch", "gifukanko"])],
   conf="low", cite=["murdoch", "jinseki", "ishikawa", "fujii", "hi"], fog=0.95,
   debate="Where the Western army stood is disputed. The markers on the field were fixed in the Meiji era; Shiramine, Takahashi and Noji deny that Ishida was on Sasaoyama and put the Western main body packed together at Yamanaka, the place named in the earliest letters [shiramine] [turnbull].")
 B.phase("07:30", "Deployment", "The East deploys blind",
@@ -253,8 +254,8 @@ B.phase("07:30", "Deployment", "The East deploys blind",
 B.phase("08:00", "First shots", "Ii Naomasa opens the battle",
   "Ii Naomasa, Ieyasu's field commander, with Matsudaira Tadayoshi, goes forward past Fukushima's front with a small party (thirty spearmen in one account, about 300 men in Kuroda kafu) and draws first blood; Fukushima's arquebusiers open fire on Ukita [murdoch] [wpja] [wpen]. Kasaya reads it as a reconnaissance in the fog that let a Tokugawa house strike first without breaking the ban on going ahead [kasaya].",
   ("Frontal assault", "With no room to manoeuvre in the basin, the East attacked straight into the Western line along its whole length.", "frontal-assault"), (35.3620, 136.4615), 3.2,
-  arrows=[B.arrow("e", "charge", (35.3642, 136.4688), (35.3630, 136.4640), (35.3618, 136.4610)), B.arrow("e", "fire", (35.3596, 136.4605), (35.3612, 136.4585))],
-  events=[((35.3630, 136.4640), "Ii's party goes ahead of Fukushima [wpja]", ["wpja"])],
+  arrows=[B.arrow("e", "charge", (35.3642, 136.4688), (35.3648, 136.4625), (35.3655, 136.4595)), B.arrow("e", "fire", (35.3596, 136.4605), (35.3612, 136.4585))],
+  events=[((35.3655, 136.4585), "The marked 'start of battle' site: Ii's party goes ahead of Fukushima [wpja] [jinseki]", ["wpja", "jinseki"])],
   conf="medium", cite=["murdoch", "wpja", "wpen", "kasaya", "ishikawa"], fog=0.6,
   debate="When did the fighting start? Edo accounts say the hour of the dragon (~08:00) and one Shimazu memoir says 'at dawn'; the letter of the 17th says Ieyasu engaged at the hour of the snake (~10:00). Kasaya reconciles them: skirmishing from 08:00, the general attack when the fog lifted about 10:00 [kasaya] [ishikawa] [shimazu].")
 B.phase("09:00", "General action", "Arquebus and spear along the whole line",
@@ -265,21 +266,21 @@ B.phase("09:00", "General action", "Arquebus and spear along the whole line",
   events=[((35.3700, 136.4615), "Shima Sakon is shot down [wpen]", ["wpen"]), ((35.3598, 136.4630), "Ukita drives Fukushima back [murdoch]", ["murdoch"])],
   conf="medium", cite=["wpen", "murdoch", "shimazu", "wpja", "fujii"], fog=0.3)
 B.phase("10:30", "Deadlock", "The Mōri do not come",
-  "The fog has lifted [kasaya] [shimazu]. The line sways back and forth [murdoch]. Ishida signals for Kobayakawa and the Nangū-san force to attack; neither moves [murdoch]. Kikkawa Hiroie, who had pledged on the 14th that the Mōri would not fight, sits at the foot of Nangū-san and blocks the way for Mōri Hidemoto and the contingents behind him [wpja] [wpen] [murdoch]. Ieyasu moves his headquarters forward from Momokubariyama toward the village [fujii] [hi].",
+  "The fog has lifted [kasaya] [shimazu]. The line sways back and forth [murdoch]. Neither Kobayakawa nor the force on Nangū-san moves [murdoch]. Kikkawa Hiroie, who had pledged on the 14th that the Mōri would not fight, sits at the foot of Nangū-san and blocks the way for Mōri Hidemoto and the contingents behind him [wpja] [wpen] [murdoch]. Ieyasu moves his headquarters forward from Momokubariyama toward the village [fujii] [hi].",
   ("A reserve that never comes", "Half the Western army stood idle on the hills; a reserve only matters if it can and will be committed.", "reserve-commitment"), (35.3580, 136.4880), 9.0,
   arrows=[B.arrow("e", "move", (35.3650, 136.4880), (35.3649, 136.4784))],
-  events=[((35.3572, 136.5125), "Kikkawa blocks the road down from Nangū-san [wpja]", ["wpja"]), ((35.3716, 136.4590), "Ishida signals for Kobayakawa and the Mōri [murdoch]", ["murdoch"])],
+  events=[((35.3572, 136.5125), "Kikkawa blocks the road down from Nangū-san [wpja]", ["wpja"])],
   conf="low", cite=["kasaya", "shimazu", "murdoch", "wpja", "wpen", "fujii", "hi"],
   debate="The tale that Kikkawa held Mōri Hidemoto back by claiming he was eating lunch is a later anecdote, and the Kikkawa family later reshaped the record of his role [wpja].")
 B.phase("12:00", "The defection", "Kobayakawa comes down",
-  "Kobayakawa Hideaki's troops descend Matsuoyama onto Ōtani's flank. Ōtani, who had kept part of his force facing the hill, drives them back twice [murdoch] [wpen]. A Shimazu memoir describes Ōtani and the Eastern troops pushing each other back and forth 'two or three times' before Kobayakawa came 'straight down from the hill' [shimazu].",
+  "Kobayakawa Hideaki's troops descend Matsuoyama onto Ōtani's flank. Ōtani, who had kept part of his force facing the hill, drives them back twice [murdoch] [wpen]. In Murdoch's account Ishida had raised the agreed signal at noon and Kobayakawa had not answered it [murdoch]. A Shimazu memoir describes Ōtani and the Eastern troops pushing each other back and forth 'two or three times' before Kobayakawa came 'straight down from the hill' [shimazu].",
   ("Pre-arranged defection", "Kobayakawa had been in contact with Kuroda and Ieyasu for weeks; the question was only when he would act.", "defection"), (35.3560, 136.4540), 3.0,
   arrows=[B.arrow("t", "charge", (35.3500, 136.4540), (35.3540, 136.4530), (35.3575, 136.4512)), B.arrow("t", "move", (35.3480, 136.4543), (35.3525, 136.4530))],
   events=[((35.3575, 136.4512), "Kobayakawa's men strike Ōtani's flank; twice thrown back [murdoch]", ["murdoch"])],
-  conf="medium", cite=["murdoch", "wpen", "shimazu", "ishikawa"],
-  debate="The hour is the battle's great dispute. Traditional (General Staff, Murdoch, Kasaya): about noon, after hours of fighting; Kasaya cites a Shimazu diary ('several hours') and a Shimazu memoir ('the hour of the horse'). Revisionist (Shiramine, Takahashi): the letter of the 17th has Kobayakawa turn as the lines met about 10:00, and Ieyasu wrote that all was over by noon. The famous 'probing shots' Ieyasu is said to have fired at Matsuoyama first appear in print in 1663 and are rejected by most scholars; Kasaya keeps a version [kasaya] [ishikawa] [ieyasu] [shiramine] [takahashi] [wpja].")
+  conf="low", cite=["murdoch", "wpen", "shimazu", "ishikawa"],
+  debate="The hour is the battle's great dispute. Traditional (General Staff, Murdoch, Kasaya): about noon, after hours of fighting; Kasaya cites a Shimazu diary ('several hours') and a Shimazu memoir ('the hour of the horse'). Revisionist (Shiramine, Takahashi): the letter of the 17th has Kobayakawa turn as the lines met about 10:00, and Ieyasu wrote that all was over by noon. The famous 'probing shots' Ieyasu is said to have fired at Matsuoyama first appear in print in 1663 and are doubted by Shiramine, Fujimoto Masayuki, Goza Yūichi and others; Kasaya defends a version [kasaya] [ishikawa] [ieyasu] [shiramine] [takahashi] [wpja].")
 B.phase("12:30", "The four turn", "Ōtani's command is destroyed",
-  "Wakisaka, Kutsuki, Ogawa and Akaza, posted below Matsuoyama and already in contact with Tōdō Takatora, turn on Hiratsuka and Toda [wpen] [murdoch] [ishikawa]. Struck from three sides, Ōtani's command breaks; Ōtani kills himself, and Hiratsuka and Toda are killed [ishikawa] [wpen].",
+  "Wakisaka, Kutsuki, Ogawa and Akaza, posted below Matsuoyama and already in contact with Tōdō Takatora, turn on Hiratsuka and Toda [wpen] [murdoch]. The letter of the 17th names Kobayakawa, Wakisaka and Ogawa father and son as the turncoats, and puts their turn at the start of the battle [ishikawa]. Struck from three sides, Ōtani's command breaks; Ōtani kills himself, and Hiratsuka and Toda are killed [ishikawa] [wpen].",
   ("Envelopment", "A flank that turns against its own army collapses the line from the end.", "envelopment"), (35.3585, 136.4540), 2.6,
   arrows=[B.arrow("t", "charge", (35.3560, 136.4580), (35.3585, 136.4560)), B.arrow("t", "charge", (35.3560, 136.4525), (35.3592, 136.4510)), B.arrow("e", "charge", (35.3592, 136.4578), (35.3600, 136.4550))],
   events=[((35.3605, 136.4500), "Ōtani Yoshitsugu kills himself [ishikawa] [wpen]", ["ishikawa", "wpen"]), ((35.3606, 136.4538), "Hiratsuka and Toda killed [ishikawa]", ["ishikawa"])],
@@ -293,11 +294,11 @@ B.phase("13:00", "Collapse", "The Western line goes down like dominoes",
   conf="medium", cite=["murdoch", "wpja", "shimazu"],
   debate="Shiramine reads the Shimazu memoirs as showing the Western main body crushed 'in a moment' by the Eastern frontal attack, before Kobayakawa's men reached it [shiramine]; the traditional account has the defection roll up the line from the south [murdoch].")
 B.phase("14:00", "The breakout", "The Shimazu charge through the enemy",
-  "Surrounded, Shimazu Yoshihiro's men charge not west but east, through the Eastern army, past Ieyasu's position and down the Ise road. Toyohisa is killed covering them near Karasugashira; Ii Naomasa, pursuing, is wounded by a Shimazu bullet; Honda's men meet them on the way [wpen] [wpja] [murdoch]. Of perhaps 1,500, about 80 reach Satsuma [wpja]. On Nangū-san the Mōri, Ankokuji, Natsuka and Chōsokabe march away without having fought [murdoch] [wpja]. About 8,000 Westerners lie dead [murdoch].",
+  "Surrounded, Shimazu Yoshihiro's men charge not west but east, through the Eastern army, past Ieyasu's position and down the Ise road. Toyohisa holds the rearguard at Utōzaka on the Ise road and is killed, though where exactly is disputed [gifukanko]; Ii Naomasa, pursuing, is wounded by a Shimazu bullet; Honda's men meet them on the way [wpen] [wpja] [murdoch]. Of perhaps 1,500, between 50 and 200 get clear of the field (Murdoch has Yoshihiro escape with 70 horsemen); tradition says about 80 reached Satsuma [wpja] [wpen] [murdoch]. On Nangū-san the Mōri, Ankokuji, Natsuka and Chōsokabe march away without having fought [murdoch] [wpja]. About 8,000 Westerners lie dead [murdoch].",
   ("Breakout", "Ieyasu's camp was the last place the East expected an attack; the Shimazu used rearguards that stood and died so the rest could get clear.", "breakout"), (35.3560, 136.4750), 4.8,
   arrows=[B.arrow("w", "retreat", (35.3670, 136.4598), (35.3645, 136.4635), (35.3618, 136.4692), (35.3565, 136.4745), (35.3513, 136.4811), (35.3440, 136.4880)),
           B.arrow("e", "charge", (35.3640, 136.4620), (35.3555, 136.4745)), B.arrow("w", "retreat", (35.3490, 136.5120), (35.3440, 136.5250))],
-  events=[((35.3513, 136.4811), "Shimazu Toyohisa killed near Karasugashira [jinseki] [wpen]", ["jinseki", "wpen"]), ((35.3555, 136.4745), "Ii Naomasa wounded in the pursuit [wpen]", ["wpen"])],
+  events=[((35.3513, 136.4811), "Toyohisa's rearguard at Utōzaka; memorial (his death place is disputed) [gifukanko]", ["gifukanko"]), ((35.3555, 136.4745), "Ii Naomasa wounded in the pursuit [wpen]", ["wpen"])],
   conf="medium", cite=["wpen", "wpja", "murdoch", "jinseki", "shimazu"],
   debate="When the battle ended is uncertain: by noon in Ieyasu's letter and in Sekigahara shimatsuki, about 14:00 in the 1713 Gunki taisei; revisionists think the whole battle took about two hours [ieyasu] [wpja] [wpen].")
 

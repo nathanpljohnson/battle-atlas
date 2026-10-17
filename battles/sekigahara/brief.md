@@ -1,6 +1,6 @@
 # Sekigahara, 21 October 1600 (Keichō 5, 9th month, 15th day): research brief
 
-**What this map is.** A *traditional reconstruction*: positions follow the camp sites marked on the ground (fixed by Gifu officials in the late Meiji era from Kamiya Dōichi's 1892 *Sekigahara kassen zushi*), Fujii Jizaemon's 1926 situation map and an independent plot from the bakufu compilation *Chōya kyūbun hōkō*; the timetable follows the long-standing account as defended by Kasaya Kazuhiko (fighting from about 08:00 in fog, Kobayakawa's defection about noon). Since 2014 Shiramine Jun, Takahashi Yōsuke and others have argued from the letters written in the days after the battle that this picture is largely a later construction: a short battle beginning about 10:00 in which Kobayakawa turned at once, fought mainly at Yamanaka. That case is presented in every phase where it bears, not hidden. Treat positions as "where tradition puts them", not as proven.
+**What this map is.** A *traditional reconstruction*: positions follow the camp sites marked on the ground (fixed by Gifu officials in the late Meiji era from Kamiya Dōichi's 1892 *Sekigahara kassen zushi*), Fujii Jizaemon's 1926 situation map and an independent plot from the bakufu compilation *Chōya kyūbun hōkō*; the timetable follows the long-standing account as defended by Kasaya Kazuhiko (fighting from about 08:00 in fog, Kobayakawa's defection about noon). Since 2013-14 Shiramine Jun, Takahashi Yōsuke and others have argued from the letters written in the days after the battle that this picture is largely a later construction: a short battle beginning about 10:00 in which Kobayakawa turned at once, fought mainly at Yamanaka. That case is presented in every phase where it bears, not hidden. Treat positions as "where tradition puts them", not as proven.
 
 ## Overview
 
@@ -11,7 +11,7 @@
 | Defectors | Kobayakawa Hideaki 15,675 (8,000 in Murdoch), Wakisaka 990, Ogawa 2,100, Kutsuki 600, Akaza 600 [wpja] [murdoch] | — |
 | Killed | ~8,000 (*Sekigahara shimatsuki*, Murdoch); 4-5,000 (Konoe letter); 32,600 (*Sekigahara gunki taisei*, 1713, inflated) [wpja] [murdoch] | ~4,000 (Gunki taisei) to 7,000 (Murdoch's guess); not recorded reliably [wpen] [murdoch] |
 
-The map shows 23 Western, 5 defecting and 22 Eastern contingents at the strengths in the General Staff table [wpja]; they sum to about 87,000 West (incl. defectors) and 89,000 East. These are mobilisation estimates from fief size, not musters: the General Staff itself said the true numbers are unknown [wpja].
+The map shows 17 Western, 6 defecting (Kobayakawa in two bodies) and 22 Eastern contingents at the strengths in the General Staff table [wpja]; they sum to about 87,000 West (incl. defectors) and 89,000 East. These are mobilisation estimates from fief size, not musters: the General Staff itself said the true numbers are unknown [wpja].
 
 ## Sources
 
@@ -20,10 +20,10 @@ The map shows 23 Western, 5 defecting and 22 Eastern contingents at the strength
 | ishikawa | Ishikawa Yasumichi & Hikosaka Motomasa to Matsudaira Ienori, 17th day (quoted in [wpja] and [shiramine2]) | primary letter, 2 days after | high for sequence: Ieyasu engaged ~10:00; Ii and Fukushima led; Kobayakawa, Wakisaka, Ogawa turned as the lines met; named dead. Written by Tokugawa officers who may not have been on the field |
 | ieyasu | Ieyasu to Date Masamune, 15th day | primary letter, same day | high: fighting finished by the hour of the horse (~noon) |
 | shimazu | Shimazu retainers' memoirs (Kanbe Gobei, Kuroki Sakon, Yamada Ansai and others; *Kyūki zatsuroku*), in modern Japanese in Shiramine 2016 | participant memoirs, written later | medium-high: what one contingent saw; disagree with each other on the hour ("from dawn" vs fog lifting ~10:00) |
-| shiramine | Shiramine Jun, *Shigaku ronsō* 46 (2016) | scholarly, primary-source based | high as critique; his own reconstruction (Western main body packed at Yamanaka, not on Sasaoyama) is contested |
-| shiramine2 | Shiramine Jun, 'Sekigahara no tatakai no fujinzu ni kansuru kōsatsu', *Beppu daigaku kiyō* | scholarly | high on the 1893 map's flaws (Furuta, Terazawa, Ii's place) |
-| kasaya | Kasaya Kazuhiko, *Sekigahara kassen* (1994, rev. 2022), as summarised with page references in [wpja] | scholarly (traditionalist) | high; read only through the Wikipedia summary — not consulted directly |
-| takahashi | Takahashi Yōsuke, 'Atarashii Sekigahara' (Kōdansha, 2025 extract) | scholarly-popular (revisionist) | medium; historiography and myths |
+| shiramine | Shiramine Jun, *Shigaku ronsō* 46 (2016), 151-163 | scholarly, primary-source based | high as critique; his own reconstruction (Western main body packed at Yamanaka, not on Sasaoyama) is contested |
+| shiramine2 | Shiramine Jun, 'Sekigahara no tatakai no fujinzu ni kansuru kōsatsu', *Beppu daigaku daigakuin kiyō* 15 (2013), 55-86 | scholarly | high on the 1893 map's flaws (Furuta, Terazawa, Ii's place) |
+| kasaya | Kasaya Kazuhiko, *Ronsō Sekigahara kassen* (Shinchō sensho, 2022), pp. 209-227, as summarised with page references in [wpja] | scholarly (traditionalist) | high; read only through the Wikipedia summary — not consulted directly |
+| takahashi | Takahashi Yōsuke, *Shin Sekigahara* (Kōdansha Gendai shinsho, 2025; extract) | scholarly-popular (revisionist) | medium; historiography and myths |
 | turnbull | Stephen Turnbull, Osprey blog (2019) | scholarly-popular | medium; English summary of Shiramine by a specialist |
 | murdoch | James Murdoch, *A History of Japan* vol. 2 (1903), ch. XIV | older narrative based on the General Staff *Nihon senshi* | medium for the traditional version; low where it adds colour |
 | wpja | ja.wikipedia, '関ヶ原の戦い' and '関ヶ原本戦の配置' | reference | medium; strengths table, Edo-period deployment variants, debates with citations |
@@ -32,6 +32,7 @@ The map shows 23 Western, 5 defecting and 22 Eastern contingents at the strength
 | hi | Plot from *Chōya kyūbun hōkō* on the 1894 1:20,000 survey (Commons) | modern plot on survey | medium; RMSE 114 m; independent of the General Staff map |
 | nsmap | General Staff deployment map (1893), Commons redraw | staff map | low-medium (Shiramine calls it a Meiji creation); used for cross-checking only |
 | jinseki | Sekigahara town open data (2013) + OpenStreetMap | data | exact coordinates of the marked camp sites (a Meiji identification) |
+| gifukanko | Gifu Prefecture tourism pages for the Tarui/Nangū-san camp markers and Utōzaka | data | coordinates of the camp sites east of the field (added after review) |
 
 ## Phases
 
@@ -45,7 +46,7 @@ Times are local solar time. Fog: dense at dawn after a night of heavy rain [murd
 - Toda Katsushige and Hiratsuka Tamehiro ~500 m S of Ukita astride the Nakasendō near Fujishita, facing E; Ōtani Yoshitsugu's own troops on the hill above Yamanaka, 400 m SW, facing SE toward Matsuoyama; Ōtani Yoshikatsu and Kinoshita Yoritsugu in front of him (Ōtani main body at Yamanaka in [hi]) [jinseki] [fujii] [hi] [wpen].
 - Wakisaka, Kutsuki, Ogawa and Akaza in a line along the foot of Matsuoyama, 600-1,000 m SE of Ōtani, facing NE [fujii] [hi] [jinseki].
 - Kobayakawa Hideaki on Matsuoyama, summit fort (castle remains), 1.5 km S of Ōtani [jinseki] [hi] [murdoch].
-- 9 km east: Mōri Hidemoto high on Nangū-san, Kikkawa Hiroie below him at the north foot, Ankokuji Ekei and Natsuka Masaie at the east foot by the Nangū shrine, Chōsokabe Morichika on Kurihara-yama to the south-east [murdoch] [wpja] (no surviving camp markers used; low).
+- About 5 km east: Mōri Hidemoto high on Nangū-san just below the summit, Kikkawa Hiroie and Ankokuji Ekei at the north foot by the Nangū shrine, Natsuka Masaie at the east foot, Chōsokabe Morichika on Kurihara-yama to the south-east (Tarui town camp markers, via the Gifu tourism pages) [gifukanko] [murdoch] [wpja]. Murdoch's 'ten miles or so' is wrong (low).
 - East: the van arrives along the Nakasendō in column from Tarui; Fukushima at its head runs into Ukita's rearguard in the fog [murdoch]. Ieyasu halts on Momokubariyama [jinseki] [fujii]. Ikeda, Asano, Yamauchi and Arima stop near Tarui and Nojō to watch Nangū-san [murdoch] [wpja].
 Confidence: low-medium (camp markers are a Meiji reading; the order of arrival is from the traditional account).
 
@@ -55,7 +56,7 @@ Confidence: low-medium (camp markers are a Meiji reading; the order of arrival i
 
 **3 — 09:00, General action.** Kuroda, Takenaka, Hosokawa, Katō, Tanaka and Ikoma attack Ishida's front; Shima Sakon is shot down by Kuroda arquebusiers firing from the flank [wpen] [murdoch]. Ukita's 17,000 push Fukushima back; Tōdō and Kyōgoku engage Hiratsuka, Toda and Ōtani's front; Oda, Furuta and Kanamori join the centre [murdoch] [wpja]. The Shimazu stand in their second line and fire on anyone who comes near, friend or foe [shimazu] [wpja]. Confidence: medium.
 
-**4 — 10:30, Deadlock; the Mōri do not come.** The fog has lifted [kasaya] [shimazu]. Ishida signals for Kobayakawa and the Nangū-san force to attack; neither moves [murdoch]. Kikkawa, who had given hostages and a pledge of Mōri neutrality on the 14th, blocks the path down for Mōri Hidemoto and those behind him [wpja] [wpen] [murdoch]. Ieyasu moves his headquarters forward from Momokubariyama to near the village (the Fujii and HI maps both show a forward command post) [fujii] [hi]. Confidence: medium for the inaction, low for the hour.
+**4 — 10:30, Deadlock; the Mōri do not come.** The fog has lifted [kasaya] [shimazu]. Neither Kobayakawa nor the Nangū-san force moves [murdoch]. (Murdoch puts Ishida's signal to Kobayakawa at noon; it is now in phase 5.) Kikkawa, who had given hostages and a pledge of Mōri neutrality on the 14th, blocks the path down for Mōri Hidemoto and those behind him [wpja] [wpen] [murdoch]. Ieyasu moves his headquarters forward from Momokubariyama to near the village (the Fujii and HI maps both show a forward command post) [fujii] [hi]. Confidence: medium for the inaction, low for the hour.
 
 **5 — 12:00, Kobayakawa comes down.** Kobayakawa's troops descend Matsuoyama onto Ōtani's flank; Ōtani, who had kept part of his force facing the hill, drives them back twice [murdoch] [wpen] [shimazu]. Confidence: medium (event), low (hour). *Debate:* the hour of the defection (see Disagreements 1); the "probing shots" (Myths 1).
 
@@ -63,7 +64,7 @@ Confidence: low-medium (camp markers are a Meiji reading; the order of arrival i
 
 **7 — 13:00, Collapse.** Ukita's division breaks, Konishi's with it, then Ishida's; the Westerners flee west and north-west into the Ibuki hills, Ishida among them [murdoch] [wpja] [shimazu]. Shimazu memoirs say Ukita's men fled past a pond between Ukita and the Shimazu [shimazu]. Confidence: medium.
 
-**8 — 14:00, The Shimazu break out; the Mōri leave.** Surrounded, Shimazu Yoshihiro's few hundred men charge east through the Eastern army, past Ieyasu's position, down the Ise road; Shimazu Toyohisa is killed near Karasugashira (marker 1.5 km SE of Sekigahara); Ii Naomasa is wounded by a Shimazu bullet in the pursuit [wpen] [wpja] [murdoch]. Western dead on the field are about 8,000 [murdoch] [wpja]. The Nangū-san force retires without fighting, toward Ise and Ōmi [murdoch] [wpja]. Confidence: medium (route), low (hour).
+**8 — 14:00, The Shimazu break out; the Mōri leave.** Surrounded, Shimazu Yoshihiro's few hundred men charge east through the Eastern army, past Ieyasu's position, down the Ise road; Shimazu Toyohisa holds the rearguard at Utōzaka on the Ise road (memorial in Ōgaki city, 2 km SE of Sekigahara; where he actually died is disputed) [gifukanko]; Ii Naomasa is wounded by a Shimazu bullet in the pursuit [wpen] [wpja] [murdoch]. Western dead on the field are about 8,000 [murdoch] [wpja]. The Nangū-san force retires without fighting, toward Ise and Ōmi [murdoch] [wpja]. Confidence: medium (route), low (hour).
 
 ## Disagreements and the readings chosen
 
@@ -77,8 +78,8 @@ Confidence: low-medium (camp markers are a Meiji reading; the order of arrival i
 
 ## Myths (popular claims modern scholarship rejects or doubts)
 
-1. **Ieyasu's "probing shots" at Matsuoyama** (*toi-deppō*): not in any account written in the first sixty years; first appears in *Keichō gunki* (1663) per Goza Yūichi, with versions differing on who fired; a 2.5 km shot would not have been heard as a signal [wpja] [turnbull] [wpen]. Kasaya keeps a version on the strength of *Bizen rōjin monogatari* [kasaya]. Shown only as a disputed tradition.
-2. **Major Meckel's verdict that the West should have won** on seeing the deployment map: invented by Shiba Ryōtarō [takahashi].
+1. **Ieyasu's "probing shots" at Matsuoyama** (*toi-deppō*): doubted by Shiramine, Fujimoto Masayuki, Goza Yūichi and others: not in any account written in the first sixty years; first appears in *Keichō gunki* (1663) per Goza, with versions differing on who fired; a 2.5 km shot would not have been heard as a signal [wpja] [turnbull] [wpen]. Kasaya keeps a version on the strength of *Bizen rōjin monogatari* [kasaya]. Shown only as a disputed tradition.
+2. **Major Meckel's verdict that the West should have won** on seeing the deployment map: according to Takahashi, an invention of Shiba Ryōtarō [takahashi].
 3. **The "crane-wing" trap**: the classic image of the West enveloping the East from the hills comes from the 1893 General Staff map, which Shiramine calls a Meiji creation [shiramine2] [turnbull].
 4. **Shimazu's refused night attack** as the reason for their passivity: from *Ochibo-shū* (1727); Kirino Sakujin rejects it [wpja].
 5. **Kikkawa's "lunch"** delaying Mōri Hidemoto (the *saishō-dono no sora-bentō* tale) is an anecdote; the Kikkawa family's later publicity shaped the record of his role [wpja].
@@ -101,3 +102,30 @@ Confidence: low-medium (camp markers are a Meiji reading; the order of arrival i
 - `window.__atlas.passThrough()`: the only remaining entries are 13:00→14:00, the Shimazu contingents passing through Ii Naomasa's and Matsudaira Tadayoshi's lines. This is the historical breakout (the Shimazu charged east through the Eastern army); the engine shows it as contact fighting.
 - The five defecting contingents (purple) belong to the East belligerent in the data, so the engine never makes them fight the East units they fought beside; they were nominally Western until they turned. The strength chart's East line therefore includes them, as its note says. Their side colour keeps them distinct on the map.
 - Overlay check: each phase's unit lines were drawn onto the Fujii 1926 map through the inverse georeference. Units sit on or within about 100-250 m of Fujii's symbols, and the Shimazu Toyohisa marker falls on the map's own 烏頭坂 (Karasugashira) label.
+
+## Review responses
+
+The independent review is in `review.md` (20 issues). Every issue was **fixed** except where noted.
+
+1. Nangū-san distance: **fixed**. It is now "about 5 km east" in the phase 0 text and the brief, with the camp markers from the Gifu tourism pages; Murdoch's mileage is flagged as wrong.
+2. Kasaya citation: **fixed**. It is now *Ronsō Sekigahara kassen* (Shinchōsha, 2022), pp. 209-227. It is still read only through ja.wikipedia (**open**: the book itself not consulted).
+3. Takahashi title: **fixed**. It is now *Shin Sekigahara* (2025), in scenario, brief and NOTES.
+4. Ankokuji execution date: **fixed**. It is now 6 November 1600 (Keichō 5.10.1).
+5. Utōzaka: **fixed**. The name is now Utōzaka, located in Ōgaki city; Toyohisa "held the rearguard there; where he died is disputed"; the event cites [gifukanko] only.
+6. Toyohisa drawn behind Yoshihiro: **fixed**. He now stands about 150 m ahead (ENE) of Yoshihiro, and the note quotes the memoir's 1.5 chō to the right of Ishida's men. Tanaka, Katō and Ii were adjusted to keep pass-through clean.
+7. Ishida's signal: **fixed**. It is removed from phase 4 and stated in phase 5 as Murdoch's noon signal to Kobayakawa only.
+8. Shimazu survivors: **fixed**. It is now a range (50 in ja.wikipedia, 200 in en.wikipedia, 70 horsemen in Murdoch), with "about 80 reached Satsuma" given as tradition.
+9. Gamō Yorisato: **fixed**. His fate is "uncertain" and his confidence `low`.
+10. Nangū-san markers: **fixed**. Hidemoto, Kikkawa, Ankokuji, Natsuka, Chōsokabe, Ikeda and Asano now stand at the marked sites (coordinates from the Gifu tourism pages) with the same Meiji caveat; the new source is `gifukanko`.
+11. Sunrise: **fixed**. It is now about 06:30, so phase 0 is at sunrise.
+12. Shiramine references: **fixed**. Both papers have full details, and the text says "since 2013-14".
+13. Phase 6 and the Ishikawa letter: **fixed**. The text now says the letter names Kobayakawa, Wakisaka and Ogawa father and son, and puts the turn at the start of the battle.
+14. Confidence: **fixed**. Phase 5 and `kobayakawa` are now `low` (`kob_van` already was).
+15. Myth wording: **fixed**. The Meckel tale is attributed to Takahashi; the probing shots are "doubted by Shiramine, Fujimoto, Goza and others", with Kasaya's defence noted.
+16. Ukita split: **fixed**. It is now declared as an estimate in the unit note.
+17. Names and strengths: **fixed**. `otani2` is Ōtani Yoshiharu (Yoshikatsu); Kyōgoku's 3,000 is attributed to en.wikipedia (the General Staff gives no figure); Mōri Katsunobu is added to the omitted contingents.
+18. Unit count: **fixed**. It is now 17 Western, 6 defecting and 22 Eastern.
+19. Ōtani group across the stream: **fixed**. Hiratsuka now starts at the Fujikawa plateau memorial west of the Fujikogawa; Toda and Hiratsuka stay on the west bank at 09:00, and the Eastern units face them across the stream.
+20. Opening clash: **fixed**. Ii's first clash now ends at the marked "start of battle" site in front of Tenmayama, and the event cites it.
+
+The reviewer's further suggestions are **open**: read Kasaya 2022, Takahashi 2025, Shiramine 2014, Nakano 2017, Mitsunari, Watanabe 2021 and Bryant 1995 directly. None was available online.
