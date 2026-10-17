@@ -616,20 +616,36 @@
      22.52569
     ],
     [
-     38.7961,
-     22.52716
+     38.7957,
+     22.526
     ],
     [
-     38.79537,
-     22.5313
+     38.7945,
+     22.5272
     ],
     [
-     38.79595,
-     22.53432
+     38.7939,
+     22.5285
     ],
     [
-     38.79653,
-     22.53583
+     38.7941,
+     22.531
+    ],
+    [
+     38.7948,
+     22.533
+    ],
+    [
+     38.7953,
+     22.5345
+    ],
+    [
+     38.7962,
+     22.5358
+    ],
+    [
+     38.7966,
+     22.5378
     ],
     [
      38.79764,
@@ -693,7 +709,77 @@
     ]
    ],
    "level_m": -2,
-   "why": "Malian Gulf in 480 BC: shore traced from Kromayer-Veith map 6 (1:25,000, the pass, 25 m georef) and map 5 (1:100,000, W of the Asopus and E of the East Gate, 173 m georef); E end bent N of the Melampygos stone. Today's plain here is Spercheios/torrent alluvium laid down since (Kraft et al. 1987; Stronk 2015: 1-8 km)."
+   "why": "Malian Gulf in 480 BC: shore traced from Kromayer-Veith map 6 (1:25,000, the pass, 25 m georef) and map 5 (1:100,000, W of the Asopus and E of the East Gate, 173 m georef); E end bent N of the Melampygos stone. Today's plain here is Spercheios/torrent alluvium laid down since (Kraft et al. 1987; Stronk 2015: 1-8 km). At the Middle Gate the line is pulled in to 40-60 m from the cliff foot (Kraft et al. 1987: 20-30 m wide)."
+  },
+  {
+   "poly": [
+    [
+     38.7922,
+     22.5257
+    ],
+    [
+     38.793,
+     22.528
+    ],
+    [
+     38.7935,
+     22.531
+    ],
+    [
+     38.7945,
+     22.5335
+    ],
+    [
+     38.7947,
+     22.5357
+    ],
+    [
+     38.7952,
+     22.5375
+    ],
+    [
+     38.796,
+     22.5394
+    ],
+    [
+     38.7966,
+     22.5394
+    ],
+    [
+     38.7966,
+     22.5378
+    ],
+    [
+     38.7962,
+     22.5358
+    ],
+    [
+     38.7953,
+     22.5345
+    ],
+    [
+     38.7948,
+     22.533
+    ],
+    [
+     38.7941,
+     22.531
+    ],
+    [
+     38.7939,
+     22.5285
+    ],
+    [
+     38.7945,
+     22.5272
+    ],
+    [
+     38.7957,
+     22.526
+    ]
+   ],
+   "level_m": 6,
+   "why": "Floor of the pass at the Middle Gate, lowered to about 6 m: the modern surface here (20-35 m) is mostly later travertine from the hot springs and alluvium, up to about 20 m deep (Stronk 2015 p.166; Kraft et al. 1987 via Reed). The true 480 BC level is not known; 6 m is a schematic beach-and-road level."
   }
  ],
  "notes": "Removed the auto-masks on Limni Nevropolis and Paliosouvala: natural karst lakes (poljes) on the Kallidromos plateau, not flooded pits. Kept the OSM quarry masks. A1/E65 motorway embankments run on the modern plain inside the 480 BC sea, so the sea flattening removes them; no separate mask."

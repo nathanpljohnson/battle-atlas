@@ -31,3 +31,9 @@
 
 ## Not read directly
 Pritchett, Studies in Ancient Greek Topography IV (1982) 176-210 and I (1965); Wallace, AJA 84 (1980) 15-23; Lazenby, The Defence of Greece (1993); Green, The Greco-Persian Wars (1996); Cartledge, Thermopylae (2006); Kraft et al. 1987; Vouvalidis et al. 2010; Grundy 1901 (its djvu text is saved as grundy1901_djvu.txt, but the maps were not extracted).
+
+## Added after the review
+- `rop2019.txt`: J. Rop, Historia 68 (2019). n. 26: the Phocian post was at the hill near Nevropolis (Pritchett 1958 pp. 209-210, 1982 p. 196 n. 50; MacKay 1963 pp. 254-255; Wallace 1980 p. 18 n. 22). n. 5: most scholars date the battle to August (How and Wells, Burn, Hignett, Hammond 1982, Lazenby 1993 pp. 118-119); Sacks 1976 and Hammond 1988 argue for mid-September. The thesis: the Persians knew of the Anopaea on arrival; the Phocians (Delphians) stood aside deliberately.
+- `isocrates_4_90.txt`: Panegyricus 90. The Lacedaemonians went to Thermopylae 'with a thousand picked soldiers of their own, supported by a few of their allies'.
+- `reed_thermopylae.txt`: Reed College summary. Kraft et al. 1987: the pass 'not more than 20-30 meters wide in 480' (Pritchett: too wide). Kolonos = hill 2 by Marinatos's arrowheads. Two ascents: Vardates (Myres, Burn, Wallace) and Chalkomata (Pritchett).
+- `manning_kolonos.txt`: Marinatos 1939, about 100 bronze and iron arrowheads and a few spearheads on Kolonos (Brown 2013 in Matthew and Trundle).
