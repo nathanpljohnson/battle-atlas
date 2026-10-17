@@ -53,7 +53,7 @@ Goal: a reusable system that turns a battle name into an Osprey-style 3D phase m
 - [x] 3 places + map matching
 - [x] 4 terrain
 - [x] 5 scenario.py
-- [ ] 6 strict validation + check.png + passThrough()
+- [x] 6 strict validation + check.png + passThrough()
 - [ ] 7 independent review
 - [ ] 8 library + browser test
 - [ ] 9 publish + report
@@ -97,7 +97,7 @@ Goal: a reusable system that turns a battle name into an Osprey-style 3D phase m
 - [x] 3 places + map matching
 - [x] 4 terrain
 - [x] 5 scenario.py
-- [ ] 6 strict validation + check.png + passThrough()
+- [x] 6 strict validation + check.png + passThrough()
 - [ ] 7 independent review
 - [ ] 8 library + browser test
 - [ ] 9 publish + report

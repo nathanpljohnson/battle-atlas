@@ -197,9 +197,9 @@ U("bevern", "pr", "inf", "Prince Karl of Bevern's flank battalions (gren. Manteu
   "The six avant-garde battalions sent with Zieten as his flank guard. Their musketry and canister drove off Nádasdy's 43 squadrons; Prince Moritz then led them round the Austrian position at the Gohlau ditch. Three of them (Manteuffel, Wedel, Ramin) followed the king to Lissa after dark [gs1904].",
   "high", {0: 3200, 5: 3100, 6: 2950, 8: 2900, 10: 2850, 11: 2800}, CITE_P, via={3: [gA(1880, 1100)], 4: [gA(1960, 1840), gA(2300, 2000)], 6: [gA(2700, 2020)]})
 U("angel", "pr", "lt", "Angelelli's free battalions (Angelelli, Kalben, Le Noble) and the foot Jäger", "3½ bns [gs1904]", 450,
-  {0: (col(0, 4700), 90, "C"), 1: (gA(1520, 930), 90, "C"), 2: ("Borne", 90, "L"), 7: ("Borne", 90, "L"), 8: (gB(2000, 1150), 110, "C"),
-   9: (gB(2300, 1270), 110, "C"), 10: (gB(2470, 1335), 60, "F"), 11: (gB(2560, 1250), 60, "L")},
-  "Light infantry that held Borne through the day, then came up at dusk to attack Wallis and Baden-Durlach on the windmill height [gs1904].",
+  {0: (col(0, 4700), 90, "C"), 1: (gA(1520, 930), 90, "C"), 2: ("Borne", 90, "L"), 7: ("Borne", 90, "L"), 8: (gB(1950, 1080), 100, "C"),
+   9: (gB(2080, 1100), 100, "C"), 10: (gB(2200, 1150), 110, "L"), 11: (gB(2470, 1335), 60, "F")},
+  "Light infantry that held Borne through the day, then marched east at dusk and joined the attack on Wallis and Baden-Durlach on the windmill height [gs1904]. Their arrival is shown late, after dark, because the map cannot move them faster than a march.",
   "medium", {0: 1500, 10: 1400, 11: 1350}, CITE_P, via=None)
 
 pcav = [  # id, name, strength text, men, typ, note, loss
@@ -390,7 +390,7 @@ U("lus", "au", "lt", "Luszinsky's hussars and Croats", "≈2 regts [gs1904]", 45
   "low", {0: 2500, 5: 2400, 11: 2300}, CITE_A, via={11: [gA(3440, 1585)]})
 
 U("aart_n", "au", "art", "Nádasdy's heavy batteries", "two batteries, ≈20 guns [gs1904]", 160,
-  {0: (gA(2845, 1250), 265, "X"), 1: (gA(2462, 1845), 250, "L"), 4: (gA(2462, 1845), 250, "F"), 5: ("Kirchberg", 230, "F"), 6: ("Kirchberg", 230, "R")},
+  {0: (gA(2845, 1250), 265, "X"), 1: (gA(2462, 1845), 250, "L"), 4: (gA(2462, 1845), 250, "F"), 5: ("Kirchberg", 230, "F"), 6: (mv(B.pos("Kirchberg"), 45, 450), 45, "R")},
   "Two batteries north-west of Sagschütz; the Prussian guns on the Glanzberg drove them back to the Kirchberg, where Wedel and Kremzow's grenadiers took them all [gs1904] [carlyle].", "medium", {0: 20, 6: 0}, CITE_A)
 U("aart_m", "au", "art", "Main army heavy batteries", "four batteries, ≈45 guns [gs1904]", 220,
   {0: (along(AN1, 0.6), 265, "X"), 1: (mv(along(AC1, 0.55), 260, 200), 260, "L"), 6: (mv(along(AC1, 0.55), 260, 200), 260, "L"), 7: ("Windmill height", 210, "F"),
