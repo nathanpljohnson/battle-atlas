@@ -79,3 +79,14 @@ Goal: a reusable system that turns a battle name into an Osprey-style 3D phase m
 - [x] 7 independent review
 - [x] 8 library + browser test
 - [x] 9 publish + report
+
+## Thermopylae 480 BC (added 2026-10-17)
+- [ ] 1 Sources
+- [ ] 2 brief.md
+- [ ] 3 places + map matching
+- [ ] 4 terrain (ancient coastline)
+- [ ] 5 scenario.py
+- [ ] 6 strict validation + check.png + passThrough()
+- [ ] 7 independent review
+- [ ] 8 library + browser test
+- [ ] 9 publish + report
