@@ -138,5 +138,15 @@
   "name": "A threat to the rear",
   "era": "all",
   "summary": "A raid or apparent attack behind the line forces a commander to divide his attention or take drastic measures."
+ },
+ "defection": {
+  "name": "Pre-arranged defection",
+  "era": "all",
+  "summary": "Contingents secretly won over before the battle change sides, or stand aside, at the moment that hurts their nominal allies most; the battle is decided before it is fought."
+ },
+ "breakout": {
+  "name": "Breakout",
+  "era": "all",
+  "summary": "A surrounded force escapes by charging through the enemy rather than away from it, leaving small rearguards to die so the rest can get clear."
  }
 }
