@@ -1,5 +1,5 @@
-Task: Battle Atlas. Thermopylae 480 BC added, reviewed and published (artifact version 9, eight battles).
-Completed: Thermopylae steps 1-9.
-Next: optional. Read Kraft 1987 / Vouvalidis 2010 / Lazenby 1993 directly and revisit the Middle Gate width and the Phocian post; palisade/wall drawing as an engine feature (Nagashino, Franklin, Thermopylae's Phocian wall). battles/crater is an unfinished separate job; don't use git add -A.
-Files written: battles/thermopylae/*, tools/terrain.py (seas), tactics.json, library.json, dist/*
-Notes: see HANDOFF.md progress log.
+Task: Battle Atlas. Adding Leuthen 1757 via /battle-map (battles/leuthen).
+Completed: step 1 sources (GS 1904 Bd. 6 text + Plans 12A/12B + both orders of battle; GS 1824 1:50k map; Beaulieu's 1757 Vienna plan; USMA-style maps; Carlyle; Wikipedia en/de/pl). See battles/leuthen/sources/NOTES.md.
+Next: step 2 brief.md.
+Files written: battles/leuthen/sources/*, tasks/todo.md
+Notes: don't use git add -A (battles/crater and dist/ regression PNGs are unrelated work). Nathan prefers no new historical-map overlays (HANDOFF 2026-10-09). Kronoskaf is CAPTCHA-blocked (don't bypass).
