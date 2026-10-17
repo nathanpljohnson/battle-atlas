@@ -6,6 +6,7 @@ Reads battles/<id>/terrain_config.json:
   {"bbox": [W, S, E, N], "zoom": 13, "grid_w": 240,
    "masks": [{"lat":..,"lon":..,"rx_m":..,"ry_m":..,"why":".."}],   # modern features to smooth away (pits, dams, motorways)
    "bumps": [{"lat":..,"lon":..,"h_m":..,"sigma_m":..,"why":".."}],  # features to restore (+) or remove (-)
+   "seas": [{"poly": [[lat, lon], ...], "level_m": -2, "why": ".."}],  # vanished water: ground inside lowered to the old level
    "exag": 3.2}
 Writes battles/<id>/terrain.json and preview PNGs (terrain_raw.png, terrain_filled.png with places overlaid if places.json exists).
 """
@@ -249,6 +250,10 @@ def main(bdir):
     for b in cfg.get("bumps", []):
         dx = (lon - b["lon"]) * kx; dy = (lat - b["lat"]) * ky
         f = f + b["h_m"] * np.exp(-(dx * dx + dy * dy) / (2 * b["sigma_m"] ** 2))
+    for s in cfg.get("seas", []):  # vanished water (e.g. a former coastline): ground inside drops to the old water level
+        im = Image.new("L", (Wd, H), 0)
+        ImageDraw.Draw(im).polygon([((lo - W) / (E - W) * Wd, (N - la) / (N - S) * H) for la, lo in s["poly"]], fill=255)
+        f = np.where(np.asarray(im) > 0, np.minimum(f, s.get("level_m", -2)), f)
     GW = cfg.get("grid_w", 240)
     GH = max(2, round(GW * (N - S) * ky / ((E - W) * kx)))
     g = np.asarray(Image.fromarray(f.astype(np.float32)).resize((GW, GH), Image.BILINEAR))
