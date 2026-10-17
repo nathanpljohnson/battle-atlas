@@ -433,6 +433,63 @@ function setupTerrainMath(T) {
   return { GW, GH, BW, BS, BE, BN, ELEV, maxE, LAT0, LON0, KLON, KLAT, MAPW: (BE - BW) * KLON, MAPH: (BN - BS) * KLAT, EXAG: T.exag || 3.2, BASE: -0.3, LIFT: 0.018, SC: (D.meta.unitScale || 1.9), elevUV };
 }
 
+// Keep Thermopylae's schematic formations and coastal road on the authored ancient land.
+function landPoint(x, z, margin = 0) {
+  if (D.id !== "thermopylae") return { x, z };
+  const polygons = G.landPolygons || (G.landPolygons = (D.water?.lakes || []).map(p => p.map(q => xz(...q))));
+  const inside = (x, z, poly) => {
+    let hit = false;
+    for (let i = 0, j = poly.length - 1; i < poly.length; j = i++) {
+      const a = poly[i], b = poly[j];
+      if ((a[1] > z) !== (b[1] > z) && x < (b[0] - a[0]) * (z - a[1]) / (b[1] - a[1]) + a[0]) hit = !hit;
+    }
+    return hit;
+  };
+  for (const poly of polygons) for (let pass = 0; pass < 4; pass++) {
+    let best = null, distance = Infinity;
+    for (let i = 0; i < poly.length; i++) {
+      const a = poly[i], b = poly[(i + 1) % poly.length], dx = b[0] - a[0], dz = b[1] - a[1];
+      const t = Math.max(0, Math.min(1, ((x - a[0]) * dx + (z - a[1]) * dz) / (dx * dx + dz * dz || 1)));
+      const qx = a[0] + dx * t, qz = a[1] + dz * t, d = Math.hypot(x - qx, z - qz);
+      if (d < distance) { distance = d; best = { x: qx, z: qz, dx, dz }; }
+    }
+    if (!inside(x, z, poly) && distance >= margin) break;
+    const l = Math.hypot(best.dx, best.dz) || 1;
+    let nx = -best.dz / l, nz = best.dx / l;
+    if (inside(best.x + nx * 0.00001, best.z + nz * 0.00001, poly)) { nx = -nx; nz = -nz; }
+    x = best.x + nx * (margin + 0.0001); z = best.z + nz * (margin + 0.0001);
+  }
+  return { x, z };
+}
+
+// Terrain-following geometry keeps the road crisp at every camera distance.
+function buildCoastalRoads() {
+  if (D.id !== "thermopylae") return;
+  G.coastalRoads = [];
+  for (const road of D.roads || []) {
+    const route = road.map(p => xz(...(Array.isArray(p) ? p : D.places[p]))), pts = [];
+    for (let i = 1; i < route.length; i++) {
+      const a = route[i - 1], b = route[i], n = Math.max(1, Math.ceil(Math.hypot(b[0] - a[0], b[1] - a[1]) / 0.008));
+      for (let j = i === 1 ? 0 : 1; j <= n; j++) pts.push(landPoint(a[0] + (b[0] - a[0]) * j / n, a[1] + (b[1] - a[1]) * j / n, 0.012));
+    }
+    G.coastalRoads.push(pts);
+    for (const [width, color, lift] of [[0.009, 0x806b4c, 0.003], [0.0055, 0xe9d9b0, 0.0035]]) {
+      const positions = [], indices = [];
+      pts.forEach((p, i) => {
+        const a = pts[Math.max(0, i - 1)], b = pts[Math.min(pts.length - 1, i + 1)], l = Math.hypot(b.x - a.x, b.z - a.z) || 1;
+        for (const sign of [-1, 1]) {
+          const q = landPoint(p.x - (b.z - a.z) / l * width / 2 * sign, p.z + (b.x - a.x) / l * width / 2 * sign, 0.006);
+          positions.push(q.x, hAt(q.x, q.z) + lift, q.z);
+        }
+        if (i) { const k = i * 2; indices.push(k - 2, k - 1, k, k - 1, k + 1, k); }
+      });
+      const geometry = new THREE.BufferGeometry(); geometry.setAttribute("position", new THREE.Float32BufferAttribute(positions, 3)); geometry.setIndex(indices);
+      const mesh = new THREE.Mesh(geometry, new THREE.MeshBasicMaterial({ color, side: THREE.DoubleSide, polygonOffset: true, polygonOffsetFactor: -2, depthWrite: false }));
+      mesh.renderOrder = 1; scene.add(mesh);
+    }
+  }
+}
+
 // ---------- Terrain texture
 function paintTerrain() {
   const { MAPW, MAPH, GW, GH, BW, BE, BS, BN, elevUV } = G;
@@ -503,7 +560,7 @@ function paintTerrain() {
   };
   for (const pass of [["rgba(96,72,40,.55)", 6], ["rgba(238,226,192,.95)", 3]]) {
     g.strokeStyle = pass[0]; g.lineWidth = pass[1]; g.lineJoin = g.lineCap = "round";
-    for (const r of D.roads || []) { const p = roadPts(r); g.beginPath(); p.forEach(([x, y], i) => i ? g.lineTo(x, y) : g.moveTo(x, y)); g.stroke(); }
+    for (const r of D.id === "thermopylae" ? [] : (D.roads || [])) { const p = roadPts(r); g.beginPath(); p.forEach(([x, y], i) => i ? g.lineTo(x, y) : g.moveTo(x, y)); g.stroke(); }
   }
   const tex = new THREE.CanvasTexture(c);
   tex.anisotropy = renderer.capabilities.getMaxAnisotropy();
@@ -545,6 +602,7 @@ function buildTerrain() {
   const mesh = new THREE.Mesh(geo, new THREE.MeshLambertMaterial({ map: paintTerrain() }));
   mesh.receiveShadow = true; scene.add(mesh);
   G.terrainGeo = geo;
+  buildCoastalRoads();
   const verts = [], cols = [], idx = [];
   const top = new THREE.Color("#94714a"), mid = new THREE.Color("#6e5236"), bot = new THREE.Color("#33261a");
   const edge = (cells) => {
@@ -577,7 +635,30 @@ function buildTerrain() {
   G.overlay.renderOrder = 1; G.overlay.visible = false; scene.add(G.overlay);
 }
 
+// Schematic stonework at the existing Phocian wall landmark; dimensions are display scale.
+function buildPhocianWall() {
+  if (D.id !== "thermopylae" || !D.hills["Phocian wall"]) return;
+  const [cx, cz] = xz(...D.hills["Phocian wall"]), angle = 20 * Math.PI / 180;
+  const dx = Math.sin(angle), dz = Math.cos(angle), group = new THREE.Group();
+  group.name = "Phocian wall (schematic)";
+  const stones = [0x9b947d, 0xada58d, 0xbcb29a, 0x887f69].map(color => new THREE.MeshLambertMaterial({ color }));
+  const geometry = new THREE.BoxGeometry(0.009, 0.004, 0.006);
+  // Staggered courses, with a narrow road opening rather than stonework over the route.
+  for (let row = 0; row < 3; row++) for (let i = -9; i <= 17; i++) {
+    const along = i * 0.009 + (row % 2) * 0.0045;
+    if (Math.abs(along) < 0.009) continue;
+    const x = cx + dx * along, z = cz + dz * along, q = landPoint(x, z, 0.009);
+    if (Math.hypot(q.x - x, q.z - z) > 0.001) continue;
+    const block = new THREE.Mesh(geometry, stones[(i + 12 + row * 3) % stones.length]);
+    block.position.set(x, hAt(x, z) + 0.002 + row * 0.004, z);
+    block.rotation.y = angle - Math.PI / 2;
+    block.castShadow = block.receiveShadow = true; group.add(block);
+  }
+  scene.add(group); G.phocianWall = group;
+}
+
 function buildScenery() {
+  buildPhocianWall();
   const dummy = new THREE.Object3D();
   const places = Object.entries(D.places), per = 18;
   const walls = new THREE.InstancedMesh(new THREE.BoxGeometry(0.034, 0.024, 0.024), new THREE.MeshLambertMaterial({ color: 0xe6dac0 }), places.length * per);
@@ -615,7 +696,8 @@ function buildCamps() {
     const d = new THREE.Object3D(); let k = 0;
     const [la0, lo0] = c.a, [la1, lo1] = c.b;
     for (let r = 0; r < rows; r++) for (let i = 0; i < per; i++, k++) {
-      const [x, z] = xz(la0 + (la1 - la0) * i / (per - 1), lo0 + (lo1 - lo0) * i / (per - 1) + r * (c.dlon || 0.0018));
+      const raw = xz(la0 + (la1 - la0) * i / (per - 1), lo0 + (lo1 - lo0) * i / (per - 1) + r * (c.dlon || 0.0018));
+      const { x, z } = landPoint(raw[0], raw[1], 0.025);
       d.position.set(x, hAt(x, z) + 0.011, z); d.rotation.set(0, Math.PI / 4, 0); d.updateMatrix(); mesh.setMatrixAt(k, d.matrix);
     }
     mesh.castShadow = true; scene.add(mesh);
@@ -797,7 +879,12 @@ function layout(U, key, nvis) {
   }
   return { blocks: out, f, form, c: [cx, cz] };
 }
-function placeBlock(U, B, s) { const T = TYPE[U.type]; B.mesh.position.set(s.x, hAt(s.x, s.z) + T.h * G.SC * B.v / 2, s.z); B.mesh.rotation.y = s.rot; B.mesh.scale.set(s.sx, Math.max(0.02, B.v), 1); B.mesh.visible = B.v > 0.03; }
+function placeBlock(U, B, s) { const T = TYPE[U.type];
+  if (D.id === "thermopylae") {
+    // The circumscribed footprint protects every corner, including during rotation and contact.
+    const radius = Math.hypot(T.w * G.SC * s.sx, T.d * G.SC) / 2 + 0.008;
+    const q = landPoint(s.x, s.z, radius); s = B.cur = { ...s, ...q };
+  } B.mesh.position.set(s.x, hAt(s.x, s.z) + T.h * G.SC * B.v / 2, s.z); B.mesh.rotation.y = s.rot; B.mesh.scale.set(s.sx, Math.max(0.02, B.v), 1); B.mesh.visible = B.v > 0.03; }
 
 // Movement path between two keys: authored via points, else a matching arrow of the same side, else straight.
 function movePath(U, p, fromC, toC) {

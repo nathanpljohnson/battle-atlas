@@ -56,3 +56,7 @@ dist/                     the built site: publish index.html with battles/*.json
 - **What it does:** `battles/austerlitz/georef.py` fits an affine transform from pixel positions on a source map to latitude and longitude, using village control points.
 - **Then:** the scenario can read positions straight off the map, e.g. `wp(1043, 766)` → Pratzen.
 - **Check the residuals:** most should be under about 300 m. A large residual usually means a wrong place identification; at Austerlitz, Bosenitz turned out to be Tvarožná, not Podolí.
+
+## GitHub release snapshot
+
+`published/index.html` is the exact self-contained ten-battle Site version 18 release, including the hosted Crater reconstruction. Open it directly or serve `published/`. The authoring build under `dist/` currently contains nine battles; preserve the Crater data in the published snapshot when rebuilding the full release. Research, source maps, scenario scripts, and Git history are included in this repository.
