@@ -1,0 +1,104 @@
+{
+ "kv5": {
+  "label": "Kromayer and Veith, Schlachten-Atlas (1922-29), Griech. Abt. Bl. 1, map 5: Thermopylen 1:100,000",
+  "file": "sources/kv5.jpg",
+  "order": 1,
+  "fwd": [
+   [
+    38.87744065038494,
+    22.33607390128044
+   ],
+   [
+    -7.979640365767644e-06,
+    0.00012456259562191108
+   ],
+   [
+    -9.215772340732703e-05,
+    -1.0957797351611475e-05
+   ]
+  ],
+  "inv": [
+   [
+    -140844.50712045585,
+    433380.0824935422
+   ],
+   [
+    -952.1739519391522,
+    -10753.802045677858
+   ],
+   [
+    7963.025551797731,
+    -684.9593132574806
+   ]
+  ],
+  "rmse_m": 173,
+  "m_per_px": 10.83,
+  "residuals_m": {
+   "Moschochori": 12,
+   "Komma": 201,
+   "Kompotades": 188,
+   "Vardates": 255,
+   "Drakospilia": 28,
+   "Koumaritsi": 186,
+   "Damasta monastery": 182
+  },
+  "loo_m": {
+   "Moschochori": 15,
+   "Komma": 340,
+   "Kompotades": 402,
+   "Vardates": 310,
+   "Drakospilia": 91,
+   "Koumaritsi": 582,
+   "Damasta monastery": 269
+  },
+  "flagged": []
+ },
+ "kv6": {
+  "label": "Kromayer and Veith, Schlachten-Atlas, Griech. Abt. Bl. 1, map 6: Die Thermopylen 480 v. Chr. 1:25,000",
+  "file": "sources/kv6.jpg",
+  "order": 1,
+  "fwd": [
+   [
+    38.80941597326518,
+    22.490471856389224
+   ],
+   [
+    1.7523965298166295e-06,
+    2.8882533145719293e-05
+   ],
+   [
+    -1.8816098104225597e-05,
+    7.13912739596036e-07
+   ]
+  ],
+  "inv": [
+   [
+    -842319.0394180029,
+    1981604.0977484642
+   ],
+   [
+    1696.2139843489217,
+    -52921.43940904037
+   ],
+   [
+    34525.5639891143,
+    3212.3702158477367
+   ]
+  ],
+  "rmse_m": 25,
+  "m_per_px": 2.51,
+  "residuals_m": {
+   "Phocian wall": 38,
+   "Kolonos Hill": 20,
+   "Old Thermopylae baths": 24,
+   "Anthele": 6
+  },
+  "loo_m": {
+   "Phocian wall": 65,
+   "Kolonos Hill": 124,
+   "Old Thermopylae baths": 103,
+   "Anthele": 431
+  },
+  "flagged": []
+ }
+}

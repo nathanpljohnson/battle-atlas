@@ -1,0 +1,22 @@
+{"bbox": [22.36, 38.72, 22.64, 38.92],
+ "langs": ["el", "en", "de"],
+ "names": {
+  "Thermopylae": {"modern": "Θερμοπύλες"},
+  "Moschochori": {"modern": "Μοσχοχώρι"},
+  "Damasta": {"modern": "Δαμάστα"},
+  "Drakospilia": {"modern": "Δρακοσπηλιά"},
+  "Mendenitsa": {"modern": "Μενδενίτσα"},
+  "Eleftherochori": {"modern": "Ελευθεροχώρι"},
+  "Irakleia": {"modern": "Ηράκλεια Φθιώτιδας"},
+  "Dyovouna": {"modern": "Διβούνια"},
+  "Frantzis": {"modern": "Φραντζής"},
+  "Kostalexis": {"modern": "Κωσταλέξης"},
+  "Komma": {"modern": "Κόμμα"},
+  "Anthili": {"modern": "Ανθήλη"},
+  "Molos": {"modern": "Μώλος"},
+  "Kompotades": {"modern": "Κομποτάδες"},
+  "Alamana": {"modern": "Αλαμάνα"},
+  "Kolonos Hill": {"modern": "Kolonos Hill", "kind": "hill"},
+  "Nevropoli": {"modern": "Νευρόπολη"},
+  "Limni Kallidromou": {"modern": "Λίμνη Καλλιδρόμου"}
+ }}

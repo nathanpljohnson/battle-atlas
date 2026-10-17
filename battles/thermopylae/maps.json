@@ -1,0 +1,62 @@
+{
+ "kv5": {
+  "file": "sources/kv5.jpg",
+  "label": "Kromayer and Veith, Schlachten-Atlas (1922-29), Griech. Abt. Bl. 1, map 5: Thermopylen 1:100,000",
+  "order": 1,
+  "gcps": {
+   "Moschochori": [
+    948,
+    458
+   ],
+   "Komma": [
+    811,
+    149
+   ],
+   "Kompotades": [
+    112,
+    115
+   ],
+   "Vardates": [
+    662,
+    672
+   ],
+   "Drakospilia": [
+    1938,
+    865
+   ],
+   "Koumaritsi": [
+    424,
+    1097
+   ],
+   "Damasta monastery": [
+    1227,
+    1039
+   ]
+  },
+  "note": "Seven village/monastery points fit at <260 m. Dropped (leave-one-out 0.8-2.7 km): Frantzis, Kostalexis, Dyovouna, Eleftherochori, Ano Damasta, Mendenitsa, Irakleia -- villages relocated since c.1900 (e.g. Kromayer's Paleo-/Elevtherochori, Neu-/Alt-Damasta) or ancient sites (Herakleia) not the modern village."
+ },
+ "kv6": {
+  "file": "sources/kv6.jpg",
+  "label": "Kromayer and Veith, Schlachten-Atlas, Griech. Abt. Bl. 1, map 6: Die Thermopylen 480 v. Chr. 1:25,000",
+  "order": 1,
+  "gcps": {
+   "Phocian wall": [
+    1527,
+    935
+   ],
+   "Kolonos Hill": [
+    1600,
+    874
+   ],
+   "Old Thermopylae baths": [
+    1259,
+    952
+   ],
+   "Anthele": [
+    657,
+    794
+   ]
+  },
+  "note": "Kolonos = Kromayer's hill 2 (his text: the end 'probably on hill 2'; Grundy's 'second mound'). Scale bar 394 px/km agrees with the fit. Anthela is a label centre (no symbol)."
+ }
+}
