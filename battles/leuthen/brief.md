@@ -10,7 +10,7 @@ Frederick II's Prussian army attacked the Austrian army of Prince Charles of Lor
 | Units | 47½ bns, 133 sqns [gs1904] | 85 bns, 125 sqns, 3 Croat bns, 4 hussar regts [gs1904] |
 | Strength | **35,000** [gs1904]; range 33,000–39,000 (Frederick: 39,000 on 1 Dec, 35,000 on 8 Dec; Wikipedia 33,000–36,000) [gs1904] [wiki] | **65,000**, incl. ≤5,000 light troops [gs1904]; range 60,000–90,000 (Frederick 60,000; Gaudi, Cogniazzo 70,000; Seyssel 85,000; Tempelhof 90,000) [gs1904]; Wikipedia 66,000 [wiki] |
 | Guns | 78 heavy (incl. 10 Glogau "Brummer" 12-pdrs) + 94 battalion guns [gs1904]; Wikipedia ~167 [wiki] | ~65 heavy + ~170 battalion guns [gs1904]; Wikipedia 250 [wiki] |
-| Losses | **6,380**: 63 officers and 1,116 men killed, 164 officers and 5,043 wounded [gs1904]; Wikipedia 6,344 (1,141 killed, 5,118 wounded, 85 captured) [wiki] | **about 22,000**: ~3,000 killed, 6,000–7,000 wounded, over 12,000 prisoners on the field [gs1904]; Wikipedia 22,000 (3,000/7,000/12,000) [wiki]; 307 officers and 21,500 men taken at Leuthen and in the pursuit [gs1904] |
+| Losses | **about 6,400**: 63 officers and 1,116 men killed, 164 officers and 5,043 wounded [gs1904]; Wikipedia 6,344 (1,141 killed, 5,118 wounded, 85 captured) [wiki] | **about 22,000**: ~3,000 killed, 6,000–7,000 wounded, over 12,000 prisoners on the field [gs1904]; Wikipedia 22,000 (3,000/7,000/12,000) [wiki]; 307 officers and 21,500 men taken at Leuthen and in the pursuit [gs1904] |
 | Trophies | — | 46 colours, 9 standards, 131 guns [gs1904]; Wikipedia 51 standards and 116 guns [wiki] |
 
 Weather: snow on 3–4 December; a clear, mild night; frozen ground with thin snow; **dense fog until towards midday**, then clear; snow again after dark [gs1904]. Sunrise about 07:55, sunset about 16:00 (local solar time; latitude 51.1°, solar declination −22.4°); civil dusk ended about 16:40.
@@ -34,7 +34,7 @@ Not read directly: Duffy, *Frederick the Great: a Military Life* (1985), *Prussi
 
 Times are local solar time. Positions are read from the georeferenced Plans 12A/12B unless stated; "Plan 12A C" means the position lettered C on that plan.
 
-### 0. 07:30 — Night camps, march from Neumarkt (conf: high)
+### 0. 07:30 — Night camps, march from Neumarkt (conf: medium)
 - Austrians in their night camp **east** of Nippern, Frobelwitz and Leuthen in two lines, about 7 km long, facing west; Nádasdy's corps and the Reserve corps as a third line behind (east); baggage behind the Weistritz [gs1904] [gs12a A] [beaulieu A]. Leuthen, Frobelwitz and Nippern held by grenadier companies, pickets and guns [gs1904] [beaulieu G].
 - Nostitz's three Saxon chevau-leger regiments and Morocz's hussars as an outpost west of Borne; Croats in the Borne and Lampersdorf woods [gs1904].
 - Prussians on the march from Neumarkt since about 05:00 in four columns (infantry inside, cavalry outside), the avant-garde (all hussars, the free battalions and Jäger, the Württemberg Dragoons, 9 battalions) ahead; joined between Neumarkt and Kammendorf at 06:00 [gs1904]. Dense fog [gs1904].
@@ -92,7 +92,7 @@ Times are local solar time. Positions are read from the georeferenced Plans 12A/
 - Driesen, watching from the Sophienberg, moves north behind the rises, wheels right and takes Lucchesi in the flank: 15 cuirassier squadrons and the 10 squadrons of the Bayreuth Dragoons in the first line, 15 cuirassier squadrons in the second, the Puttkamer Hussars overlapping on the left and into the rear; Prince Eugen of Württemberg's 30 squadrons join [gs1904] [gs12b C]. Lucchesi is killed; his horse flees into its own infantry [gs1904] [wiki].
 - Panic in the Austrian right; the whole army makes for the Weistritz; Wallis and Baden-Durlach stand on the windmill height and are ridden down; grenadier battalion Schenckendorff takes the batteries there; Angelelli's free battalions and Jäger come up from Borne [gs1904].
 
-### 11. 18:00 — Night: Lissa (conf: high)
+### 11. 18:00 — Night: Lissa (conf: medium)
 - The flight pours over Saara and Klein-Heidau to the Weistritz bridges; Nádasdy holds the crossings at Lissa; the Prussian infantry halts north of the Breslau road [gs1904].
 - About 18:00, in snow and darkness, the king with grenadier battalions Manteuffel, Wedel and Ramin and the Seydlitz Cuirassiers goes forward to Lissa; a last fight for the bridges east of the town shortly before 19:00; the king spends the night in the Lissa Schloss [gs1904].
 - The Prussian army camps between Lissa and Guckerwitz [gs1904].
@@ -103,7 +103,7 @@ Times are local solar time. Positions are read from the georeferenced Plans 12A/
 3. **The feint** (phase 2): deliberate (most sources) or accidental (Gaudi). **Chosen: deliberate, partial** [gs1904].
 4. **Nostitz's wound.** Carlyle has him mortally wounded at Borne in the morning; gs1904 (Anhang 9, from the Saxon officer Rex's report and Gadow) has him wounded and captured in the afternoon charge on Zieten. **Chosen: afternoon.**
 5. **Who led the Borne charge.** Zieten in some accounts; gs1904 finds no evidence and gives it to the avant-garde cavalry under Prince Eugen of Württemberg. **Chosen: Württemberg.**
-6. **Prussian losses** 6,344 (Wikipedia) vs 6,380 (gs1904's components; its printed total, 223 officers and 6,159 men, does not add up). **Chosen: 6,380.** Austrian 22,000; trophies 116 or 131 guns. **Chosen: gs1904** for both.
+6. **Prussian losses** 6,344 (Wikipedia) vs 6,386 (sum of gs1904's components; its printed total, 223 officers and 6,159 men, does not add up). **Chosen: about 6,400 publicly.** Components sum to 6,386; the printed 223 officers + 6,159 men sum to 6,382. Austrian 22,000; trophies 116 or 131 guns. **Chosen: gs1904** for both.
 7. **The time of Lucchesi's charge** is not given in gs1904; 16:30 is inferred (phase 9).
 8. **The "oblique order".** gs1904 calls Leuthen "the first and only time" it was carried right through; it also records that the flanking advance turned frontal south of Leuthen. Modern writers (via Wikipedia) stress the terrain and the screened march more than a drill formula. The map shows the echelon from 13:00 and a frontal fight from 15:00.
 
@@ -116,6 +116,14 @@ Times are local solar time. Positions are read from the georeferenced Plans 12A/
 - **The Austrian line through and east of the villages** (see disagreement 1).
 
 ## Confidence
-- Phases: high 0, 1, 3, 4, 5, 8, 11; medium 2, 6, 7, 9, 10.
+- Phases: high 1, 3, 4, 5, 8; medium 0, 2, 6, 7, 9, 10, 11.
 - Units: high for the Austrian battle-position lines, Nádasdy's corps, Wedel, Zieten and the Prussian line at 13:00–15:30 (mapped on Plan 12A/12B); medium for the march columns, the feint, the Reserve corps' movements, Lucchesi and Driesen (mapped on 12B but timed by inference); low for the Prussian columns before 08:00, Nostitz's outpost and the pursuit after dark (narrative only).
 - Per-phase strengths are estimates distributed from the sourced totals; unit strengths at phase 0 are estimates from battalion and squadron counts (about 520 men per Prussian battalion and 78 per squadron, 550 per Austrian battalion and 105 per squadron, scaled to the totals).
+
+## Review responses (17 October 2026)
+
+1. **Fixed:** public losses rounded to about 6,400. The recorded components total 6,386 and printed aggregate 6,382; neither supports 6,380 exactly. Modeled losses remain approximate.
+2. **Fixed:** removed the exclusive cavalry counterfactual; describe the flank attack and disruption of Austrian infantry.
+3. **Fixed:** phases 0 and 11 now medium. Their narrative is better supported than individual pre-dawn and post-dark routes, which remain low-confidence. Phase 3 is high for the concealed march, not exact intermediate column coordinates.
+4. **Fixed:** n3 names Arenberg under Forgách; this is separate from the Reserve corps commander.
+5. **Fixed / open:** directly consulted Hans-Peter Kriemann, “Die Schlacht von Leuthen,” ZMSBw (2 December 2022), https://zms.bundeswehr.de/de/mediathek/die-schlacht-von-leuthen-1757-5535676 (DOI 10.48727/opus4-603). Added to atlas sources. It corroborates the west-side battle line, concealed march, 13:00 attack and final cavalry sequence. Its Borne attribution to Zieten and opening Butterberg battery differ from the archival framework; retain the documented 1904 reading and disclose both. T. G. Otte, *Leuthen: Great Battles* (OUP, 2024), DOI 10.1093/oso/9780192870490.001.0001, identified but not read in full; direct consultation remains open.
