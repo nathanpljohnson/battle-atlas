@@ -1,5 +1,5 @@
-Task: Battle Atlas. Add Thermopylae 480 BC (/battle-map protocol).
-Completed: steps 1-6 (sources, brief, places/georef, terrain with the 480 BC sea via the new terrain.py 'seas' option, scenario.py, strict validation 0 warnings).
-Next: step 7, the independent reviewer agent (tools/review_prompt.md with <id>=thermopylae) -> battles/thermopylae/review.md; answer it in brief.md; then step 8 (library.json, build, browser check incl. passThrough()) and step 9 (publish the artifact, HANDOFF log).
-Files written: battles/thermopylae/*, tools/terrain.py (seas), tactics.json (feigned-retreat, last-stand), tasks/todo.md
-Notes: battles/crater is an unfinished separate job; never git add -A (stage paths). The coast is in battles/thermopylae/coast480.json (from KV maps 5/6). Kolonos = Kromayer hill 2.
+Task: Battle Atlas. Thermopylae 480 BC added, reviewed and published (artifact version 9, eight battles).
+Completed: Thermopylae steps 1-9.
+Next: optional. Read Kraft 1987 / Vouvalidis 2010 / Lazenby 1993 directly and revisit the Middle Gate width and the Phocian post; palisade/wall drawing as an engine feature (Nagashino, Franklin, Thermopylae's Phocian wall). battles/crater is an unfinished separate job; don't use git add -A.
+Files written: battles/thermopylae/*, tools/terrain.py (seas), tactics.json, library.json, dist/*
+Notes: see HANDOFF.md progress log.
