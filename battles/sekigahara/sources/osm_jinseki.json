@@ -1,0 +1,497 @@
+{
+  "version": 0.6,
+  "generator": "Overpass API 0.7.62.11 87bfad18",
+  "osm3s": {
+    "timestamp_osm_base": "2026-10-17T01:45:26Z",
+    "copyright": "The data included in this document is from www.openstreetmap.org. The data is made available under ODbL."
+  },
+  "elements": [
+
+{
+  "type": "node",
+  "id": 415123842,
+  "lat": 35.3800681,
+  "lon": 136.4300245,
+  "tags": {
+    "historic": "ruins",
+    "name": "藤川宿本陣跡"
+  }
+},
+{
+  "type": "node",
+  "id": 566545690,
+  "lat": 35.3692799,
+  "lon": 136.4661931,
+  "tags": {
+    "highway": "traffic_signals",
+    "name": "陣場野"
+  }
+},
+{
+  "type": "node",
+  "id": 573247657,
+  "lat": 35.3638108,
+  "lon": 136.4678136,
+  "tags": {
+    "historic": "yes",
+    "name": "東首塚"
+  }
+},
+{
+  "type": "node",
+  "id": 573247665,
+  "lat": 35.3654986,
+  "lon": 136.4654699,
+  "tags": {
+    "name": "徳川家康最後陣地",
+    "tourism": "attraction"
+  }
+},
+{
+  "type": "node",
+  "id": 573247666,
+  "lat": 35.3652140,
+  "lon": 136.4657182,
+  "tags": {
+    "historic": "ruins",
+    "name": "田中吉政陣跡"
+  }
+},
+{
+  "type": "node",
+  "id": 2418509289,
+  "lat": 35.3717680,
+  "lon": 136.4588320,
+  "tags": {
+    "name": "石田三成陣跡",
+    "name:ja": "石田三成陣跡",
+    "tourism": "viewpoint"
+  }
+},
+{
+  "type": "node",
+  "id": 2418518526,
+  "lat": 35.3704769,
+  "lon": 136.4615990,
+  "tags": {
+    "historic": "memorial",
+    "inscription": "史跡 関ヶ原古戦場 決戦地",
+    "material": "stone",
+    "memorial": "plaque",
+    "name": "関ヶ原古戦場 決戦地",
+    "name:en": "Sekigahara Battlefield",
+    "name:ja": "関ヶ原古戦場 決戦地"
+  }
+},
+{
+  "type": "node",
+  "id": 2919862274,
+  "lat": 35.3655410,
+  "lon": 136.4583899,
+  "tags": {
+    "historic": "battlefield",
+    "name": "関ヶ原古戦場　開戦地"
+  }
+},
+{
+  "type": "node",
+  "id": 4533350792,
+  "lat": 35.3670733,
+  "lon": 136.4592487,
+  "tags": {
+    "historic": "monument",
+    "name": "島津義弘陣跡",
+    "name:ja": "島津義弘陣跡"
+  }
+},
+{
+  "type": "node",
+  "id": 4586525922,
+  "lat": 35.3903461,
+  "lon": 136.5825522,
+  "tags": {
+    "historic": "memorial",
+    "name": "中山道赤坂宿本陣跡",
+    "source": "survey"
+  }
+},
+{
+  "type": "node",
+  "id": 4802727322,
+  "lat": 35.3592500,
+  "lon": 136.4611167,
+  "tags": {
+    "board_type": "history",
+    "information": "board",
+    "name": "福島正則陣跡",
+    "name:en": "Fukushima Masanori's Encampment",
+    "ref": "E東07",
+    "tourism": "information"
+  }
+},
+{
+  "type": "node",
+  "id": 4803331324,
+  "lat": 35.3594035,
+  "lon": 136.4641416,
+  "tags": {
+    "name": "藤堂高虎・京極高知 陣跡",
+    "name:en": "Todo Takatora & Kyogoju Takatomo'd encampment",
+    "tourism": "attraction"
+  }
+},
+{
+  "type": "node",
+  "id": 5411408644,
+  "lat": 35.3656913,
+  "lon": 136.4655012,
+  "tags": {
+    "leisure": "park",
+    "name": "陣場野公園"
+  }
+},
+{
+  "type": "node",
+  "id": 6029006642,
+  "lat": 35.3662502,
+  "lon": 136.6187166,
+  "tags": {
+    "amenity": "restaurant",
+    "name": "陣屋"
+  }
+},
+{
+  "type": "node",
+  "id": 7276303560,
+  "lat": 35.3603408,
+  "lon": 136.6190709,
+  "tags": {
+    "information": "board",
+    "name": "大垣宿脇本陣跡",
+    "tourism": "information"
+  }
+},
+{
+  "type": "node",
+  "id": 7276303561,
+  "lat": 35.3603496,
+  "lon": 136.6190709,
+  "tags": {
+    "historic": "memorial",
+    "memorial": "stele",
+    "name": "美濃路 大垣宿脇本陣跡"
+  }
+},
+{
+  "type": "node",
+  "id": 7276303579,
+  "lat": 35.3581075,
+  "lon": 136.6164869,
+  "tags": {
+    "information": "board",
+    "name": "大垣宿本陣跡",
+    "tourism": "information"
+  }
+},
+{
+  "type": "node",
+  "id": 7612455225,
+  "lat": 35.3432225,
+  "lon": 136.4011551,
+  "tags": {
+    "board_type": "history",
+    "information": "board",
+    "name": "柏原宿脇本陣跡",
+    "tourism": "information"
+  }
+},
+{
+  "type": "node",
+  "id": 7617618992,
+  "lat": 35.3485651,
+  "lon": 136.4352165,
+  "tags": {
+    "board_type": "history",
+    "information": "board",
+    "name": "本陣跡・脇本陣跡",
+    "tourism": "information"
+  }
+},
+{
+  "type": "node",
+  "id": 7618992328,
+  "lat": 35.3585231,
+  "lon": 136.4503723,
+  "tags": {
+    "board_type": "history",
+    "description": "大谷吉継墓、大谷吉継陣跡",
+    "information": "board",
+    "name": "大谷吉継陣跡",
+    "ref": "W西06-07",
+    "tourism": "information"
+  }
+},
+{
+  "type": "node",
+  "id": 7619056087,
+  "lat": 35.3596551,
+  "lon": 136.4603341,
+  "tags": {
+    "information": "guidepost",
+    "name": "福島正則陣跡",
+    "tourism": "information"
+  }
+},
+{
+  "type": "node",
+  "id": 7652800805,
+  "lat": 35.3520249,
+  "lon": 136.4613882,
+  "tags": {
+    "board_type": "history",
+    "information": "board",
+    "name": "小早川秀秋陣跡",
+    "ref": "W西09",
+    "tourism": "information"
+  }
+},
+{
+  "type": "node",
+  "id": 7652800816,
+  "lat": 35.3654056,
+  "lon": 136.4657642,
+  "tags": {
+    "board_type": "history",
+    "information": "board",
+    "name": "徳川家康最後陣地",
+    "ref": "E東01",
+    "tourism": "information"
+  }
+},
+{
+  "type": "node",
+  "id": 7652800817,
+  "lat": 35.3683333,
+  "lon": 136.4679247,
+  "tags": {
+    "board_type": "history",
+    "information": "board",
+    "name": "細川忠興陣跡",
+    "ref": "E東03",
+    "tourism": "information"
+  }
+},
+{
+  "type": "node",
+  "id": 7652800824,
+  "lat": 35.3705379,
+  "lon": 136.4615639,
+  "tags": {
+    "board_type": "history",
+    "information": "board",
+    "name": "決戦地",
+    "ref": "E東05",
+    "tourism": "information"
+  }
+},
+{
+  "type": "node",
+  "id": 7652800825,
+  "lat": 35.3707698,
+  "lon": 136.4594091,
+  "tags": {
+    "board_type": "history",
+    "information": "board",
+    "name": "石田三成陣跡",
+    "ref": "W西01",
+    "tourism": "information"
+  }
+},
+{
+  "type": "node",
+  "id": 7652800852,
+  "lat": 35.3670975,
+  "lon": 136.4592049,
+  "tags": {
+    "board_type": "history",
+    "information": "board",
+    "name": "島津義弘陣跡",
+    "ref": "W西06",
+    "tourism": "information"
+  }
+},
+{
+  "type": "node",
+  "id": 7652806000,
+  "lat": 35.3653745,
+  "lon": 136.4585035,
+  "tags": {
+    "board_type": "history",
+    "information": "board",
+    "name": "開戦地",
+    "ref": "E06",
+    "tourism": "information"
+  }
+},
+{
+  "type": "node",
+  "id": 7652806001,
+  "lat": 35.3594232,
+  "lon": 136.4642139,
+  "tags": {
+    "board_type": "history",
+    "information": "board",
+    "name": "藤堂高虎・京極高知 陣跡",
+    "ref": "E08",
+    "tourism": "information"
+  }
+},
+{
+  "type": "node",
+  "id": 7656276348,
+  "lat": 35.3670483,
+  "lon": 136.4919385,
+  "tags": {
+    "board_type": "history",
+    "information": "board",
+    "name": "山内一豊陣跡",
+    "tourism": "information"
+  }
+},
+{
+  "type": "node",
+  "id": 7656276365,
+  "lat": 35.3654899,
+  "lon": 136.4862368,
+  "tags": {
+    "information": "guidepost",
+    "name": "山内一豊陣跡",
+    "tourism": "information"
+  }
+},
+{
+  "type": "node",
+  "id": 7657875940,
+  "lat": 35.3707851,
+  "lon": 136.5117500,
+  "tags": {
+    "board_type": "history",
+    "information": "board",
+    "name": "垂井一里塚／浅野幸長陣跡",
+    "tourism": "information"
+  }
+},
+{
+  "type": "node",
+  "id": 7659482569,
+  "lat": 35.3715374,
+  "lon": 136.5259864,
+  "tags": {
+    "board_type": "history",
+    "information": "board",
+    "name": "中山道 垂井宿本陣跡",
+    "tourism": "information"
+  }
+},
+{
+  "type": "node",
+  "id": 7831801483,
+  "lat": 35.3715347,
+  "lon": 136.5259863,
+  "tags": {
+    "historic": "memorial",
+    "memorial": "stele",
+    "name": "中山道 垂井宿 本陣跡"
+  }
+},
+{
+  "type": "node",
+  "id": 13707208403,
+  "lat": 35.3695136,
+  "lon": 136.4523212,
+  "tags": {
+    "artist_name": "浅野祥雲",
+    "artwork_type": "sculpture",
+    "name": "島津義弘",
+    "name:ja": "島津義弘",
+    "tourism": "artwork"
+  }
+},
+{
+  "type": "node",
+  "id": 13707212265,
+  "lat": 35.3684052,
+  "lon": 136.4521053,
+  "tags": {
+    "artist_name": "浅野祥雲",
+    "artwork_type": "sculpture",
+    "name": "小早川秀秋",
+    "name:ja": "小早川秀秋",
+    "tourism": "artwork"
+  }
+},
+{
+  "type": "way",
+  "id": 177972681,
+  "center": {
+    "lat": 35.3654509,
+    "lon": 136.4878911
+  },
+  "tags": {
+    "highway": "footway",
+    "name": "桃配山 歩道 徳川家康最初陣跡"
+  }
+},
+{
+  "type": "way",
+  "id": 240798831,
+  "center": {
+    "lat": 35.3860553,
+    "lon": 136.5001950
+  },
+  "tags": {
+    "building": "yes",
+    "name": "竹中氏陣屋櫓門",
+    "source": "Bing"
+  }
+},
+{
+  "type": "way",
+  "id": 561230241,
+  "center": {
+    "lat": 35.3656449,
+    "lon": 136.4653068
+  },
+  "tags": {
+    "leisure": "park",
+    "name": "陣場野公園"
+  }
+},
+{
+  "type": "way",
+  "id": 797870253,
+  "center": {
+    "lat": 35.3898890,
+    "lon": 136.5827766
+  },
+  "tags": {
+    "leisure": "park",
+    "name": "赤坂本陣公園"
+  }
+},
+{
+  "type": "way",
+  "id": 837475193,
+  "center": {
+    "lat": 35.3624452,
+    "lon": 136.4694414
+  },
+  "tags": {
+    "building": "yes",
+    "historic": "building",
+    "name": "関ケ原宿脇本陣"
+  }
+}
+
+  ]
+}

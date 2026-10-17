@@ -1,0 +1,972 @@
+{
+  "version": 0.6,
+  "generator": "Overpass API 0.7.62.11 87bfad18",
+  "osm3s": {
+    "timestamp_osm_base": "2026-10-17T01:46:26Z",
+    "copyright": "The data included in this document is from www.openstreetmap.org. The data is made available under ODbL."
+  },
+  "elements": [
+
+{
+  "type": "node",
+  "id": 573247669,
+  "lat": 35.3681846,
+  "lon": 136.4701760,
+  "tags": {
+    "highway": "traffic_signals",
+    "name": "丸山"
+  }
+},
+{
+  "type": "node",
+  "id": 1420990031,
+  "lat": 35.3363120,
+  "lon": 136.5466340,
+  "tags": {
+    "addr:block_number": "1588",
+    "addr:city": "垂井町",
+    "addr:county": "不破郡",
+    "addr:housenumber": "2",
+    "addr:neighbourhood": "栗原",
+    "addr:postcode": "503-2123",
+    "addr:province": "岐阜県",
+    "amenity": "post_office",
+    "name": "栗原簡易郵便局",
+    "name:en": "Kurihara Summary Post Office",
+    "name:es": "Oficina Simple de Correos de Kurihara",
+    "name:ja": "栗原簡易郵便局",
+    "name:ja-Hira": "くりはら かんいゆうびんきょく",
+    "note": "National-Land Numerical Information (Public Facility) 2006, MLIT Japan",
+    "note:ja": "国土数値情報（公共施設データ）平成19年　国土交通省",
+    "opening_hours": "Mo-Fr 09:00-17:00",
+    "operator": "日本郵便",
+    "operator:en": "Japan Post",
+    "operator:ja": "日本郵便",
+    "operator:short": "郵便局",
+    "operator:short:en": "JP",
+    "operator:short:ja": "郵便局",
+    "operator:wikidata": "Q11509260",
+    "phone": "+81-584-22-0615",
+    "source": "KSJ2",
+    "source_ref": "http://nlftp.mlit.go.jp/ksj/jpgis/datalist/KsjTmplt-P02-v2_0.html"
+  }
+},
+{
+  "type": "node",
+  "id": 1421001470,
+  "lat": 35.3796130,
+  "lon": 136.5769350,
+  "tags": {
+    "amenity": "hospital",
+    "healthcare": "hospital",
+    "name": "金森病院",
+    "note": "National-Land Numerical Information (Public Facility) 2006, MLIT Japan",
+    "note:ja": "国土数値情報（公共施設データ）平成19年　国土交通省",
+    "source": "KSJ2",
+    "source_ref": "http://nlftp.mlit.go.jp/ksj/jpgis/datalist/KsjTmplt-P02-v2_0.html"
+  }
+},
+{
+  "type": "node",
+  "id": 2418515386,
+  "lat": 35.3718070,
+  "lon": 136.4586660,
+  "tags": {
+    "name": "笹尾山",
+    "natural": "peak"
+  }
+},
+{
+  "type": "node",
+  "id": 2418523015,
+  "lat": 35.3717620,
+  "lon": 136.4608060,
+  "tags": {
+    "name": "笹尾山交流館",
+    "shop": "gift"
+  }
+},
+{
+  "type": "node",
+  "id": 2785410565,
+  "lat": 35.3623082,
+  "lon": 136.6117832,
+  "tags": {
+    "historic": "yes",
+    "name": "戸田家廟所"
+  }
+},
+{
+  "type": "node",
+  "id": 5352110729,
+  "lat": 35.3551823,
+  "lon": 136.6142414,
+  "tags": {
+    "name": "小川仏壇",
+    "shop": "furniture"
+  }
+},
+{
+  "type": "node",
+  "id": 6038463985,
+  "lat": 35.4196666,
+  "lon": 136.5585294,
+  "tags": {
+    "name": "道の駅 池田温泉",
+    "tourism": "viewpoint",
+    "wikidata": "Q11641363",
+    "wikipedia": "ja:道の駅池田温泉"
+  }
+},
+{
+  "type": "node",
+  "id": 7274134853,
+  "lat": 35.3624377,
+  "lon": 136.6125642,
+  "tags": {
+    "information": "board",
+    "name": "岐阜県指定史跡 戸田家廟所",
+    "tourism": "information"
+  }
+},
+{
+  "type": "node",
+  "id": 7274134854,
+  "lat": 35.3624402,
+  "lon": 136.6125474,
+  "tags": {
+    "historic": "memorial",
+    "memorial": "stele",
+    "name": "史蹟 戸田家廟所"
+  }
+},
+{
+  "type": "node",
+  "id": 7274211280,
+  "lat": 35.3619338,
+  "lon": 136.6156628,
+  "tags": {
+    "artwork_type": "statue",
+    "name": "戸田氏鉄公騎馬像",
+    "tourism": "artwork"
+  }
+},
+{
+  "type": "node",
+  "id": 7275880721,
+  "lat": 35.3614941,
+  "lon": 136.6161697,
+  "tags": {
+    "historic": "memorial",
+    "memorial": "statue",
+    "name": "金森吉次郎翁之像"
+  }
+},
+{
+  "type": "node",
+  "id": 7618992328,
+  "lat": 35.3585231,
+  "lon": 136.4503723,
+  "tags": {
+    "board_type": "history",
+    "description": "大谷吉継墓、大谷吉継陣跡",
+    "information": "board",
+    "name": "大谷吉継陣跡",
+    "ref": "W西06-07",
+    "tourism": "information"
+  }
+},
+{
+  "type": "node",
+  "id": 7657875940,
+  "lat": 35.3707851,
+  "lon": 136.5117500,
+  "tags": {
+    "board_type": "history",
+    "information": "board",
+    "name": "垂井一里塚／浅野幸長陣跡",
+    "tourism": "information"
+  }
+},
+{
+  "type": "node",
+  "id": 8742227676,
+  "lat": 35.3381291,
+  "lon": 136.5461898,
+  "tags": {
+    "name": "栗原",
+    "name:en": "Kurihara",
+    "name:id": "Kurihara",
+    "name:ja": "栗原",
+    "name:ja-Hira": "くりはら",
+    "place": "quarter"
+  }
+},
+{
+  "type": "node",
+  "id": 11885376351,
+  "lat": 35.3468280,
+  "lon": 136.5097833,
+  "tags": {
+    "ele": "419.0",
+    "man_made": "survey_point",
+    "name": "南宮山",
+    "natural": "peak",
+    "wikidata": "Q27972356",
+    "wikipedia": "ja:南宮山"
+  }
+},
+{
+  "type": "node",
+  "id": 12169601359,
+  "lat": 35.3471631,
+  "lon": 136.4543079,
+  "tags": {
+    "alt_name": "溝口",
+    "ele": "393.95",
+    "man_made": "survey_point",
+    "name": "松尾山",
+    "natural": "peak",
+    "ref": "TR35336031601",
+    "survey_point:purpose": "horizontal",
+    "survey_point:structure": "block",
+    "wikidata": "Q11529615",
+    "wikipedia": "ja:松尾山 (岐阜県)"
+  }
+},
+{
+  "type": "node",
+  "id": 13707208405,
+  "lat": 35.3693101,
+  "lon": 136.4522720,
+  "tags": {
+    "artist_name": "浅野祥雲",
+    "artwork_type": "sculpture",
+    "name": "小西行長",
+    "name:ja": "小西行長",
+    "tourism": "artwork"
+  }
+},
+{
+  "type": "node",
+  "id": 13707208408,
+  "lat": 35.3686042,
+  "lon": 136.4531717,
+  "tags": {
+    "artist_name": "浅野祥雲",
+    "artwork_type": "sculpture",
+    "name": "毛利秀元",
+    "name:ja": "毛利秀元",
+    "tourism": "artwork"
+  }
+},
+{
+  "type": "node",
+  "id": 13707212266,
+  "lat": 35.3686404,
+  "lon": 136.4519698,
+  "tags": {
+    "artist_name": "浅野祥雲",
+    "artwork_type": "sculpture",
+    "name": "大谷吉隆",
+    "name:ja": "大谷吉隆",
+    "tourism": "artwork"
+  }
+},
+{
+  "type": "node",
+  "id": 13707212268,
+  "lat": 35.3685335,
+  "lon": 136.4521301,
+  "tags": {
+    "artist_name": "浅野祥雲",
+    "artwork_type": "sculpture",
+    "name": "平塚義広",
+    "name:ja": "平塚義広",
+    "tourism": "artwork"
+  }
+},
+{
+  "type": "node",
+  "id": 13707212269,
+  "lat": 35.3689649,
+  "lon": 136.4521071,
+  "tags": {
+    "artist_name": "浅野祥雲",
+    "artwork_type": "sculpture",
+    "name": "宇喜多秀家",
+    "name:ja": "宇喜多秀家",
+    "tourism": "artwork"
+  }
+},
+{
+  "type": "node",
+  "id": 13707212270,
+  "lat": 35.3696777,
+  "lon": 136.4527313,
+  "tags": {
+    "artist_name": "浅野祥雲",
+    "artwork_type": "sculpture",
+    "name": "黒田長政",
+    "name:ja": "黒田長政",
+    "tourism": "artwork"
+  }
+},
+{
+  "type": "node",
+  "id": 13707212273,
+  "lat": 35.3693092,
+  "lon": 136.4527733,
+  "tags": {
+    "artist_name": "浅野祥雲",
+    "artwork_type": "sculpture",
+    "name": "松平忠吉",
+    "name:ja": "松平忠吉",
+    "tourism": "artwork"
+  }
+},
+{
+  "type": "node",
+  "id": 13707212274,
+  "lat": 35.3692172,
+  "lon": 136.4527722,
+  "tags": {
+    "artist_name": "浅野祥雲",
+    "artwork_type": "sculpture",
+    "name": "本多忠勝",
+    "name:ja": "本多忠勝",
+    "tourism": "artwork"
+  }
+},
+{
+  "type": "node",
+  "id": 13707212275,
+  "lat": 35.3691350,
+  "lon": 136.4527833,
+  "tags": {
+    "artist_name": "浅野祥雲",
+    "artwork_type": "sculpture",
+    "name": "井伊直弼",
+    "name:ja": "井伊直弼",
+    "tourism": "artwork"
+  }
+},
+{
+  "type": "way",
+  "id": 44629800,
+  "center": {
+    "lat": 35.3713948,
+    "lon": 136.5529150
+  },
+  "tags": {
+    "highway": "secondary",
+    "name": "栗原青野線",
+    "ref": "228",
+    "source": "Bing"
+  }
+},
+{
+  "type": "way",
+  "id": 58625300,
+  "center": {
+    "lat": 35.4024201,
+    "lon": 136.5574462
+  },
+  "tags": {
+    "name": "大谷川",
+    "name:ja": "大谷川",
+    "note": "National-Land Numerical Information (River) 2006, MLIT Japan",
+    "note:ja": "国土数値情報(河川データ)平成18年国土交通省",
+    "source": "KSJ2",
+    "source_ref": "http://nlftp.mlit.go.jp/ksj/jpgis/datalist/KsjTmplt-W05.html",
+    "waterway": "river"
+  }
+},
+{
+  "type": "way",
+  "id": 58625886,
+  "center": {
+    "lat": 35.3779967,
+    "lon": 136.5630102
+  },
+  "tags": {
+    "name": "大谷川",
+    "name:ja": "大谷川",
+    "note": "National-Land Numerical Information (River) 2006, MLIT Japan",
+    "note:ja": "国土数値情報(河川データ)平成18年国土交通省",
+    "source": "KSJ2",
+    "source_ref": "http://nlftp.mlit.go.jp/ksj/jpgis/datalist/KsjTmplt-W05.html",
+    "waterway": "river"
+  }
+},
+{
+  "type": "way",
+  "id": 58627624,
+  "center": {
+    "lat": 35.3923461,
+    "lon": 136.5572705
+  },
+  "tags": {
+    "name": "大谷川",
+    "name:ja": "大谷川",
+    "note": "National-Land Numerical Information (River) 2006, MLIT Japan",
+    "note:ja": "国土数値情報(河川データ)平成18年国土交通省",
+    "source": "KSJ2",
+    "source_ref": "http://nlftp.mlit.go.jp/ksj/jpgis/datalist/KsjTmplt-W05.html",
+    "waterway": "river"
+  }
+},
+{
+  "type": "way",
+  "id": 58630799,
+  "center": {
+    "lat": 35.3675151,
+    "lon": 136.5699906
+  },
+  "tags": {
+    "name": "大谷川",
+    "name:ja": "大谷川",
+    "note": "National-Land Numerical Information (River) 2006, MLIT Japan",
+    "note:ja": "国土数値情報(河川データ)平成18年国土交通省",
+    "source": "KSJ2",
+    "source_ref": "http://nlftp.mlit.go.jp/ksj/jpgis/datalist/KsjTmplt-W05.html",
+    "waterway": "river"
+  }
+},
+{
+  "type": "way",
+  "id": 58634681,
+  "center": {
+    "lat": 35.3516694,
+    "lon": 136.5768013
+  },
+  "tags": {
+    "name": "大谷川",
+    "name:ja": "大谷川",
+    "note": "National-Land Numerical Information (River) 2006, MLIT Japan",
+    "note:ja": "国土数値情報(河川データ)平成18年国土交通省",
+    "source": "KSJ2",
+    "source_ref": "http://nlftp.mlit.go.jp/ksj/jpgis/datalist/KsjTmplt-W05.html",
+    "waterway": "river"
+  }
+},
+{
+  "type": "way",
+  "id": 113965729,
+  "center": {
+    "lat": 35.3402576,
+    "lon": 136.5471138
+  },
+  "tags": {
+    "highway": "secondary",
+    "name": "栗原青野線",
+    "ref": "228",
+    "source": "YahooJapan/ALPSMAP"
+  }
+},
+{
+  "type": "way",
+  "id": 113966605,
+  "center": {
+    "lat": 35.3618998,
+    "lon": 136.5515598
+  },
+  "tags": {
+    "bridge": "yes",
+    "highway": "secondary",
+    "layer": "1",
+    "name": "栗原青野線",
+    "ref": "228",
+    "source": "YahooJapan/ALPSMAP"
+  }
+},
+{
+  "type": "way",
+  "id": 113966717,
+  "center": {
+    "lat": 35.3455793,
+    "lon": 136.5462751
+  },
+  "tags": {
+    "bridge": "yes",
+    "highway": "secondary",
+    "layer": "1",
+    "name": "栗原青野線",
+    "ref": "228",
+    "source": "YahooJapan/ALPSMAP",
+    "yh:LINE_NAME": "栗原青野線",
+    "yh:LINE_NUM": "228",
+    "yh:STRUCTURE": "橋",
+    "yh:TOTYUMONO": "供用中",
+    "yh:TYPE": "一般都道府県道",
+    "yh:WIDTH": "5.5m〜13.0m",
+    "yh:WIDTH_RANK": "2"
+  }
+},
+{
+  "type": "way",
+  "id": 113967732,
+  "center": {
+    "lat": 35.3527746,
+    "lon": 136.5467143
+  },
+  "tags": {
+    "highway": "secondary",
+    "name": "栗原青野線",
+    "ref": "228",
+    "source": "YahooJapan/ALPSMAP"
+  }
+},
+{
+  "type": "way",
+  "id": 113967747,
+  "center": {
+    "lat": 35.3645226,
+    "lon": 136.5523458
+  },
+  "tags": {
+    "highway": "secondary",
+    "name": "栗原青野線",
+    "ref": "228",
+    "source": "YahooJapan/ALPSMAP"
+  }
+},
+{
+  "type": "way",
+  "id": 113967768,
+  "center": {
+    "lat": 35.3672669,
+    "lon": 136.5526961
+  },
+  "tags": {
+    "highway": "secondary",
+    "name": "栗原青野線",
+    "ref": "228",
+    "source": "Bing"
+  }
+},
+{
+  "type": "way",
+  "id": 114115794,
+  "center": {
+    "lat": 35.4099434,
+    "lon": 136.5585440
+  },
+  "tags": {
+    "highway": "secondary",
+    "layer": "-1",
+    "name": "大垣池田線",
+    "ref": "241",
+    "source": "YahooJapan/ALPSMAP",
+    "tunnel": "yes"
+  }
+},
+{
+  "type": "way",
+  "id": 114116157,
+  "center": {
+    "lat": 35.4116564,
+    "lon": 136.5590816
+  },
+  "tags": {
+    "highway": "secondary",
+    "name": "大垣池田線",
+    "ref": "241",
+    "source": "YahooJapan/ALPSMAP",
+    "yh:LINE_NAME": "大垣池田線",
+    "yh:LINE_NUM": "241",
+    "yh:STRUCTURE": "地上",
+    "yh:TOTYUMONO": "供用中",
+    "yh:TYPE": "一般都道府県道",
+    "yh:WIDTH": "5.5m〜13.0m",
+    "yh:WIDTH_RANK": "2"
+  }
+},
+{
+  "type": "way",
+  "id": 114117360,
+  "center": {
+    "lat": 35.4155992,
+    "lon": 136.5586684
+  },
+  "tags": {
+    "highway": "secondary",
+    "name": "大垣池田線",
+    "ref": "241",
+    "source": "YahooJapan/ALPSMAP"
+  }
+},
+{
+  "type": "way",
+  "id": 114556902,
+  "center": {
+    "lat": 35.3917673,
+    "lon": 136.5614367
+  },
+  "tags": {
+    "highway": "secondary",
+    "name": "大垣池田線",
+    "ref": "241",
+    "source": "YahooJapan/ALPSMAP"
+  }
+},
+{
+  "type": "way",
+  "id": 114556975,
+  "center": {
+    "lat": 35.3889312,
+    "lon": 136.5663990
+  },
+  "tags": {
+    "highway": "secondary",
+    "name": "大垣池田線",
+    "ref": "241",
+    "source": "YahooJapan/ALPSMAP"
+  }
+},
+{
+  "type": "way",
+  "id": 114558326,
+  "center": {
+    "lat": 35.4079682,
+    "lon": 136.5578066
+  },
+  "tags": {
+    "highway": "secondary",
+    "name": "大垣池田線",
+    "ref": "241",
+    "source": "YahooJapan/ALPSMAP",
+    "yh:LINE_NAME": "大垣池田線",
+    "yh:LINE_NUM": "241",
+    "yh:STRUCTURE": "地上",
+    "yh:TOTYUMONO": "供用中",
+    "yh:TYPE": "一般都道府県道",
+    "yh:WIDTH": "5.5m〜13.0m",
+    "yh:WIDTH_RANK": "2"
+  }
+},
+{
+  "type": "way",
+  "id": 114559333,
+  "center": {
+    "lat": 35.3908181,
+    "lon": 136.5637737
+  },
+  "tags": {
+    "highway": "secondary",
+    "name": "大垣池田線",
+    "ref": "241",
+    "source": "YahooJapan/ALPSMAP"
+  }
+},
+{
+  "type": "way",
+  "id": 114560745,
+  "center": {
+    "lat": 35.3931007,
+    "lon": 136.5612579
+  },
+  "tags": {
+    "highway": "secondary",
+    "name": "大垣池田線",
+    "ref": "241",
+    "source": "YahooJapan/ALPSMAP"
+  }
+},
+{
+  "type": "way",
+  "id": 114561799,
+  "center": {
+    "lat": 35.3783355,
+    "lon": 136.5536362
+  },
+  "tags": {
+    "highway": "secondary",
+    "name": "栗原青野線",
+    "ref": "228",
+    "source": "YahooJapan/ALPSMAP"
+  }
+},
+{
+  "type": "way",
+  "id": 114563676,
+  "center": {
+    "lat": 35.4011047,
+    "lon": 136.5579392
+  },
+  "tags": {
+    "highway": "secondary",
+    "name": "大垣池田線",
+    "ref": "241",
+    "source": "YahooJapan/ALPSMAP"
+  }
+},
+{
+  "type": "way",
+  "id": 114566298,
+  "center": {
+    "lat": 35.3947734,
+    "lon": 136.5604492
+  },
+  "tags": {
+    "highway": "secondary",
+    "name": "大垣池田線",
+    "ref": "241",
+    "source": "YahooJapan/ALPSMAP"
+  }
+},
+{
+  "type": "way",
+  "id": 114567245,
+  "center": {
+    "lat": 35.3967537,
+    "lon": 136.5589648
+  },
+  "tags": {
+    "highway": "secondary",
+    "name": "大垣池田線",
+    "ref": "241",
+    "source": "YahooJapan/ALPSMAP"
+  }
+},
+{
+  "type": "way",
+  "id": 162056802,
+  "center": {
+    "lat": 35.2609468,
+    "lon": 136.5067272
+  },
+  "tags": {
+    "cables": "6",
+    "circuits": "2",
+    "frequency": "60",
+    "name": "丸山幹線",
+    "name:en": "Maruyama Trunk Line",
+    "name:ja-Latn": "Maruyama Kansen",
+    "name:ja_rm": "Maruyama Kansen",
+    "operator": "関西電力送配電",
+    "operator:en": "Kansai Transmission and Distribution",
+    "operator:ja": "関西電力送配電",
+    "operator:wikidata": "Q65556946",
+    "power": "line",
+    "ref": "201 丸山幹線(関〜甲賀)",
+    "source": "Bing",
+    "voltage": "275000",
+    "wires": "single"
+  }
+},
+{
+  "type": "way",
+  "id": 611312905,
+  "center": {
+    "lat": 35.4066843,
+    "lon": 136.5572738
+  },
+  "tags": {
+    "layer": "-1",
+    "name": "大谷川",
+    "name:ja": "大谷川",
+    "note": "National-Land Numerical Information (River) 2006, MLIT Japan",
+    "note:ja": "国土数値情報(河川データ)平成18年国土交通省",
+    "source": "KSJ2",
+    "source_ref": "http://nlftp.mlit.go.jp/ksj/jpgis/datalist/KsjTmplt-W05.html",
+    "tunnel": "culvert",
+    "waterway": "river"
+  }
+},
+{
+  "type": "way",
+  "id": 611312906,
+  "center": {
+    "lat": 35.4076124,
+    "lon": 136.5580966
+  },
+  "tags": {
+    "name": "大谷川",
+    "name:ja": "大谷川",
+    "note": "National-Land Numerical Information (River) 2006, MLIT Japan",
+    "note:ja": "国土数値情報(河川データ)平成18年国土交通省",
+    "source": "KSJ2",
+    "source_ref": "http://nlftp.mlit.go.jp/ksj/jpgis/datalist/KsjTmplt-W05.html",
+    "waterway": "river"
+  }
+},
+{
+  "type": "way",
+  "id": 611312907,
+  "center": {
+    "lat": 35.4055735,
+    "lon": 136.5574209
+  },
+  "tags": {
+    "bridge": "yes",
+    "highway": "secondary",
+    "layer": "1",
+    "name": "大垣池田線",
+    "ref": "241",
+    "source": "YahooJapan/ALPSMAP"
+  }
+},
+{
+  "type": "way",
+  "id": 611312908,
+  "center": {
+    "lat": 35.4052149,
+    "lon": 136.5575377
+  },
+  "tags": {
+    "highway": "secondary",
+    "name": "大垣池田線",
+    "ref": "241",
+    "source": "YahooJapan/ALPSMAP"
+  }
+},
+{
+  "type": "way",
+  "id": 611312909,
+  "center": {
+    "lat": 35.4066103,
+    "lon": 136.5574489
+  },
+  "tags": {
+    "highway": "secondary",
+    "name": "大垣池田線",
+    "ref": "241",
+    "source": "YahooJapan/ALPSMAP"
+  }
+},
+{
+  "type": "way",
+  "id": 611312910,
+  "center": {
+    "lat": 35.4048730,
+    "lon": 136.5576848
+  },
+  "tags": {
+    "bridge": "yes",
+    "highway": "secondary",
+    "layer": "1",
+    "name": "大垣池田線",
+    "ref": "241",
+    "source": "YahooJapan/ALPSMAP"
+  }
+},
+{
+  "type": "way",
+  "id": 620523345,
+  "center": {
+    "lat": 35.3607635,
+    "lon": 136.5497456
+  },
+  "tags": {
+    "highway": "secondary",
+    "name": "栗原青野線",
+    "ref": "228",
+    "source": "YahooJapan/ALPSMAP"
+  }
+},
+{
+  "type": "way",
+  "id": 620523348,
+  "center": {
+    "lat": 35.3598744,
+    "lon": 136.5481339
+  },
+  "tags": {
+    "bridge": "yes",
+    "highway": "secondary",
+    "layer": "1",
+    "name": "栗原青野線",
+    "ref": "228",
+    "source": "YahooJapan/ALPSMAP"
+  }
+},
+{
+  "type": "way",
+  "id": 842499394,
+  "center": {
+    "lat": 35.3822445,
+    "lon": 136.5558683
+  },
+  "tags": {
+    "highway": "secondary",
+    "lanes": "2",
+    "maxspeed": "30",
+    "name": "栗原青野線",
+    "ref": "228",
+    "source": "YahooJapan/ALPSMAP"
+  }
+},
+{
+  "type": "way",
+  "id": 843061581,
+  "center": {
+    "lat": 35.3752246,
+    "lon": 136.5860841
+  },
+  "tags": {
+    "building": "commercial",
+    "ele": "9.6",
+    "height": "7.8",
+    "name": "加藤修不動産事務所",
+    "source": "MLIT_PLATEAU bldg_2a06ce8d-d1ab-4868-8a9b-8f08f17818d7"
+  }
+},
+{
+  "type": "way",
+  "id": 1085670139,
+  "center": {
+    "lat": 35.3773615,
+    "lon": 136.5850110
+  },
+  "tags": {
+    "building": "industrial",
+    "ele": "10.1",
+    "height": "8.2",
+    "name": "(株)小川製作所",
+    "office": "company",
+    "source": "MLIT_PLATEAU bldg_af3a5630-f232-48a2-93cf-1e59b52f887c"
+  }
+},
+{
+  "type": "relation",
+  "id": 4716897,
+  "center": {
+    "lat": 35.4388115,
+    "lon": 136.5584510
+  },
+  "tags": {
+    "admin_level": "7",
+    "boundary": "administrative",
+    "name": "池田町",
+    "name:en": "Ikeda",
+    "name:ja": "池田町",
+    "name:ja-Hira": "いけだちょう",
+    "name:ja-Latn": "Ikeda-chō",
+    "name:ko": "이케다초",
+    "name:zh": "池田町",
+    "name:zh-Hans": "池田町",
+    "name:zh-Hant": "池田町",
+    "ref": "214043",
+    "source": "KSJ2/N03",
+    "type": "boundary",
+    "wikidata": "Q1203599"
+  }
+},
+{
+  "type": "relation",
+  "id": 19198464,
+  "center": {
+    "lat": 35.3731530,
+    "lon": 136.5690538
+  },
+  "tags": {
+    "name": "大谷川",
+    "type": "waterway",
+    "waterway": "river",
+    "wikidata": "Q17222513"
+  }
+}
+
+  ]
+}
