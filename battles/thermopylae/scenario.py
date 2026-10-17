@@ -55,7 +55,7 @@ B.meta = {
     "sun": {"lat": 38.80, "decl": 8.0, "note": "Herodotus ties the campaign to the Carneia and the Olympic games; modern dates run from August to September 480 BC [stronk]. The sun is set for about 1 September. Herodotus's own times: Hydarnes leaves 'about lamp-lighting', reaches the summit at dawn, and Xerxes attacks at 'the hour when the market fills' [hdt]."},
     "wind": 45, "view": {"az": 0.0, "el": 0.95}, "unitScale": 0.7, "unitLabelDist": 6,
     "ground": {"season": "summer", "relief": 160},
-    "days": {"1": "Day 1 (fifth day after arrival)", "2": "Day 2", "3": "Day 3"},
+    "days": {"1": "Day 1", "2": "Day 2", "3": "Day 3"},
     "strengthNote": "Greeks: Herodotus's list (5,200 with 1,000 Phocians) plus 900 helots and 1,000 Opuntian Locrians = 7,100. Diodorus gives about 7,400; Pausanias up to 11,200 [hdt] [diod] [paus]. Persians: Herodotus's millions are impossible; 120,000 is the low end of modern estimates [wp] [kv]. The Medes' and Cissians' myriads (10,000 each) and the 20,000 sent in on day 3 are illustrative; only the Immortals' 10,000 is a source figure [hdt]. Losses follow Herodotus's 20,000 Persian dead and the modern figure of about 2,000 Greek dead [hdt] [wp]; how they are spread across the moments is an estimate. On day 3 the dismissed allies (about 3,700) and the Phocians (about 1,000) leave or stand aside; the Thebans (about 340 left) surrender.",
     "method": "The 480 BC shoreline and the pass come from the Kromayer-Veith maps of 1922-29, which rest on Grundy's 1899 survey and the French staff survey. They are georeferenced to OSM's Phocian wall, Kolonos and old baths (map 6, 25 m) and to seven villages (map 5, 173 m) [kv] [data]. The vanished water is drawn over today's Spercheios plain, and the ground inside it is lowered to sea level; it agrees with Grundy's 5-10 yard contour and the geoarchaeological reconstruction [grundy] [kraft]. Unit positions follow Herodotus's sequence on that ground [hdt]. The Anopaea route and the Phocian post are one reconstruction among several, and are low confidence [kv] [standrews].",
     "notes": "The pass at the Middle Gate was some 15-30 m wide in 480; at this map's 43 m grid it shows as a strip, and the units' frontages are drawn wider than the hoplite files would have been. Today's shore lies 1-8 km further north [stronk]. The Anopaea route shown runs up from the Asopus crossing by Kalkomata and Paleo-Eleftherochori, through the Nevropoli meadows, over the Sastani saddle and down the Alpenoi ravine. Kromayer's shorter line via Alt-Damasta, and Leake's and Grundy's variants, are described in the debate notes. Diodorus's night attack on Xerxes' tent is not shown. The oak woods on Kallidromos are drawn schematically from Herodotus's 'all the mountain was covered with oak-trees'. Phocian and Locrian contingent positions in camp are illustrative. No historical-map overlay is offered.",
@@ -99,8 +99,8 @@ B.woods = [[38.7570, 22.4700, 1400, 700], [38.7560, 22.5110, 1300, 650], [38.763
 B.camps = [{"a": [38.7982, 22.5385], "b": [38.8003, 22.5450], "rows": 2, "until": 6},
            {"a": [38.8020, 22.4520], "b": [38.7970, 22.4730], "rows": 4, "until": 9}]
 
-def U(uid, side, typ, name, strength, frontage, keys, note, conf, men, cite, via=None, blocks=None, code=None):
-    u = B.unit(uid, side, typ, name, strength, frontage, note=note, conf=conf, men=men, cite=cite, blocks=blocks, code=code)
+def U(uid, side, typ, name, strength, frontage, keys, note, conf, men, cite, via=None, blocks=None, code=None, lines=None):
+    u = B.unit(uid, side, typ, name, strength, frontage, note=note, conf=conf, men=men, cite=cite, blocks=blocks, code=code, lines=lines)
     for phase, (pos, facing, form, *bend) in keys.items():
         u.at(phase, pos, facing, form, via=(via or {}).get(phase), bend=bend[0] if bend else 0)
     return u
@@ -123,7 +123,7 @@ U("thespians", "gre", "hi", "Thespians (Demophilos)", "700 hoplites", 90,
   "The Thespians chose to stay with Leonidas on the last day and died with him; Dithyrambos was named the bravest of them [hdt].",
   "high", {0: 700, 3: 680, 8: 480, 9: 150}, ["hdt"], via={9: [WALL]}, code="C")
 U("thebans", "gre", "hi", "Thebans (Leontiades)", "400 hoplites", 70,
-  {0: ((GCAMP, 75, 260), W, "X"), 1: ((WALL, 75, 140), W, "C"), 7: ((WALL, 75, 80), W, "L"), 8: ((F3, 165, 50), W, "L"), 9: ((WALL, W, 140), W, "R")},
+  {0: ((GCAMP, 75, 260), W, "X"), 1: ((WALL, 75, 140), W, "C"), 7: ((WALL, 75, 80), W, "L"), 8: ((F3, 165, 50), W, "L"), 9: ((WALL, W, 35), W, "R")},
   "Herodotus says Leonidas kept them as hostages; they fought for a while on day 3, then broke away while the others made for the hillock and surrendered. Some were killed as they came over; the rest were branded [hdt].",
   "medium", {0: 400, 3: 390, 8: 340, 9: 0}, ["hdt", "diod"], code="D")
 U("tegeans", "gre", "hi", "Tegeans", "500 hoplites", 80,
@@ -152,24 +152,24 @@ U("phocians", "gre", "hi", "Phocians on the mountain", "1,000 hoplites", 120,
   "low", {0: 1000, 6: 980}, ["hdt", "kv"], code="J")
 
 # ---- Persians. Only the waves Herodotus names are separate; the rest of the army is a camp block.
-U("medes", "per", "arc", "Medes", "about 10,000 (illustrative)", 120,
+U("medes", "per", "arc", "Medes", "about 10,000 (illustrative)", 80,
   {0: ((PCAMP, 270, 500), E, "X"), 1: ((F12, W, 130), E, "F"), 2: ((ANTH, 255, 300), W, "C"), 3: ((F12, W, 120), E, "F"), 4: ((PCAMP, 270, 500), E, "X")},
   "Sent first with the Cissians, with orders to take the Greeks alive; they lost heavily all day and came on again on day 2 [hdt]. Diodorus adds the kinsmen of the Marathon dead [diod]. Their strength is not recorded.",
-  "medium", {0: 10000, 1: 7500, 3: 6000}, ["hdt", "diod"], via={1: [WEST_GATE, ANTH, MID], 4: [WEST_GATE]}, blocks=8, code="1")
-U("cissians", "per", "arc", "Cissians", "about 10,000 (illustrative)", 120,
+  "medium", {0: 10000, 1: 7500, 3: 6000}, ["hdt", "diod"], via={1: [WEST_GATE, ANTH, MID], 4: [WEST_GATE]}, blocks=6, lines=2, code="1")
+U("cissians", "per", "arc", "Cissians", "about 10,000 (illustrative)", 80,
   {0: ((PCAMP, 90, 500), E, "X"), 1: ((F12, W, 450), E, "C"), 2: ((ANTH, 255, 500), W, "C"), 3: ((F12, W, 420), E, "C"), 4: ((PCAMP, 90, 500), E, "X")},
   "Attacked alongside the Medes on day 1 [hdt]; Diodorus has them, with Sacae, relieving the Medes [diod]. Their strength is not recorded.",
-  "medium", {0: 10000, 1: 8500, 3: 7000}, ["hdt", "diod"], via={1: [WEST_GATE, ANTH], 4: [WEST_GATE]}, blocks=8, code="2")
-U("immortals", "imm", "inf", "Immortals (Hydarnes), guided by Ephialtes", "10,000", 130,
+  "medium", {0: 10000, 1: 8500, 3: 7000}, ["hdt", "diod"], via={1: [WEST_GATE, ANTH], 4: [WEST_GATE]}, blocks=6, lines=2, code="2")
+U("immortals", "imm", "inf", "Immortals (Hydarnes), guided by Ephialtes", "10,000", 90,
   {0: ((PCAMP, 180, 350), E, "X"), 1: ((ANTH, 75, 150), E, "C"), 2: ((F12, W, 140), E, "F"), 3: ((PCAMP, 180, 350), E, "X"),
    4: (ASOPUS_X, 170, "C"), 5: (M1, 70, "C"), 6: (SADDLE, 60, "F"), 7: (D3, 30, "C"), 8: ((UNTDRAK, 345, 600), 0, "C"), 9: ((KOL, 75, 230), W, "F")},
   "Persia's royal guard, 10,000 strong by Herodotus's count. They failed against the wall on day 1. At lamp-lighting on day 2 they left with Ephialtes over the Anopaea path, reached the summit at dawn, brushed the Phocians aside and came down behind the Greeks [hdt]. The route is a reconstruction [kv] [standrews].",
   "medium", {0: 10000, 2: 8500, 9: 8000}, ["hdt", "kv", "standrews"],
-  via={2: [ANTH, MID], 3: [MID, WEST_GATE], 5: [KALK, PALEO, QUELLE, NEVRO], 6: [M2, ALTDRAK], 7: [D1, D2], 8: [D4, D5, UNTDRAK], 9: [ALPENOI, EAST_GATE, GCAMP]}, blocks=8, code="3")
-U("assault", "per", "arc", "Xerxes' assault columns (day 3)", "about 20,000 (illustrative)", 150,
+  via={2: [ANTH, MID], 3: [MID, WEST_GATE], 5: [KALK, PALEO, QUELLE, NEVRO], 6: [M2, ALTDRAK], 7: [D1, D2], 8: [D4, D5, UNTDRAK], 9: [ALPENOI, EAST_GATE, GCAMP]}, blocks=6, lines=2, code="3")
+U("assault", "per", "arc", "Xerxes' assault columns (day 3)", "about 20,000 (illustrative)", 110,
   {0: ((PCAMP, 0, 200), E, "X"), 7: ((ANTH, 255, 200), E, "C"), 8: ((F3, W, 110), E, "F"), 9: ((WALL, W, 70), E, "F")},
   "Sent in at 'the hour when the market fills', driven forward with whips; many were pushed into the sea or trampled. Two of Xerxes' brothers, Abrocomes and Hyperanthes, fell [hdt]. The strength is illustrative.",
-  "medium", {0: 20000, 8: 12000, 9: 10000}, ["hdt"], via={7: [WEST_GATE], 8: [MID]}, blocks=10, code="4")
+  "medium", {0: 20000, 8: 12000, 9: 10000}, ["hdt"], via={7: [WEST_GATE], 8: [MID]}, blocks=8, lines=2, code="4")
 U("pcamp", "per", "inf", "Persian main army in camp", "about 70,000 (illustrative)", 900,
   {0: ((PCAMP, 315, 400), E, "X")},
   "The rest of the army, including the cavalry, stayed on the Trachinian plain, where it could not be used in the pass [hdt] [kv]. Herodotus's millions are discarded; 120,000 in all is the low end of modern estimates [wp].",
@@ -253,7 +253,7 @@ B.phase("11:00", "The kolonos", "The last stand",
   tac("Last stand", "Cut off front and rear, the remnant takes the strongest ground left and fights until overwhelmed.", "last-stand"),
   "Kolonos Hill", 1.9,
   arrows=[ARR("imm", "charge", (KOL, 75, 300), (KOL, 75, 60)), ARR("per", "charge", (WALL, W, 120), (KOL, 230, 60)), ARR("spa", "retreat", F3, WALL, (KOL, 230, 20))],
-  events=[("Kolonos Hill", "The last stand on Kolonos [hdt] [wp]", ["hdt", "wp"]), ((WALL, W, 140), "The Thebans surrender [hdt]", ["hdt"])],
+  events=[("Kolonos Hill", "The last stand on Kolonos [hdt] [wp]", ["hdt", "wp"]), ((WALL, W, 40), "The Thebans surrender [hdt]", ["hdt"])],
   conf="medium", day=3, cite=["hdt", "wp", "grundy", "kv"],
   debate="The hillock is identified with Kolonos, where Marinatos found the arrowheads [wp]. Kromayer labels a hill farther east as the Leonidashügel but writes that the end came 'probably on hill 2', which matches Kolonos; Grundy says the 'second mound' [kv] [grundy]. Herodotus gives 20,000 Persian dead and 4,000 Greek bodies, including helots; most modern writers accept roughly 2,000 Greek dead [hdt] [wp].")
 
