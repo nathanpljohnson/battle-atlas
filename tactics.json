@@ -148,5 +148,15 @@
   "name": "Breakout",
   "era": "all",
   "summary": "A surrounded force escapes by charging through the enemy rather than away from it, leaving small rearguards to die so the rest can get clear."
+ },
+ "feigned-retreat": {
+  "name": "Feigned retreat",
+  "era": "all",
+  "summary": "Troops turn and appear to run so that the enemy breaks ranks to chase them, then face about and strike the disordered pursuers. It needs discipline and drill: a real panic and a pretended one look the same until the turn."
+ },
+ "last-stand": {
+  "name": "Last stand",
+  "era": "all",
+  "summary": "A force that cannot escape chooses the strongest ground left to it, often a hill or a wall, and fights until overwhelmed. Usually it buys time for others to get away, or makes a point the survivors and the enemy will remember."
  }
 }

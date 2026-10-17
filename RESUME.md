@@ -1,5 +1,5 @@
-Task: Battle Atlas. Nagashino 1575 (featuring Baba Nobuharu) added, reviewed and published.
-Completed: Nagashino steps 1-9; library artifact version 7 (seven battles).
-Next: optional. Draw palisades/earthworks as an engine feature (Nagashino, Franklin); read Hirayama 2014, Kaneko 2023, Mikawa monogatari directly; Sekigahara's open items (Kasaya 2022 etc.). battles/crater is an unfinished separate job; don't use git add -A.
-Files written: battles/nagashino/*, library.json, dist/*
-Notes: see HANDOFF.md progress log.
+Task: Battle Atlas. Add Thermopylae 480 BC (/battle-map protocol).
+Completed: steps 1-6 (sources, brief, places/georef, terrain with the 480 BC sea via the new terrain.py 'seas' option, scenario.py, strict validation 0 warnings).
+Next: step 7, the independent reviewer agent (tools/review_prompt.md with <id>=thermopylae) -> battles/thermopylae/review.md; answer it in brief.md; then step 8 (library.json, build, browser check incl. passThrough()) and step 9 (publish the artifact, HANDOFF log).
+Files written: battles/thermopylae/*, tools/terrain.py (seas), tactics.json (feigned-retreat, last-stand), tasks/todo.md
+Notes: battles/crater is an unfinished separate job; never git add -A (stage paths). The coast is in battles/thermopylae/coast480.json (from KV maps 5/6). Kolonos = Kromayer hill 2.
