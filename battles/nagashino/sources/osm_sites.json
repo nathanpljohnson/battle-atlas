@@ -1,0 +1,1597 @@
+{
+  "version": 0.6,
+  "generator": "Overpass API 0.7.62.11 87bfad18",
+  "osm3s": {
+    "timestamp_osm_base": "2026-10-17T02:31:20Z",
+    "copyright": "The data included in this document is from www.openstreetmap.org. The data is made available under ODbL."
+  },
+  "elements": [
+
+{
+  "type": "node",
+  "id": 264875703,
+  "lat": 34.9102392,
+  "lon": 137.5142196,
+  "tags": {
+    "KSJ2:LIN": "飯田線",
+    "name": "茶臼山",
+    "name:en": "Chausuyama",
+    "name:ko": "차우스야마",
+    "note": "National-Land Numerical Information (Railway) 2007, MLIT Japan",
+    "note:ja": "国土数値情報（鉄道データ）平成19年 国土交通省",
+    "public_transport": "station",
+    "railway": "station",
+    "source": "KSJ2",
+    "source_ref": "http://nlftp.mlit.go.jp/ksj/jpgis/datalist/KsjTmplt-N02-v1_1.html",
+    "wikidata": "Q772936",
+    "wikipedia": "ja:茶臼山駅"
+  }
+},
+{
+  "type": "node",
+  "id": 264875774,
+  "lat": 34.9325634,
+  "lon": 137.5761886,
+  "tags": {
+    "KSJ2:LIN": "飯田線",
+    "KSJ2:STN": "本長篠",
+    "name": "本長篠",
+    "name:en": "Hon-Nagashino",
+    "name:ja": "本長篠",
+    "name:ko": "혼나가시노",
+    "note": "National-Land Numerical Information (Railway) 2007, MLIT Japan",
+    "note:ja": "国土数値情報（鉄道データ）平成19年　国土交通省",
+    "public_transport": "station",
+    "railway": "station",
+    "source": "KSJ2",
+    "source_ref": "http://nlftp.mlit.go.jp/ksj/jpgis/datalist/KsjTmplt-N02-v1_1.html",
+    "wikidata": "Q773509",
+    "wikipedia": "ja:本長篠駅"
+  }
+},
+{
+  "type": "node",
+  "id": 646235185,
+  "lat": 34.9084990,
+  "lon": 137.5146357,
+  "tags": {
+    "crossing": "traffic_signals",
+    "crossing_ref": "zebra",
+    "highway": "traffic_signals",
+    "name": "茶臼山駅入口"
+  }
+},
+{
+  "type": "node",
+  "id": 650019854,
+  "lat": 34.9216765,
+  "lon": 137.5368758,
+  "tags": {
+    "crossing": "traffic_signals",
+    "crossing_ref": "zebra",
+    "highway": "traffic_signals",
+    "name": "清井田"
+  }
+},
+{
+  "type": "node",
+  "id": 650020062,
+  "lat": 34.9245531,
+  "lon": 137.5606434,
+  "tags": {
+    "crossing": "traffic_signals",
+    "crossing_ref": "zebra",
+    "highway": "traffic_signals",
+    "name": "長篠城址"
+  }
+},
+{
+  "type": "node",
+  "id": 650020145,
+  "lat": 34.9261220,
+  "lon": 137.5651760,
+  "tags": {
+    "KSJ2:LIN": "飯田線",
+    "KSJ2:STN": "長篠城",
+    "name": "長篠城",
+    "name:en": "Nagashinojo",
+    "name:ja": "長篠城",
+    "name:ko": "나가시노조",
+    "public_transport": "station",
+    "railway": "station",
+    "wikidata": "Q773379",
+    "wikipedia": "ja:長篠城駅"
+  }
+},
+{
+  "type": "node",
+  "id": 650020286,
+  "lat": 34.9341193,
+  "lon": 137.5760476,
+  "tags": {
+    "crossing": "traffic_signals",
+    "crossing_ref": "zebra",
+    "highway": "traffic_signals",
+    "name": "長篠"
+  }
+},
+{
+  "type": "node",
+  "id": 660026312,
+  "lat": 34.9153676,
+  "lon": 137.5255106,
+  "tags": {
+    "crossing": "traffic_signals",
+    "crossing_ref": "zebra",
+    "highway": "traffic_signals",
+    "name": "設楽原歴史資料館南"
+  }
+},
+{
+  "type": "node",
+  "id": 660026483,
+  "lat": 34.9222696,
+  "lon": 137.5372065,
+  "tags": {
+    "name": "清井田踏切",
+    "railway": "level_crossing"
+  }
+},
+{
+  "type": "node",
+  "id": 663909700,
+  "lat": 34.9301608,
+  "lon": 137.5476300,
+  "tags": {
+    "name": "長篠踏切",
+    "railway": "level_crossing"
+  }
+},
+{
+  "type": "node",
+  "id": 664319022,
+  "lat": 34.9412910,
+  "lon": 137.5413460,
+  "tags": {
+    "name": "出沢",
+    "place": "quarter"
+  }
+},
+{
+  "type": "node",
+  "id": 664319025,
+  "lat": 34.9271227,
+  "lon": 137.5616223,
+  "tags": {
+    "name": "長篠",
+    "place": "quarter"
+  }
+},
+{
+  "type": "node",
+  "id": 667214894,
+  "lat": 34.9227202,
+  "lon": 137.5595040,
+  "tags": {
+    "historic": "ruins",
+    "name": "長篠城址",
+    "note": "長篠合戦のぼりまつり"
+  }
+},
+{
+  "type": "node",
+  "id": 667218199,
+  "lat": 34.9216837,
+  "lon": 137.5247394,
+  "tags": {
+    "historic": "battlefield",
+    "name": "設楽原決戦場跡",
+    "place": "locality"
+  }
+},
+{
+  "type": "node",
+  "id": 973493556,
+  "lat": 34.9303199,
+  "lon": 137.5578390,
+  "tags": {
+    "amenity": "place_of_worship",
+    "name": "医王寺",
+    "religion": "buddhist",
+    "wikidata": "Q11404618",
+    "wikipedia": "ja:医王寺 (新城市)"
+  }
+},
+{
+  "type": "node",
+  "id": 974278519,
+  "lat": 34.9181647,
+  "lon": 137.5286876,
+  "tags": {
+    "description": "〔お・し・ふ・も〕 設楽原古戦場いろはかるた",
+    "historic": "memorial",
+    "name": "信玄塚",
+    "object": "karuta",
+    "website": "http://www.net-plaza.org/KANKO/shinshiro/karuta.html"
+  }
+},
+{
+  "type": "node",
+  "id": 986261588,
+  "lat": 34.8835150,
+  "lon": 137.4793985,
+  "tags": {
+    "historic": "archaeological_site",
+    "name": "嶋田氏陣屋跡",
+    "note": "市指定文化遺産"
+  }
+},
+{
+  "type": "node",
+  "id": 986268168,
+  "lat": 34.9236747,
+  "lon": 137.5543957,
+  "tags": {
+    "historic": "memorial",
+    "name": "馬場美濃守信房の墓"
+  }
+},
+{
+  "type": "node",
+  "id": 986333629,
+  "lat": 34.9284035,
+  "lon": 137.5579200,
+  "tags": {
+    "amenity": "place_of_worship",
+    "name": "長篠荏柄天神社",
+    "religion": "shinto"
+  }
+},
+{
+  "type": "node",
+  "id": 992354563,
+  "lat": 34.9251385,
+  "lon": 137.5608599,
+  "tags": {
+    "amenity": "place_of_worship",
+    "name": "大通寺",
+    "religion": "buddhist"
+  }
+},
+{
+  "type": "node",
+  "id": 1024448875,
+  "lat": 34.8969759,
+  "lon": 137.5241351,
+  "tags": {
+    "historic": "memorial",
+    "name": "菅谷太次兵衛の墓"
+  }
+},
+{
+  "type": "node",
+  "id": 1060638501,
+  "lat": 34.9338336,
+  "lon": 137.5758457,
+  "tags": {
+    "bus": "yes",
+    "highway": "bus_stop",
+    "name": "本長篠駅前",
+    "operator": "豊鉄バス",
+    "operator:en": "Toyotetsu-Bus",
+    "operator:ja": "豊鉄バス",
+    "public_transport": "platform"
+  }
+},
+{
+  "type": "node",
+  "id": 1060801153,
+  "lat": 34.8969176,
+  "lon": 137.4704636,
+  "tags": {
+    "historic": "memorial",
+    "name": "菅沼定則の塚"
+  }
+},
+{
+  "type": "node",
+  "id": 1060848570,
+  "lat": 34.8963698,
+  "lon": 137.5078616,
+  "tags": {
+    "historic": "wayside_shrine",
+    "name": "丸山像"
+  }
+},
+{
+  "type": "node",
+  "id": 1061015317,
+  "lat": 34.8982947,
+  "lon": 137.4942011,
+  "tags": {
+    "historic": "memorial",
+    "name": "亀姫の墓"
+  }
+},
+{
+  "type": "node",
+  "id": 1061031839,
+  "lat": 34.9128830,
+  "lon": 137.5031330,
+  "tags": {
+    "historic": "battlefield",
+    "landuse": "village_green",
+    "name": "織田信長旗本地"
+  }
+},
+{
+  "type": "node",
+  "id": 1061035875,
+  "lat": 34.9135957,
+  "lon": 137.5035191,
+  "tags": {
+    "description": "〔ゑ〕〔て〕設楽原古戦場いろはかるた",
+    "historic": "battlefield",
+    "landuse": "village_green",
+    "name": "織田信長本陣地",
+    "object": "karuta",
+    "website": "http://www.net-plaza.org/KANKO/shinshiro/karuta.html"
+  }
+},
+{
+  "type": "node",
+  "id": 1061042930,
+  "lat": 34.9165869,
+  "lon": 137.5209426,
+  "tags": {
+    "description": "〔い〕 設楽原古戦場いろはかるた",
+    "historic": "battlefield",
+    "name": "徳川家康本陣跡",
+    "object": "karuta",
+    "place": "locality",
+    "website": "http://www.net-plaza.org/KANKO/shinshiro/karuta.html"
+  }
+},
+{
+  "type": "node",
+  "id": 1119642691,
+  "lat": 34.9202512,
+  "lon": 137.5266886,
+  "tags": {
+    "information": "board",
+    "name": "甘利郷左衛門信康の碑",
+    "tourism": "information"
+  }
+},
+{
+  "type": "node",
+  "id": 1119654618,
+  "lat": 34.9251112,
+  "lon": 137.5249548,
+  "tags": {
+    "description": "〔さ〕 設楽原古戦場いろはかるた",
+    "historic": "battlefield",
+    "name": "丸山攻防戦跡",
+    "object": "karuta",
+    "place": "locality",
+    "website": "http://www.net-plaza.org/KANKO/shinshiro/karuta.html"
+  }
+},
+{
+  "type": "node",
+  "id": 1119686195,
+  "lat": 34.9406974,
+  "lon": 137.5458852,
+  "tags": {
+    "description": "〔へ〕 設楽原古戦場いろはかるた",
+    "historic": "memorial",
+    "name": "馬場美濃守信房の墓",
+    "object": "karuta",
+    "website": "http://www.net-plaza.org/KANKO/shinshiro/karuta.html"
+  }
+},
+{
+  "type": "node",
+  "id": 1141576184,
+  "lat": 34.9299773,
+  "lon": 137.5574642,
+  "tags": {
+    "historic": "battlefield",
+    "landuse": "village_green",
+    "name": "武田勝頼本陣"
+  }
+},
+{
+  "type": "node",
+  "id": 1141658759,
+  "lat": 34.9087466,
+  "lon": 137.5287005,
+  "tags": {
+    "description": "〔か〕 設楽原古戦場いろはかるた",
+    "historic": "memorial",
+    "name": "山本勘蔵信供の墓",
+    "object": "karuta",
+    "website": "http://www.net-plaza.org/KANKO/shinshiro/karuta.html"
+  }
+},
+{
+  "type": "node",
+  "id": 1141663976,
+  "lat": 34.9094636,
+  "lon": 137.5197849,
+  "tags": {
+    "description": "〔る〕〔ゆ〕 設楽原古戦場いろはかるた",
+    "historic": "memorial",
+    "name": "高坂昌澄の墓",
+    "object": "karuta",
+    "website": "http://www.net-plaza.org/KANKO/shinshiro/karuta.html"
+  }
+},
+{
+  "type": "node",
+  "id": 1141664012,
+  "lat": 34.9087730,
+  "lon": 137.5218019,
+  "tags": {
+    "description": "〔せ〕 設楽原古戦場いろはかるた",
+    "historic": "battlefield",
+    "name": "大久保兄弟布陣跡",
+    "object": "karuta",
+    "place": "locality",
+    "website": "http://www.net-plaza.org/KANKO/shinshiro/karuta.html"
+  }
+},
+{
+  "type": "node",
+  "id": 1141710055,
+  "lat": 34.9117468,
+  "lon": 137.5227138,
+  "tags": {
+    "description": "〔に〕 設楽原古戦場いろはかるた",
+    "historic": "battlefield",
+    "name": "天正乙亥設楽原古戦場",
+    "object": "karuta",
+    "place": "locality",
+    "website": "http://www.net-plaza.org/KANKO/shinshiro/karuta.html"
+  }
+},
+{
+  "type": "node",
+  "id": 1141716407,
+  "lat": 34.9190002,
+  "lon": 137.5355211,
+  "tags": {
+    "description": "〔け〕 設楽原古戦場いろはかるた",
+    "historic": "archaeological_site",
+    "name": "清井田訣盃の跡",
+    "object": "karuta",
+    "website": "http://www.net-plaza.org/KANKO/shinshiro/karuta.html"
+  }
+},
+{
+  "type": "node",
+  "id": 1141723891,
+  "lat": 34.9220746,
+  "lon": 137.5473488,
+  "tags": {
+    "description": "〔ま〕 設楽原古戦場いろはかるた",
+    "historic": "yes",
+    "name": "信長賞詞地（コロミツ坂）",
+    "object": "karuta",
+    "place": "locality",
+    "website": "http://www.net-plaza.org/KANKO/shinshiro/karuta.html"
+  }
+},
+{
+  "type": "node",
+  "id": 1141747689,
+  "lat": 34.9443585,
+  "lon": 137.5442965,
+  "tags": {
+    "historic": "battlefield",
+    "name": "馬場美濃守信房戦死の地",
+    "place": "locality"
+  }
+},
+{
+  "type": "node",
+  "id": 1141758294,
+  "lat": 34.9295486,
+  "lon": 137.5124750,
+  "tags": {
+    "description": "〔は〕 設楽原古戦場いろはかるた",
+    "historic": "battlefield",
+    "name": "羽柴秀吉陣地",
+    "object": "karuta",
+    "place": "locality",
+    "website": "http://www.net-plaza.org/KANKO/shinshiro/karuta.html"
+  }
+},
+{
+  "type": "node",
+  "id": 1141773561,
+  "lat": 34.9284931,
+  "lon": 137.5136284,
+  "tags": {
+    "historic": "yes",
+    "name": "羽柴秀吉陣地登り口",
+    "place": "locality"
+  }
+},
+{
+  "type": "node",
+  "id": 1141791878,
+  "lat": 34.9206939,
+  "lon": 137.5277810,
+  "tags": {
+    "description": "〔な〕 設楽原古戦場いろはかるた",
+    "historic": "memorial",
+    "name": "内藤修理亮昌豊之碑",
+    "object": "karuta",
+    "website": "http://www.net-plaza.org/KANKO/shinshiro/karuta.html"
+  }
+},
+{
+  "type": "node",
+  "id": 1141798775,
+  "lat": 34.9205048,
+  "lon": 137.5280170,
+  "tags": {
+    "historic": "memorial",
+    "name": "横田備中守綱松之墓"
+  }
+},
+{
+  "type": "node",
+  "id": 1141798778,
+  "lat": 34.9208874,
+  "lon": 137.5280921,
+  "tags": {
+    "historic": "battlefield",
+    "name": "天王山陣所",
+    "place": "locality"
+  }
+},
+{
+  "type": "node",
+  "id": 1141818025,
+  "lat": 34.9181876,
+  "lon": 137.5269536,
+  "tags": {
+    "historic": "memorial",
+    "name": "小幡上総介信貞の墓"
+  }
+},
+{
+  "type": "node",
+  "id": 1141827043,
+  "lat": 34.9175982,
+  "lon": 137.5278119,
+  "tags": {
+    "historic": "memorial",
+    "name": "原隼人佐昌胤の墓"
+  }
+},
+{
+  "type": "node",
+  "id": 1141830326,
+  "lat": 34.9179545,
+  "lon": 137.5283161,
+  "tags": {
+    "description": "〔ち〕 設楽原古戦場いろはかるた",
+    "name": "原隼人佐昌胤の墓",
+    "object": "karuta",
+    "website": "http://www.net-plaza.org/KANKO/shinshiro/karuta.html"
+  }
+},
+{
+  "type": "node",
+  "id": 1141834078,
+  "lat": 34.9169648,
+  "lon": 137.5260041,
+  "tags": {
+    "historic": "memorial",
+    "name": "山県三郎兵衛昌景墓入り口"
+  }
+},
+{
+  "type": "node",
+  "id": 1141834079,
+  "lat": 34.9168065,
+  "lon": 137.5264225,
+  "tags": {
+    "description": "〔や〕 設楽原古戦場いろはかるた",
+    "historic": "memorial",
+    "name": "山県三郎兵衛昌景の墓",
+    "note": "山県甚太郎昌次・従士名取又左エ門道忠・高坂又八郎助宣の四人の墓が並ぶ",
+    "object": "karuta",
+    "website": "http://www.net-plaza.org/KANKO/shinshiro/karuta.html"
+  }
+},
+{
+  "type": "node",
+  "id": 1141868957,
+  "lat": 34.9162567,
+  "lon": 137.5233701,
+  "tags": {
+    "description": "〔ひ〕 設楽原古戦場いろはかるた",
+    "historic": "battlefield",
+    "name": "長篠役設楽原決戦場碑",
+    "object": "karuta",
+    "place": "locality",
+    "website": "http://www.net-plaza.org/KANKO/shinshiro/karuta.html"
+  }
+},
+{
+  "type": "node",
+  "id": 1141872098,
+  "lat": 34.9163446,
+  "lon": 137.5247327,
+  "tags": {
+    "historic": "battlefield",
+    "name": "設楽原の戦碑",
+    "place": "locality"
+  }
+},
+{
+  "type": "node",
+  "id": 1143180461,
+  "lat": 34.9241520,
+  "lon": 137.5295446,
+  "tags": {
+    "description": "〔り〕 設楽原古戦場いろはかるた",
+    "historic": "memorial",
+    "name": "武田方浪人衆五味貞氏の塚",
+    "object": "karuta",
+    "website": "http://www.net-plaza.org/KANKO/shinshiro/karuta.html"
+  }
+},
+{
+  "type": "node",
+  "id": 1143186087,
+  "lat": 34.9243203,
+  "lon": 137.5299054,
+  "tags": {
+    "historic": "memorial",
+    "name": "塚への登り口"
+  }
+},
+{
+  "type": "node",
+  "id": 1143229357,
+  "lat": 34.9292319,
+  "lon": 137.5316957,
+  "tags": {
+    "description": "〔み〕 設楽原古戦場いろはかるた",
+    "historic": "memorial",
+    "name": "真田源太左衛門尉信綱の墓",
+    "note": "真田兵部丞昌輝、禰津甚平是広、常田図書春清、鎌原筑前守之綱ら四人の墓もあり",
+    "object": "karuta",
+    "website": "http://www.net-plaza.org/KANKO/shinshiro/karuta.html"
+  }
+},
+{
+  "type": "node",
+  "id": 1143251475,
+  "lat": 34.9158475,
+  "lon": 137.5191323,
+  "tags": {
+    "description": "〔ゐ〕 設楽原古戦場いろはかるた",
+    "name": "一重柵建設地",
+    "object": "karuta",
+    "place": "locality",
+    "website": "http://www.net-plaza.org/KANKO/shinshiro/karuta.html"
+  }
+},
+{
+  "type": "node",
+  "id": 1143263270,
+  "lat": 34.9221049,
+  "lon": 137.5250361,
+  "tags": {
+    "description": "〔つ〕 設楽原古戦場いろはかるた",
+    "information": "board",
+    "name": "土屋昌次戦死之地",
+    "object": "karuta",
+    "tourism": "information",
+    "website": "http://www.net-plaza.org/KANKO/shinshiro/karuta.html"
+  }
+},
+{
+  "type": "node",
+  "id": 1143275467,
+  "lat": 34.9073924,
+  "lon": 137.5406025,
+  "tags": {
+    "description": "〔と〕 設楽原古戦場いろはかるた",
+    "historic": "battlefield",
+    "name": "設楽越中守陣地",
+    "object": "karuta",
+    "place": "locality",
+    "website": "http://www.net-plaza.org/KANKO/shinshiro/karuta.html"
+  }
+},
+{
+  "type": "node",
+  "id": 1143279385,
+  "lat": 34.8860446,
+  "lon": 137.5538724,
+  "tags": {
+    "description": "〔よ〕 設楽原古戦場いろはかるた",
+    "historic": "archaeological_site",
+    "name": "鳶ヶ巣奇襲隊進路松山越",
+    "object": "karuta",
+    "website": "http://www.net-plaza.org/KANKO/shinshiro/karuta.html"
+  }
+},
+{
+  "type": "node",
+  "id": 1143371957,
+  "lat": 34.9289056,
+  "lon": 137.5259946,
+  "tags": {
+    "description": "〔れ〕 設楽原古戦場いろはかるた",
+    "historic": "archaeological_site",
+    "name": "馬防柵左端",
+    "object": "karuta",
+    "website": "http://www.net-plaza.org/KANKO/shinshiro/karuta.html"
+  }
+},
+{
+  "type": "node",
+  "id": 1143375527,
+  "lat": 34.9215229,
+  "lon": 137.5250984,
+  "tags": {
+    "description": "〔え〕 設楽原古戦場いろはかるた",
+    "information": "board",
+    "name": "え　えんえんと 柵木岐阜より かつぎくる",
+    "object": "karuta",
+    "tourism": "information",
+    "website": "http://www.net-plaza.org/KANKO/shinshiro/karuta.html"
+  }
+},
+{
+  "type": "node",
+  "id": 1143393865,
+  "lat": 34.9165108,
+  "lon": 137.5232695,
+  "tags": {
+    "historic": "battlefield",
+    "name": "家康物見塚",
+    "place": "locality"
+  }
+},
+{
+  "type": "node",
+  "id": 1143399737,
+  "lat": 34.9232252,
+  "lon": 137.5297417,
+  "tags": {
+    "historic": "archaeological_site",
+    "name": "才ノ神の武田勝頼観戦地碑"
+  }
+},
+{
+  "type": "node",
+  "id": 1143401222,
+  "lat": 34.9225655,
+  "lon": 137.5303908,
+  "tags": {
+    "description": "〔あ〕 設楽原古戦場いろはかるた",
+    "historic": "battlefield",
+    "name": "才ノ神の武田勝頼観戦地",
+    "object": "karuta",
+    "place": "locality",
+    "website": "http://www.net-plaza.org/KANKO/shinshiro/karuta.html"
+  }
+},
+{
+  "type": "node",
+  "id": 1181880585,
+  "lat": 34.9250024,
+  "lon": 137.5142682,
+  "tags": {
+    "description": "〔の〕 設楽原古戦場いろはかるた",
+    "historic": "battlefield",
+    "name": "織田信長戦地本陣",
+    "object": "karuta",
+    "place": "locality",
+    "website": "http://www.net-plaza.org/KANKO/shinshiro/karuta.html"
+  }
+},
+{
+  "type": "node",
+  "id": 1196420140,
+  "lat": 34.9249405,
+  "lon": 137.5539363,
+  "tags": {
+    "amenity": "fuel",
+    "name": "JA愛知東長篠ＳＳ"
+  }
+},
+{
+  "type": "node",
+  "id": 1202519204,
+  "lat": 34.9242980,
+  "lon": 137.5150092,
+  "tags": {
+    "name": "茶臼山公園",
+    "place": "locality"
+  }
+},
+{
+  "type": "node",
+  "id": 1423949137,
+  "lat": 34.9302309,
+  "lon": 137.5580706,
+  "tags": {
+    "name": "医王寺民俗資料館",
+    "note": "National-Land Numerical Information (Public Facility) 2006, MLIT Japan",
+    "note:ja": "国土数値情報（公共施設データ）平成19年　国土交通省",
+    "source": "KSJ2",
+    "source_ref": "http://nlftp.mlit.go.jp/ksj/jpgis/datalist/KsjTmplt-P02-v2_0.html",
+    "tourism": "museum"
+  }
+},
+{
+  "type": "node",
+  "id": 1423986844,
+  "lat": 34.9233184,
+  "lon": 137.5595516,
+  "tags": {
+    "name": "長篠城址・史跡保存館",
+    "note": "National-Land Numerical Information (Public Facility) 2006, MLIT Japan",
+    "note:ja": "国土数値情報（公共施設データ）平成19年　国土交通省",
+    "source": "KSJ2",
+    "source_ref": "http://nlftp.mlit.go.jp/ksj/jpgis/datalist/KsjTmplt-P02-v2_0.html",
+    "tourism": "museum"
+  }
+},
+{
+  "type": "node",
+  "id": 1423986846,
+  "lat": 34.9187893,
+  "lon": 137.5282321,
+  "tags": {
+    "name": "新城市設楽原歴史資料館",
+    "note": "National-Land Numerical Information (Public Facility) 2006, MLIT Japan",
+    "note:ja": "国土数値情報（公共施設データ）平成19年　国土交通省",
+    "source": "KSJ2",
+    "source_ref": "http://nlftp.mlit.go.jp/ksj/jpgis/datalist/KsjTmplt-P02-v2_0.html",
+    "tourism": "museum",
+    "wikidata": "Q104720628",
+    "wikipedia": "ja:設楽原歴史資料館"
+  }
+},
+{
+  "type": "node",
+  "id": 1423986873,
+  "lat": 34.9336940,
+  "lon": 137.5737650,
+  "tags": {
+    "KSJ2:ADS": "長篠字内金5-7",
+    "KSJ2:AdminArea": "愛知県新城市",
+    "amenity": "police",
+    "name": "新城警察署長篠駐在所",
+    "note": "National-Land Numerical Information (Public Facility) 2006, MLIT Japan",
+    "note:ja": "国土数値情報（公共施設データ）平成19年　国土交通省",
+    "operator": "愛知県警察",
+    "source": "KSJ2",
+    "source_ref": "http://nlftp.mlit.go.jp/ksj/jpgis/datalist/KsjTmplt-P02-v2_0.html"
+  }
+},
+{
+  "type": "node",
+  "id": 1424003271,
+  "lat": 34.9342600,
+  "lon": 137.5761710,
+  "tags": {
+    "addr:block_number": "19",
+    "addr:city": "新城市",
+    "addr:housenumber": "5",
+    "addr:neighbourhood": "長篠下り筬",
+    "addr:postcode": "441-1699",
+    "addr:province": "愛知県",
+    "amenity": "post_office",
+    "name": "長篠郵便局",
+    "name:en": "Nagashino Post Office",
+    "name:es": "Oficina de Correos de Nagashino",
+    "name:ja": "長篠郵便局",
+    "name:ja-Hira": "ながしの ゆうびんきょく",
+    "name:pt": "Correio de Nagashino",
+    "note": "National-Land Numerical Information (Public Facility) 2006, MLIT Japan",
+    "note:ja": "国土数値情報（公共施設データ）平成19年　国土交通省",
+    "opening_hours": "Mo-Fr 09:00-17:00",
+    "operator": "日本郵便",
+    "operator:en": "Japan Post",
+    "operator:ja": "日本郵便",
+    "operator:short": "郵便局",
+    "operator:short:en": "JP",
+    "operator:short:ja": "郵便局",
+    "operator:wikidata": "Q11509260",
+    "phone": "+81-536-32-0242",
+    "source": "KSJ2",
+    "source_ref": "http://nlftp.mlit.go.jp/ksj/jpgis/datalist/KsjTmplt-P02-v2_0.html"
+  }
+},
+{
+  "type": "node",
+  "id": 4005179611,
+  "lat": 34.9229719,
+  "lon": 137.5005365,
+  "tags": {
+    "highway": "motorway_junction",
+    "name": "長篠設楽原ＰＡ（上り）"
+  }
+},
+{
+  "type": "node",
+  "id": 5803045536,
+  "lat": 34.9268568,
+  "lon": 137.5157963,
+  "tags": {
+    "highway": "motorway_junction",
+    "name": "長篠設楽原ＰＡ（下り）"
+  }
+},
+{
+  "type": "node",
+  "id": 7720817356,
+  "lat": 34.9152654,
+  "lon": 137.5255439,
+  "tags": {
+    "crossing": "traffic_signals",
+    "crossing_ref": "zebra",
+    "highway": "traffic_signals",
+    "name": "設楽原歴史資料館南"
+  }
+},
+{
+  "type": "node",
+  "id": 7795653384,
+  "lat": 34.9230970,
+  "lon": 137.5599056,
+  "tags": {
+    "historic": "memorial",
+    "memorial": "stele",
+    "name": "長篠城址"
+  }
+},
+{
+  "type": "node",
+  "id": 7795681864,
+  "lat": 34.9226242,
+  "lon": 137.5601115,
+  "tags": {
+    "information": "board",
+    "name": "鳶ケ巣山",
+    "tourism": "information"
+  }
+},
+{
+  "type": "node",
+  "id": 7795681873,
+  "lat": 34.9225018,
+  "lon": 137.5594742,
+  "tags": {
+    "information": "board",
+    "name": "鳥居強右衛門磔の場所（寒狭川の対岸）",
+    "tourism": "information"
+  }
+},
+{
+  "type": "node",
+  "id": 7795681875,
+  "lat": 34.9225445,
+  "lon": 137.5593927,
+  "tags": {
+    "information": "board",
+    "name": "寒狭川 豊川",
+    "tourism": "information"
+  }
+},
+{
+  "type": "node",
+  "id": 7795687307,
+  "lat": 34.9230728,
+  "lon": 137.5596146,
+  "tags": {
+    "historic": "memorial",
+    "memorial": "stele",
+    "name": "史蹟 長篠城阯"
+  }
+},
+{
+  "type": "node",
+  "id": 7795687312,
+  "lat": 34.9230443,
+  "lon": 137.5596978,
+  "tags": {
+    "information": "board",
+    "name": "長篠城縄張概図",
+    "tourism": "information"
+  }
+},
+{
+  "type": "node",
+  "id": 7795687313,
+  "lat": 34.9232697,
+  "lon": 137.5598902,
+  "tags": {
+    "information": "board",
+    "name": "要害の長篠城",
+    "tourism": "information"
+  }
+},
+{
+  "type": "node",
+  "id": 7795687346,
+  "lat": 34.9233818,
+  "lon": 137.5598171,
+  "tags": {
+    "information": "map",
+    "name": "長篠の戦い 史跡めぐりコース",
+    "tourism": "information"
+  }
+},
+{
+  "type": "node",
+  "id": 7795687364,
+  "lat": 34.9234200,
+  "lon": 137.5597001,
+  "tags": {
+    "information": "map",
+    "name": "長篠戦図",
+    "tourism": "information"
+  }
+},
+{
+  "type": "node",
+  "id": 7795687365,
+  "lat": 34.9233345,
+  "lon": 137.5597058,
+  "tags": {
+    "information": "board",
+    "name": "国指定史跡 長篠城跡",
+    "tourism": "information"
+  }
+},
+{
+  "type": "node",
+  "id": 7795687411,
+  "lat": 34.9240218,
+  "lon": 137.5076609,
+  "tags": {
+    "information": "board",
+    "name": "郷土の歴史～長篠・設楽原の合戦～",
+    "tourism": "information"
+  }
+},
+{
+  "type": "node",
+  "id": 7795756490,
+  "lat": 34.9227397,
+  "lon": 137.5594684,
+  "tags": {
+    "information": "board",
+    "name": "長篠城本丸跡",
+    "tourism": "information"
+  }
+},
+{
+  "type": "node",
+  "id": 7795791121,
+  "lat": 34.9233763,
+  "lon": 137.5591265,
+  "tags": {
+    "historic": "memorial",
+    "memorial": "stele",
+    "name": "弾正郭"
+  }
+},
+{
+  "type": "node",
+  "id": 7795791122,
+  "lat": 34.9233642,
+  "lon": 137.5591251,
+  "tags": {
+    "information": "board",
+    "name": "2 弾正郭趾",
+    "tourism": "information"
+  }
+},
+{
+  "type": "node",
+  "id": 9137720061,
+  "lat": 34.9248717,
+  "lon": 137.5551342,
+  "tags": {
+    "amenity": "bbq",
+    "name": "こんたく長篠"
+  }
+},
+{
+  "type": "node",
+  "id": 9207915114,
+  "lat": 34.9215924,
+  "lon": 137.5369210,
+  "tags": {
+    "crossing": "traffic_signals",
+    "crossing_ref": "zebra",
+    "highway": "traffic_signals",
+    "name": "清井田"
+  }
+},
+{
+  "type": "node",
+  "id": 9208442912,
+  "lat": 34.9216639,
+  "lon": 137.5369966,
+  "tags": {
+    "crossing": "traffic_signals",
+    "crossing_ref": "zebra",
+    "highway": "traffic_signals",
+    "name": "清井田"
+  }
+},
+{
+  "type": "node",
+  "id": 10823860911,
+  "lat": 34.9204453,
+  "lon": 137.5250210,
+  "tags": {
+    "information": "board",
+    "name": "設楽原の「長篠・設楽原合戦屏風絵図」",
+    "tourism": "information"
+  }
+},
+{
+  "type": "node",
+  "id": 10823860912,
+  "lat": 34.9200264,
+  "lon": 137.5261423,
+  "tags": {
+    "description": "〔ぬ〕 設楽原古戦場いろはかるた",
+    "name": "ぬ　ぬかるみに 馬もしりごむ 連吾川",
+    "object": "karuta",
+    "website": "http://www.net-plaza.org/KANKO/shinshiro/karuta.html"
+  }
+},
+{
+  "type": "node",
+  "id": 10823860915,
+  "lat": 34.9202488,
+  "lon": 137.5267118,
+  "tags": {
+    "description": "〔を〕 設楽原古戦場いろはかるた",
+    "name": "を 雄々しくも 立ち腹さばく 甘利信康",
+    "object": "karuta",
+    "website": "http://www.net-plaza.org/KANKO/shinshiro/karuta.html"
+  }
+},
+{
+  "type": "node",
+  "id": 10823860916,
+  "lat": 34.9199793,
+  "lon": 137.5269147,
+  "tags": {
+    "information": "board",
+    "name": "歴史の分かれ道－設楽原古戦場ガイド",
+    "tourism": "information"
+  }
+},
+{
+  "type": "node",
+  "id": 10823861006,
+  "lat": 34.9220163,
+  "lon": 137.5580688,
+  "tags": {
+    "information": "board",
+    "name": "長篠と設楽原を結んだ鳥居強右衛門",
+    "tourism": "information"
+  }
+},
+{
+  "type": "node",
+  "id": 10824088278,
+  "lat": 34.9221152,
+  "lon": 137.5250288,
+  "tags": {
+    "description": "〔つ〕 設楽原古戦場いろはかるた",
+    "information": "board",
+    "name": "つ　土屋昌次 柵にとりつき 大音声",
+    "object": "karuta",
+    "tourism": "information",
+    "website": "http://www.net-plaza.org/KANKO/shinshiro/karuta.html"
+  }
+},
+{
+  "type": "node",
+  "id": 10824088280,
+  "lat": 34.9215968,
+  "lon": 137.5249976,
+  "tags": {
+    "information": "board",
+    "name": "馬防柵",
+    "tourism": "information"
+  }
+},
+{
+  "type": "node",
+  "id": 11088554808,
+  "lat": 34.9247440,
+  "lon": 137.5575608,
+  "tags": {
+    "historic": "memorial",
+    "material": "stone",
+    "memorial": "stone",
+    "name": "蟻塚"
+  }
+},
+{
+  "type": "node",
+  "id": 11219572137,
+  "lat": 34.9242513,
+  "lon": 137.5528835,
+  "tags": {
+    "monument": "yes",
+    "name": "長篠露頭（中央構造線）",
+    "name:en": "Nagashino Outcrop (Japan Median Tectonic Line)",
+    "name:ja": "長篠露頭（中央構造線）",
+    "natural": "cliff",
+    "website": "https://www.city.shinshiro.lg.jp/kanko/meisyo/nagashinoroto.html"
+  }
+},
+{
+  "type": "node",
+  "id": 13183309913,
+  "lat": 34.9337510,
+  "lon": 137.5758290,
+  "tags": {
+    "addr:province": "愛知県",
+    "amenity": "bicycle_rental",
+    "authentication:app": "yes",
+    "brand": "HELLO CYCLING",
+    "brand:ja": "ハローサイクリング",
+    "brand:wikidata": "Q91231927",
+    "capacity": "6",
+    "contact:website": "https://www.hellocycling.jp",
+    "fee": "yes",
+    "gbfs:station_id": "15824",
+    "gbfs:system_id": "hellocycling",
+    "name": "本長篠バスターミナル前",
+    "name:ja": "本長篠バスターミナル前",
+    "network": "HELLO CYCLING",
+    "network:ja": "ハローサイクリング",
+    "network:wikidata": "Q91231927"
+  }
+},
+{
+  "type": "way",
+  "id": 50980826,
+  "center": {
+    "lat": 34.9300171,
+    "lon": 137.5544667
+  },
+  "tags": {
+    "bridge": "yes",
+    "highway": "unclassified",
+    "lanes": "2",
+    "name": "長篠橋"
+  }
+},
+{
+  "type": "way",
+  "id": 53192702,
+  "center": {
+    "lat": 34.9102976,
+    "lon": 137.5142181
+  },
+  "tags": {
+    "building": "train_station",
+    "name": "茶臼山駅"
+  }
+},
+{
+  "type": "way",
+  "id": 58689267,
+  "center": {
+    "lat": 34.9060682,
+    "lon": 137.5223277
+  },
+  "tags": {
+    "name": "連吾川",
+    "name:ja": "連吾川",
+    "note": "National-Land Numerical Information (River) 2006, MLIT Japan",
+    "note:ja": "国土数値情報(河川データ)平成18年国土交通省",
+    "source": "KSJ2",
+    "source_ref": "http://nlftp.mlit.go.jp/ksj/jpgis/datalist/KsjTmplt-W05.html",
+    "waterway": "river"
+  }
+},
+{
+  "type": "way",
+  "id": 58690607,
+  "center": {
+    "lat": 34.9170605,
+    "lon": 137.5240585
+  },
+  "tags": {
+    "name": "連吾川",
+    "name:ja": "連吾川",
+    "note": "National-Land Numerical Information (River) 2006, MLIT Japan",
+    "note:ja": "国土数値情報(河川データ)平成18年国土交通省",
+    "source": "KSJ2",
+    "source_ref": "http://nlftp.mlit.go.jp/ksj/jpgis/datalist/KsjTmplt-W05.html",
+    "waterway": "river"
+  }
+},
+{
+  "type": "way",
+  "id": 96681119,
+  "center": {
+    "lat": 34.9420561,
+    "lon": 137.5360443
+  },
+  "tags": {
+    "building": "yes",
+    "name": "出沢公民館"
+  }
+},
+{
+  "type": "way",
+  "id": 98672239,
+  "center": {
+    "lat": 34.9243085,
+    "lon": 137.5543750
+  },
+  "tags": {
+    "amenity": "social_facility",
+    "building": "yes",
+    "name": "長篠グループホーム",
+    "social_facility": "group_home",
+    "source": "knowledge;survey"
+  }
+},
+{
+  "type": "way",
+  "id": 98830427,
+  "center": {
+    "lat": 34.9215909,
+    "lon": 137.5250846
+  },
+  "tags": {
+    "barrier": "fence",
+    "fence_type": "split_rail",
+    "name": "馬防柵"
+  }
+},
+{
+  "type": "way",
+  "id": 98839864,
+  "center": {
+    "lat": 34.9219627,
+    "lon": 137.5250570
+  },
+  "tags": {
+    "barrier": "fence",
+    "fence_type": "split_rail",
+    "name": "馬防柵"
+  }
+},
+{
+  "type": "way",
+  "id": 128041633,
+  "center": {
+    "lat": 34.9509601,
+    "lon": 137.4712760
+  },
+  "tags": {
+    "highway": "unclassified",
+    "name": "林道高松田代線",
+    "source": "YahooJapan/ALPSMAP"
+  }
+},
+{
+  "type": "way",
+  "id": 277774023,
+  "center": {
+    "lat": 34.9326368,
+    "lon": 137.5761090
+  },
+  "tags": {
+    "building": "yes",
+    "name": "本長篠駅舎"
+  }
+},
+{
+  "type": "way",
+  "id": 441265576,
+  "center": {
+    "lat": 34.9254093,
+    "lon": 137.5121946
+  },
+  "tags": {
+    "area": "yes",
+    "highway": "services",
+    "name": "長篠設楽原PA (下り)"
+  }
+},
+{
+  "type": "way",
+  "id": 463468135,
+  "center": {
+    "lat": 34.9243371,
+    "lon": 137.5065506
+  },
+  "tags": {
+    "area": "yes",
+    "highway": "services",
+    "name": "長篠設楽原PA (上り)",
+    "source": "survey"
+  }
+},
+{
+  "type": "way",
+  "id": 992999366,
+  "center": {
+    "lat": 34.9434146,
+    "lon": 137.5750507
+  },
+  "tags": {
+    "highway": "primary",
+    "lanes": "2",
+    "maxspeed": "40",
+    "name": "長篠東栄線",
+    "official_name": "長篠東栄線",
+    "ref": "32",
+    "source_ref": "http://www.pref.aichi.jp/douroiji/image/rosennmeihennkou.pdf"
+  }
+},
+{
+  "type": "way",
+  "id": 992999367,
+  "center": {
+    "lat": 34.9527534,
+    "lon": 137.5747803
+  },
+  "tags": {
+    "bridge": "yes",
+    "highway": "primary",
+    "lanes": "2",
+    "layer": "1",
+    "maxspeed": "40",
+    "name": "長篠東栄線",
+    "official_name": "長篠東栄線",
+    "ref": "32",
+    "source_ref": "http://www.pref.aichi.jp/douroiji/image/rosennmeihennkou.pdf"
+  }
+},
+{
+  "type": "way",
+  "id": 992999374,
+  "center": {
+    "lat": 34.9558168,
+    "lon": 137.5730557
+  },
+  "tags": {
+    "highway": "primary",
+    "lanes": "2",
+    "maxspeed": "40",
+    "name": "長篠東栄線",
+    "official_name": "長篠東栄線",
+    "ref": "32",
+    "source_ref": "http://www.pref.aichi.jp/douroiji/image/rosennmeihennkou.pdf"
+  }
+},
+{
+  "type": "way",
+  "id": 992999375,
+  "center": {
+    "lat": 34.9588989,
+    "lon": 137.5732975
+  },
+  "tags": {
+    "bridge": "yes",
+    "highway": "primary",
+    "lanes": "2",
+    "layer": "1",
+    "maxspeed": "40",
+    "name": "長篠東栄線",
+    "official_name": "長篠東栄線",
+    "ref": "32",
+    "source_ref": "http://www.pref.aichi.jp/douroiji/image/rosennmeihennkou.pdf"
+  }
+},
+{
+  "type": "way",
+  "id": 992999427,
+  "center": {
+    "lat": 34.9488020,
+    "lon": 137.4733982
+  },
+  "tags": {
+    "highway": "unclassified",
+    "name": "林道高松田代線"
+  }
+},
+{
+  "type": "way",
+  "id": 1088059725,
+  "center": {
+    "lat": 34.9620486,
+    "lon": 137.5725464
+  },
+  "tags": {
+    "highway": "primary",
+    "lanes": "2",
+    "maxspeed": "40",
+    "name": "長篠東栄線",
+    "official_name": "長篠東栄線",
+    "ref": "32",
+    "source_ref": "http://www.pref.aichi.jp/douroiji/image/rosennmeihennkou.pdf"
+  }
+},
+{
+  "type": "way",
+  "id": 1128492094,
+  "center": {
+    "lat": 34.8901335,
+    "lon": 137.4745017
+  },
+  "tags": {
+    "amenity": "grave_yard",
+    "name": "龍田寺墓地",
+    "religion": "buddhist"
+  }
+},
+{
+  "type": "way",
+  "id": 1163859790,
+  "center": {
+    "lat": 34.9213520,
+    "lon": 137.5250762
+  },
+  "tags": {
+    "barrier": "fence",
+    "fence_type": "split_rail",
+    "name": "馬防柵"
+  }
+},
+{
+  "type": "way",
+  "id": 1184539605,
+  "center": {
+    "lat": 34.9093674,
+    "lon": 137.5150467
+  },
+  "tags": {
+    "amenity": "hospital",
+    "healthcare": "hospital",
+    "name": "長生会茶臼山厚生病院",
+    "note": "National-Land Numerical Information (Public Facility) 2006, MLIT Japan",
+    "note:ja": "国土数値情報（公共施設データ）平成19年　国土交通省",
+    "source": "KSJ2",
+    "source_ref": "http://nlftp.mlit.go.jp/ksj/jpgis/datalist/KsjTmplt-P02-v2_0.html"
+  }
+},
+{
+  "type": "way",
+  "id": 1201713459,
+  "center": {
+    "lat": 34.9379469,
+    "lon": 137.5755838
+  },
+  "tags": {
+    "amenity": "kindergarten",
+    "name": "長篠保育園",
+    "note": "National-Land Numerical Information (Public Facility) 2006, MLIT Japan",
+    "note:ja": "国土数値情報（公共施設データ）平成19年　国土交通省",
+    "source": "KSJ2",
+    "source_ref": "http://nlftp.mlit.go.jp/ksj/jpgis/datalist/KsjTmplt-P02-v2_0.html"
+  }
+}
+
+  ]
+}

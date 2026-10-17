@@ -1,0 +1,17 @@
+{"bbox": [137.48, 34.89, 137.60, 34.96],
+ "langs": ["ja", "en"],
+ "names": {
+  "Nagashino": {"modern": "長篠"},
+  "Arumi": {"modern": "有海"},
+  "Kiyoida": {"modern": "清井田"},
+  "Takehiro": {"modern": "竹広"},
+  "Morinaga": {"modern": "森長"},
+  "Sunaga": {"modern": "須長"},
+  "Ōmiya": {"modern": "大宮"},
+  "Shinshiro": {"modern": "新城"},
+  "Taki": {"modern": "滝川"},
+  "Chausuyama": {"modern": "茶臼山", "kind": "hill"},
+  "Gokurakujiyama": {"modern": "極楽寺", "kind": "hill"},
+  "Tobigasuyama": {"modern": "鳶ヶ巣山", "kind": "hill"},
+  "Iōjiyama": {"modern": "医王寺", "kind": "hill"}
+ }}

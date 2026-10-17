@@ -1,0 +1,47 @@
+{{Short description|Japanese samurai}}
+{{Family name hatnote|Baba|lang=Japanese}}{{Infobox military person
+| name          = Baba Nobuharu
+| native_name   = 馬場 信春
+| image         = Baba Nobufusa.jpg
+| caption       = A painting of the Japanese samurai, Baba Nobuharu, possibly drawn in the 1500’s
+| birth_date    = 1514/15
+| death_date    = June 29, 1575
+| nickname      = Baba Nobufusa (馬場 信房)
+| allegiance    = [[File:Takeda mon.svg|25px]] [[Takeda clan]]
+| battles       = [[Siege of Katsurayama]] (1557)<br />[[Siege of Iwamura Castle]] (1572)<br />[[Battle of Mikatagahara]] (1573)<br />[[Battle of Nagashino]] (1575)
+}}
+{{nihongo|'''Baba Nobuharu'''|馬場 信春|extra= 1514/15 &ndash; June 29, 1575}}, also known as '''{{nihongo|Baba Nobufusa|馬場 信房}}''', was a Japanese [[samurai]] of the [[Sengoku period]].  He was known as one of the "[[Twenty-Four Generals of Takeda Shingen]]".<ref>[[Stephen Turnbull (historian)|Turnbull, Stephen]]. (2011). [https://books.google.com/books?id=oDNp5xE_7-gC&pg=PA85&dq= ''The Samurai and the Sacred: The Path of the Warrior,'' p. 85].</ref> 
+When Takeda Shingen [[Siege of Fukashi|took Fukashi castle]] (now [[Matsumoto Castle]]) in 1550, he entrusted it to Baba.
+
+According to records, he was in charge of the [[Suwa, Nagano|Suwa]] area in [[Shinano Province|Shinano]] from around 1553.<ref>{{Cite journal |last=丸島 |first=和洋 |date=2007 |title=戦国大名武田氏の領地支配と「郡司」：信濃国諏訪郡支配事例として |journal=史学 |volume=75 |issue=2/3 |pages=9}}</ref> This was a border area with the northern [[Daimyo]], and was a defensive base to monitor invasions from the north. He was also an intermediary for the Shiina family of [[Etchū Province|Etchu]].<ref>{{Cite journal |last=丸島 |first=和洋 |date=2008 |title=戦国大名外交における取次：甲斐武田氏を事例として |journal=史学 |volume=77 |issue=2/3 |pages=49}}</ref>
+
+== Military life ==
+In 1557, Baba fought in the [[Battles of Kawanakajima|Kawanakajima campaigns]], and led the Takeda army that [[Siege of Katsurayama|besieged and destroyed Katsurayama]], a major [[Uesugi clan]] stronghold.
+
+In 1562, he was allowed to take the name of "Mino no Kami", the guardian of [[Mino Province|Mino]], in honor of [[Hara Toratane]], a former "Mino no Kami" who had retired the previous year, and changed his name to Baba Mino no Kami Nobuharu. The ''[[Kōyō Gunkan]]'' states that Shingen often consulted Nobuharu on important matters.
+
+In 1572, he took part in the [[Siege of Iwamura Castle]] against [[Oda clan]] garrison.
+
+In 1573, he took part in the [[Battle of Mikatagahara]],<ref name="Cassell">{{cite book|last1=Turnbull|first1=Stephen|title=The Samurai Sourcebook|date=2000|publisher=Cassell & C0|location=London|isbn=1854095234|pages=222–223}}</ref> during which the troops under his command chased [[Tokugawa Ieyasu]]'s army back to Hamamatsu fortress; upon seeing the gates open and braziers lit, Baba mistakenly suspected a trap, and did not press the fleeing army further.<ref name="battles">{{cite book|last1=Turnbull|first1=Stephen|title=Battles of the Samurai|date=1987|publisher=Arms and Armour Press|location=London|isbn=9780853688266|pages=77, 85, 91}}</ref> Following Takeda Shingen's death, Baba served his successor [[Takeda Katsuyori]].
+
+In 1575, knowing Nobunaga's participation in the [[Battle of Nagashino]], he advised Katsuyori to withdraw but Katsuyori rejected the idea.<ref name=kotobank/> He led the Takeda army's right-wing,<ref name="Steve">{{cite book|last1=Turnbull|first1=Stephen|title=The Samurai|date=1977|publisher=Macmillan Publishing Co., Inc.|location=New York|isbn=9780026205405|pages=156–160}}</ref> and was killed in combat during that engagement.<ref name="battles"/> It is said that he served to cover the retreat, enabling Katsuyori to escape the battlefield.<ref name=kotobank>{{cite web|url=https://kotobank.jp/word/%E9%A6%AC%E5%A0%B4%E4%BF%A1%E6%98%A5-1196360|title=世界大百科事典 第２版「馬場信春」の解説|publisher=kotobank|access-date=23 October 2021}}</ref> The deaths of Baba Nobuharu, [[Sanada Nobutsuna]], [[Naitō Masatoyo|Naito Masayo]], [[Yamagata Masakage]], and other brave warriors of Shingen's reign in the Battle of Nagashino led to the weakening of the Takeda family and its destruction in 1582. Prior to Nagashino, Nobuharu was reputed to have fought in 70 battles without receiving a single wound. For this reason, he is known today as "Baba Mino the Immortal" or "Oni Mino the Immortal".<ref>{{Cite journal |last=岡田 |first=大助 |date=2021 |title=『甲陽軍鑑』の大将論に見る武士の主従関係 |journal=江戸川大学紀要 |issue=31 |pages=11}}</ref>
+
+==References==
+{{Reflist}}
+
+==Further reading==
+*Turnbull, Stephen (1998). ''The Samurai Sourcebook''. London: Cassell & Co.
+
+==External links ==
+* [http://www.yamanashi-kankou.jp/shingen/english2009.pdf  "Legendary Takeda's 24 Generals" at Yamanashi-kankou.jp]
+
+{{Twenty-Four Generals of the Takeda}}
+{{People of the Sengoku period |state=autocollapse}}
+{{Authority control}}
+
+{{DEFAULTSORT:Baba, Nobuharu}}
+[[Category:1575 deaths]]
+[[Category:Samurai]]
+[[Category:Japanese warriors killed in battle]]
+[[Category:Takeda retainers]]
+[[Category:Year of birth unknown]]
