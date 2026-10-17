@@ -1,0 +1,20 @@
+{"bbox": [136.42, 35.32, 136.56, 35.395],
+ "langs": ["ja", "en"],
+ "names": {
+  "Sekigahara": {"modern": "関ケ原"},
+  "Koseki": {"modern": "小関"},
+  "Koike": {"modern": "小池"},
+  "Fujishita": {"modern": "藤下"},
+  "Yamanaka": {"modern": "山中"},
+  "Matsuo": {"modern": "松尾"},
+  "Nojō": {"modern": "野上"},
+  "Makita": {"modern": "牧田"},
+  "Tarui": {"modern": "垂井"},
+  "Kurihara": {"modern": "栗原"},
+  "Imasu": {"modern": "今須"},
+  "Sasaoyama": {"modern": "笹尾山", "kind": "hill"},
+  "Matsuoyama": {"modern": "松尾山", "kind": "hill"},
+  "Nangūsan": {"modern": "南宮山", "kind": "hill"},
+  "Momokubariyama": {"modern": "桃配山", "kind": "hill"},
+  "Tenmayama": {"modern": "天満山", "kind": "hill"}
+ }}

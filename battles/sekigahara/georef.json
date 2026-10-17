@@ -1,0 +1,112 @@
+{
+ "fujii": {
+  "label": "Fujii Jizaemon, situation on the morning of 15th, 1926",
+  "file": "sources/fujii_midmorning.jpg",
+  "order": 1,
+  "fwd": [
+   [
+    35.376603468087055,
+    136.4404870009852
+   ],
+   [
+    1.7385625524716206e-06,
+    1.999864976635406e-05
+   ],
+   [
+    -1.5775238158101368e-05,
+    -6.260206114328046e-07
+   ]
+  ],
+  "inv": [
+   [
+    -6687349.230004366,
+    1501375.5333987072
+   ],
+   [
+    -326.02968562737686,
+    -59698.140976614544
+   ],
+   [
+    49097.83145192288,
+    4475.370061469995
+   ]
+  ],
+  "rmse_m": 227,
+  "m_per_px": 1.82,
+  "residuals_m": {
+   "Ieyasu first camp (Momokubariyama)": 226,
+   "Fuwa barrier": 49,
+   "Kobayakawa camp (Matsuoyama)": 316,
+   "Ikedera pond": 139,
+   "Jukujo pond": 48,
+   "Sekigahara crossroads": 270,
+   "Maruyama": 117,
+   "Ishida camp (Sasaoyama)": 164,
+   "Yamanaka": 417
+  },
+  "loo_m": {
+   "Ieyasu first camp (Momokubariyama)": 480,
+   "Fuwa barrier": 57,
+   "Kobayakawa camp (Matsuoyama)": 757,
+   "Ikedera pond": 190,
+   "Jukujo pond": 66,
+   "Sekigahara crossroads": 320,
+   "Maruyama": 160,
+   "Ishida camp (Sasaoyama)": 315,
+   "Yamanaka": 589
+  },
+  "flagged": []
+ },
+ "hi": {
+  "label": "Deployment after Ch\u014dya ky\u016bbun h\u014dk\u014d on the 1894 1:20,000 survey sheet (ja.wikipedia user HI)",
+  "file": "sources/hi_sekigahara.jpg",
+  "order": 1,
+  "fwd": [
+   [
+    35.37724878470028,
+    136.43696106957762
+   ],
+   [
+    9.329440986112622e-07,
+    5.120640107808954e-05
+   ],
+   [
+    -4.197132846469945e-05,
+    -1.6607059185188338e-06
+   ]
+  ],
+  "inv": [
+   [
+    -2616229.090778715,
+    774648.0800178121
+   ],
+   [
+    -833.7482462094702,
+    -23781.187769407916
+   ],
+   [
+    19391.5840082436,
+    488.60731815188876
+   ]
+  ],
+  "rmse_m": 114,
+  "m_per_px": 4.64,
+  "residuals_m": {
+   "Ikedera pond": 74,
+   "Jukujo pond": 57,
+   "Ise road junction": 217,
+   "Maruyama": 15,
+   "Matsuoyama summit": 34,
+   "Ieyasu first camp (Momokubariyama)": 143
+  },
+  "loo_m": {
+   "Ikedera pond": 260,
+   "Jukujo pond": 82,
+   "Ise road junction": 265,
+   "Maruyama": 23,
+   "Matsuoyama summit": 379,
+   "Ieyasu first camp (Momokubariyama)": 306
+  },
+  "flagged": []
+ }
+}

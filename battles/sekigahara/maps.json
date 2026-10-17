@@ -1,0 +1,78 @@
+{
+ "fujii": {
+  "file": "sources/fujii_midmorning.jpg",
+  "label": "Fujii Jizaemon, situation on the morning of 15th, 1926",
+  "order": 1,
+  "gcps": {
+   "Ieyasu first camp (Momokubariyama)": [
+    2391,
+    1096
+   ],
+   "Fuwa barrier": [
+    962,
+    1213
+   ],
+   "Kobayakawa camp (Matsuoyama)": [
+    625,
+    1800
+   ],
+   "Ikedera pond": [
+    710,
+    710
+   ],
+   "Jukujo pond": [
+    1865,
+    1210
+   ],
+   "Sekigahara crossroads": [
+    1617,
+    1000
+   ],
+   "Maruyama": [
+    1506,
+    550
+   ],
+   "Ishida camp (Sasaoyama)": [
+    856,
+    337
+   ],
+   "Yamanaka": [
+    500,
+    1258
+   ]
+  },
+  "note": "Taishō survey base. Unit symbols sit on or near the camp markers fixed in the Meiji era."
+ },
+ "hi": {
+  "file": "sources/hi_sekigahara.jpg",
+  "label": "Deployment after Chōya kyūbun hōkō on the 1894 1:20,000 survey sheet (ja.wikipedia user HI)",
+  "order": 1,
+  "gcps": {
+   "Ikedera pond": [
+    345,
+    242
+   ],
+   "Jukujo pond": [
+    807,
+    430
+   ],
+   "Ise road junction": [
+    710,
+    347
+   ],
+   "Maruyama": [
+    665,
+    197
+   ],
+   "Matsuoyama summit": [
+    355,
+    725
+   ],
+   "Ieyasu first camp (Momokubariyama)": [
+    985,
+    312
+   ]
+  },
+  "note": "Survey base; unit bars are the compiler's reading of the bakufu compilation, independent of the 1893 General Staff map."
+ }
+}
