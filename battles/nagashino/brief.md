@@ -12,7 +12,7 @@
 | Detached | Sakai Tadatsugu's raid on Tobigasu: ~4,000 incl. 500 Oda guns [shincho] (~3,000 in [nsenshi]); Nagashino garrison ~500 under Okudaira Sadamasa [wpen] | — |
 | Killed | not recorded; no senior commander lost [wpja]; ~6,000 incl. desertions in some modern summaries (poorly sourced) [wpja]; ~300 at Tobigasu [nsenshi] | ~10,000 "and countless drowned or starved" [shincho]; "over a thousand of the Kai *kunishū*" (*Tamon'in nikki*) and "several thousand horsemen" (*Kanemi-kyō ki*) [wpja]; ~370 heads at Tobigasu [nsenshi] |
 
-The map shows 19 Takeda and 23 allied units summing to 15,000 and about 39,500. Unit strengths inside the three Takeda wings and in the allied army are my division of the sourced totals, except where a source gives a figure (Baba 700, Naitō ~1,000, Yamagata 1,500, Sakuma ~6,000, Takigawa ~3,000 [koyo]; 1,000 guns [shincho]); every estimate is marked in the unit note.
+The map shows 17 Takeda and 19 allied units summing to 15,000 and about 40,500 (Oda 31,000 incl. the guns with Sakai; Tokugawa 9,500 incl. Sakai's column and the garrison). Unit strengths inside the three Takeda wings and in the allied army are my division of the sourced totals, except where a source gives a figure (Baba 700, Naitō ~1,000, Yamagata 1,500, Sakuma ~6,000, Takigawa ~3,000 [koyo]; 1,000 guns [shincho]); every estimate is marked in the unit note.
 
 ## Sources
 
