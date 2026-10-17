@@ -49,7 +49,7 @@ B.meta = {
     "wind": 270,
     "strengthNote": "Traditional figures: Oda ~30,000 and Tokugawa ~8,000, Takeda 15,000 of whom 12,000 fought at Shitaragahara [shincho] [koyo] [nsenshi]; Takayanagi (1960) estimated 16-18,000 against 8-10,000 [wpja]. Shinchō kōki gives ~10,000 Takeda dead, the Tamon'in nikki 'over a thousand' of the Kai gentry [shincho] [wpja]; allied losses are not recorded (the 6,000 lost row is a modern estimate including desertions, low confidence) [wpja]. Strengths inside each Takeda wing and most allied contingents are my division of the sourced totals; per-moment losses are estimates following the narrative.",
     "method": "Camps, graves and the reconstructed palisade are placed from the Shinshiro battlefield markers [sites]; the allied line, the Takeda camps and the Tobigasu forts from the 1903 General Staff map georeferenced on six points (143 m) [nsmap]; the sequence from Shinchō kōki, Kōyō gunkan and the 1903 staff history [shincho] [koyo] [nsenshi]. The Takeda attack positions east of the Rengo-gawa are inferred, and positions are good to a few hundred metres.",
-    "notes": "The Baba contingent is featured: its note, a commander flag for Baba himself, and events in phases 3, 5, 6, 8 and 9 follow him from Maruyama to his death. Shinchō kōki makes Baba the fifth and last Takeda wave, while the Takeda tradition puts his capture of Maruyama at the start; both are shown, in that order (my reconciliation) [shincho] [koyo] [nsenshi]. The three-rank volley of 3,000 guns is a later story and is not shown [wpen] [wpja]. The 2016 Shin-Tōmei expressway embankments across the field are removed from the terrain. No historical-map overlay is offered. Per-moment losses are estimates.",
+    "notes": "The Baba contingent is featured: its note, a commander flag for Baba himself, and events in phases 3, 5, 6, 8 and 9 follow him from Maruyama to his death. Shinchō kōki makes Baba the fifth and last Takeda wave, while the Takeda tradition puts his capture of Maruyama at the start; both are shown, in that order (my reconciliation) [shincho] [koyo] [nsenshi]. The three-rank volley of 3,000 guns is a later story and is not shown [wpen] [wpja]. The palisade itself is not drawn: the allied units standing behind it mark its line, and an event at dawn marks the reconstructed section. The 2016 Shin-Tōmei expressway embankments across the field are removed from the terrain. No historical-map overlay is offered. Per-moment losses are estimates.",
 }
 
 # ---- geography
@@ -91,7 +91,7 @@ U("baba", "tak", "inf", "Baba Mino-no-kami Nobuharu", {0: 700, 3: 650, 5: 600, 6
   "Baba Mino-no-kami Nobuharu (Nobufusa), aged about 61, Takeda retainer for forty years and the backbone of the right wing. With 700 men he drove Sakuma's larger force inside the palisade and took the Maruyama knoll, then held there while the Sanada and Tsuchiya went forward [koyo] [nsenshi] [wpja]. Shinchō kōki makes his own attack the fifth and last wave [shincho]. He urged Katsuyori to withdraw, covered the retreat with a few score men and, once Katsuyori was out of sight, turned to fight at Idesawa and was killed; Ōta Gyūichi wrote that his conduct was 'beyond compare' [nsenshi] [koyo] [shincho].",
   "medium", ["koyo", "nsenshi", "shincho", "wpja", "sites"], {8: [(34.9290, 137.5320)], 9: [(34.9380, 137.5370)]})
 U("sanada", "tak", "inf", "Sanada Nobutsuna and Masateru", {0: 800, 5: 500, 6: 80}, 160,
-  {0: ((34.9285, 137.5352), 250, "L"), 1: ((34.9282, 137.5300), 265, "L"), 5: ((34.9272, 137.5266), 260, "F"), 6: ((34.9292, 137.5317), 70, "R")},
+  {0: ((34.9285, 137.5352), 250, "L"), 1: ((34.9282, 137.5300), 265, "L"), 5: ((34.9272, 137.5266), 260, "F"), 6: ((34.9292, 137.5317), 70, "R"), 7: ((34.9385, 137.5405), 30, "R")},
   "The Sanada brothers passed Baba on Maruyama, broke into the first palisade and were both killed; Nobutsuna's grave marker stands on the slope behind (strength an estimate) [koyo] [nsenshi] [sites] [shincho].", "medium", ["koyo", "nsenshi", "sites", "shincho"])
 U("tsuchiya", "tak", "inf", "Tsuchiya Masatsugu", {0: 400, 5: 250, 6: 40}, 110,
   {0: ((34.9275, 137.5340), 250, "L"), 1: ((34.9240, 137.5293), 270, "L"), 5: ((34.9226, 137.5266), 265, "F"), 6: ((34.9235, 137.5300), 80, "R")},
@@ -107,7 +107,7 @@ U("nobukado", "tak", "inf", "Takeda Nobukado (Shōyōken)", {0: 800, 3: 600, 7: 
   {0: ((34.9240, 137.5352), 255, "L"), 1: ((34.9223, 137.5296), 270, "L"), 3: ((34.9212, 137.5264), 270, "F"), 4: ((34.9222, 137.5295), 270, "L"), 7: ((34.9260, 137.5340), 60, "R"), 8: ((34.9410, 137.5400), 30, "R")},
   "Shingen's brother; the second wave in Shinchō kōki, driven back by the guns (strength an estimate) [shincho] [nsenshi].", "medium", ["shincho", "nsenshi"])
 U("naito", "tak", "inf", "Naitō Masatoyo", {0: 1000, 6: 600, 7: 400, 8: 60}, 170,
-  {0: ((34.9228, 137.5360), 255, "L"), 1: ((34.9207, 137.5292), 270, "L"), 6: ((34.9205, 137.5265), 270, "F"), 7: ((34.9215, 137.5290), 260, "F"), 8: ((34.9233, 137.5305), 250, "F")},
+  {0: ((34.9228, 137.5360), 255, "L"), 1: ((34.9207, 137.5292), 270, "L"), 6: ((34.9205, 137.5265), 270, "F"), 7: ((34.9222, 137.5318), 260, "F"), 8: ((34.9233, 137.5305), 250, "F")},
   "About 1,000 men, who drove Takigawa's troops back to the palisade in the Takeda account; Naitō covered the retreat and died near Miyawaki before Baba [koyo] [nsenshi] [sites].", "medium", ["koyo", "nsenshi", "sites"])
 U("hara", "tak", "inf", "Hara Masatane", {0: 500, 6: 250, 7: 120}, 110,
   {0: ((34.9215, 137.5370), 255, "L"), 1: ((34.9190, 137.5293), 270, "L"), 6: ((34.9188, 137.5268), 270, "F"), 7: ((34.9182, 137.5285), 80, "R")},
@@ -157,7 +157,7 @@ A("niwa", "oda", "Niwa Nagahide", {0: 2000, 9: 1900}, 160,
   {0: ((34.9240, 137.5228), 95, "L"), 7: ((34.9240, 137.5290), 90, "F")},
   "Moved forward onto Arumihara facing east with Takigawa and Hashiba (strength an estimate) [shincho] [nsenshi].", "medium", ["shincho", "nsenshi"])
 A("takigawa", "oda", "Takigawa Kazumasu", {0: 3000, 6: 2800, 9: 2750}, 220,
-  {0: ((34.9218, 137.5242), 90, "L"), 2: ((34.9218, 137.5242), 90, "F"), 7: ((34.9215, 137.5300), 85, "F")},
+  {0: ((34.9218, 137.5242), 90, "L"), 2: ((34.9218, 137.5242), 90, "F"), 7: ((34.9212, 137.5280), 85, "F")},
   "Behind the palisade on Arumihara, facing east; about 3,000 in Kōyō gunkan, driven back to the palisade by Naitō [shincho] [koyo].", "medium", ["shincho", "koyo", "sites"])
 A("gunners", "oda", "Arquebusiers of the five commanders (Sassa, Maeda, Nonomura, Fukutomi, Ban)", {0: 1000, 9: 950}, 500,
   {0: ((34.9200, 137.5248), 90, "L"), 2: ((34.9200, 137.5248), 90, "F"), 7: ((34.9205, 137.5300), 85, "F"), 9: ((34.9400, 137.5395), 40, "F")},
