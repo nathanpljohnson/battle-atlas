@@ -122,7 +122,7 @@ U("ukita", "w", "inf", "Ukita Hideie (main body)", {0: 9220, 3: 8800, 5: 8000, 7
   {0: ((35.3626, 136.4552), 100, "L"), 3: ((35.3622, 136.4560), 100, "F"), 7: ((35.3650, 136.4470), 280, "R"), 8: (R, 290, "R")},
   "The largest Western division (17,220 in all) on south Tenmayama, including many new hires after the Ukita household split [jinseki] [wpja] [wpen].", "medium", ["jinseki", "fujii", "wpja", "wpen"])
 U("akashi", "w", "inf", "Ukita vanguard (Akashi Takenori)", {0: 8000, 3: 7400, 5: 6800, 7: 2500, 8: 600}, 420,
-  {0: (wp(875, 1040), 100, "L"), 2: (wp(875, 1040), 100, "F"), 3: ((35.3612, 136.4600), 95, "F"), 5: ((35.3615, 136.4585), 95, "F"), 7: ((35.3640, 136.4490), 280, "R"), 8: (R, 290, "R")},
+  {0: (wp(875, 1040), 100, "L"), 2: (wp(875, 1040), 100, "F"), 3: (wp(905, 1050), 95, "F"), 5: (wp(880, 1040), 95, "F"), 7: ((35.3640, 136.4490), 280, "R"), 8: (R, 290, "R")},
   "Ukita's forward battle toward the Nakasendō; it pushed Fukushima back several hundred metres before the collapse [fujii] [murdoch] [wpen].", "medium", ["fujii", "murdoch", "wpen", "wpja"])
 U("toda", "w", "inf", "Toda Katsushige", {0: 300, 3: 280, 5: 250, 6: 40}, 100,
   {0: (wp(695, 1140), 95, "L"), 3: ((35.3598, 136.4556), 95, "F"), 6: ((35.3605, 136.4520), 290, "R")},
@@ -260,7 +260,7 @@ B.phase("08:00", "First shots", "Ii Naomasa opens the battle",
 B.phase("09:00", "General action", "Arquebus and spear along the whole line",
   "The battle becomes general. Kuroda, Takenaka, Hosokawa, Katō, Tanaka and Ikoma attack Ishida's palisaded front; Shima Sakon is shot down by Kuroda arquebusiers firing from the flank [wpen] [murdoch]. Ukita's men push Fukushima back several hundred metres; Tōdō and Kyōgoku fight Hiratsuka, Toda and Ōtani's front [murdoch]. The Shimazu hold their ground and fire on anyone who comes near [shimazu] [wpja].",
   ("Combined arms", "Massed arquebuses behind palisades, long spears and mounted samurai fought together; fire from a flank broke Ishida's vanguard.", "combined-arms"), (35.3650, 136.4610), 3.6,
-  arrows=[B.arrow("e", "fire", (35.3720, 136.4640), (35.3702, 136.4615)), B.arrow("e", "charge", (35.3688, 136.4645), (35.3700, 136.4618)), B.arrow("w", "charge", (35.3612, 136.4590), (35.3598, 136.4625)),
+  arrows=[B.arrow("e", "fire", (35.3720, 136.4640), (35.3702, 136.4615)), B.arrow("e", "charge", (35.3688, 136.4645), (35.3700, 136.4618)), B.arrow("w", "charge", (35.3615, 136.4585), (35.3600, 136.4622)),
           B.arrow("e", "charge", (35.3594, 136.4600), (35.3592, 136.4575)), B.arrow("w", "fire", (35.3671, 136.4600), (35.3665, 136.4625))],
   events=[((35.3700, 136.4615), "Shima Sakon is shot down [wpen]", ["wpen"]), ((35.3598, 136.4630), "Ukita drives Fukushima back [murdoch]", ["murdoch"])],
   conf="medium", cite=["wpen", "murdoch", "shimazu", "wpja", "fujii"], fog=0.3)
