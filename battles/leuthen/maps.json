@@ -1,0 +1,366 @@
+{
+ "gs12a": {
+  "file": "sources/gs1904_plan_228.jpg",
+  "label": "Prussian General Staff 1904, Plan 12A (1:25,000): night camps and the fight to 15:00",
+  "order": 1,
+  "gcps": {
+   "Borne": [
+    1825,
+    1000
+   ],
+   "Groß Heidau": [
+    2150,
+    980
+   ],
+   "Frobelwitz": [
+    2575,
+    1070
+   ],
+   "Leuthen": [
+    2560,
+    1450
+   ],
+   "Radaxdorf": [
+    2075,
+    1570
+   ],
+   "Lobetinz": [
+    2040,
+    1720
+   ],
+   "Sagschütz": [
+    2534,
+    1882
+   ],
+   "Guckerwitz": [
+    2730,
+    825
+   ],
+   "Nippern": [
+    2590,
+    445
+   ],
+   "Wohnwitz": [
+    2720,
+    240
+   ],
+   "Saarawenze": [
+    2990,
+    715
+   ],
+   "Muckerau": [
+    3280,
+    740
+   ],
+   "Krampitz": [
+    2920,
+    920
+   ],
+   "Stabelwitz": [
+    3820,
+    1110
+   ],
+   "Lissa": [
+    3630,
+    1250
+   ],
+   "Groß Gohlau": [
+    2930,
+    1915
+   ],
+   "Schriegwitz": [
+    2353,
+    2090
+   ],
+   "Kertschütz": [
+    2072,
+    2090
+   ],
+   "Ilnisch": [
+    1819,
+    2162
+   ],
+   "Romolkwitz": [
+    1830,
+    2250
+   ],
+   "Romberg": [
+    3150,
+    2074
+   ],
+   "Schalkau": [
+    3134,
+    2272
+   ],
+   "Marschwitz": [
+    3790,
+    870
+   ],
+   "Neumarkt": [
+    300,
+    980
+   ],
+   "Kammendorf": [
+    740,
+    850
+   ],
+   "Lampersdorf": [
+    1280,
+    1090
+   ],
+   "Kadlau": [
+    1520,
+    730
+   ],
+   "Polkendorf": [
+    1380,
+    1360
+   ],
+   "Krintsch": [
+    1160,
+    1540
+   ],
+   "Wilxen": [
+    3520,
+    360
+   ]
+  }
+ },
+ "gs12b": {
+  "file": "sources/gs1904_plan_229.jpg",
+  "label": "Prussian General Staff 1904, Plan 12B (1:25,000): the fight from 15:00 to the end",
+  "order": 1,
+  "gcps": {
+   "Nippern": [
+    2595,
+    412
+   ],
+   "Groß Heidau": [
+    2148,
+    972
+   ],
+   "Borne": [
+    1823,
+    1004
+   ],
+   "Frobelwitz": [
+    2601,
+    1046
+   ],
+   "Guckerwitz": [
+    2723,
+    817
+   ],
+   "Krampitz": [
+    2889,
+    902
+   ],
+   "Leuthen": [
+    2553,
+    1451
+   ],
+   "Radaxdorf": [
+    2062,
+    1563
+   ],
+   "Lobetinz": [
+    2046,
+    1712
+   ],
+   "Sagschütz": [
+    2521,
+    1872
+   ],
+   "Groß Gohlau": [
+    2905,
+    1899
+   ],
+   "Schriegwitz": [
+    2340,
+    2064
+   ],
+   "Kertschütz": [
+    2052,
+    2080
+   ],
+   "Rathen": [
+    3352,
+    1537
+   ],
+   "Lissa": [
+    3629,
+    1238
+   ],
+   "Saarawenze": [
+    2979,
+    694
+   ],
+   "Muckerau": [
+    3278,
+    721
+   ],
+   "Romberg": [
+    3182,
+    2054
+   ],
+   "Ilnisch": [
+    1796,
+    2208
+   ],
+   "Nimkau": [
+    1993,
+    353
+   ],
+   "Wilxen": [
+    3512,
+    332
+   ],
+   "Hermannsdorf": [
+    3661,
+    1712
+   ]
+  }
+ },
+ "gs1824": {
+  "file": "sources/gs1824_full.jpg",
+  "label": "Prussian General Staff 1824-47, Schlacht bei Leuthen (1:50,000)",
+  "order": 1,
+  "gcps": {
+   "Nippern": [
+    1911,
+    630
+   ],
+   "Borne": [
+    1155,
+    1176
+   ],
+   "Groß Heidau": [
+    1502,
+    1145
+   ],
+   "Frobelwitz": [
+    1848,
+    1229
+   ],
+   "Guckerwitz": [
+    1985,
+    1029
+   ],
+   "Krampitz": [
+    2184,
+    1082
+   ],
+   "Saarawenze": [
+    2237,
+    882
+   ],
+   "Muckerau": [
+    2541,
+    893
+   ],
+   "Wilxen": [
+    2804,
+    609
+   ],
+   "Lissa": [
+    2867,
+    1428
+   ],
+   "Leuthen": [
+    1869,
+    1628
+   ],
+   "Radaxdorf": [
+    1365,
+    1722
+   ],
+   "Lobetinz": [
+    1344,
+    1880
+   ],
+   "Sagschütz": [
+    1785,
+    2016
+   ],
+   "Groß Gohlau": [
+    2163,
+    2016
+   ],
+   "Schriegwitz": [
+    1628,
+    2258
+   ],
+   "Kertschütz": [
+    1365,
+    2300
+   ],
+   "Rathen": [
+    2625,
+    1701
+   ],
+   "Stabelwitz": [
+    3066,
+    1281
+   ],
+   "Marschwitz": [
+    3035,
+    1071
+   ]
+  }
+ },
+ "beaulieu": {
+  "file": "sources/vienna1757_full.jpg",
+  "label": "Beaulieu, Plan de la bataille près de Leuthen (Vienna, 1757), west at top",
+  "order": 1,
+  "gcps": {
+   "Groß Heidau": [
+    2280,
+    528
+   ],
+   "Radaxdorf": [
+    1228,
+    787
+   ],
+   "Lobetinz": [
+    1013,
+    795
+   ],
+   "Kertschütz": [
+    392,
+    1166
+   ],
+   "Schriegwitz": [
+    538,
+    1520
+   ],
+   "Sagschütz": [
+    918,
+    1606
+   ],
+   "Leuthen": [
+    1677,
+    1356
+   ],
+   "Frobelwitz": [
+    2349,
+    1304
+   ],
+   "Guckerwitz": [
+    2669,
+    1477
+   ],
+   "Nippern": [
+    3195,
+    1140
+   ],
+   "Krampitz": [
+    2600,
+    1796
+   ],
+   "Saarawenze": [
+    2867,
+    1744
+   ]
+  }
+ }
+}

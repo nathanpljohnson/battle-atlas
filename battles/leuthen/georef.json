@@ -1,0 +1,314 @@
+{
+ "gs12a": {
+  "label": "Prussian General Staff 1904, Plan 12A (1:25,000): night camps and the fight to 15:00",
+  "file": "sources/gs1904_plan_228.jpg",
+  "order": 1,
+  "fwd": [
+   [
+    51.21278603423634,
+    16.572349672249462
+   ],
+   [
+    -5.16115302828167e-07,
+    8.236248693876039e-05
+   ],
+   [
+    -5.1965559315037e-05,
+    -1.5688427034617206e-07
+   ]
+  ],
+  "inv": [
+   [
+    -199830.50738679548,
+    985160.3950478507
+   ],
+   [
+    -21.632874862097943,
+    -19196.38602910279
+   ],
+   [
+    12125.164678740113,
+    -124.06831413175932
+   ]
+  ],
+  "rmse_m": 241,
+  "m_per_px": 5.75,
+  "residuals_m": {
+   "Borne": 162,
+   "Gro\u00df Heidau": 128,
+   "Frobelwitz": 196,
+   "Leuthen": 124,
+   "Radaxdorf": 109,
+   "Lobetinz": 537,
+   "Sagsch\u00fctz": 173,
+   "Guckerwitz": 121,
+   "Nippern": 274,
+   "Wohnwitz": 291,
+   "Saarawenze": 343,
+   "Muckerau": 399,
+   "Krampitz": 138,
+   "Stabelwitz": 330,
+   "Lissa": 69,
+   "Gro\u00df Gohlau": 111,
+   "Schriegwitz": 45,
+   "Kertsch\u00fctz": 163,
+   "Romolkwitz": 491,
+   "Romberg": 26,
+   "Schalkau": 82,
+   "Neumarkt": 306,
+   "Kammendorf": 351,
+   "Lampersdorf": 89,
+   "Kadlau": 90,
+   "Polkendorf": 130,
+   "Krintsch": 147
+  },
+  "loo_m": {
+   "Borne": 172,
+   "Gro\u00df Heidau": 134,
+   "Frobelwitz": 206,
+   "Leuthen": 129,
+   "Radaxdorf": 114,
+   "Lobetinz": 573,
+   "Sagsch\u00fctz": 188,
+   "Guckerwitz": 130,
+   "Nippern": 315,
+   "Wohnwitz": 356,
+   "Saarawenze": 383,
+   "Muckerau": 458,
+   "Krampitz": 149,
+   "Stabelwitz": 394,
+   "Lissa": 80,
+   "Gro\u00df Gohlau": 123,
+   "Schriegwitz": 51,
+   "Kertsch\u00fctz": 184,
+   "Romolkwitz": 582,
+   "Romberg": 30,
+   "Schalkau": 99,
+   "Neumarkt": 410,
+   "Kammendorf": 429,
+   "Lampersdorf": 98,
+   "Kadlau": 100,
+   "Polkendorf": 142,
+   "Krintsch": 166
+  },
+  "flagged": []
+ },
+ "gs12b": {
+  "label": "Prussian General Staff 1904, Plan 12B (1:25,000): the fight from 15:00 to the end",
+  "file": "sources/gs1904_plan_229.jpg",
+  "order": 1,
+  "fwd": [
+   [
+    51.210971294510216,
+    16.579632366697624
+   ],
+   [
+    -2.5376137112101095e-07,
+    7.932399689688549e-05
+   ],
+   [
+    -5.1958919873269515e-05,
+    7.45470988480653e-07
+   ]
+  ],
+  "inv": [
+   [
+    -218570.42357843657,
+    985714.0029047729
+   ],
+   [
+    199.56543039995213,
+    -19223.509178521963
+   ],
+   [
+    12567.229803009193,
+    -75.68998194857744
+   ]
+  ],
+  "rmse_m": 193,
+  "m_per_px": 5.53,
+  "residuals_m": {
+   "Nippern": 283,
+   "Gro\u00df Heidau": 54,
+   "Borne": 243,
+   "Frobelwitz": 283,
+   "Guckerwitz": 88,
+   "Krampitz": 238,
+   "Leuthen": 20,
+   "Radaxdorf": 132,
+   "Lobetinz": 312,
+   "Sagsch\u00fctz": 194,
+   "Gro\u00df Gohlau": 222,
+   "Schriegwitz": 60,
+   "Kertsch\u00fctz": 98,
+   "Rathen": 174,
+   "Lissa": 129,
+   "Saarawenze": 222,
+   "Muckerau": 249,
+   "Romberg": 172,
+   "Nimkau": 138
+  },
+  "loo_m": {
+   "Nippern": 347,
+   "Gro\u00df Heidau": 61,
+   "Borne": 302,
+   "Frobelwitz": 302,
+   "Guckerwitz": 97,
+   "Krampitz": 262,
+   "Leuthen": 21,
+   "Radaxdorf": 151,
+   "Lobetinz": 366,
+   "Sagsch\u00fctz": 219,
+   "Gro\u00df Gohlau": 258,
+   "Schriegwitz": 72,
+   "Kertsch\u00fctz": 126,
+   "Rathen": 212,
+   "Lissa": 175,
+   "Saarawenze": 258,
+   "Muckerau": 309,
+   "Romberg": 222,
+   "Nimkau": 194
+  },
+  "flagged": []
+ },
+ "gs1824": {
+  "label": "Prussian General Staff 1824-47, Schlacht bei Leuthen (1:50,000)",
+  "file": "sources/gs1824_full.jpg",
+  "order": 1,
+  "fwd": [
+   [
+    51.222512438119864,
+    16.621551061410642
+   ],
+   [
+    -5.242076472683069e-07,
+    8.538314222791057e-05
+   ],
+   [
+    -5.3166487950215876e-05,
+    2.993319670338816e-06
+   ]
+  ],
+  "inv": [
+   [
+    -228597.552261199,
+    961907.1882216069
+   ],
+   [
+    672.1079272635669,
+    -18737.776361746965
+   ],
+   [
+    11682.260635929113,
+    -126.53453476989816
+   ]
+  ],
+  "rmse_m": 242,
+  "m_per_px": 5.96,
+  "residuals_m": {
+   "Nippern": 199,
+   "Borne": 140,
+   "Gro\u00df Heidau": 255,
+   "Frobelwitz": 156,
+   "Guckerwitz": 200,
+   "Krampitz": 193,
+   "Saarawenze": 142,
+   "Muckerau": 355,
+   "Lissa": 66,
+   "Leuthen": 212,
+   "Radaxdorf": 127,
+   "Lobetinz": 403,
+   "Sagsch\u00fctz": 155,
+   "Gro\u00df Gohlau": 378,
+   "Schriegwitz": 139,
+   "Kertsch\u00fctz": 384,
+   "Rathen": 118,
+   "Stabelwitz": 324
+  },
+  "loo_m": {
+   "Nippern": 263,
+   "Borne": 187,
+   "Gro\u00df Heidau": 300,
+   "Frobelwitz": 169,
+   "Guckerwitz": 223,
+   "Krampitz": 213,
+   "Saarawenze": 164,
+   "Muckerau": 424,
+   "Lissa": 85,
+   "Leuthen": 226,
+   "Radaxdorf": 146,
+   "Lobetinz": 473,
+   "Sagsch\u00fctz": 178,
+   "Gro\u00df Gohlau": 450,
+   "Schriegwitz": 176,
+   "Kertsch\u00fctz": 509,
+   "Rathen": 145,
+   "Stabelwitz": 460
+  },
+  "flagged": []
+ },
+ "beaulieu": {
+  "label": "Beaulieu, Plan de la bataille pr\u00e8s de Leuthen (Vienna, 1757), west at top",
+  "file": "sources/vienna1757_full.jpg",
+  "order": 1,
+  "fwd": [
+   [
+    51.093930853502464,
+    16.69043732786955
+   ],
+   [
+    3.0528942598025833e-05,
+    1.533144946274943e-05
+   ],
+   [
+    -5.017547073651813e-06,
+    4.5202115417429485e-05
+   ]
+  ],
+  "inv": [
+   [
+    -1630848.6968154411,
+    171250.8506626963
+   ],
+   [
+    30656.811978286154,
+    -9948.419621721738
+   ],
+   [
+    3861.7436148333995,
+    20196.559141682712
+   ]
+  ],
+  "rmse_m": 289,
+  "m_per_px": 3.56,
+  "residuals_m": {
+   "Gro\u00df Heidau": 142,
+   "Radaxdorf": 254,
+   "Lobetinz": 342,
+   "Kertsch\u00fctz": 435,
+   "Schriegwitz": 76,
+   "Sagsch\u00fctz": 95,
+   "Leuthen": 534,
+   "Frobelwitz": 213,
+   "Guckerwitz": 198,
+   "Nippern": 251,
+   "Krampitz": 236,
+   "Saarawenze": 323
+  },
+  "loo_m": {
+   "Gro\u00df Heidau": 261,
+   "Radaxdorf": 330,
+   "Lobetinz": 454,
+   "Kertsch\u00fctz": 603,
+   "Schriegwitz": 111,
+   "Sagsch\u00fctz": 127,
+   "Leuthen": 587,
+   "Frobelwitz": 240,
+   "Guckerwitz": 238,
+   "Nippern": 359,
+   "Krampitz": 324,
+   "Saarawenze": 451
+  },
+  "flagged": []
+ }
+}

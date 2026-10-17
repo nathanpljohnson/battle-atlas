@@ -50,7 +50,7 @@ Goal: a reusable system that turns a battle name into an Osprey-style 3D phase m
 ## The Crater 1864 (added 2026-10-16)
 - [x] 1 Sources
 - [x] 2 brief.md
-- [ ] 3 places + map matching
+- [x] 3 places + map matching
 - [ ] 4 terrain
 - [ ] 5 scenario.py
 - [ ] 6 strict validation + check.png + passThrough()
@@ -94,7 +94,7 @@ Goal: a reusable system that turns a battle name into an Osprey-style 3D phase m
 ## Leuthen 1757 (added 2026-10-17)
 - [x] 1 Sources
 - [x] 2 brief.md
-- [ ] 3 places + map matching
+- [x] 3 places + map matching
 - [ ] 4 terrain
 - [ ] 5 scenario.py
 - [ ] 6 strict validation + check.png + passThrough()
