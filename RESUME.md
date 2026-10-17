@@ -1,5 +1,5 @@
-Task: Battle Atlas. Add Nagashino 1575 (featuring Baba Nobuharu) via /battle-map.
-Completed: Nagashino steps 1-6 and 8 (library build + browser checks); Sekigahara published as artifact v6.
-Next: Nagashino step 7 (reviewer running; save to battles/nagashino/review.md, answer in brief.md), rebuild, publish artifact v7.
-Files written: battles/sekigahara/*, tactics.json (defection, breakout), library.json, dist/*
-Notes: see the HANDOFF.md progress log. Sekigahara's defectors (side "t") sit in the East belligerent so the engine doesn't make them fight their new allies; the chart note says so.
+Task: Battle Atlas. Nagashino 1575 (featuring Baba Nobuharu) added, reviewed and published.
+Completed: Nagashino steps 1-9; library artifact version 7 (seven battles).
+Next: optional. Draw palisades/earthworks as an engine feature (Nagashino, Franklin); read Hirayama 2014, Kaneko 2023, Mikawa monogatari directly; Sekigahara's open items (Kasaya 2022 etc.). battles/crater is an unfinished separate job; don't use git add -A.
+Files written: battles/nagashino/*, library.json, dist/*
+Notes: see HANDOFF.md progress log.
