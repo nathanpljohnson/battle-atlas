@@ -1,0 +1,34 @@
+{
+ "ns1903": {
+  "file": "sources/ndl/p156_full.jpg",
+  "label": "General Staff, Nihon senshi Nagashino-eki (1903), 長篠戰圖 1:20,000",
+  "order": 1,
+  "gcps": {
+   "Nagashino Castle": [
+    2855,
+    1528
+   ],
+   "Kiyoida": [
+    2040,
+    1590
+   ],
+   "Arumi": [
+    2630,
+    1600
+   ],
+   "Danjōyama": [
+    1510,
+    1690
+   ],
+   "Ōmi (Ōami)": [
+    2500,
+    1110
+   ],
+   "Iōji": [
+    2790,
+    1140
+   ]
+  },
+  "note": "Village labels used as village centres; positions of the allied line read off relative to the Rengo-gawa."
+ }
+}
