@@ -94,3 +94,10 @@ Confidence: low-medium (camp markers are a Meiji reading; the order of arrival i
 - Camp markers are used as unit centres at phase 0-1 (they mark commanders' camps; troops deployed around them). Eastern units without markers are read from the Fujii map (`wp(x, y)`).
 - The Fujikogawa and Kuroji-gawa are shallow streams, modelled as fords.
 - Per-phase losses are estimates distributed along the narrative; after a rout, `men` counts those still with the colours, not survivors.
+
+## Validation notes
+
+- `BATTLEKIT_STRICT=1 python3 scenario.py`: 0 errors, 0 warnings.
+- `window.__atlas.passThrough()`: the only remaining entries are 13:00→14:00, the Shimazu contingents passing through Ii Naomasa's and Matsudaira Tadayoshi's lines. This is the historical breakout (the Shimazu charged east through the Eastern army); the engine shows it as contact fighting.
+- The five defecting contingents (purple) belong to the East belligerent in the data, so the engine never makes them fight the East units they fought beside; they were nominally Western until they turned. The strength chart's East line therefore includes them, as its note says. Their side colour keeps them distinct on the map.
+- Overlay check: each phase's unit lines were drawn onto the Fujii 1926 map through the inverse georeference. Units sit on or within about 100-250 m of Fujii's symbols, and the Shimazu Toyohisa marker falls on the map's own 烏頭坂 (Karasugashira) label.
