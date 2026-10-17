@@ -158,5 +158,15 @@
   "name": "Last stand",
   "era": "all",
   "summary": "A force that cannot escape chooses the strongest ground left to it, often a hill or a wall, and fights until overwhelmed. Usually it buys time for others to get away, or makes a point the survivors and the enemy will remember."
+ },
+ "demonstration": {
+  "name": "Demonstration (feint)",
+  "era": "all",
+  "summary": "A visible show of force against one part of the enemy's line, meant to make him reinforce it while the real blow falls elsewhere."
+ },
+ "change-of-front": {
+  "name": "Change of front under attack",
+  "era": "gunpowder",
+  "summary": "Turning a linear army to face an enemy who has appeared on its flank. With long lines and drilled step it was slow and risky, and done in haste it crowded the troops into deep, disordered masses."
  }
 }
