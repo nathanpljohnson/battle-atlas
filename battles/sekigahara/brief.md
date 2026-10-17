@@ -87,7 +87,7 @@ Confidence: low-medium (camp markers are a Meiji reading; the order of arrival i
 
 ## Confidence summary
 
-- Phases: 0 low-medium, 1 medium, 2 medium (hour low), 3 medium, 4 medium/low, 5 medium (hour low), 6 medium-high, 7 medium, 8 medium (hour low).
+- Phases: 0 low-medium, 1 medium, 2 medium (hour low), 3 medium, 4 low, 5 low, 6 medium, 7 medium, 8 medium (hour low).
 - Units: camp-marker units `medium`; Nangū-san group, Terazawa and the Eastern centre (Ikoma, Kanamori, Oda, Furuta, Tsutsui) `low`; all post-defection movements `low`.
 
 ## Method notes
